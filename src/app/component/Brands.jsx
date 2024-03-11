@@ -1,36 +1,37 @@
 "use client";
-import { useState } from "react";
-import Modal from "./model";
-import { FaLongArrowAltRight } from "react-icons/fa";
-import { FaLongArrowAltLeft } from "react-icons/fa";
-
+import Image from "next/image";
 
 const Brands = () => {
-  const images = ['/Carousel/branding.jpg' , '/Carousel/Graphic designing.jpg', '/Carousel/illustration.jpg', '/Carousel/motion designing.jpg' ,'/Carousel/ui-ux.jpg','/Carousel/website-design.jpg']; 
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [showModal, setShowModal] = useState(false);
-  const visibleImages = 4; // Number of images visible at a time
-
-  const goToPrevSlide = () => {
-    const newIndex = (currentIndex - 1 + images.length) % images.length;
-    setCurrentIndex(newIndex);
-  };
-
-  const goToNextSlide = () => {
-    const newIndex = (currentIndex + 1) % images.length;
-    setCurrentIndex(newIndex);
-  };
-  const openModal = () => {
-  
-    setShowModal(true);
-  };
-
-  const closeModal = () => {
-    setShowModal(false);
-  };
+ 
 
   return (
-<div className="w-8 h-9 bg-black"></div>
+<div className="w-full  bg-[#181818] flex overflow-x-scroll justify-between p-10 items-center">
+<div>
+  <Image src="/brands/1.png" width= "153" height="22"/>
+</div>
+<div>
+  <Image src="/brands/2.png" width= "179" height="26"/>
+</div>
+<div>
+  <Image src="/brands/3.png" width= "137" height="23"/>
+</div>
+<div>
+  <Image src="/brands/4.png" width= "134" height="55"/>
+</div>
+<div>
+  <Image src="/brands/5.png" width= "128" height="32"/>
+</div>
+<div>
+  <Image src="/brands/6.png" width= "142" height="31"/>
+</div>
+<div>
+  <Image src="/brands/7.png" width= "112" height="39"/>
+</div>
+<div>
+  <Image src="/brands/8.png" width= "118" height="22"/>
+</div>
+
+</div>
   );
 };
 

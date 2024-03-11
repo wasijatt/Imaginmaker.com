@@ -43,7 +43,7 @@ const Carousel = () => {
             <div
               key={index}
               className="w-full "
-              style={{ flex: `0 0 ${100 / visibleImages}%` }}
+              style={{ flex: `0 0 ${100 /visibleImages}%` }}
               onClick={openModal}
             >
               <img src={image} alt={`Image ${index + 1}`} className="w-[80%] m-1 mdl:m-4 rounded-3xl"  />

@@ -1,5 +1,4 @@
 import dynamic from "next/dynamic";
-// import Brands from "./component/brands";
 const HeroSection = dynamic(() => import("./component/HeroSection"), {
   ssr: true,
   loading: () => <div className="bg-white animate-pulse h-32 w-full"></div>,
@@ -11,6 +10,12 @@ const Carousel = dynamic(() => import("./component/Carousel"), {
 const Brands = dynamic(() => import("./component/Brands"), {
   ssr: true,
   loading: () => <div className="bg-white animate-pulse h-32 w-full"></div>,
+});
+const Services = dynamic(() => import("./component/Services"), {
+  ssr: true,
+  loading: () => (
+    <div className="bg-white animate-pulse h-32 w-full"> loading</div>
+  ),
 });
 
 export default function page() {
@@ -28,9 +33,14 @@ export default function page() {
         </div>
       </div>
 
-      <div >
+      <div>
         <Brands />
       </div>
+
+      <div>
+        <Services />
+      </div>
+
 
 
     </div>
