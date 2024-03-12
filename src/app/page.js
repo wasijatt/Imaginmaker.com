@@ -17,6 +17,12 @@ const Services = dynamic(() => import("./component/Services"), {
     <div className="bg-white animate-pulse h-32 w-full"> loading</div>
   ),
 });
+const OurServices = dynamic(() => import("./component/OurServices"), {
+  ssr: true,
+  loading: () => (
+    <div className="bg-white animate-pulse h-32 w-full"> loading</div>
+  ),
+});
 
 export default function page() {
   return (
@@ -41,7 +47,9 @@ export default function page() {
         <Services />
       </div>
 
-
+<div> 
+  <OurServices/>
+</div>
 
     </div>
   );

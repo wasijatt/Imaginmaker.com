@@ -4,6 +4,7 @@ import style from "../modulerCss/HeroSection.module.css"
 import leftLogo from "../../../public/images/icons/leftLogo.png"
 import middleLogo from "../../../public/images/icons/middleLogo.png"
 import Heart from "../../../public/images/icons/heart.svg"
+
 export default function HeroSection({HeroSectionHead, HeroSectionPara,HeroSectionButton}) {
 
 

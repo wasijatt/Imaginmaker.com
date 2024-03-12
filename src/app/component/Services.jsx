@@ -19,7 +19,7 @@ const Services = () => {
                 <Image src="/Services/1.png" width="70" height="70" />
               </div>
               <div className="ml-5 ">
-                <h1 className="text-white text-2xl font-bold">
+                <h1 className="text-white text-2xl font-bold tracking-widest">
                   Visual Versatility
                 </h1>
                 <p className="text-white text-sm w-[70%]">
@@ -33,7 +33,7 @@ const Services = () => {
                 <Image src="/Services/2.png" width="70" height="70" />
               </div>
               <div className="ml-5 ">
-                <h1 className="text-white text-2xl font-bold">Relationships</h1>
+                <h1 className="text-white text-2xl font-bold tracking-widest">Relationships</h1>
                 <p className="text-white text-sm w-[70%]">
                   Over Transactions Prioritizing your success, we believe in
                   forging lasting partnerships.
@@ -45,8 +45,8 @@ const Services = () => {
                 <Image src="/Services/3.png" width="70" height="70" />
               </div>
               <div className="ml-5 ">
-                <h1 className="text-white text-2xl font-bold">
-                  Visual VersatilitySocial Media Impact
+                <h1 className="text-white text-2xl font-bold tracking-widest">
+                  Social Media Impact
                 </h1>
                 <p className="text-white text-sm w-[70%]">
                   Crafted visuals that authentically connect with your audience,

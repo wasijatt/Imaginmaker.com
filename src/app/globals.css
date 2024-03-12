@@ -5,3 +5,8 @@
 h1{
     font-family: grifter;
 }
+.ourServices{
+    width: 30% ;
+    margin: 1rem;
+    border-radius: 50px;
+}
