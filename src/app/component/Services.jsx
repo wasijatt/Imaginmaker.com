@@ -2,13 +2,13 @@ import ReviewSlider from "../component/ReviewSlider";
 import Image from "next/image";
 const Services = () => {
   return (
-    <div className="bg-[#181818] rounded-3xl w-full mdl:w-[70%] mt-16 m-auto flex p-12 justify-center items-center">
-      <div className="w-1/2">
+    <div className="bg-[#181818] rounded-3xl  w-full mdl:w-[70%] mt-16 m-auto flex flex-col mdl:flex-row  p-12 justify-center items-center">
+      <div className=" w-full mdl:w-1/2">
         <div>
-          <h1 className="text-white text-[40px] leading-sung font-bold  ">
-            A Full-Service of <br />
+          <h1 className="text-white text-[40px] text-center mdl:text-left w-full mdl:w-[70%] leading-sung font-bold  ">
+            A Full-Service of 
             Design, Branding
-            <br />
+            
             and Animation Agency
           </h1>
         </div>

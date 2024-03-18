@@ -2,11 +2,31 @@
 @tailwind components;
 @tailwind utilities;
 
-h1{
-    font-family: grifter;
+h1 {
+  font-family: grifter;
 }
-.ourServices{
-    width: 30% ;
-    margin: 1rem;
-    border-radius: 50px;
+.ourServices {
+  width: 30%;
+  margin: 1rem;
+}
+input {
+  font-size: 19px;
+  padding: 8px 16px;
+  border: none;
+  font-weight: 600;
+  font-family: sf ui display;
+  width: 45%;
+  margin: 1rem;
+  border-bottom: 2px solid #7700ff;
+  outline: none ;
+
+}
+form button{
+    outline: none;
+    border: none;
+    border-radius: 30px;
+    margin-top: 40px;
+}
+.purpleBg{
+  background: #7700ff;
 }

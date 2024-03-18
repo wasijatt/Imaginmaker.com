@@ -11,7 +11,7 @@ const Carousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [activeIndex, setActiveIndex] = useState(Math.floor(images.length / 3));
   const [showModal, setShowModal] = useState(false);
-  const visibleImages = 4; // Number of images visible at a time
+  const visibleImages = 5; // Number of images visible at a time
 
   const goToPrevSlide = () => {
     const newIndex = (currentIndex - 1 + images.length) % images.length;
@@ -41,18 +41,18 @@ const Carousel = () => {
         onPrevSlide={goToPrevSlide}
         onNextSlide={goToNextSlide} />
         )}
-      <div className="overflow-hidden w-full">
+      <div className="overflow-hidden mdl:mx-3 w-full">
         <div className="flex transition-transform ease-out duration-1000" style={{ transform: `translateX(-${currentIndex * (100 / images.length)}%)` }}>
           {images.map((image, index) => (
             <motion.div
-            animate={index === activeIndex ? { scale: 1.1 } : { scale: 1 }} // Scale up the active image
-            transition={{ duration: 0.3 }} // Adjust the duration as needed
+            animate={index === activeIndex ? { scale: 1.1 } : { scale: 1 }}
+            transition={{ duration: 0.5 }} 
               key={index}
-              className="w-full "
+              className="w-full p-4 "
               style={{ flex: `0 0 ${100 /visibleImages}%` }}
               onClick={openModal}
             >
-              <img src={image} alt={`Image ${index + 1}`} className="w-[80%] m-1 mdl:m-4 rounded-3xl"  />
+              <img src={image} alt={`Image ${index + 1}`} className="w-[100%] justify-center  m-0 mdl:mx-4 rounded-xl"  />
             </motion.div>
           ))}
         </div>
