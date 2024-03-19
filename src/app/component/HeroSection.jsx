@@ -32,7 +32,7 @@ export default function HeroSection({HeroSectionHead, HeroSectionPara,HeroSectio
      </div>
     </div>
 
-<h1 className=" text-white text-[39px] tracking-wide	 mdl:text-[60px] font-extrabold text-center mdl:text-left w-full  mdl:w-[40%]">{HeroSectionHead}</h1>
+<h1 className=" text-white text-[39px] tracking-wide	 mdl:text-[60px] font-extrabold text-center mdl:text-left w-full  mdl:w-[60%]">{HeroSectionHead}</h1>
 <p className="text-white text-2xl font-semibold">{HeroSectionPara}</p>
    <div className="w-[100%] text-center mt-6"> <button className={`"purpleBg px-5 py-2 rounded-3xl  " ${style.boxShadow}`}>
 {HeroSectionButton}

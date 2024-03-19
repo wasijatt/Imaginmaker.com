@@ -32,10 +32,10 @@ const Plan = () => {
   ];
   return (
     <div className="w-full mdl:w-[80%] m-auto text-center">
-      <h1 className="text-[50px]">Memberships levels</h1>
-      <p className="font-bold text-xl">Choose a plan that's right for you.</p>
+      <h1 className=" text-xl mt-5 mdl:text-[50px]">Memberships levels</h1>
+      <p className="font-bold text-sm mdl:text-xl">Choose a plan that's right for you.</p>
       <img className="m-auto mt-9" src="/plan/logo.png" alt="" />
-      <div className="   flex flex-col mdl:flex-row rounded-3xl mt-36">
+      <div className="   flex flex-col mdl:flex-row rounded-3xl mt-4 mdl:mt-36">
         {planList.map((item, index) => (
           <div
             key={index}
@@ -49,7 +49,7 @@ const Plan = () => {
               ${item.price}$/month
             </h1>
             <button
-              className={`${style.boxShadow} " rounded-3xl purpleBg text-white py-2 px-8 mt-9"`}
+              className={`${style.boxShadow} " mt-6 rounded-3xl purpleBg text-white py-2 px-8 mt-9"`}
             >
               Get Started
             </button>

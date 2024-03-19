@@ -29,7 +29,7 @@ const OurServices = () => {
           </div>
         ))}
         <div className="w-full  mdl:ml-[40%] mt-5">
-          <button className={`bg-[#7700ff] text-white px-7 rounded-3xl py-2 text-xl ${style.boxShadow}`}>Get Your Design Done</button>
+          <button className={`purpleBg text-white px-7 m-auto mt-7  rounded-3xl py-2 text-xl ${style.boxShadow}`}>Get Your Design Done</button>
         </div>
       </div>
     </div>

@@ -30,3 +30,22 @@ form button{
 .purpleBg{
   background: #7700ff;
 }
+.footerHead{
+color: rgb(219, 219, 219);
+font-weight: 500;
+}
+.footerLink{
+  display: block ;
+  color: #908f8f;
+}
+.bottomBorder{
+  border-bottom: 1px solid #a4a4a4;
+}
+@media screen and (max-width: 976px) {
+  .footerHead {
+    font-size: 12px;
+  }
+  .footerLink {
+    font-size: 9px;
+  }
+}

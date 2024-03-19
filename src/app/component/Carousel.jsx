@@ -34,7 +34,8 @@ const Carousel = () => {
   };
 
   return (
-
+    <div className=" p-1 mdl:p-4 w-full  purpleBg">
+    <div className="m-auto w-[90%] ">
     <div className="relative w-full  p-2">
        {showModal && (
         <Modal image={images[currentIndex]} onClose={closeModal}
@@ -72,6 +73,8 @@ const Carousel = () => {
 
       </button>
     </div>
+    </div>
+      </div>
   );
 };
 

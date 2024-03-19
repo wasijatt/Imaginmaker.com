@@ -61,6 +61,12 @@ const Faqs = dynamic(() => import("./component/Faqs"), {
     <div className="bg-black animate-pulse h-32 w-full"> loading</div>
   ),
 });
+const Footer = dynamic(() => import("./component/Footer"), {
+  ssr: true,
+  loading: () => (
+    <div className="bg-black animate-pulse h-32 w-full"> loading</div>
+  ),
+});
 
 export default function page() {
   return (
@@ -87,6 +93,7 @@ export default function page() {
     <Simplicity/>
     <Counter/>
      <Faqs/>
+     <Footer/>
     </div>
   );
 }

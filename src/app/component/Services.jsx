@@ -1,68 +1,49 @@
 import ReviewSlider from "../component/ReviewSlider";
-import Image from "next/image";
+
 const Services = () => {
+  const servicesData = [
+    { imgsrc: "/Services/1.png", heading: "Visual Versatility", des: "Tailored design and animation, bringing your vision to life effortlessly." },
+    { imgsrc: "/Services/2.png", heading: "Relationships", des: "Over Transactions Prioritizing your success, we believe in forging lasting partnerships." },
+    { imgsrc: "/Services/3.png", heading: "Social Media Impact", des: "Crafted visuals that authentically connect with your audience, elevating your brand's narrative." },
+  ];
+
   return (
     <div className="bg-[#181818] rounded-3xl  w-full mdl:w-[70%] mt-16 m-auto flex flex-col mdl:flex-row  p-12 justify-center items-center">
       <div className=" w-full mdl:w-1/2">
         <div>
-          <h1 className="text-white text-[40px] text-center mdl:text-left w-full mdl:w-[70%] leading-sung font-bold  ">
-            A Full-Service of 
-            Design, Branding
-            
-            and Animation Agency
+          <h1 className="text-white text-xl mdl:text-[40px] text-center mdl:text-left w-full mdl:w-[70%] leading-sung font-bold leading-normal	 ">
+            A Full-Service of Design, Branding and Animation Agency
           </h1>
         </div>
         <div>
-          <div className="flex flex-col p-6 ">
-            <div className="flex mt-7 ">
-              <div>
-                <Image src="/Services/1.png" width="70" height="70" />
-              </div>
-              <div className="ml-5 ">
-                <h1 className="text-white text-2xl font-bold tracking-widest">
-                  Visual Versatility
-                </h1>
-                <p className="text-white text-sm w-[70%]">
-                  Tailored design and animation, bringing your vision to life
-                  effortlessly.
-                </p>
-              </div>
-            </div>
-            <div className="flex mt-7">
-              <div>
-                <Image src="/Services/2.png" width="70" height="70" />
-              </div>
-              <div className="ml-5 ">
-                <h1 className="text-white text-2xl font-bold tracking-widest">Relationships</h1>
-                <p className="text-white text-sm w-[70%]">
-                  Over Transactions Prioritizing your success, we believe in
-                  forging lasting partnerships.
-                </p>
-              </div>
-            </div>
-            <div className="flex mt-7">
-              <div>
-                <Image src="/Services/3.png" width="70" height="70" />
-              </div>
-              <div className="ml-5 ">
-                <h1 className="text-white text-2xl font-bold tracking-widest">
-                  Social Media Impact
-                </h1>
-                <p className="text-white text-sm w-[70%]">
-                  Crafted visuals that authentically connect with your audience,
-                  elevating your brand's narrative.
-                </p>
-              </div>
-            </div>
-          </div>
+     
+
+<div className="flex flex-col p-2 mdl:p-6">
+    {servicesData.map((service, index) => (
+      <div key={index} className="flex mt-7">
+        <div>
+          <img src={service.imgsrc} width="70" height="70" alt={service.heading} />
+        </div>
+        <div className="ml-5">
+          <h1 className="text-white text-xl mdl:text-2xl font-bold tracking-widest">{service.heading}</h1>
+          <p className="text-white text-sm w-[70%]">{service.des}</p>
         </div>
       </div>
-      <div className="w-1/2 p-4 justify-center items-center ">
-<h1 className="text-white text-center text-2xl">What Our Clients Say About Us</h1>
-             <ReviewSlider />
-             <div className="w-full">
-             <button className="text-center px-10 py-3 ml-[30%] bg-[#7700ff] text-white rounded-3xl" >About Us </button>
-             </div>
+    ))}
+  </div>
+);
+        </div>
+      </div>
+      <div className="w-full mdl:w-1/2 p-4 justify-center items-center ">
+        <h1 className="text-white text-center text-xl mdl:text-2xl">
+          What Our Clients Say About Us
+        </h1>
+        <ReviewSlider />
+        <div className="w-full">
+          <button className="text-center px-10 mt-6 py-3  ml-[35%] purpleBg text-white rounded-3xl">
+            About Us{" "}
+          </button>
+        </div>
       </div>
     </div>
   );
