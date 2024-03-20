@@ -1,5 +1,17 @@
-import HeroSection from "../component/HeroSection";
+
 import dynamic from "next/dynamic";
+const HeroSection = dynamic(() => import("./../component/HeroSection"), {
+  ssr: true,
+  loading: () => (
+    <div className="bg-black animate-pulse h-32 w-full"> loading</div>
+  ),
+});
+const Tabs = dynamic(() => import("./../component/Tabs"), {
+  ssr: true,
+  loading: () => (
+    <div className="bg-black animate-pulse h-32 w-full"> loading</div>
+  ),
+});
 const Simplicity = dynamic(() => import("./../component/Simplicity"), {
   ssr: true,
   loading: () => (
@@ -27,6 +39,7 @@ const page = ()=>{
         HeroSectionPara={"What You Think, We Can Design And Animate."}
         HeroSectionButton={"See Plans"}
       />
+      <Tabs/>
       <div className="mt-[5%]"><Simplicity/></div>
       <Login/>
       <Footer/>

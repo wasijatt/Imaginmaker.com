@@ -81,7 +81,7 @@ const Faqs = () => {
   };
 
   return (
-    <div className="bg-[#191919] border-b-8 border-white">
+    <div className="bg-[#191919] border-b- border-white">
       <div className="w-full  mdl:w-[47%] m-auto p-4 mld:px-7 py-12 ">
         <h1 className="text-white text-center text-[40px]">FAQs</h1>
         {faqs.map((faq, index) => (

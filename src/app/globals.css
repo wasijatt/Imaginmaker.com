@@ -49,3 +49,21 @@ font-weight: 500;
     font-size: 9px;
   }
 }
+.hover:hover{
+color: #7700ff;
+}
+.active-label {
+  color: #7700ff;
+}
+.tab-content {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.fade-in {
+  opacity: 1;
+}
+
+.fade-out {
+  opacity: 0;
+}
