@@ -3,11 +3,11 @@ import dynamic from "next/dynamic";
 
 const HeroSection = dynamic(() => import("./component/HeroSection"), {
   ssr: true,
-  loading: () => <div className="bg-white animate-pulse h-32 w-full"></div>,
+  loading: () => <div className="bg-black animate-pulse h-32 w-full">Loading</div>,
 });
 const Carousel = dynamic(() => import("./component/Carousel"), {
   ssr: true,
-  loading: () => <div className="bg-white animate-pulse h-32 w-full"></div>,
+  loading: () => <div className="bg-white animate-pulse h-32 w-full">loading</div>,
 });
 const Brands = dynamic(() => import("./component/Brands"), {
   ssr: true,
@@ -76,24 +76,17 @@ export default function page() {
         HeroSectionPara={"What You Think, We Can Design And Animate."}
         HeroSectionButton={"See Plans"}
       />
-
-      <div className=" p-1 mdl:p-4 w-full  purpleBg">
-        <div className="m-auto w-[90%] ">
-          <Carousel />
-        </div>
-      </div>
-
-      
+        <Carousel />
         <Brands />
-          <Services />
+        <Services />
         <OurServices />
         <MemberShip />
-  <Plan />
+        <Plan />
         <Login />
-    <Simplicity/>
-    <Counter/>
-     <Faqs/>
-     <Footer/>
+        <Simplicity/>
+        <Counter/>
+        <Faqs/>
+        <Footer/>
     </div>
   );
 }
