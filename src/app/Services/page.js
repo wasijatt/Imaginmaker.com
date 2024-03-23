@@ -1,5 +1,3 @@
-
-import dynamic from "next/dynamic";
 const HeroSection = dynamic(() => import("./../component/HeroSection"), {
   ssr: true,
   loading: () => (
@@ -30,6 +28,7 @@ const Footer = dynamic(() => import("./../component/Footer"), {
     <div className="bg-black animate-pulse h-32 w-full"> loading</div>
   ),
 });
+
 const page = ()=>{
 
     return(
@@ -43,6 +42,7 @@ const page = ()=>{
       <div className="mt-[5%]"><Simplicity/></div>
       <Login/>
       <Footer/>
+  
 </div>
     )
     }

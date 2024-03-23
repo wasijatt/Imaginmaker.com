@@ -1,20 +1,17 @@
 "use client";
 import Link from "next/link";
-import { FaInstagramSquare } from "react-icons/fa";
-import { FaLinkedin } from "react-icons/fa";
-import { FaDribbble } from "react-icons/fa";
-import { FaFacebook } from "react-icons/fa";
+import { FaInstagramSquare ,FaLinkedin ,FaDribbble,FaFacebook,FaBehance } from "react-icons/fa";
 import { CiYoutube } from "react-icons/ci";
-import { FaBehance } from "react-icons/fa";
+
 
 const Footer = () => {
   const socialMedia = [
-    { icon: <FaInstagramSquare />, link: "" },
-    { icon: <FaFacebook />, link: "" },
-    { icon: <FaLinkedin />, link: "" },
-    { icon: <CiYoutube />, link: "" },
-    { icon: <FaDribbble />, link: "" },
-    { icon: <FaBehance />, link: "" },
+    { icon: <FaInstagramSquare />, link: "https://www.instagram.com/imaginmaker/" },
+    { icon: <FaFacebook />, link: "https://www.facebook.com/profile.php?id=61551109724275" },
+    { icon: <FaLinkedin />, link: "https://www.linkedin.com/company/imagin-maker/" },
+    { icon: <CiYoutube />, link: "https://youtube.com/@javedsomroo9792?si=74AP0H67tmddOSnK" },
+    { icon: <FaDribbble />, link: "https://dribbble.com/imaginmaker" },
+    { icon: <FaBehance />, link: "https://www.behance.net/imagin-maker" },
   ];
 
   return (

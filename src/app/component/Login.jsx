@@ -22,8 +22,8 @@ const Login = ( ) =>{
         </div>
         <div className="w-full mdl:w-[28%]  text-center mdl:text-left mt-2 mdl:mt-[30%]" >
             <h1 className="text-bold text-[30px]  ">Whatsapp</h1>
-            <Link className="block font-extrabold text-[20px]" href={" https://wa.me/971567208725"}> UAE: +971 56 720 87 25</Link>
-            <Link className="block font-extrabold text-[20px]" href={" https://wa.me/923005837549"}> Pak: +92 300 5837549</Link>
+            <Link className="block font-extrabold text-[20px]" target="blank" href={" https://wa.me/971567208725"}> UAE: +971 56 720 87 25</Link>
+            <Link className="block font-extrabold text-[20px]" target="blank" href={" https://wa.me/923005837549"}> Pak: +92 300 5837549</Link>
         </div>
         </div>
     )

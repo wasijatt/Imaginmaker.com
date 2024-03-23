@@ -1,8 +1,6 @@
 
-
 import { useState } from 'react';
-import { MdOutlineNavigateBefore, MdOutlineNavigateNext } from "react-icons/md";
-import { motion } from 'framer-motion';
+import Modal from '../Modal';
 
 const Graphics = () => {
   const GraphicData = [
@@ -40,7 +38,11 @@ const Graphics = () => {
     setSelectedImageIndex(index);
     setShowPopup(true);
   };
-
+  const handleOverlayClick = (event) => {
+        if (event.target.classList.contains('overlay')) {
+          closePopup();
+        }
+      };
   const closePopup = () => {
     setShowPopup(false);
   };
@@ -53,16 +55,11 @@ const Graphics = () => {
     setSelectedImageIndex((prevIndex) => (prevIndex === GraphicData.length - 1 ? 0 : prevIndex + 1));
   };
 
-  const handleOverlayClick = (event) => {
-    if (event.target.classList.contains('overlay')) {
-      closePopup();
-    }
-  };
-
   return (
-    <div className="flex flex-row flex-wrap w-[90%] m-auto">
+    <div className="flex flex-row flex-wrap w-[85%] m-auto">
+      
       <div className=" m-4 w-[23%] h-full">
-        {GraphicData.slice(0, 7).map((image, index) => (
+         {GraphicData.slice(0, 7).map((image, index) => (
           <img
             className="rounded-3xl m-7 w-full mdl:w-[100%] h-full"
             key={index}
@@ -109,39 +106,16 @@ const Graphics = () => {
           />
         ))}
       </div>
-      {showPopup && (
-        <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
-        className="fixed inset-0 z-50 flex justify-center items-center bg-[#000000c8] bg-opacity-50 overlay" onClick={handleOverlayClick}>
-        <motion.div className="w-70%"
-        initial={{ y: "-100vh" }}
-        animate={{ y: 0 }}
-        transition={{ type: "spring", stiffness: 300, damping: 20 }}>
-          <div className="relative w-[800px]">
-            <img
-              src={GraphicData[selectedImageIndex]}
-              alt={`Graphic ${selectedImageIndex}`}
-              className="rounded-lg h-full w-full"
-            />
-          </div>
-          <div className="flex justify-between mt-4">
-            <button className="text-[#7700ff] bg-white rounded-full absolute -left-[10%] top-1/2 p-3" onClick={goToPreviousImage}>
-            <MdOutlineNavigateBefore className='text-xl' />
-
-            </button>
-            <button className="text-[#7700ff] bg-white  rounded-full absolute -right-[10%] top-1/2 p-3" onClick={goToNextImage}>
-            <MdOutlineNavigateNext className='text-xl' />
-
-
-            </button>
-          </div>
-        </motion.div>
-      </motion.div>
-    )}
-  </div>
-);
+      <Modal
+        isOpen={showPopup}
+        onClose={handleOverlayClick}
+        images={GraphicData}
+        selectedIndex={selectedImageIndex}
+        onPrevious={goToPreviousImage}
+        onNext={goToNextImage}
+      />
+    </div>
+  );
 };
 
 export default Graphics;
