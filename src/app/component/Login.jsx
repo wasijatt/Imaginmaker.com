@@ -17,7 +17,7 @@ const Login = ( ) =>{
             <input  className="w-full mdl:w-[40%]"  type="Number" placeholder="Phone Number" required />
             <input className="w-full mdl:w-[40%]"  type="text" placeholder="Address" required/> 
             <input className="w-full mdl:w-[90%]"   type= " textarea" placeholder="Interseted In" required /> 
-            <button type="submit" className={`${style.boxShadow} " ml-[5%] py-2 px-5 purpleBg " `} >Let's Go </button>
+            <button type="submit" className={`${style.boxShadow} " text-white ml-[5%] py-2 px-5 purpleBg " `} >Let's Go </button>
             </form>
         </div>
         <div className="w-full mdl:w-[28%]  text-center mdl:text-left mt-2 mdl:mt-[30%]" >

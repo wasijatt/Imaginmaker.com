@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
-import { FaLongArrowAltRight, FaLongArrowAltLeft } from "react-icons/fa";
+import { MdOutlineNavigateBefore, MdOutlineNavigateNext } from "react-icons/md";
+
 import { motion } from "framer-motion";
 import Modal from "./Modal";
 
@@ -88,13 +89,13 @@ const Carousel = () => {
             className="absolute top-1/2 -ml-[100px] transform -translate-y-1/2 bg-white text-[#7700ff] font-extrabold px-6 py-6 rounded-full "
             onClick={goToPrevSlide}
           >
-            <FaLongArrowAltLeft />
+            <MdOutlineNavigateBefore />
           </button>
           <button
             className="absolute top-1/2 right-0 transform -translate-y-1/2 bg-white text-[#7700ff] font-extrabold px-6 py-6 rounded-full"
             onClick={goToNextSlide}
           >
-            <FaLongArrowAltRight />
+            <MdOutlineNavigateNext />
           </button>
         </div>
       </div>

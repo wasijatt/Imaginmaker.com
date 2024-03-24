@@ -1,6 +1,10 @@
+import Link from "next/link";
 import HeroSection from "../component/HeroSection";
-
+import Footer from "../component/Footer";
+import Login from "../component/Login";
 const page = () => {
+
+ 
   return (
     <>
       <HeroSection
@@ -28,7 +32,7 @@ const page = () => {
           Things that define us
         </h1>
         <div className="flex items-center ">
-          <img className="w-[15%] " src="/images/Aboutus/1.png" alt="" />
+          <img className="w-[15%] " src="/Aboutus/1.png" alt="" />
           <div className="">
             <h1 className="text-xl mdl:text-3xl ">Great Work Ethic</h1>
             <p className="text-sm mdl:text-xl w-[60%]  font-semibold">
@@ -40,7 +44,7 @@ const page = () => {
 
         <div className=" flex w-full items-center">
         <div className="w-[50%]"></div>
-          <img className="w-[15%] " src="/images/Aboutus/1.png" alt="" />
+          <img className="w-[15%] " src="/Aboutus/1.png" alt="" />
           <div className="">
             <h1 className="text-xl mdl:text-3xl ">High Energy, High Spirits</h1>
             <p className="text-sm mdl:text-xl w-[60%] font-semibold">
@@ -50,7 +54,7 @@ const page = () => {
           </div>
         </div>
         <div className="flex  items-center">
-          <img className="w-[15%] " src="/images/Aboutus/1.png" alt="" />
+          <img className="w-[15%] " src="/Aboutus/1.png" alt="" />
           <div className="">
             <h1 className="text-xl mdl:text-3xl ">Going The Extra Mile</h1>
             <p className="text-sm mdl:text-xl w-[60%] font-semibold">
@@ -62,7 +66,7 @@ const page = () => {
         </div>
         <div className="flex w-full items-center ">
             <div className="w-[50%]"></div>
-          <img className="w-[15%] " src="/images/Aboutus/1.png" alt="" />
+          <img className="w-[15%] " src="/Aboutus/1.png" alt="" />
           <div className="">
             <h1 className="text-xl mdl:text-3xl ">Up For A Challenge</h1>
             <p className="text-sm mdl:text-xl font-semibold w-[60%]">
@@ -72,6 +76,44 @@ const page = () => {
           </div>
         </div>
       </div>
+
+
+
+<div className="mdl:flex w-full p-2 mdl:p-[4%] m-auto text-white bg-[#191919] ">
+  <div className="w-full mdl:w-[70%] mdl:p-8">
+    <h1 className="text-xl mdl:text-3xl  font-bold">Our Founder</h1>
+    <p className="text-sm mdl:text-xl leading-loose	p-4 w-full mdl:w-[80%] ">Meet Javed Somroo, the creative force 
+driving ImaginMaker. With 5 years of 
+expertise in graphic design, branding,
+ and professional digital marketing, Javed 
+leads our team in Pakistan, spearheading 
+innovative projects that captivate audiences
+ worldwide. His diverse skil l set encompasses 
+graphic and motion designing, digital marketing, animation, UI/UX design, video editing, 
+photography, and branding, ensuring 
+every project exceeds expectations.</p>
+<Link className="text-sm text-[#7700ff]" href={"https://www.linkedin.com/in/javed-somroo-bb32bb247/"}>Linkdin.com/JAVEDSOMROO</Link>
+  </div>
+  <img src={"AboutUs/JavedSomroo.jpg"} className="w-full mdl:w-[400px] " />
+</div>
+
+<div className="bg-[#191919] text-center text-white py-28">
+ <h1 className="text-xl mdl:text-[40px] font-bold"> Our Team</h1>
+
+ <div className="mdl:flex w-full m-auto justify-evenly mt-7 mdl:w-[60%]">
+<img src="/AboutUs/Over.jpg" className="w-full rounded-full mdl:w-[300px]" alt="Muhammad Madni,The Figma Designer"/>
+<img src="/AboutUs/Overlay1.jpg" className="w-full rounded-full mdl:w-[300px]" alt="Muhammad Madni,The Figma Designer"/>
+<img src="/AboutUs/6.jpg" className="w-full rounded-full mdl:w-[300px]" alt="Muhammad Madni,The Figma Designer"/>
+ </div>
+ <div className="mdl:flex justify-evenly m-auto w-full mdl:w-[45%]">
+<img src="/AboutUs/anas1.jpg" className="w-full rounded-full mdl:w-[300px]" alt="Muhammad Madni,The Figma Designer"/>
+<img src="/AboutUs/4.jpg" className="w-full rounded-full mdl:w-[300px]" alt="Muhammad Madni,The Figma Designer"/>
+
+ </div>
+</div>
+<Login/>
+<Footer/>
+
     </>
   );
 };

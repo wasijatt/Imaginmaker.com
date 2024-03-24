@@ -1,4 +1,6 @@
+import Link from "next/link";
 import ReviewSlider from "../component/ReviewSlider";
+
 
 const Services = () => {
   const servicesData = [
@@ -40,9 +42,9 @@ const Services = () => {
         </h1>
         <ReviewSlider />
         <div className="w-full">
-          <button className="text-center px-10 mt-6 py-3  ml-[35%] purpleBg text-white rounded-3xl">
-            About Us{" "}
-          </button>
+          <Link href={"/AboutUs"} className="text-center px-10 mt-12 py-3  ml-[35%] purpleBg text-white rounded-3xl">
+            About Us
+          </Link>
         </div>
       </div>
     </div>

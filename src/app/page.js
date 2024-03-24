@@ -1,6 +1,7 @@
-"use client ";
+"use client"
+import { useEffect } from "react";
 import dynamic from "next/dynamic";
-
+import { Main } from "next/document";
 const HeroSection = dynamic(() => import("./component/HeroSection"), {
   ssr: true,
   loading: () => <div className="bg-black animate-pulse h-32 w-full">Loading</div>,
@@ -67,15 +68,28 @@ const Footer = dynamic(() => import("./component/Footer"), {
     <div className="bg-black animate-pulse h-32 w-full"> loading</div>
   ),
 });
+const Cursor = dynamic(() => import("./component/Cursor"), {
+  ssr: true,
+  loading: () => (
+    <div className="bg-black animate-pulse h-32 w-full"> loading</div>
+  ),
+});
 
-export default function page() {
+
+
+  export default function Page() {
+   
+
+  
   return (
+    <main className="main" data-scroll-container>
     <div>
       <HeroSection
         HeroSectionHead={"A Design Agency With a Twist"}
         HeroSectionPara={"What You Think, We Can Design And Animate."}
         HeroSectionButton={"See Plans"}
       />
+<Cursor/>
         <Carousel />
         <Brands />
         <Services />
@@ -88,5 +102,6 @@ export default function page() {
         <Faqs/>
         <Footer/>
     </div>
+    </main>
   );
 }

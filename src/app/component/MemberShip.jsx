@@ -44,7 +44,7 @@ for your design. Seriously.</p>
     <div className="flex flex-wrap items-center justify-center m-auto w-full mdl:w-[70%]">
     
       {MembershipData.map((item, index) => (
-        <div key={index} className={` ${style.planboxShadow} "mdl:mt-14 flex w-full mdl:w-[31%] p-12 m-3 "`}>
+        <div key={index} className={` ${style.planboxShadow} " mdl:mt-14 flex w-full mdl:w-[31%] p-12 m-3 rounded-xl "`}>
           
          
             <div key={index} className="max-w-sm rounded overflow-hidden ">

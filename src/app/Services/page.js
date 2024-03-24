@@ -1,3 +1,4 @@
+import dynamic from "next/dynamic";
 const HeroSection = dynamic(() => import("./../component/HeroSection"), {
   ssr: true,
   loading: () => (
@@ -27,6 +28,11 @@ const Footer = dynamic(() => import("./../component/Footer"), {
   loading: () => (
     <div className="bg-black animate-pulse h-32 w-full"> loading</div>
   ),
+});const Cursor = dynamic(() => import("./../component/Cursor"), {
+  ssr: true,
+  loading: () => (
+    <div className="bg-black animate-pulse h-32 w-full"> loading</div>
+  ),
 });
 
 const page = ()=>{
@@ -39,8 +45,10 @@ const page = ()=>{
         HeroSectionButton={"See Plans"}
       />
       <Tabs/>
-      <div className="mt-[5%]"><Simplicity/></div>
+      <div className="mt-[5%]">
+        <Simplicity/></div>
       <Login/>
+      <Cursor/>
       <Footer/>
   
 </div>
