@@ -9,7 +9,7 @@ import Web from "./TabsData/Web";
 
 import { useState } from "react";
 
-const Tabs = () => {
+const Tabs = ({}) => {
   const [activeTab, setActiveTab] = useState(<Graphics/>);
 
   const handleTabChange = (content) => {

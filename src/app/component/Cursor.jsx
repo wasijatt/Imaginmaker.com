@@ -35,9 +35,10 @@ const Cursor = () => {
   const cursorStyle = {
     left: position.x,
     top: position.y,
-    backgroundColor: brandsHovered ? "#ff0000" : "#7700ff", 
+    backgroundColor: brandsHovered ? "#7700ff7e" : "#7700ff", 
     width: "10px",
     height: "10px",
+    
     zIndex: brandsHovered ? 9999 : 50, 
   };
 
@@ -47,10 +48,10 @@ const Cursor = () => {
         onMouseEnter={handleBrandsEnter}
         onMouseLeave={handleBrandsLeave}
       >
-        <Brands />
+      
       </div>
       <div
-        className="fixed z-50 bg-[#7700ff] rounded-full pointer-events-none transition-all duration-300 ease-linear"
+        className="fixed z-50 bg-[#7700ff7e] rounded-full pointer-events-none transition-all duration-300 ease-linear"
         style={cursorStyle}
       />
     </>

@@ -1,5 +1,5 @@
 import style from "../modulerCss/HeroSection.module.css";
-
+import Image from "next/image";
 
 
 
@@ -14,15 +14,16 @@ const OurServices = () => {
   ];
   return (
     <div className="bg-[#181818] py-16 mt-[5vh]">
-      <h1 className=" text-[20px] mdl:text-[50px] text-white text-center">Our Services</h1>
+      <h1 className=" text-[20px] mdl:text-[64px] text-white text-center">Our Services</h1>
       <div className="flex flex-wrap m-auto w-full  mdl:w-[70%]">
         {imageSources.map((src, index) => (
-          <div
+          <div key={index}
             
             className="ourServices w-full mdl:w-[30%]"
           >
-            <img
+            <Image
               className=" w-full mdl:w-[95%] mt-5 rounded-3xl"
+              key={index}
               src={src}
               alt={`Branding ${index + 1}`}
             />

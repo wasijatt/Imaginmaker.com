@@ -2,7 +2,7 @@
 import Link from "next/link";
 import { FaInstagramSquare ,FaLinkedin ,FaDribbble,FaFacebook,FaBehance } from "react-icons/fa";
 import { CiYoutube } from "react-icons/ci";
-
+import Image from "next/image";
 
 const Footer = () => {
   const socialMedia = [
@@ -18,7 +18,7 @@ const Footer = () => {
     <div className=" bg-[#191919] py-7 px-4 mdl:p-14">
       <div className="  flex w-full mdl:w-[90%] justify-between">
         <div className=" w-30% mdl:w-[40%] mt-2 mdl:m-auto p-3">
-          <img  src="/footer/footer-Icon.png" alt="" />
+          <Image  src="/footer/footer-Icon.png" alt="" />
           <h1 className="text-[#908f8f] text-sm mdl:text-[18px]">Follow Us</h1>
           <div className="flex items-center mt-5">
             {socialMedia.map((item, index) => (

@@ -18,9 +18,11 @@ const Footer = dynamic(() => import("./../component/Footer"), {
     ),
   });
 const page = ()=>{
+  
     return(
         <div>
-        <div> <HeroSection HeroSectionHead={""} HeroSectionPara={""} HeroSectionButton={""}/></div>
+        <div> <HeroSection HeroSectionHead={"Online Journal"} HeroSectionPara={"Elevating Insights, Crafting Excellence, Your Gateway to Informed and Polished Content."} HeroSectionButton={"Learn about us"}/></div>
+        
         <div className="my-[5%]"> <Simplicity/></div>
 
         <div> <Footer/></div>

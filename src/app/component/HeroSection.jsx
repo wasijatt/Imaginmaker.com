@@ -23,7 +23,7 @@ export default function HeroSection({HeroSectionHead, HeroSectionPara,HeroSectio
       <Link href={"/CaseStudy"} className={`${style.navLinks}`} >Case Study </Link> 
       <Link href={"/Weblog"} className={`${style.navLinks}`} >Weblog</Link>
     
-      <Link href={"/"} className={`${style.navLinks}`} > <Image src={middleLogo} className="" /> </Link>
+      <Link href={"/"} className={`${style.navLinks}`} > <Image src={middleLogo} alt="logo" className="" /> </Link>
   
       <Link href={"/Services"} className={`${style.navLinks}`} >Services</Link>
       <Link href={"/OurValues"} className={`${style.navLinks}`} >Our Values </Link>
@@ -41,7 +41,7 @@ export default function HeroSection({HeroSectionHead, HeroSectionPara,HeroSectio
     </button>
     </div>
 
-    <div className="w-full text-center text-white mt-4  ">Designs you'll <div className="inline"><Image src={Heart} className="inline"/></div>, guaranteed</div>
+    <div className="w-full text-center text-white mt-4  ">Designs you&apos;ll <div className="inline"><Image alt="Heart" src={Heart} className="inline"/></div>, guaranteed</div>
     </div>
   )
 }

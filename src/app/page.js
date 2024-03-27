@@ -1,10 +1,8 @@
 "use client"
-import { useEffect } from "react";
 import dynamic from "next/dynamic";
-import { Main } from "next/document";
 const HeroSection = dynamic(() => import("./component/HeroSection"), {
   ssr: true,
-  loading: () => <div className="bg-black animate-pulse h-32 w-full">Loading</div>,
+  loading: () => <div className="bg-black animate-pulse h-32 w-full">Loading ,.....</div>,
 });
 const Carousel = dynamic(() => import("./component/Carousel"), {
   ssr: true,
@@ -12,7 +10,7 @@ const Carousel = dynamic(() => import("./component/Carousel"), {
 });
 const Brands = dynamic(() => import("./component/Brands"), {
   ssr: true,
-  loading: () => <div className="bg-white animate-pulse h-32 w-full"></div>,
+  loading: () => <div className="bg-white animate-pulse h-32 w-full">yyyytfytfygrt</div>,
 });
 const Services = dynamic(() => import("./component/Services"), {
   ssr: true,

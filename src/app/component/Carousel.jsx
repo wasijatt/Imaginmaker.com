@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import { MdOutlineNavigateBefore, MdOutlineNavigateNext } from "react-icons/md";
-
+import Image from "next/image";
 import { motion } from "framer-motion";
 import Modal from "./Modal";
 
@@ -53,8 +53,8 @@ const Carousel = () => {
           {showModal && (
             <Modal
               isOpen={showModal}
-              images={images[currentIndex]}
-              selectedIndex={images[currentIndex]}
+              images={images[activeIndex]}
+              selectedIndex={images[activeIndex]}
               onClose={handleOverlayClick}
               onPrevious={goToPrevSlide}
               onNext={goToNextSlide}
@@ -76,7 +76,7 @@ const Carousel = () => {
                   style={{ flex: `0 0 ${100 / visibleImages}%` }}
                   onClick={() => openModal(index)}
                 >
-                  <img
+                  <Image
                     src={image}
                     alt={`Image ${index + 1}`}
                     className="w-[100%] justify-center m-0 mdl:mx-4 rounded-xl"

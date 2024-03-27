@@ -1,4 +1,5 @@
 import style from "../modulerCss/HeroSection.module.css"
+import Image from "next/image";
 const MemberShip = () => {
   const MembershipData = [
     {
@@ -36,9 +37,9 @@ const MemberShip = () => {
   return(
   <>
         <div className="mt-4 mdl:mt-14 m-auto text-center w-full mdl:w-[30%]">
-        <img className="m-auto" src="/services/mem-logo.png" alt="" />
+        <Image className="m-auto" src="/services/mem-logo.png" alt="" />
         <h1 className="text-3xl ">Membership benefits</h1>
-        <p>Perks so good you'll never need to go anywhere else
+        <p>Perks so good you&apos;ll never need to go anywhere else
 for your design. Seriously.</p>
         </div>
     <div className="flex flex-wrap items-center justify-center m-auto w-full mdl:w-[70%]">
@@ -49,7 +50,7 @@ for your design. Seriously.</p>
          
             <div key={index} className="max-w-sm rounded overflow-hidden ">
              
-              <img className="w-[50px] m-auto " src={item.imgsrc} alt={item.title} />
+              <Image className="w-[50px] m-auto " src={item.imgsrc} alt={item.title} />
               <div className="px-6 py-4">
                 <div className="font-bold text-2xl text-center mb-2">{item.title}</div>
                 <p className=" text-lg text-center">{item.para}</p>

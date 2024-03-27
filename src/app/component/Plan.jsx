@@ -1,5 +1,6 @@
 "use client ";
 import style from "../modulerCss/HeroSection.module.css";
+import Image from "next/image";
 const Plan = () => {
   const planList = [
     {
@@ -33,8 +34,8 @@ const Plan = () => {
   return (
     <div className="w-full mdl:w-[80%] m-auto text-center">
       <h1 className=" text-xl mt-5 mdl:text-[50px]">Memberships levels</h1>
-      <p className="font-bold text-sm mdl:text-xl">Choose a plan that's right for you.</p>
-      <img className="m-auto mt-9" src="/plan/logo.png" alt="" />
+      <p className="font-bold text-sm mdl:text-xl">Choose a plan that&apos;s right for you.</p>
+      <Image className="m-auto mt-9" src="/plan/logo.png" alt="" />
       <div className="   flex flex-col mdl:flex-row rounded-3xl mt-4 mdl:mt-36">
         {planList.map((item, index) => (
           <div
@@ -53,7 +54,7 @@ const Plan = () => {
             >
               Get Started
             </button>
-            <h1 className="text-left font-extrabold mt-20">What's Included:</h1>
+            <h1 className="text-left font-extrabold mt-20">What&apos;s Included:</h1>
             <ul className="mt-4 text-left">
               {item.specs.map((spec, idx) => (
                 <li key={idx} className="mb-2">
@@ -67,7 +68,7 @@ const Plan = () => {
           className={`${style.planboxShadow}" flex flex-col w-full mdl:w-[28%] p-9  " `}
         >
           <div className="border-b-2 py-6 border-[#333]">
-            <img
+            <Image
               className="w-[80%] mdl:w-[60%] m-auto"
               src="/Plan/booking.png"
               alt=""
@@ -85,7 +86,7 @@ const Plan = () => {
             </a>
           </div>
           <div className="mt-9">
-            <img
+            <Image
               className="w-[80%] mdl:w-[50%] m-auto "
               src="/Plan/book.png"
               alt=""

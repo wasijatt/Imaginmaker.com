@@ -1,7 +1,7 @@
 
 import { useState } from 'react';
 import Modal from '../Modal';
-
+import Image from 'next/image';
 const Graphics = () => {
   const GraphicData = [
     "/images/servicesPage/Grphic designing/book cover design.jpg",
@@ -60,7 +60,7 @@ const Graphics = () => {
       
       <div className=" m-4 w-[23%] h-full">
          {GraphicData.slice(0, 7).map((image, index) => (
-          <img
+          <Image
             className="rounded-3xl m-7 w-full mdl:w-[100%] h-full"
             key={index}
             src={image}
@@ -72,7 +72,7 @@ const Graphics = () => {
       </div>
       <div className=" m-4 w-[23%] h-full">
         {GraphicData.slice(7, 13).map((image, index) => (
-          <img
+          <Image
             className="rounded-3xl m-7 w-full mdl:w-[100%] h-full"
             key={index + 7}
             src={image}
@@ -84,7 +84,7 @@ const Graphics = () => {
       </div>
       <div className=" m-4 w-[23%] h-full">
         {GraphicData.slice(13, 20).map((image, index) => (
-          <img
+          <Image
             className="rounded-3xl m-7 w-full mdl:w-[100%] h-full"
             key={index + 13}
             src={image}
@@ -96,7 +96,7 @@ const Graphics = () => {
       </div>
       <div className=" m-4 w-[23%] h-full">
         {GraphicData.slice(20, 25).map((image, index) => (
-          <img
+          <Image
             className="rounded-3xl m-7 w-full mdl:w-[100%] h-full"
             key={index + 20}
             src={image}

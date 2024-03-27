@@ -1,6 +1,6 @@
 import Link from "next/link";
 import ReviewSlider from "../component/ReviewSlider";
-
+import Image from "next/image";
 
 const Services = () => {
   const servicesData = [
@@ -24,7 +24,7 @@ const Services = () => {
     {servicesData.map((service, index) => (
       <div key={index} className="flex mt-7">
         <div>
-          <img src={service.imgsrc} width="70" height="70" alt={service.heading} />
+          <Image src={service.imgsrc} width="70" height="70" alt={service.heading} />
         </div>
         <div className="ml-5">
           <h1 className="text-white text-xl mdl:text-2xl font-bold tracking-widest">{service.heading}</h1>
@@ -40,7 +40,7 @@ const Services = () => {
         <h1 className="text-white text-center text-xl mdl:text-2xl">
           What Our Clients Say About Us
         </h1>
-        <ReviewSlider />
+        <ReviewSlider  />
         <div className="w-full">
           <Link href={"/AboutUs"} className="text-center px-10 mt-12 py-3  ml-[35%] purpleBg text-white rounded-3xl">
             About Us

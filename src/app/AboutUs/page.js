@@ -2,13 +2,14 @@ import Link from "next/link";
 import HeroSection from "../component/HeroSection";
 import Footer from "../component/Footer";
 import Login from "../component/Login";
+import Image from "next/image";
 const page = () => {
 
  
   return (
     <>
       <HeroSection
-        HeroSectionHead={"Let’s craft brilliance together"}
+        HeroSectionHead={"Let&apos;s craft brilliance together"}
         HeroSectionPara={
           "We deal with intricate challenges and transform them into holistic experiences."
         }
@@ -19,11 +20,10 @@ const page = () => {
           Who we are
         </h1>
         <p className="w-full mdl:w-1/2 text-center text-sm mdl:text-2xl font-semibold">
-          Welcome to our design agency! We're a team committed to empowering the
+          Welcome to our design agency! We&apos;re a team committed to empowering the
           next generation with design skills. Offering affordable services,
-          we're on a mission to make quality design accessible to all. Trusted
-          by businesses and individuals, we offer free consultations to guide
-          you. Whether an agency seeking support or an individual in need, we're
+          we&apos;re on a mission to make quality design accessible to all. Trusted
+          by businesses and individuals, we offer free consultations to guide you. Whether an agency seeking support or an individual in need, we&apos;re
           here to help.
         </p>
       </div>
@@ -32,7 +32,7 @@ const page = () => {
           Things that define us
         </h1>
         <div className="flex items-center ">
-          <img className="w-[15%] " src="/Aboutus/1.png" alt="" />
+          <Image className="w-[15%]"  src="/Aboutus/1.png" alt="image" />
           <div className="">
             <h1 className="text-xl mdl:text-3xl ">Great Work Ethic</h1>
             <p className="text-sm mdl:text-xl w-[60%]  font-semibold">
@@ -44,7 +44,7 @@ const page = () => {
 
         <div className=" flex w-full items-center">
         <div className="w-[50%]"></div>
-          <img className="w-[15%] " src="/Aboutus/1.png" alt="" />
+          <Image className="w-[15%] " src="/Aboutus/1.png" alt="" />
           <div className="">
             <h1 className="text-xl mdl:text-3xl ">High Energy, High Spirits</h1>
             <p className="text-sm mdl:text-xl w-[60%] font-semibold">
@@ -54,11 +54,11 @@ const page = () => {
           </div>
         </div>
         <div className="flex  items-center">
-          <img className="w-[15%] " src="/Aboutus/1.png" alt="" />
+          <Image className="w-[15%] " src="/Aboutus/1.png" alt="" />
           <div className="">
             <h1 className="text-xl mdl:text-3xl ">Going The Extra Mile</h1>
             <p className="text-sm mdl:text-xl w-[60%] font-semibold">
-              We're committed to exceeding expectations by delivering optimal
+              We&apos;re committed to exceeding expectations by delivering optimal
               value with meticulous attention to detail, ensuring your needs are
               always met.
             </p>
@@ -66,7 +66,7 @@ const page = () => {
         </div>
         <div className="flex w-full items-center ">
             <div className="w-[50%]"></div>
-          <img className="w-[15%] " src="/Aboutus/1.png" alt="" />
+          <Image className="w-[15%] " src="/Aboutus/1.png" alt="" />
           <div className="">
             <h1 className="text-xl mdl:text-3xl ">Up For A Challenge</h1>
             <p className="text-sm mdl:text-xl font-semibold w-[60%]">
@@ -94,20 +94,20 @@ photography, and branding, ensuring
 every project exceeds expectations.</p>
 <Link className="text-sm text-[#7700ff]" href={"https://www.linkedin.com/in/javed-somroo-bb32bb247/"}>Linkdin.com/JAVEDSOMROO</Link>
   </div>
-  <img src={"AboutUs/JavedSomroo.jpg"} className="w-full mdl:w-[400px] " />
+  <Image src={"AboutUs/JavedSomroo.jpg"} alt="Javed Somroo" className="w-full mdl:w-[400px]  " />
 </div>
 
 <div className="bg-[#191919] text-center text-white py-28">
  <h1 className="text-xl mdl:text-[40px] font-bold"> Our Team</h1>
 
  <div className="mdl:flex w-full m-auto justify-evenly mt-7 mdl:w-[60%]">
-<img src="/AboutUs/Over.jpg" className="w-full rounded-full mdl:w-[300px]" alt="Muhammad Madni,The Figma Designer"/>
-<img src="/AboutUs/Overlay1.jpg" className="w-full rounded-full mdl:w-[300px]" alt="Muhammad Madni,The Figma Designer"/>
-<img src="/AboutUs/6.jpg" className="w-full rounded-full mdl:w-[300px]" alt="Muhammad Madni,The Figma Designer"/>
+<Image src="/AboutUs/Over.jpg" className="w-full rounded-full mdl:w-[300px]" alt="Muhammad Madni,The Figma Designer"/>
+<Image src="/AboutUs/Overlay1.jpg" className="w-full rounded-full mdl:w-[300px]" alt="Muhammad Madni,The Figma Designer"/>
+<Image src="/AboutUs/6.jpg" className="w-full rounded-full mdl:w-[300px]" alt="Muhammad Madni,The Figma Designer"/>
  </div>
  <div className="mdl:flex justify-evenly m-auto w-full mdl:w-[45%]">
-<img src="/AboutUs/anas1.jpg" className="w-full rounded-full mdl:w-[300px]" alt="Muhammad Madni,The Figma Designer"/>
-<img src="/AboutUs/4.jpg" className="w-full rounded-full mdl:w-[300px]" alt="Muhammad Madni,The Figma Designer"/>
+<Image src="/AboutUs/anas1.jpg" className="w-full rounded-full mdl:w-[300px]" alt="Muhammad Madni,The Figma Designer"/>
+<Image src="/AboutUs/4.jpg" className="w-full rounded-full mdl:w-[300px]" alt="Muhammad Madni,The Figma Designer"/>
 
  </div>
 </div>

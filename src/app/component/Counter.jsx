@@ -1,6 +1,6 @@
 "use client"
 import { useState, useEffect } from "react";
-
+import Image from "next/image";
 const Counter = () => {
     const [projects, setProjects] = useState(0);
     const [clients, setClients] = useState(0);
@@ -46,7 +46,7 @@ const Counter = () => {
             <div className="flex flex-col mdl:flex-row w-full mdl:w-[70%] m-auto justify-between">
                 {CounterData.map((counterItem, index) => (
                     <div className="bg-white text-center w-[90%] mdl:w-[30%] m-4 h-96 pt-9 rounded-3xl " key={index}>
-                        <img className="m-auto w-[40%]" src={counterItem.imgsrc} alt={counterItem.title} />
+                        <Image className="m-auto w-[40%]" src={counterItem.Imagesrc} alt={counterItem.title} />
                         <h1 className="text-[30px] font-extrabold text-[#7700ff]">{counterItem.number}+</h1>
                         <h2 className=" text-xl mdl:text-[30px] font-bold text-[#7700ff]">{counterItem.title}</h2>
                     </div>

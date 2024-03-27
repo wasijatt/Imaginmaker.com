@@ -1,7 +1,7 @@
 const Ui = ()=>{
   
     return( 
-        <div className="bg-white text-lg mdl:text-2xl">
+        <div className="bg-white ">
                 ddfgb
     
         </div>

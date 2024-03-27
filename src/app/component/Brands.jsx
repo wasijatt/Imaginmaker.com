@@ -19,7 +19,7 @@ const Brands = () => {
     <div className="w-full bg-gray-900 flex overflow-x-scroll justify-between p-10 items-center">
       {images.map((image, index) => (
         <div key={index}>
-          <Image src={image.src} width={image.width} height={image.height} />
+          <Image src={image.src} alt="brands" width={image.width} height={image.height} />
         </div>
       ))}
     </div>
