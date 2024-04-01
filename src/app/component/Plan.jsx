@@ -35,7 +35,7 @@ const Plan = () => {
     <div className="w-full mdl:w-[80%] m-auto text-center">
       <h1 className=" text-xl mt-5 mdl:text-[50px]">Memberships levels</h1>
       <p className="font-bold text-sm mdl:text-xl">Choose a plan that&apos;s right for you.</p>
-      <Image className="m-auto mt-9" src="/plan/logo.png" alt="" />
+      <Image className="m-auto mt-9" src="/plan/logo.png" alt="" width={100} height={100} />
       <div className="   flex flex-col mdl:flex-row rounded-3xl mt-4 mdl:mt-36">
         {planList.map((item, index) => (
           <div
@@ -71,6 +71,8 @@ const Plan = () => {
             <Image
               className="w-[80%] mdl:w-[60%] m-auto"
               src="/Plan/booking.png"
+              width={80}
+              height={80}
               alt=""
             />
             <h1 className="text-left text-2xl">Book</h1>
@@ -89,6 +91,9 @@ const Plan = () => {
             <Image
               className="w-[80%] mdl:w-[50%] m-auto "
               src="/Plan/book.png"
+              width={80}
+              height={80}
+
               alt=""
             />
             <h1>Book</h1>

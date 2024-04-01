@@ -24,7 +24,7 @@ const Services = () => {
     {servicesData.map((service, index) => (
       <div key={index} className="flex mt-7">
         <div>
-          <Image src={service.imgsrc} width="70" height="70" alt={service.heading} />
+          <Image src={service.imgsrc} width={70} height={70} alt={service.heading} />
         </div>
         <div className="ml-5">
           <h1 className="text-white text-xl mdl:text-2xl font-bold tracking-widest">{service.heading}</h1>

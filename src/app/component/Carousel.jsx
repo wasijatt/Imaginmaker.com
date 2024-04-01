@@ -79,6 +79,8 @@ const Carousel = () => {
                   <Image
                     src={image}
                     alt={`Image ${index + 1}`}
+                    width={100}
+                    height={100}
                     className="w-[100%] justify-center m-0 mdl:mx-4 rounded-xl"
                   />
                 </motion.div>

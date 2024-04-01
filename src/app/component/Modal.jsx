@@ -24,6 +24,8 @@ const Modal = ({ isOpen, onClose, images, selectedIndex, onPrevious, onNext }) =
               <Image
                 src={images[selectedIndex]}
                 alt={`Graphic ${selectedIndex}`}
+                width={100}
+            height={100}
                 className="rounded-lg h-full w-full"
               />
             </div>

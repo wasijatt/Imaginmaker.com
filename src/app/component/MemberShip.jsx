@@ -37,7 +37,7 @@ const MemberShip = () => {
   return(
   <>
         <div className="mt-4 mdl:mt-14 m-auto text-center w-full mdl:w-[30%]">
-        <Image className="m-auto" src="/services/mem-logo.png" alt="" />
+        <Image className="m-auto" src="/services/mem-logo.png" alt="" width={100} height={100}/>
         <h1 className="text-3xl ">Membership benefits</h1>
         <p>Perks so good you&apos;ll never need to go anywhere else
 for your design. Seriously.</p>
@@ -50,7 +50,7 @@ for your design. Seriously.</p>
          
             <div key={index} className="max-w-sm rounded overflow-hidden ">
              
-              <Image className="w-[50px] m-auto " src={item.imgsrc} alt={item.title} />
+              <Image className="w-[50px] m-auto " src={item.imgsrc} alt={item.title} width={50} height={50} />
               <div className="px-6 py-4">
                 <div className="font-bold text-2xl text-center mb-2">{item.title}</div>
                 <p className=" text-lg text-center">{item.para}</p>

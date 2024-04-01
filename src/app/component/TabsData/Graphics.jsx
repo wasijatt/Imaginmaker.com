@@ -8,7 +8,7 @@ const Graphics = () => {
     "/images/servicesPage/Grphic designing/Iphone-15---black-friday---poster desin for instagram-by imaginmaker.jpg",
     "/images/servicesPage/Grphic designing/Boulivard -  perfume poster design for adds-by imaginmaker.jpg",
     "/images/servicesPage/Grphic designing/Dous link poster design for facbooke-by imaginmaker.jpg",
-    "/images/servicesPage/Grphic designing/I phone poster design 50% discount.jpg",
+    "/images/servicesPage/Grphic designing/I phone poster design  discount.jpg",
     "/images/servicesPage/Grphic designing/instagram post for worker.jpg",
     "/images/servicesPage/Grphic designing/Infust Flower poster design for insagram-by imaginmaker.jpg",
     "/images/servicesPage/Grphic designing/Iphone-12--black-friday---poster desin for instagram-by imaginmaker.jpg",
@@ -64,8 +64,10 @@ const Graphics = () => {
             className="rounded-3xl m-7 w-full mdl:w-[100%] h-full"
             key={index}
             src={image}
+            width={100}
+            height={100}
             alt={`Graphic ${index}`}
-            style={{ width: "100%" }}
+            
             onClick={() => openPopup(index)}
           />
         ))}
@@ -76,6 +78,8 @@ const Graphics = () => {
             className="rounded-3xl m-7 w-full mdl:w-[100%] h-full"
             key={index + 7}
             src={image}
+            width={100}
+            height={100}
             alt={`Graphic ${index}`}
             style={{ width: "100%" }}
             onClick={() => openPopup(index + 7)}
@@ -89,6 +93,8 @@ const Graphics = () => {
             key={index + 13}
             src={image}
             alt={`Graphic ${index}`}
+            width={100}
+            height={100}
             style={{ width: "100%" }}
             onClick={() => openPopup(index + 13)}
           />
@@ -101,6 +107,8 @@ const Graphics = () => {
             key={index + 20}
             src={image}
             alt={`Graphic ${index}`}
+            width={100}
+            height={100}
             style={{ width: "100%" }}
             onClick={() => openPopup(index + 20)}
           />

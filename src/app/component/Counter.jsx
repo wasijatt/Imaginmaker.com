@@ -25,15 +25,14 @@ const Counter = () => {
     ];
 
     useEffect(() => {
-        // Simulate fetching data from an API
-        // Replace the setTimeout with your actual data fetching logic
+        
         const fetchData = () => {
             setTimeout(() => {
-                // Simulating fetched data
+            
                 setProjects(1500);
                 setClients(900);
                 setCounter(157);
-            }, 4000); // Adjust the timeout as per your requirement
+            }, 4000);
         };
 
         fetchData();
@@ -45,8 +44,8 @@ const Counter = () => {
             <p className="text-center text-white mt-6 text-sm mdl:text-[20px]">Professional Design Agency to Provide solution</p>
             <div className="flex flex-col mdl:flex-row w-full mdl:w-[70%] m-auto justify-between">
                 {CounterData.map((counterItem, index) => (
-                    <div className="bg-white text-center w-[90%] mdl:w-[30%] m-4 h-96 pt-9 rounded-3xl " key={index}>
-                        <Image className="m-auto w-[40%]" src={counterItem.Imagesrc} alt={counterItem.title} />
+                    <div className="bg-white text-center w-[90%] mdl:w-[30%] m-4 h-96 pt-9 rounded-3xl  " key={index}>
+                        <Image className="m-auto  w-[40%]" width={100} height={100} src={counterItem.imgsrc} alt={counterItem.title} />
                         <h1 className="text-[30px] font-extrabold text-[#7700ff]">{counterItem.number}+</h1>
                         <h2 className=" text-xl mdl:text-[30px] font-bold text-[#7700ff]">{counterItem.title}</h2>
                     </div>

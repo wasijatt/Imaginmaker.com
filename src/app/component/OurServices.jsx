@@ -24,6 +24,8 @@ const OurServices = () => {
             <Image
               className=" w-full mdl:w-[95%] mt-5 rounded-3xl"
               key={index}
+              width={100}
+              height={100}
               src={src}
               alt={`Branding ${index + 1}`}
             />

@@ -2,7 +2,7 @@
   "name": "imaginmaker",
   "version": "0.1.0",
   "private": true,
-  "page":"imaginmaker.com",
+  "page": "imaginmaker.com",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -11,6 +11,7 @@
   "dependencies": {
     "framer-motion": "^11.0.8",
     "gsap": "^3.12.5",
+    "ldrs": "^1.0.1",
     "mongodb": "^6.5.0",
     "mongoose": "^8.2.2",
     "next": "14.1.0",
