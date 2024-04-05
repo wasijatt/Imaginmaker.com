@@ -7,12 +7,12 @@ import Modal from "./Modal";
 
 const Carousel = () => {
   const images = [
+    "/Carousel/app designing.jpg",
     "/Carousel/branding.jpg",
-    "/Carousel/Graphic designing.jpg",
     "/Carousel/illustration.jpg",
-    "/Carousel/motion designing.jpg",
-    "/Carousel/ui-ux.jpg",
-    "/Carousel/website-design.jpg"
+    "/Carousel/Product Designing.jpg",
+    "/Carousel/poster design.jpg",
+    "/Carousel/website Landing Page.jpg"
   ];
   const [currentIndex, setCurrentIndex] = useState(0);
   const [activeIndex, setActiveIndex] = useState(Math.floor(images.length / 3));
@@ -82,6 +82,7 @@ const Carousel = () => {
                     width={100}
                     height={100}
                     className="w-[100%] justify-center m-0 mdl:mx-4 rounded-xl"
+                    layout="responsive"
                   />
                 </motion.div>
               ))}
