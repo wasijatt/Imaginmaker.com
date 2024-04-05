@@ -7,12 +7,12 @@ import Modal from "./Modal";
 
 const Carousel = () => {
   const images = [
-    "/Carousel/app designing.jpg",
+    "/Carousel/appDesigning.jpg",
     "/Carousel/branding.jpg",
     "/Carousel/illustration.jpg",
-    "/Carousel/Product Designing.jpg",
-    "/Carousel/poster design.jpg",
-    "/Carousel/website Landing Page.jpg"
+    "/Carousel/ProductDesigning.jpg",
+    "/Carousel/posterdesign.jpg",
+    "/Carousel/websiteLandingPage.jpg"
   ];
   const [currentIndex, setCurrentIndex] = useState(0);
   const [activeIndex, setActiveIndex] = useState(Math.floor(images.length / 3));
