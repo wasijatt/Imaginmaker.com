@@ -9,7 +9,7 @@ const OurServices = () => {
     "/OurServices/Graphic-Designer-illustration.jpg",
     "/OurServices/website-design.jpg",
     "/OurServices/ui-ux.jpg",
-    "/OurServices/motion graphics-01.jpg",
+    "/OurServices/motion graphics.jpg",
     "/OurServices/Graphic-Designer.jpg",
   ];
   return (

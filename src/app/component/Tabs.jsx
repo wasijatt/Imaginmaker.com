@@ -1,28 +1,53 @@
 "use client"
 import Graphics from "../component/TabsData/Graphics";
 import Motion from "../component/TabsData/Motion";
-import Ui from "../component/TabsData/Ui";
-import Illustration from "../component/TabsData/Illustration";
-import Branding from "../component/TabsData/Branding";
-import Web from "./TabsData/Web";
 
 
 import { useState } from "react";
 
 const Tabs = ({}) => {
-  const [activeTab, setActiveTab] = useState(<Graphics/>);
+  const GraphicData1 = [
+    "/images/servicesPage/Grphic designing/graphicDesign-one.jpg",
+
+
+    "/images/servicesPage/Grphic designing/graphicDesign-one.jpg",
+    "/images/servicesPage/Grphic designing/graphicDesign-one.jpg",
+    "/images/servicesPage/Grphic designing/graphicDesign-one.jpg",
+    "/images/servicesPage/Grphic designing/graphicDesign-one.jpg",
+
+   
+  ];
+  const GraphicData2 = [
+  
+    "/images/servicesPage/Grphic designing/graphicDesign-one.jpg",
+    "/images/servicesPage/Grphic designing/graphicDesign-one.jpg",
+    "/images/servicesPage/Grphic designing/graphicDesign-one.jpg",
+    "/images/servicesPage/Grphic designing/graphicDesign-one.jpg",
+
+    "/images/servicesPage/Grphic designing/graphicDesign-one.jpg",
+   
+  ];
+  const GraphicData3 = [
+    "/images/servicesPage/Grphic designing/graphicDesign-one.jpg",
+    "/images/servicesPage/Grphic designing/graphicDesign-one.jpg",
+    "/images/servicesPage/Grphic designing/graphicDesign-one.jpg",
+ 
+  ];
+
+
+  const [activeTab, setActiveTab] = useState(<Graphics GraphicData={GraphicData1}/>);
 
   const handleTabChange = (content) => {
     setActiveTab(content);
   };
 
   const tabData = [
-    { label: "Graphics", content: <Graphics /> },
+    { label: "Graphics", content: <Graphics GraphicData={GraphicData1}/> },
     { label: "Motion Design", content: <Motion /> },
-    { label: "UI/UX Design", content: <Ui /> },
-    { label: "Web Design", content: <Web /> },
-    { label: "Illustration", content: <Illustration /> },
-    { label: "Branding", content: <Branding /> },
+    { label: "UI/UX Design", content: <Graphics GraphicData={GraphicData3} /> },
+    { label: "Web Design", content: <Graphics GraphicData={GraphicData2} /> },
+    { label: "Illustration", content:<Graphics GraphicData={GraphicData2} /> },
+    { label: "Branding", content: <Graphics GraphicData={GraphicData2} /> },
   ];
 
   return (

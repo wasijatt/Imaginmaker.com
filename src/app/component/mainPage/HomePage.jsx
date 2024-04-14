@@ -23,6 +23,8 @@ import Footer from "../Footer";
         HeroSectionButton={"See Plans"}
       />
 <Cursor/>
+<Brands />
+
         <Carousel />
         <Brands />
         <Services />

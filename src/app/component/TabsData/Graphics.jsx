@@ -2,34 +2,8 @@
 import { useState } from 'react';
 import Modal from '../Modal';
 import Image from 'next/image';
-const Graphics = () => {
-  const GraphicData = [
-    "/images/servicesPage/Grphic designing/book cover design.jpg",
-    "/images/servicesPage/Grphic designing/Iphone-15---black-friday---poster desin for instagram-by imaginmaker.jpg",
-    "/images/servicesPage/Grphic designing/Boulivard -  perfume poster design for adds-by imaginmaker.jpg",
-    "/images/servicesPage/Grphic designing/Dous link poster design for facbooke-by imaginmaker.jpg",
-    "/images/servicesPage/Grphic designing/I phone poster design  discount.jpg",
-    "/images/servicesPage/Grphic designing/instagram post for worker.jpg",
-    "/images/servicesPage/Grphic designing/Infust Flower poster design for insagram-by imaginmaker.jpg",
-    "/images/servicesPage/Grphic designing/Iphone-12--black-friday---poster desin for instagram-by imaginmaker.jpg",
-    "/images/servicesPage/Grphic designing/Infust Flower poster design for insagram-by imaginmaker (2).jpg",
-    "/images/servicesPage/Grphic designing/Impression -   perfume poster design for adds-by imaginmaker.jpg",
-    "/images/servicesPage/Grphic designing/worker.jpg",
-    "/images/servicesPage/Grphic designing/worker trucks posters design for instagram-by imaginmaker.jpg",
-    "/images/servicesPage/Grphic designing/Worker trucks insgtaram post-by imaginmaker.jpg",
-    "/images/servicesPage/Grphic designing/Worker trucks insgtaram post.jpg",
-    "/images/servicesPage/Grphic designing/Vocal truth -concert poster  desin for instagram-by imaginmaker.jpg",
-    "/images/servicesPage/Grphic designing/university  posters design -by imaginmaker.jpg",
-    "/images/servicesPage/Grphic designing/Vintage  perfume poster design for adds-by imaginmaker.jpg",
-    "/images/servicesPage/Grphic designing/university  posters design -by imaginmaker.jpg",
-    "/images/servicesPage/Grphic designing/sourse apple toofie poster design for insagram-by imaginmaker.jpg",
-    "/images/servicesPage/Grphic designing/Instagram poster designing.jpg",
-    "/images/servicesPage/Grphic designing/International education university-poster-designed by imaginmaker.jpg",
-    "/images/servicesPage/Grphic designing/Iphone-13---black-friday---poster desin for instagram-by imaginmaker.jpg",
-    "/images/servicesPage/Grphic designing/KIDS-POSTER-poster desin for instagram post-by imaginmaker.jpg",
-    "/images/servicesPage/Grphic designing/KIDS-POSTER-poster desin for instagram-by imaginmaker.jpg",
-    "/images/servicesPage/Grphic designing/man T shirt posters poster desin for instagram-by imaginmaker.jpg",
-  ];
+const Graphics = ({GraphicData}) => {
+ 
 
   const [showPopup, setShowPopup] = useState(false);
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);

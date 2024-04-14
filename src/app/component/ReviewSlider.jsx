@@ -2,6 +2,7 @@
 import Image from 'next/image';
 import { MdOutlineNavigateBefore, MdOutlineNavigateNext } from "react-icons/md";
 
+
 import { useState } from 'react';
 
 const Slider = () => {
@@ -25,9 +26,10 @@ const Slider = () => {
       <button className="absolute -right-1 top-1/2 transform -translate-y-1/2 purpleBg text-white px-1 mdl:px-4 py-1 mdl:py-4 rounded-full" onClick={handleNext}>
         <MdOutlineNavigateNext />
       </button>
-      <Image  width={180} height={150} className=" m-auto rounded mdl:rounded-3xl w-[300px] mdl:w-[400px]" src={images[index]} alt={`Slide ${index + 1}`} />
+      <Image  width={180} height={150} className=" m-auto rounded mdl:rounded-3xl w-[300px] mdl:w-[400px] transition ease-in-out duration-1000 " src={images[index]} alt={`Slide ${index + 1}`} />
     </div>
   );
 };
 
 export default Slider;
+

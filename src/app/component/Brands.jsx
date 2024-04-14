@@ -2,6 +2,7 @@
 
 "use client";
 import Image from "next/image";
+import { useState, useEffect } from "react";
 
 const images = [
   { src: "/brands/1.png", width: 153, height: 22 },
@@ -15,13 +16,34 @@ const images = [
 ];
 
 const Brands = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const visibleImages = 5; 
+
+  useEffect(() => {
+    const interval = setInterval(goToNextSlide, 3000); 
+    return () => clearInterval(interval);
+  }, [currentIndex]);
+  const goToNextSlide = () => {
+    const newIndex = (currentIndex + 1) % images.length;
+    setCurrentIndex(newIndex);
+  
+  };
+
   return (
-    <div className="w-full bg-gray-900 flex overflow-x-scroll justify-between p-10 items-center">
+    
+    <div className="w-full bg-gray-900 flex overflow-hidden p-10 ">
+ <div
+              className="flex transition-transform ease-in-out items-center justify-between  duration-1000"
+              style={{
+                transform: `translateX(${currentIndex * (100 / images.length)}%)`
+              }}
+            >
       {images.map((image, index) => (
-        <div key={index}>
-          <Image src={image.src} alt="brands" width={image.width} height={image.height} />
+        <div className="ml-12" key={index}>
+          <Image className=" ml-12 items-center" src={image.src} alt="brands" width={image.width} height={image.height}  style={{ flex: `0 0 ${100 / visibleImages}%` }} />
         </div>
       ))}
+      </div>
     </div>
   );
 };
