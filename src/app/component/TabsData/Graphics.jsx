@@ -34,7 +34,7 @@ const Graphics = ({GraphicData}) => {
       
       <div className=" m-4 w-[23%] h-full">
          {GraphicData.slice(0, 7).map((image, index) => (
-          <Image
+          <img
             className="rounded-3xl m-7 w-full mdl:w-[100%] h-full"
             key={index}
             src={image}

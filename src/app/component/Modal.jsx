@@ -21,7 +21,7 @@ const Modal = ({ isOpen, onClose, images, selectedIndex, onPrevious, onNext }) =
             transition={{ type: "spring", stiffness: 300, damping: 20 }}
           >
             <div className="relative  w-[800px]">
-              <Image
+              <img
                 src={images[selectedIndex]}
                 alt={`Graphic ${selectedIndex}`}
                 width={100}

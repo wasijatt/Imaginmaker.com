@@ -10,7 +10,7 @@ const Tabs = ({}) => {
     "/images/servicesPage/Grphic designing/graphicDesign-one.jpg",
 
 
-    "/images/servicesPage/Grphic designing/graphicDesign-one.jpg",
+    "/images/servicesPage/Grphic designing/instagrampostforworker.jpg",
     "/images/servicesPage/Grphic designing/graphicDesign-one.jpg",
     "/images/servicesPage/Grphic designing/graphicDesign-one.jpg",
     "/images/servicesPage/Grphic designing/graphicDesign-one.jpg",
