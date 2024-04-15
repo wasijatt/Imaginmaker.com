@@ -21,7 +21,7 @@ const OurServices = () => {
             
             className="ourServices w-full mdl:w-[30%]"
           >
-            <Image
+            <img
               className=" w-full mdl:w-[95%] mt-5 rounded-3xl"
               key={index}
               width={100}

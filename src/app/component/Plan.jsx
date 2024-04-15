@@ -1,7 +1,15 @@
 "use client ";
+import { useState } from "react";
 import style from "../modulerCss/HeroSection.module.css";
 import Image from "next/image";
 const Plan = () => {
+const [showPopup ,setShowPopup] = useState(false);
+const handleClose  = () => {
+  setShowPopup(false)
+}
+const handleOpen  = () => {
+  setShowPopup(true)
+}
   const planList = [
     {
       title: "Standard",
