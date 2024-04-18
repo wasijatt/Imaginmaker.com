@@ -12,18 +12,26 @@ import Simplicity from "../Simplicity";
 import Counter from "../Counter";
 import Faqs from "../Faqs";
 import Footer from "../Footer";
-
+import { motion, useScroll, useSpring } from "framer-motion"
   export default function Page() {
+    const { scrollYProgress } = useScroll();
+    const scaleX = useSpring(scrollYProgress, {
+      stiffness: 100,
+      damping: 30,
+      restDelta: 0.001
+    });
   return (
     <main className="main" data-scroll-container>
     <div>
+    <motion.div className="progress-bar" style={{ scaleX }} />
+     
       <HeroSection
         HeroSectionHead={"A Design Agency With a Twist"}
         HeroSectionPara={"What You Think, We Can Design And Animate."}
         HeroSectionButton={"See Plans"}
       />
 <Cursor/>
-<Brands />
+
 
         <Carousel />
         <Brands />
@@ -40,3 +48,4 @@ import Footer from "../Footer";
     </main>
   );
 }
+

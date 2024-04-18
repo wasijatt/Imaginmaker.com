@@ -36,7 +36,7 @@ const MemberShip = () => {
 
   return(
   <>
-        <div className="mt-4 mdl:mt-14 m-auto text-center w-full mdl:w-[30%]">
+        <div className="mt-2 mdl:mt-14 m-auto text-center w-full mdl:w-[30%]">
         <Image className="m-auto" src="/services/mem-logo.png" alt="" width={100} height={100}/>
         <h1 className="text-3xl ">Membership benefits</h1>
         <p>Perks so good you&apos;ll never need to go anywhere else

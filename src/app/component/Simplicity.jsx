@@ -2,7 +2,7 @@
 import Image from "next/image";
 const Simplicity = () => {
   return (
-    <div className="mdl:flex bg-[#191919] p-4 mdl:-mt-6 mdl:p-14 w-[70%] m-auto rounded-3xl">
+    <div className="mdl:flex bg-[#191919] p-4 mdl:-mt-6 mdl:p-14 w-[95%] mdl:w-[70%] m-auto rounded-3xl">
 
       <h1 className="w-full mdl:w-[50%] justify-center items-center text-xl mdl:text-[30px] text-white ">
         <Image className="" src="/Plan/quotes.png" alt="" width={35} height={100}/>

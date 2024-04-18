@@ -2,6 +2,7 @@ import Link from "next/link";
 import ReviewSlider from "../component/ReviewSlider";
 import Image from "next/image";
 
+
 const Services = () => {
   const servicesData = [
     { imgsrc: "/Services/1.png", heading: "Visual Versatility", des: "Tailored design and animation, bringing your vision to life effortlessly." },
@@ -10,7 +11,7 @@ const Services = () => {
   ];
 
   return (
-    <div className="bg-[#181818] rounded-3xl  w-full mdl:w-[70%] mt-16 m-auto flex flex-col mdl:flex-row  p-12 justify-center items-center">
+    <div className="bg-[#181818] rounded-3xl  w-full mdl:w-[70%] mt-16 m-auto flex flex-col mdl:flex-row p-2 mdl:p-12 justify-center items-center">
       <div className=" w-full mdl:w-1/2">
         <div>
           <h1 className="text-white text-xl mdl:text-[40px] text-center mdl:text-left w-full mdl:w-[80%] px-5 leading-sung font-bold leading-normal	 ">

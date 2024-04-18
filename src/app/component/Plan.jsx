@@ -2,6 +2,8 @@
 import { useState } from "react";
 import style from "../modulerCss/HeroSection.module.css";
 import Image from "next/image";
+import { RxCross2 } from "react-icons/rx";
+
 
 const Plan = () => {
   const [showPopup, setShowPopup] = useState(false);
@@ -17,11 +19,16 @@ const Plan = () => {
     setShowPopup(true);
   };
   
-  const handlePayments = (plan) => { 
+  const handlePayments = () => { 
     setShowPopup(false);
 setpayment(true)
   }
-
+  const handlePaymentsClose = () => { 
+setpayment(false)
+   
+  }
+ 
+  
 
   const acounts = [ 
     "/Acounts/Credit Card.png",
@@ -87,7 +94,7 @@ setpayment(true)
             </h1>
             <button
               className={`${style.boxShadow} "mt-6 rounded-3xl purpleBg text-white py-2 px-8 mt-9"`}
-              onClick={() => handleOpen(item)} // Pass plan type to handleOpen function
+              onClick={() => handleOpen(item)} 
             >
               Get Started
             </button>
@@ -146,22 +153,27 @@ setpayment(true)
           className="fixed inset-0 z-50 flex justify-center items-center backdrop-blur-xl bg-[#10101051] bg-opacity-50 overlay"
           onClick={handleClose}
         >
-          <div className="w-full mdl:w-[70%] bg-[#ffffff] flex px-10 py-28 rounded-2xl ">
-            <div className={`${style.planboxShadow} " w-[30%] m-4 bg-[#eeeded] p-4 rounded-3xl" `}>
-              <h1 className=" text-[15px] mdl:text-[30px] font-bold text-center mt-8">Choose One </h1> 
+
+          <div className="w-full mdl:w-[70%] h-full mdl:h-[400px] bg-[#ffffff] flex flex-wrap px-10 rounded-2xl ">
+          <div className="p-6 absolute right-4" ><RxCross2 
+  className="text-[#7700ff] text-[40px] bg-[#b8b7b7] rounded-full p-6 " onClick={handleClose}/>
+</div>
+            <div className={`${style.planboxShadow} "w-full mdl:w-[30%] m-4 bg-[#eeeded] p-4 rounded-3xl" `}>
+              
+              <h1 className=" text-[20px] mdl:text-[30px] font-bold text-center mt-8">Choose One </h1> 
               <div className="flex flex-wrap">
                 {acounts.map((imageSrc, index) => (
                   <img onClick={handlePayments} className="w-[30%] " key={index} src={imageSrc} alt={`Image ${index}`} />
                 ))}
               </div>
             </div>
-            <div className={`${style.planboxShadow} " w-[30%] m-4 bg-[#eeeded] p-4 justify-between " `}>
+            <div className={`${style.planboxShadow} "w-full mdl:w-[30%] m-4 bg-[#eeeded] p-4 justify-between " `}>
               <h1 className="text-3xl font-extrabold mt-8">{selectedPlan.title}</h1>
               <p className="font-sm text-left" >{selectedPlan.des}</p>
               <h1 className="text-[15px] mdl:text-[30px] font-bold text-center mt-8">{selectedPlan.price}/month</h1>
               <p>Pause or cancel anytime</p>
             </div>
-            <div className={`${style.planboxShadow} " w-[30%] m-4 bg-[#eeeded] p-4 " `}>
+            <div className={`${style.planboxShadow} " w-full mdl:w-[30%] m-4 bg-[#eeeded] p-4 " `}>
          
              
             <ul className="mt-4 text-left">
@@ -178,9 +190,9 @@ setpayment(true)
       {payment && (
         <div
           className="fixed inset-0 z-50 flex justify-center items-center backdrop-blur-xl bg-[#10101051] bg-opacity-50 overlay"
-        onClick={handleClose}
+        onClick={handlePaymentsClose}
         >
-         <div>jhgydYASIU</div>
+         <div className="w-1/2 bg-white">jhgydYASIU</div>
         </div>
       )}
     </div>

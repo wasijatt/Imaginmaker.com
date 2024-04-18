@@ -17,7 +17,8 @@ const images = [
 
 const Brands = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const visibleImages = 5; 
+  const isDesktop = window.innerWidth > 768; 
+  const visibleImages = isDesktop ? 5 : 3;
 
   useEffect(() => {
     const interval = setInterval(goToNextSlide, 3000); 

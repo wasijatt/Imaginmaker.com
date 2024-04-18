@@ -15,9 +15,10 @@ const Carousel = () => {
   ];
   const [currentIndex, setCurrentIndex] = useState(0);
   const [activeIndex, setActiveIndex] = useState(Math.floor(images.length / 3));
-  
 
-  const visibleImages = 5; 
+  
+  const isDesktop = window.innerWidth > 768; 
+  const visibleImages = isDesktop ? 5 : 1;
 
   useEffect(() => {
     const interval = setInterval(goToNextSlide, 3000); 
@@ -36,8 +37,6 @@ const Carousel = () => {
     setActiveIndex(newIndex);
   };
 
- 
-
   return (
     <div className="p-1 mdl:p-4 w-full purpleBg">
       <div className="m-auto w-[90%] ">
@@ -46,7 +45,7 @@ const Carousel = () => {
             <div
               className="flex transition-transform ease-in-out  duration-1000"
               style={{
-                transform: `translateX(-${currentIndex * (100 / images.length)}%)`
+                transform: `translateX(-${currentIndex * (100 / visibleImages)}%)`
               }}
             >
               {images.map((image, index) => (
@@ -56,7 +55,6 @@ const Carousel = () => {
                   key={index}
                   className="w-full p-4"
                   style={{ flex: `0 0 ${100 / visibleImages}%` }}
-                  
                 >
                   <Image
                     src={image}
@@ -64,14 +62,13 @@ const Carousel = () => {
                     width={100}
                     height={100}
                     className="w-[100%] justify-center m-0 mdl:mx-4 rounded-xl"
-                    
                   />
                 </motion.div>
               ))}
             </div>
           </div>
           <button
-            className="absolute top-1/2 -ml-[100px] transform -translate-y-1/2 bg-white text-[#7700ff] font-extrabold px-6 py-6 rounded-full "
+            className="absolute top-1/2  mdl:-ml-[100px] transform -translate-y-1/2 bg-white text-[#7700ff] font-extrabold px-6 py-6 rounded-full "
             onClick={goToPrevSlide}
           >
             <MdOutlineNavigateBefore />

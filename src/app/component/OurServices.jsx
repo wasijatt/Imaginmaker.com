@@ -1,5 +1,4 @@
 import style from "../modulerCss/HeroSection.module.css";
-import Image from "next/image";
 
 
 
@@ -13,13 +12,13 @@ const OurServices = () => {
     "/OurServices/Graphic-Designer.jpg",
   ];
   return (
-    <div className="bg-[#181818] py-16 mt-[5vh]">
-      <h1 className=" text-[20px] mdl:text-[64px] text-white text-center">Our Services</h1>
+    <div className="bg-[#181818] py-3 mdl:py-16 mt-[5vh] m-auto">
+      <h1 className=" text-[30px] mdl:text-[64px] text-white text-center">Our Services</h1>
       <div className="flex flex-wrap m-auto w-full  mdl:w-[70%]">
         {imageSources.map((src, index) => (
           <div key={index}
             
-            className="ourServices w-full mdl:w-[30%]"
+            className="m-[1rem]  w-[40%] mdl:w-[30%]"
           >
             <img
               className=" w-full mdl:w-[95%] mt-5 rounded-3xl"
@@ -31,7 +30,7 @@ const OurServices = () => {
             />
           </div>
         ))}
-        <div className="w-full  mdl:ml-[40%] mt-5">
+        <div className="w-full text-center items-center   mt-5">
           <button className={`purpleBg text-white px-7 m-auto  rounded-3xl py-2 text-xl ${style.boxShadow}`}>Get Your Design Done</button>
         </div>
       </div>
