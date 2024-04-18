@@ -2,14 +2,34 @@
 import { useState } from "react";
 import style from "../modulerCss/HeroSection.module.css";
 import Image from "next/image";
+
 const Plan = () => {
-const [showPopup ,setShowPopup] = useState(false);
-const handleClose  = () => {
-  setShowPopup(false)
-}
-const handleOpen  = () => {
-  setShowPopup(true)
-}
+  const [showPopup, setShowPopup] = useState(false);
+  const [selectedPlan, setSelectedPlan] = useState('');
+  const [payment, setpayment] = useState(false);
+
+  const handleClose = () => {
+    setShowPopup(false);
+  };
+
+  const handleOpen = (plan) => {
+    setSelectedPlan(plan);
+    setShowPopup(true);
+  };
+  
+  const handlePayments = (plan) => { 
+    setShowPopup(false);
+setpayment(true)
+  }
+
+
+  const acounts = [ 
+    "/Acounts/Credit Card.png",
+    "/Acounts/Paypal.png",
+    "/Acounts/Transparent.png",
+    "/Acounts/Visa Card.png",
+  ];
+
   const planList = [
     {
       title: "Standard",
@@ -28,7 +48,6 @@ const handleOpen  = () => {
       title: "Pro",
       price: "1800",
       des: "Double the requests. Pause or cancel anytime.",
-
       specs: [
         "Two request at a time",
         "Unlimited Social Media Design",
@@ -39,18 +58,27 @@ const handleOpen  = () => {
       ],
     },
   ];
+
   return (
     <div className="w-full mdl:w-[80%] m-auto text-center">
-      <h1 className=" text-xl mt-5 mdl:text-[50px]">Memberships levels</h1>
-      <p className="font-bold text-sm mdl:text-xl">Choose a plan that&apos;s right for you.</p>
-      <Image className="m-auto mt-9" src="/plan/logo.png" alt="" width={100} height={100} />
-      <div className="   flex flex-col mdl:flex-row rounded-3xl mt-4 mdl:mt-36">
+      <h1 className="text-xl mt-5 mdl:text-[50px]">Memberships levels</h1>
+      <p className="font-bold text-sm mdl:text-xl">
+        Choose a plan that&apos;s right for you.
+      </p>
+      <Image
+        className="m-auto mt-9"
+        src="/plan/logo.png"
+        alt=""
+        width={100}
+        height={100}
+      />
+      <div className="flex flex-col mdl:flex-row rounded-3xl mt-4 mdl:mt-36">
         {planList.map((item, index) => (
           <div
             key={index}
             className={`${style.planboxShadow} "border w-full mdl:w-[28%]   rounded-lg p-9 mx-4 my-4"`}
           >
-            <h2 className="text-3xl font-extrabold text-left mt-8 ">
+            <h2 className="text-3xl font-extrabold text-left mt-8">
               {item.title}
             </h2>
             <p className="font-sm text-left ">{item.des}</p>
@@ -58,11 +86,14 @@ const handleOpen  = () => {
               ${item.price}$/month
             </h1>
             <button
-              className={`${style.boxShadow} " mt-6 rounded-3xl purpleBg text-white py-2 px-8 mt-9"`}
+              className={`${style.boxShadow} "mt-6 rounded-3xl purpleBg text-white py-2 px-8 mt-9"`}
+              onClick={() => handleOpen(item)} // Pass plan type to handleOpen function
             >
               Get Started
             </button>
-            <h1 className="text-left font-extrabold mt-20">What&apos;s Included:</h1>
+            <h1 className="text-left font-extrabold mt-20">
+              What&apos;s Included:
+            </h1>
             <ul className="mt-4 text-left">
               {item.specs.map((spec, idx) => (
                 <li key={idx} className="mb-2">
@@ -84,15 +115,12 @@ const handleOpen  = () => {
               alt=""
             />
             <h1 className="text-left text-2xl">Book</h1>
-            <p className="text-[#7700ff] ">
+            <p className="text-[#7700ff]">
               If You Need Something Deferent, Let’s Call. We would love to help
               you.
             </p>
-            <a
-              href="tel:+923005837549"
-              className=" text-xl font-semibold"
-            >
-              Book a call{" "}
+            <a href="tel:+923005837549" className="text-xl font-semibold">
+              Book a call
             </a>
           </div>
           <div className="mt-9">
@@ -101,21 +129,62 @@ const handleOpen  = () => {
               src="/Plan/book.png"
               width={80}
               height={80}
-
               alt=""
             />
             <h1>Book</h1>
-            <p className="text-[#7700ff] ">
-              Book A Call And Get Your First
-            </p>
+            <p className="text-[#7700ff]">Book A Call And Get Your First</p>
             <h1 className="text-left text-xl  font-semibold">Design Free</h1>
-            <a href="" className="mt-14  ">
-              How it works{" "}
+            <a href="" className="mt-14">
+              How it works
             </a>
           </div>
         </div>
       </div>
+
+      {showPopup && (
+        <div
+          className="fixed inset-0 z-50 flex justify-center items-center backdrop-blur-xl bg-[#10101051] bg-opacity-50 overlay"
+          onClick={handleClose}
+        >
+          <div className="w-full mdl:w-[70%] bg-[#ffffff] flex px-10 py-28 rounded-2xl ">
+            <div className={`${style.planboxShadow} " w-[30%] m-4 bg-[#eeeded] p-4 rounded-3xl" `}>
+              <h1 className=" text-[15px] mdl:text-[30px] font-bold text-center mt-8">Choose One </h1> 
+              <div className="flex flex-wrap">
+                {acounts.map((imageSrc, index) => (
+                  <img onClick={handlePayments} className="w-[30%] " key={index} src={imageSrc} alt={`Image ${index}`} />
+                ))}
+              </div>
+            </div>
+            <div className={`${style.planboxShadow} " w-[30%] m-4 bg-[#eeeded] p-4 justify-between " `}>
+              <h1 className="text-3xl font-extrabold mt-8">{selectedPlan.title}</h1>
+              <p className="font-sm text-left" >{selectedPlan.des}</p>
+              <h1 className="text-[15px] mdl:text-[30px] font-bold text-center mt-8">{selectedPlan.price}/month</h1>
+              <p>Pause or cancel anytime</p>
+            </div>
+            <div className={`${style.planboxShadow} " w-[30%] m-4 bg-[#eeeded] p-4 " `}>
+         
+             
+            <ul className="mt-4 text-left">
+          {selectedPlan.specs.map((spec, idx) => (
+            <li key={idx} className="mb-2">
+              {spec}
+            </li>
+          ))}
+        </ul>
+            </div>
+          </div>
+        </div>
+      )}
+      {payment && (
+        <div
+          className="fixed inset-0 z-50 flex justify-center items-center backdrop-blur-xl bg-[#10101051] bg-opacity-50 overlay"
+        onClick={handleClose}
+        >
+         <div>jhgydYASIU</div>
+        </div>
+      )}
     </div>
   );
 };
+
 export default Plan;

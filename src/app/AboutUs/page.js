@@ -32,7 +32,7 @@ const page = () => {
           Things that define us
         </h1>
         <div className="flex items-center ">
-          <Image className="w-[15%]"  src="/Aboutus/1.png" alt="image" />
+          <Image width={100} height={100} className="w-[15%]"  src="/Aboutus/1.png" alt="image" />
           <div className="">
             <h1 className="text-xl mdl:text-3xl ">Great Work Ethic</h1>
             <p className="text-sm mdl:text-xl w-[60%]  font-semibold">
@@ -44,7 +44,7 @@ const page = () => {
 
         <div className=" flex w-full items-center">
         <div className="w-[50%]"></div>
-          <Image className="w-[15%] " src="/Aboutus/1.png" alt="" />
+          <Image  width={100} height={100} className="w-[15%] " src="/Aboutus/2.png" alt="" />
           <div className="">
             <h1 className="text-xl mdl:text-3xl ">High Energy, High Spirits</h1>
             <p className="text-sm mdl:text-xl w-[60%] font-semibold">
@@ -54,7 +54,7 @@ const page = () => {
           </div>
         </div>
         <div className="flex  items-center">
-          <Image className="w-[15%] " src="/Aboutus/1.png" alt="" />
+          <Image  width={100} height={100} className="w-[15%] " src="/Aboutus/3.png" alt="" />
           <div className="">
             <h1 className="text-xl mdl:text-3xl ">Going The Extra Mile</h1>
             <p className="text-sm mdl:text-xl w-[60%] font-semibold">
@@ -66,7 +66,7 @@ const page = () => {
         </div>
         <div className="flex w-full items-center ">
             <div className="w-[50%]"></div>
-          <Image className="w-[15%] " src="/Aboutus/1.png" alt="" />
+          <Image  width={100} height={100} className="w-[15%] " src="/Aboutus/4.png" alt="" />
           <div className="">
             <h1 className="text-xl mdl:text-3xl ">Up For A Challenge</h1>
             <p className="text-sm mdl:text-xl font-semibold w-[60%]">
@@ -94,20 +94,20 @@ photography, and branding, ensuring
 every project exceeds expectations.</p>
 <Link className="text-sm text-[#7700ff]" href={"https://www.linkedin.com/in/javed-somroo-bb32bb247/"}>Linkdin.com/JAVEDSOMROO</Link>
   </div>
-  <Image src={"AboutUs/JavedSomroo.jpg"} alt="Javed Somroo" className="w-full mdl:w-[400px]  " />
+  <img  width={100} height={100} src={"/AboutUs/JavedSomroo.jpg"} alt="Javed Somroo" className="w-full mdl:w-[400px]  " />
 </div>
 
 <div className="bg-[#191919] text-center text-white py-28">
  <h1 className="text-xl mdl:text-[40px] font-bold"> Our Team</h1>
 
  <div className="mdl:flex w-full m-auto justify-evenly mt-7 mdl:w-[60%]">
-<Image src="/AboutUs/Over.jpg" className="w-full rounded-full mdl:w-[300px]" alt="Muhammad Madni,The Figma Designer"/>
-<Image src="/AboutUs/Overlay1.jpg" className="w-full rounded-full mdl:w-[300px]" alt="Muhammad Madni,The Figma Designer"/>
-<Image src="/AboutUs/6.jpg" className="w-full rounded-full mdl:w-[300px]" alt="Muhammad Madni,The Figma Designer"/>
+<img  width={100} height={100} src="/AboutUs/Over.jpg" className="w-full rounded-full mdl:w-[300px]" alt="Muhammad Madni,The Figma Designer"/>
+<img  width={100} height={100} src="/AboutUs/Overlay1.jpg" className="w-full rounded-full mdl:w-[300px]" alt="Muhammad Madni,The Figma Designer"/>
+<img  width={100} height={100} src="/AboutUs/6.jpg" className="w-full rounded-full mdl:w-[300px]" alt="Muhammad Madni,The Figma Designer"/>
  </div>
  <div className="mdl:flex justify-evenly m-auto w-full mdl:w-[45%]">
-<Image src="/AboutUs/anas1.jpg" className="w-full rounded-full mdl:w-[300px]" alt="Muhammad Madni,The Figma Designer"/>
-<Image src="/AboutUs/4.jpg" className="w-full rounded-full mdl:w-[300px]" alt="Muhammad Madni,The Figma Designer"/>
+<img  width={100} height={100} src="/AboutUs/anas1.jpg" className="w-full rounded-full mdl:w-[300px]" alt="Muhammad Madni,The Figma Designer"/>
+<img  width={100} height={100} src="/AboutUs/4.jpg" className="w-full rounded-full mdl:w-[300px]" alt="Muhammad Madni,The Figma Designer"/>
 
  </div>
 </div>

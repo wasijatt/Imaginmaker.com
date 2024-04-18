@@ -1,12 +1,31 @@
+"use client"
 import Link from "next/link"
 import Image from "next/image"
 import style from "../modulerCss/HeroSection.module.css"
 import leftLogo from "../../../public/images/icons/leftLogo.png"
 import middleLogo from "../../../public/images/icons/middleLogo.png"
 import Heart from "../../../public/images/icons/heart.svg"
+import { VscThreeBars } from "react-icons/vsc";
+
+import { useState } from "react"
 
 export default function HeroSection({HeroSectionHead, HeroSectionPara,HeroSectionButton}) {
 
+  const [isOpen, setIsOpen] = useState(false);
+
+  const mobileMenu = () => {
+    setIsOpen(!isOpen);
+  };
+  const closemenu = () => {
+    setIsOpen(false)
+  }
+  const closemobileMenu = (event) =>{
+    
+      if (event.target.classList.contains('overlay')) {
+       closemenu()
+      }
+    };
+  
 
 
   return (
@@ -14,11 +33,12 @@ export default function HeroSection({HeroSectionHead, HeroSectionPara,HeroSectio
 
 
     <div className='flex justify-between items-center '>
+    
       <div className=""> 
       <Link href="/"><Image className=" w-[70%] h-[70%] mdl:w-[100%] mld:h-[100%] bg-transparent" src={leftLogo} alt="logo"/>
       </Link>
       </div>
-     <div className="mdl:w-[60%]  mdl:flex justify-between items-center  ">
+     <div className="mdl:w-[60%] hidden  mdl:flex justify-between items-center  ">
       
       <Link href={"/CaseStudy"} className={`${style.navLinks}`} >Case Study </Link> 
       <Link href={"/Weblog"} className={`${style.navLinks}`} >Weblog</Link>
@@ -29,9 +49,26 @@ export default function HeroSection({HeroSectionHead, HeroSectionPara,HeroSectio
       <Link href={"/OurValues"} className={`${style.navLinks}`} >Our Values </Link>
       
      </div>
+     
      <div className="">
       <button className={`"purpleBg text-white px-5 py-2 hidden mdl:block rounded-3xl " ${style.boxShadow}`}>Get In Touch </button>
      </div>
+     <div className="md:hidden">
+      <button className="text-[#7700ff]" onClick={mobileMenu}><VscThreeBars />
+</button>
+      {isOpen && (
+        <div onClick={closemobileMenu} className="fixed inset-0 z-50  backdrop-blur-lg bg-[#000000e4] bg-opacity-50 overlay  "  >
+
+          <div className=" flex flex-col text-2xl ml-[30%] text-left justify-center text-white">
+          <Link href={"/CaseStudy"}>Case Study</Link>
+          <Link href={"/Weblog"}>Weblog</Link>
+          <Link href={"/"}>Home</Link>
+          <Link href={"/Services"}>Services</Link>
+          <Link href={"/OurValues"}>Our Values</Link>
+          </div>
+        </div>
+      )}
+    </div>
     </div>
 
 <h1 className=" text-white text-[39px] tracking-wide mdl:ml-9	 mdl:text-[60px] font-extrabold text-center mdl:text-left w-full  mdl:w-[50%]">{HeroSectionHead}</h1>
