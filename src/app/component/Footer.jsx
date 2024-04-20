@@ -52,6 +52,9 @@ const Footer = () => {
           <Link className="footerLink"  target="blank" href={""}>
             Branding
           </Link>
+          <Link className="footerLink"  target="blank" href={"/PrivacyPolicy"}>
+            Privacy Policy
+          </Link>
         </div>
         <div className="mdl:flex w-[33%]">
           <div className="w-full mdl:w-1/2">
