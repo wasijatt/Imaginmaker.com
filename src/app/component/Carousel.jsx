@@ -1,3 +1,4 @@
+"use client"
 import { useState, useEffect } from "react";
 import { MdOutlineNavigateBefore, MdOutlineNavigateNext } from "react-icons/md";
 import Image from "next/image";
@@ -15,19 +16,19 @@ const Carousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [activeIndex, setActiveIndex] = useState(Math.floor(images.length / 3));
   const [isDesktop, setIsDesktop] = useState(false);
-  const [visibleImages, setVisibleImages] = useState(1); // Initialize visibleImages state with 1
+  const [visibleImages, setVisibleImages] = useState(1); 
   
   useEffect(() => {
     const handleResize = () => {
       setIsDesktop(window.innerWidth > 768); 
-      setVisibleImages(window.innerWidth > 768 ? 5 : 1); // Set visibleImages to 5 for desktop and 1 for mobile
+      setVisibleImages(window.innerWidth > 768 ? 5 : 1); 
     };
 
-    handleResize(); // Initial resize check
-    window.addEventListener("resize", handleResize); // Add event listener for window resize
+    handleResize(); 
+    window.addEventListener("resize", handleResize); 
     const interval = setInterval(goToNextSlide, 3000); 
     return () => {
-      window.removeEventListener("resize", handleResize); // Remove event listener on component unmount
+      window.removeEventListener("resize", handleResize); 
       clearInterval(interval);
     };
   }, []); 
@@ -44,7 +45,7 @@ const Carousel = () => {
     setActiveIndex(newIndex);
   };
   
-  const renderImages = images.slice(0, visibleImages); // Only render the first `visibleImages` images
+  const renderImages = images.slice(0, visibleImages); 
   
   return (
     <div className="p-1 mdl:p-4 w-full purpleBg">
