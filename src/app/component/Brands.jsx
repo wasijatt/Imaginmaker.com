@@ -17,10 +17,12 @@ const images = [
 
 const Brands = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const isDesktop = window.innerWidth > 768; 
+  const [isDesktop, setIsDesktop] = useState(false);
+
   const visibleImages = isDesktop ? 5 : 3;
 
   useEffect(() => {
+    setIsDesktop(window.innerWidth > 768); 
     const interval = setInterval(goToNextSlide, 3000); 
     return () => clearInterval(interval);
   }, [currentIndex]);
