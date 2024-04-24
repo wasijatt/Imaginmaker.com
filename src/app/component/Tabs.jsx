@@ -79,11 +79,11 @@ const Tabs = ({}) => {
   ];
 
   return (
-    <div className="my-9">
+    <div className="my-9 w-[98%] overflow-x-scroll">
       {tabData.map((item, index) => (
         <h1
           key={index}
-          className={`p-6 hover block mdl:inline text-lg mdl:text-2xl text-[#2c2c2c] ${
+          className={`p-6 inline text-lg mdl:text-2xl text-[#2c2c2c] ${
             activeTab === item.content ? "active-tab" : ""
           }`}
           onClick={() => handleTabChange(item.content)}

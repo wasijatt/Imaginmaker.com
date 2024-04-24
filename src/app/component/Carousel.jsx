@@ -21,7 +21,7 @@ const Carousel = () => {
   useEffect(() => {
     const handleResize = () => {
       setIsDesktop(window.innerWidth > 768); 
-      setVisibleImages(window.innerWidth > 768 ? 5 : 1); 
+      setVisibleImages(window.innerWidth > 768 ? 5 : 3); 
     };
 
     handleResize(); 
@@ -34,13 +34,13 @@ const Carousel = () => {
   }, []); 
 
   const goToPrevSlide = () => {
-    const newIndex = (currentIndex - 1 + images.length) % images.length;
+    const newIndex = (currentIndex + 1 + images.length) % images.length;
     setCurrentIndex(newIndex);
     setActiveIndex(newIndex);
   };
 
   const goToNextSlide = () => {
-    const newIndex = (currentIndex + 1) % images.length;
+    const newIndex = (currentIndex - 1) % images.length;
     setCurrentIndex(newIndex);
     setActiveIndex(newIndex);
   };
@@ -50,7 +50,7 @@ const Carousel = () => {
   return (
     <div className="p-1 mdl:p-4 w-full purpleBg">
       <div className="m-auto w-[90%] ">
-        <div className="relative w-full p-2">
+        <div className="relative w-full mdl:p-2">
           <div className="overflow-hidden mdl:mx-3 w-full">
             <div
               className="flex transition-transform ease-in-out  duration-1000"
@@ -63,7 +63,7 @@ const Carousel = () => {
                   whileHover={{ scale: 1.1 }}
                   transition={{ duration: 0.5 }}
                   key={index}
-                  className="w-full p-4"
+                  className="w-full mdl:p-4 p-2"
                   style={{ flex: `0 0 ${100 / visibleImages}%` }}
                 >
                   <Image
