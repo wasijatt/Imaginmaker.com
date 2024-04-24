@@ -1,10 +1,7 @@
-"use client"
+"use client";
 import TabContent from "./TabsData/TabContent";
 import Motion from "../component/TabsData/Motion";
-
-
 import { useState } from "react";
-
 const Tabs = ({}) => {
   const GraphicData1 = [
     "/images/servicesPage/Grphic designing/1.jpg",
@@ -32,11 +29,8 @@ const Tabs = ({}) => {
     "/images/servicesPage/Grphic designing/23.jpg",
     "/images/servicesPage/Grphic designing/24.jpg",
     "/images/servicesPage/Grphic designing/25.jpg",
-
-
   ];
   const GraphicData2 = [
-  
     "/images/servicesPage/Ui/Bakery app-designed by imaginmaker.jpg",
     "/images/servicesPage/Ui/Betting app-design by imaginmaker.jpg",
     "/images/servicesPage/Ui/Diliverd IT solutions app-designed by imaginmaker.jpg",
@@ -50,7 +44,7 @@ const Tabs = ({}) => {
     "/images/servicesPage/Ui/Imagin-maker-design-agency-app-UI-design.jpg",
     "/images/servicesPage/Ui/Imagin-maker-design-agency-app-UI-design.jpg",
     "/images/servicesPage/Ui/Imagin-maker-design-agency-app-UI-design.jpg",
-  ]
+  ];
   const GraphicData3 = [
     "/images/servicesPage/Web/Agency website design design by imaginmaker.jpg",
     "/images/servicesPage/Web/Chatboat websites deign-by imaginmaker.jpg",
@@ -63,20 +57,24 @@ const Tabs = ({}) => {
     "/images/servicesPage/Web/Sofa's and chairs website-designed by imaginmaker design agency.jpg",
     "/images/servicesPage/Web/web design by imaginmaker.jpg",
   ];
-
-
-  const [activeTab, setActiveTab] = useState(<TabContent GraphicData={GraphicData1}/>);
-
+  const [activeTab, setActiveTab] = useState(
+    <TabContent GraphicData={GraphicData1} />
+  );
   const handleTabChange = (content) => {
     setActiveTab(content);
   };
-
   const tabData = [
-    { label: "Graphics", content: <TabContent GraphicData={GraphicData1}/> },
+    { label: "Graphics", content: <TabContent GraphicData={GraphicData1} /> },
     { label: "Motion Design", content: <Motion /> },
-    { label: "UI/UX Design", content: <TabContent GraphicData={GraphicData2} /> },
+    {
+      label: "UI/UX Design",
+      content: <TabContent GraphicData={GraphicData2} />,
+    },
     { label: "Web Design", content: <TabContent GraphicData={GraphicData3} /> },
-    { label: "Illustration", content:<TabContent GraphicData={GraphicData2} /> },
+    {
+      label: "Illustration",
+      content: <TabContent GraphicData={GraphicData2} />,
+    },
     { label: "Branding", content: <TabContent GraphicData={GraphicData2} /> },
   ];
 
@@ -85,15 +83,23 @@ const Tabs = ({}) => {
       {tabData.map((item, index) => (
         <h1
           key={index}
-          className={`p-6 hover inline text-lg mdl:text-2xl text-[#2c2c2c] ${activeTab === item.content ? 'active-tab' : ''}`}
+          className={`p-6 hover block mdl:inline text-lg mdl:text-2xl text-[#2c2c2c] ${
+            activeTab === item.content ? "active-tab" : ""
+          }`}
           onClick={() => handleTabChange(item.content)}
         >
-          <span className={activeTab === item.content ? 'active-label' : ''}>
+          <span className={activeTab === item.content ? "active-label" : ""}>
             {item.label}
           </span>
         </h1>
       ))}
-      <div className={`transition-opacity duration-1000 ease-in-out ${activeTab ? 'opacity-100' : 'opacity-0'}`}>{activeTab}</div>
+      <div
+        className={`transition-opacity duration-1000 ease-in-out ${
+          activeTab ? "opacity-100" : "opacity-0"
+        }`}
+      >
+        {activeTab}
+      </div>
     </div>
   );
 };

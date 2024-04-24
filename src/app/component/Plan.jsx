@@ -83,7 +83,7 @@ setpayment(false)
         {planList.map((item, index) => (
           <div
             key={index}
-            className={`${style.planboxShadow} "border w-full mdl:w-[28%]   rounded-lg p-9 mx-4 my-4"`}
+            className={`${style.planboxShadow} "border w-[98%] mdl:w-[28%] box-border	  rounded-lg p-9 mdl:mx-4 my-4"`}
           >
             <h2 className="text-3xl font-extrabold text-left mt-8">
               {item.title}

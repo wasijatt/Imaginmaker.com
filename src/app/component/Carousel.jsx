@@ -78,13 +78,13 @@ const Carousel = () => {
             </div>
           </div>
           <button
-            className="absolute top-1/2  mdl:-ml-[100px] transform -translate-y-1/2 bg-white text-[#7700ff] font-extrabold px-6 py-6 rounded-full "
+            className="absolute top-1/2  mdl:-ml-[100px] transform -translate-y-1/2 bg-white text-[#7700ff] font-extrabold mdl:px-6 p-2 mdl:py-6 rounded-full "
             onClick={goToPrevSlide}
           >
             <MdOutlineNavigateBefore />
           </button>
           <button
-            className="absolute top-1/2 right-0 transform -translate-y-1/2 bg-white text-[#7700ff] font-extrabold px-6 py-6 rounded-full"
+            className="absolute top-1/2 right-0 transform -translate-y-1/2 bg-white text-[#7700ff] font-extrabold mdl:px-6 p-2 mdl:py-6 rounded-full"
             onClick={goToNextSlide}
           >
             <MdOutlineNavigateNext />
