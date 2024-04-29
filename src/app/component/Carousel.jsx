@@ -11,12 +11,17 @@ const Carousel = () => {
     "/Carousel/illustration.jpg",
     "/Carousel/ProductDesigning.jpg",
     "/Carousel/posterdesign.jpg",
+    "/Carousel/websiteLandingPage.jpg",
+    "/Carousel/websiteLandingPage.jpg",
+    "/Carousel/websiteLandingPage.jpg",
+    "/Carousel/websiteLandingPage.jpg",
+    "/Carousel/websiteLandingPage.jpg",
     "/Carousel/websiteLandingPage.jpg"
   ];
   const [currentIndex, setCurrentIndex] = useState(0);
   const [activeIndex, setActiveIndex] = useState(Math.floor(images.length / 3));
   const [isDesktop, setIsDesktop] = useState(false);
-  const [visibleImages, setVisibleImages] = useState(1); 
+  const [visibleImages, setVisibleImages] = useState(); 
   
   useEffect(() => {
     const handleResize = () => {
@@ -34,18 +39,18 @@ const Carousel = () => {
   }, []); 
 
   const goToPrevSlide = () => {
-    const newIndex = (currentIndex + 1 + images.length) % images.length;
+    const newIndex = (currentIndex - 1 + images.length) % images.length;
     setCurrentIndex(newIndex);
     setActiveIndex(newIndex);
   };
 
   const goToNextSlide = () => {
-    const newIndex = (currentIndex - 1) % images.length;
+    const newIndex = (currentIndex + 1) % images.length;
     setCurrentIndex(newIndex);
     setActiveIndex(newIndex);
   };
   
-  const renderImages = images.slice(0, visibleImages); 
+  // const renderImages = images.slice(0, visibleImages); 
   
   return (
     <div className="p-1 mdl:p-4 w-full purpleBg">
@@ -58,7 +63,7 @@ const Carousel = () => {
                 transform: `translateX(-${currentIndex * (100 / visibleImages)}%)`
               }}
             >
-              {renderImages.map((image, index) => (
+              {images.map((image, index) => (
                 <motion.div
                   whileHover={{ scale: 1.1 }}
                   transition={{ duration: 0.5 }}

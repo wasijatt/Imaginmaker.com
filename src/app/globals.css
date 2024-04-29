@@ -51,6 +51,9 @@ font-weight: 500;
   .footerLink {
     font-size: 9px;
   }
+  .brandimg{
+    width: 70%;
+  }
 }
 .hover:hover{
 color: #7700ff;

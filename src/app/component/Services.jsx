@@ -25,14 +25,19 @@ const Services = () => {
     {servicesData.map((service, index) => (
       <div key={index} className="flex mt-3  mdl:mt-7 w-[50%]  mdl:w-full">
         <div >
-          <Image src={service.imgsrc} width={70} height={70} alt={service.heading} />
+          <Image className="w-[70] mdl:w-full" src={service.imgsrc} width={70} height={70} alt={service.heading} />
         </div>
         <div className="ml-2 mdl:ml-5">
           <h1 className="text-white text-sm mdl:text-2xl font-bold tracking-widest">{service.heading}</h1>
           <p className="text-white text-xs w-full mdl:w-[70%]">{service.des}</p>
         </div>
+      
       </div>
+
     ))}
+      <Link href={"/AboutUs"} className=" mdl:hidden px-5 py-2 mt-5  w-1/2 purpleBg text-white rounded-2xl">
+            About Us
+          </Link>
   </div>
 
         </div>
@@ -42,8 +47,8 @@ const Services = () => {
           What Our Clients Say About Us
         </h1>
         <ReviewSlider  />
-        <div className="w-full text-center">
-          <Link href={"/AboutUs"} className="text-center px-10 mt-12 py-3 purpleBg text-white rounded-3xl">
+        <div className=" text-center">
+          <Link href={"/AboutUs"} className=" hidden mdl:inline text-center px-10 mt-12 py-3 purpleBg text-white rounded-3xl">
             About Us
           </Link>
         </div>

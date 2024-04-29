@@ -79,7 +79,7 @@ setpayment(false)
         width={100}
         height={100}
       />
-      <div className="flex flex-col mdl:flex-row rounded-3xl mt-4 mdl:mt-36">
+      <div className="flex flex-col mdl:flex-row rounded-3xl  mdl:mt-36">
         {planList.map((item, index) => (
           <div
             key={index}

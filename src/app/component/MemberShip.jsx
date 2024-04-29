@@ -51,7 +51,7 @@ for your design. Seriously.</p>
             <div key={index} className="max-w-sm rounded overflow-hidden ">
              
               <Image className="w-[50px] m-auto " src={item.imgsrc} alt={item.title} width={50} height={50} />
-              <div className="px-6 py-4">
+              <div className="mdl:px-6 px-3 mdl:py-4 py-2">
                 <div className="font-bold mdl:text-2xl text-lg  text-center mb-2">{item.title}</div>
                 <p className=" text-sm mdl:text-lg text-center">{item.para}</p>
               </div>
