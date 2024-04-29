@@ -77,10 +77,10 @@ export default function HeroSection({
               onClick={closemobileMenu}
               className="fixed inset-0 z-50  backdrop-blur-lg bg-[#000000e4] bg-opacity-50 overlay p-8  "
             >
-              <div className=" flex flex-col text-2xl   text-right  justify-center text-white">
+              <div className=" flex flex-col text-2xl mt-[30vh]  leading-10  text-center  justify-center text-white">
                 <Link href={"/CaseStudy"}>Case Study</Link>
                 <Link href={"/Weblog"}>Weblog</Link>
-                <Link href={"/"}>Home</Link>
+                <Link href={"/ "}>Home</Link>
                 <Link href={"/Services"}>Services</Link>
                 <Link href={"/OurValues"}>Our Values</Link>
               </div>

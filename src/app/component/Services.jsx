@@ -21,20 +21,20 @@ const Services = () => {
         <div>
      
 
-<div className="flex flex-col p-2 mdl:p-6">
+<div className="flex mdl:flex-col flex-wrap p-2 mdl:p-6">
     {servicesData.map((service, index) => (
-      <div key={index} className="flex mt-7">
-        <div>
+      <div key={index} className="flex mt-3  mdl:mt-7 w-[50%]  mdl:w-full">
+        <div >
           <Image src={service.imgsrc} width={70} height={70} alt={service.heading} />
         </div>
-        <div className="ml-5">
-          <h1 className="text-white text-xl mdl:text-2xl font-bold tracking-widest">{service.heading}</h1>
-          <p className="text-white text-sm w-[70%]">{service.des}</p>
+        <div className="ml-2 mdl:ml-5">
+          <h1 className="text-white text-sm mdl:text-2xl font-bold tracking-widest">{service.heading}</h1>
+          <p className="text-white text-xs w-full mdl:w-[70%]">{service.des}</p>
         </div>
       </div>
     ))}
   </div>
-);
+
         </div>
       </div>
       <div className="w-full mdl:w-1/2 p-4 justify-center items-center ">
@@ -42,8 +42,8 @@ const Services = () => {
           What Our Clients Say About Us
         </h1>
         <ReviewSlider  />
-        <div className="w-full">
-          <Link href={"/AboutUs"} className="text-center px-10 mt-12 py-3  ml-[35%] purpleBg text-white rounded-3xl">
+        <div className="w-full text-center">
+          <Link href={"/AboutUs"} className="text-center px-10 mt-12 py-3 purpleBg text-white rounded-3xl">
             About Us
           </Link>
         </div>

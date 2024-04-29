@@ -57,51 +57,59 @@ const Tabs = ({}) => {
     "/images/servicesPage/Web/Sofa's and chairs website-designed by imaginmaker design agency.jpg",
     "/images/servicesPage/Web/web design by imaginmaker.jpg",
   ];
-  const [activeTab, setActiveTab] = useState(
-    <TabContent GraphicData={GraphicData1} />
-  );
-  const handleTabChange = (content) => {
-    setActiveTab(content);
-  };
-  const tabData = [
-    { label: "Graphics", content: <TabContent GraphicData={GraphicData1} /> },
-    { label: "Motion Design", content: <Motion /> },
-    {
-      label: "UI/UX Design",
-      content: <TabContent GraphicData={GraphicData2} />,
-    },
-    { label: "Web Design", content: <TabContent GraphicData={GraphicData3} /> },
-    {
-      label: "Illustration",
-      content: <TabContent GraphicData={GraphicData2} />,
-    },
-    { label: "Branding", content: <TabContent GraphicData={GraphicData2} /> },
-  ];
 
-  return (
-    <div className="my-9 w-[98%] overflow-x-scroll">
-      {tabData.map((item, index) => (
-        <h1
-          key={index}
-          className={`p-6 inline text-lg mdl:text-2xl text-[#2c2c2c] ${
-            activeTab === item.content ? "active-tab" : ""
+    const [activeTab, setActiveTab] = useState(
+      <TabContent GraphicData={GraphicData1} />
+    );
+  
+    const handleTabChange = (content) => {
+      setActiveTab(content);
+    };
+  
+    const tabData = [
+      { label: "Graphics", content: <TabContent GraphicData={GraphicData1} /> },
+      { label: "Motion Design", content: <Motion /> },
+      {
+        label: "UI/UX Design",
+        content: <TabContent GraphicData={GraphicData2} />,
+      },
+      { label: "Web Design", content: <TabContent GraphicData={GraphicData3} /> },
+      {
+        label: "Illustration",
+        content: <TabContent GraphicData={GraphicData2} />,
+      },
+      { label: "Branding", content: <TabContent GraphicData={GraphicData2} /> },
+    ];
+  
+    return (
+      <div className="my-9 w-[98%]">
+        <div className="custom-scrollbar">
+          <div className="scroll-content">
+            {tabData.map((item, index) => (
+              <h1
+                key={index}
+                className={`p-6 inline text-lg mdl:text-2xl text-nowrap ${
+                  activeTab === item.content ? "active-tab text-[#7700ff] " : "text-[#333]"
+                }`}
+                onClick={() => handleTabChange(item.content)}
+              >
+                <span className={activeTab === item.content ? "active-label" : ""}>
+                  {item.label}
+                </span>
+              </h1>
+            ))}
+          </div>
+        </div>
+        <div
+          className={`transition-opacity duration-1000 ease-in-out ${
+            activeTab ? "opacity-100" : "opacity-0"
           }`}
-          onClick={() => handleTabChange(item.content)}
         >
-          <span className={activeTab === item.content ? "active-label" : ""}>
-            {item.label}
-          </span>
-        </h1>
-      ))}
-      <div
-        className={`transition-opacity duration-1000 ease-in-out ${
-          activeTab ? "opacity-100" : "opacity-0"
-        }`}
-      >
-        {activeTab}
+          {activeTab}
+        </div>
       </div>
-    </div>
-  );
-};
-
-export default Tabs;
+    );
+  };
+  
+  export default Tabs;
+  

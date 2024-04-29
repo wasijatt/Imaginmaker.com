@@ -6,12 +6,12 @@ import Image from "next/image";
 
 const Footer = () => {
   const socialMedia = [
-    { icon: <FaInstagramSquare />, link: "https://www.instagram.com/imaginmaker/" },
-    { icon: <FaFacebook />, link: "https://www.facebook.com/profile.php?id=61551109724275" },
-    { icon: <FaLinkedin />, link: "https://www.linkedin.com/company/imagin-maker/" },
-    { icon: <CiYoutube />, link: "https://youtube.com/@javedsomroo9792?si=74AP0H67tmddOSnK" },
-    { icon: <FaDribbble />, link: "https://dribbble.com/imaginmaker" },
-    { icon: <FaBehance />, link: "https://www.behance.net/imagin-maker" },
+    { icon: <FaInstagramSquare />, link: "https://www.instagram.com/imaginmaker/" , label :"Instagramme" },
+    { icon: <FaFacebook />, link: "https://www.facebook.com/profile.php?id=61551109724275" , label :"Facebooook"  },
+    { icon: <FaLinkedin />, link: "https://www.linkedin.com/company/imagin-maker/" , label :"LinkedIn" },
+    { icon: <CiYoutube />, link: "https://youtube.com/@javedsomroo9792?si=74AP0H67tmddOSnK" , label :"Youtube"  },
+    { icon: <FaDribbble />, link: "https://dribbble.com/imaginmaker"  , label :"Dribble" },
+    { icon: <FaBehance />, link: "https://www.behance.net/imagin-maker" , label :"Behance" },
   ];
 
   return (
@@ -20,15 +20,16 @@ const Footer = () => {
         <div className=" w-30% mdl:w-[40%] mt-2 mdl:m-auto p-3">
           <Image  src="/footer/footer-Icon.png" alt="" width={100} height={100} />
           <h1 className="text-[#908f8f] text-sm mdl:text-[18px]">Follow Us</h1>
-          <div className="flex items-center mt-5">
+          <div className="mdl:flex  items-center mt-5 text-sm mdl:text-2xl">
             {socialMedia.map((item, index) => (
               <Link
                 target="blank"
                 href={item.link}
                 key={index}
-                className="mr-1 mdl:mr-4 text-[#7700ff] text-sm mdl:text-2xl"
+                className="mr-1 mdl:mr-4 text-[#7700ff] flex items-center"
               >
                 {Object.values(item)[0]}
+                <span className="inline text-[#908f8f] mr-1 " >{item.label}</span>
               </Link>
             ))}
           </div>
