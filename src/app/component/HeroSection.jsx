@@ -62,11 +62,11 @@ export default function HeroSection({
         </div>
 
         <div className="">
-          <button
+          <Link href={"/getintouch"}
             className={`"purpleBg text-white px-5 py-2 hidden mdl:block rounded-3xl " ${style.boxShadow}`}
           >
             Get In Touch{" "}
-          </button>
+          </Link>
         </div>
         <div className="md:hidden">
           <button className="text-[#7700ff] text-[30px]" onClick={mobileMenu}>

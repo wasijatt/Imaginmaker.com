@@ -29,7 +29,7 @@ const Footer = () => {
                 className="mr-1 mdl:mr-4 text-[#7700ff] flex items-center"
               >
                 {Object.values(item)[0]}
-                <span className="inline text-[#908f8f] mr-2 " >{item.label}</span>
+                <span className="inline text-[#908f8f] mr-2 mdl:hidden " >{item.label}</span>
               </Link>
             ))}
           </div>
