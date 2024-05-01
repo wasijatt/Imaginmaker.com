@@ -207,7 +207,7 @@ const page = () => {
               onMouseEnter={() => setHoveredIndex(index)}
               onMouseLeave={() => setHoveredIndex(null)}
             >
-              <img
+              <Image
                 width={100}
                 height={100}
                 src={item.src}
@@ -218,6 +218,7 @@ const page = () => {
                 <div className="absolute top-0 left-0 w-full h-full z-50 flex justify-center items-center text-center bg-[#1E1E24] rounded-[30px] mdl:rounded-full">
                   <div>
                     <Image
+                    alt="overlay"
                       className="rounded-full m-auto"
                       src={item.overlay}
                       width={100}
