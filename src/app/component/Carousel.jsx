@@ -12,11 +12,7 @@ const Carousel = () => {
     "/Carousel/ProductDesigning.jpg",
     "/Carousel/posterdesign.jpg",
     "/Carousel/websiteLandingPage.jpg",
-    "/Carousel/websiteLandingPage.jpg",
-    "/Carousel/websiteLandingPage.jpg",
-    "/Carousel/websiteLandingPage.jpg",
-    "/Carousel/websiteLandingPage.jpg",
-    "/Carousel/websiteLandingPage.jpg"
+   
   ];
   const [currentIndex, setCurrentIndex] = useState(0);
   const [activeIndex, setActiveIndex] = useState(Math.floor(images.length / 3));
@@ -50,7 +46,7 @@ const Carousel = () => {
     setActiveIndex(newIndex);
   };
   
-  // const renderImages = images.slice(0, visibleImages); 
+  
   
   return (
     <div className="p-1 mdl:p-4 w-full purpleBg">

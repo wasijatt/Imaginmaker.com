@@ -35,7 +35,9 @@ form button{
 }
 .footerHead{
 color: rgb(219, 219, 219);
-font-weight: 500;
+font-weight: 400;
+font-size: 20px;
+letter-spacing: 2px;
 }
 .footerLink{
   display: block ;
@@ -47,6 +49,7 @@ font-weight: 500;
 @media screen and (max-width: 976px) {
   .footerHead {
     font-size: 12px;
+   
   }
   .footerLink {
     font-size: 9px;

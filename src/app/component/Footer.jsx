@@ -17,7 +17,7 @@ const Footer = () => {
   return (
     <div className=" bg-[#191919] py-7 px-4 mdl:p-14">
       <div className="  flex w-full mdl:w-[90%] justify-between">
-        <div className=" w-30% mdl:w-[40%] mt-2 mdl:m-auto p-3">
+        <div className=" w-28% mdl:w-[40%] mt-2 mdl:ml-[15%] p-3">
           <Image  src="/footer/footer-Icon.png" alt="" width={100} height={100} />
           <h1 className="text-[#908f8f] text-sm mdl:text-[18px]">Follow Us</h1>
           <div className="mdl:flex  items-center mt-5 text-sm mdl:text-2xl">
@@ -32,6 +32,13 @@ const Footer = () => {
                 <span className="inline text-[#908f8f] mr-2 mdl:hidden " >{item.label}</span>
               </Link>
             ))}
+          </div>
+          <div className=" hidden mdl:flex mt-[70px]   text-[#908f8f]">
+          <p >© 2024 Imagin Maker    </p>
+          <Link className="ml-4  font-bold " href={"/PrivacyPolicy"}>Terms</Link>
+          <Link className="ml-4  font-bold " target="blank" href={"/PrivacyPolicy"}>
+            Privacy 
+          </Link>
           </div>
         </div>
         
@@ -53,9 +60,7 @@ const Footer = () => {
           <Link className="footerLink"  target="blank" href={""}>
             Branding
           </Link>
-          <Link className="footerLink"  target="blank" href={"/PrivacyPolicy"}>
-            Privacy Policy
-          </Link>
+         
         </div>
         <div className="mdl:flex w-[33%]">
           <div className="w-full mdl:w-1/2">
@@ -90,6 +95,13 @@ const Footer = () => {
           </div>
         </div>
       </div>
+      <div className="mdl:hidden mt-[70px]   text-[#908f8f]">
+          <p className=" inline ">© 2024 Imagin Maker    </p>
+          <Link className="ml-4  font-bold " href={"/PrivacyPolicy"}>Terms</Link>
+          <Link className="ml-4  font-bold " target="blank" href={"/PrivacyPolicy"}>
+            Privacy 
+          </Link>
+          </div>
     </div>
   );
 };

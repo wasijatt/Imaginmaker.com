@@ -12,7 +12,7 @@ const Simplicity = () => {
       </h1>
       <div className=" w-[30%] mld:w-[50%] text-center">
         <Image className="m-auto w-12 mdl:w-full " src="/Plan/but.png" alt="" width={100} height={100}/>
-      <button className="mdl:py-2 mdl:px-8 py-1 purpleBg text-xs text-white rounded-3xl">Let&apos;s Work Togather</button>
+      <button className="mdl:py-2 mdl:px-8 py-1 purpleBg text-xs text-white rounded-3xl ">Let&apos;s Work Togather</button>
       </div>
     </div>
   );

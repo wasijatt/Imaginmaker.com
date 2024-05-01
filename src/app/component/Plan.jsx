@@ -3,6 +3,7 @@ import { useState } from "react";
 import style from "../modulerCss/HeroSection.module.css";
 import Image from "next/image";
 import { RxCross2 } from "react-icons/rx";
+import Link from "next/link";
 
 
 const Plan = () => {
@@ -122,10 +123,10 @@ setpayment(false)
               alt=""
             />
             <h1 className="text-left text-2xl">Book</h1>
-            <p className="text-[#7700ff]">
+            <Link href={" https://wa.me/971567208725"} className="text-[#7700ff]">
               If You Need Something Deferent, Let’s Call. We would love to help
               you.
-            </p>
+            </Link>
             <a href="tel:+923005837549" className="text-xl font-semibold">
               Book a call
             </a>
@@ -139,7 +140,7 @@ setpayment(false)
               alt=""
             />
             <h1>Book</h1>
-            <p className="text-[#7700ff]">Book A Call And Get Your First</p>
+            <Link href={" https://wa.me/971567208725"} className="text-[#7700ff]">Book A Call And Get Your First</Link>
             <h1 className="text-left text-xl  font-semibold">Design Free</h1>
             <a href="" className="mt-14">
               How it works
