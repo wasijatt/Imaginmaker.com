@@ -1,6 +1,6 @@
 import style from "../modulerCss/HeroSection.module.css";
 
-
+import Image from "next/image";
 
 const OurServices = () => {
   const imageSources = [
@@ -20,7 +20,7 @@ const OurServices = () => {
             
             className="m-[1rem]  w-[40%] mdl:w-[30%]"
           >
-            <img
+            <Image
               className=" w-full mdl:w-[95%] mt-5 rounded-3xl"
               key={index}
               width={100}

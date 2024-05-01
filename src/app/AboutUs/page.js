@@ -1,3 +1,4 @@
+
 "use client";
 import Link from "next/link";
 import { useState } from "react";
@@ -7,7 +8,7 @@ import Login from "../component/Login";
 import Image from "next/image";
 import { FaInstagramSquare ,FaLinkedin  } from "react-icons/fa";
 
-const page = () => {
+const Page = () => {
 
   const [hoveredIndex, setHoveredIndex] = useState(null);
   const imagePaths = [
@@ -176,7 +177,7 @@ const page = () => {
             years of expertise in graphic design, branding, and professional
             digital marketing, Javed leads our team in Pakistan, spearheading
             innovative projects that captivate audiences worldwide. His diverse
-            skil l set encompasses graphic and motion designing, digital
+            skill set encompasses graphic and motion designing, digital
             marketing, animation, UI/UX design, video editing, photography, and
             branding, ensuring every project exceeds expectations.
           </p>
@@ -187,7 +188,7 @@ const page = () => {
             Linkdin.com/JAVEDSOMROO
           </Link>
         </div>
-        <img
+        <Image
           width={100}
           height={100}
           src={"/AboutUs/JavedSomroo.jpg"}
@@ -253,7 +254,7 @@ const page = () => {
               onMouseEnter={() => setHoveredIndex(index + 3)}
               onMouseLeave={() => setHoveredIndex(null)}
             >
-              <img
+              <Image
                 width={100}
                 height={100}
                 src={item.src}
@@ -321,6 +322,4 @@ const page = () => {
     </>
   );
 };
-export default page;
-
-
+export default Page;

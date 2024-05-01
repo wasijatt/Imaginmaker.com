@@ -34,7 +34,7 @@ const TabContent = ({ GraphicData }) => {
       {[...Array(4)].map((_, i) => (
         <div className=" mdl:m-4 w-[49%] mdl:w-[21%] h-full" key={i}>
           {GraphicData.slice(i * imagesPerSlice, (i + 1) * imagesPerSlice).map((image, index) => (
-            <img
+            <Image
               className="rounded-lg mdl:rounded-3xl mx-2 m-2 mdl:m-7 w-full  h-full"
               key={i * imagesPerSlice + index}
               src={image}

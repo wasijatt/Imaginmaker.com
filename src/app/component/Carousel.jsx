@@ -18,7 +18,19 @@ const Carousel = () => {
   const [activeIndex, setActiveIndex] = useState(Math.floor(images.length / 3));
   const [isDesktop, setIsDesktop] = useState(false);
   const [visibleImages, setVisibleImages] = useState(); 
-  
+
+  const goToPrevSlide = () => {
+    const newIndex = (currentIndex - 1 + images.length) % images.length;
+    setCurrentIndex(newIndex);
+    setActiveIndex(newIndex);
+  };
+
+  const goToNextSlide = () => {
+    const newIndex = (currentIndex + 1) % images.length;
+    setCurrentIndex(newIndex);
+    setActiveIndex(newIndex);
+  };
+
   useEffect(() => {
     const handleResize = () => {
       setIsDesktop(window.innerWidth > 768); 
@@ -32,21 +44,9 @@ const Carousel = () => {
       window.removeEventListener("resize", handleResize); 
       clearInterval(interval);
     };
-  }, []); 
-
-  const goToPrevSlide = () => {
-    const newIndex = (currentIndex - 1 + images.length) % images.length;
-    setCurrentIndex(newIndex);
-    setActiveIndex(newIndex);
-  };
-
-  const goToNextSlide = () => {
-    const newIndex = (currentIndex + 1) % images.length;
-    setCurrentIndex(newIndex);
-    setActiveIndex(newIndex);
-  };
+  }, [goToNextSlide]); 
   
-  
+
   
   return (
     <div className="p-1 mdl:p-4 w-full purpleBg">
