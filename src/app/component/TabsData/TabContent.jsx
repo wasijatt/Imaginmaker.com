@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import Modal from '../Modal';
+import Image from 'next/image';
 
 const TabContent = ({ GraphicData }) => {
   const [showPopup, setShowPopup] = useState(false);

@@ -1,5 +1,5 @@
 "use client"
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { MdOutlineNavigateBefore, MdOutlineNavigateNext } from "react-icons/md";
 import Image from "next/image";
 import { motion } from "framer-motion";
@@ -12,24 +12,23 @@ const Carousel = () => {
     "/Carousel/ProductDesigning.jpg",
     "/Carousel/posterdesign.jpg",
     "/Carousel/websiteLandingPage.jpg",
-   
   ];
   const [currentIndex, setCurrentIndex] = useState(0);
   const [activeIndex, setActiveIndex] = useState(Math.floor(images.length / 3));
   const [isDesktop, setIsDesktop] = useState(false);
   const [visibleImages, setVisibleImages] = useState(); 
 
-  const goToPrevSlide = () => {
+  const goToPrevSlide = useCallback(() => {
     const newIndex = (currentIndex - 1 + images.length) % images.length;
     setCurrentIndex(newIndex);
     setActiveIndex(newIndex);
-  };
+  }, [currentIndex, images.length]);
 
-  const goToNextSlide = () => {
+  const goToNextSlide = useCallback(() => {
     const newIndex = (currentIndex + 1) % images.length;
     setCurrentIndex(newIndex);
     setActiveIndex(newIndex);
-  };
+  }, [currentIndex, images.length]);
 
   useEffect(() => {
     const handleResize = () => {
@@ -45,8 +44,6 @@ const Carousel = () => {
       clearInterval(interval);
     };
   }, [goToNextSlide]); 
-  
-
   
   return (
     <div className="p-1 mdl:p-4 w-full purpleBg">

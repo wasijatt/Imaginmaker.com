@@ -76,7 +76,7 @@ setpayment(false)
       <Image
         className="m-auto mt-9"
         src="/plan/logo.png"
-        alt=""
+        alt="logo"
         width={100}
         height={100}
       />
@@ -120,7 +120,7 @@ setpayment(false)
               src="/Plan/booking.png"
               width={80}
               height={80}
-              alt=""
+              alt="booking"
             />
             <h1 className="text-left text-2xl">Book</h1>
             <Link href={" https://wa.me/971567208725"} className="text-[#7700ff]">
@@ -137,7 +137,7 @@ setpayment(false)
               src="/Plan/book.png"
               width={80}
               height={80}
-              alt=""
+              alt="booking"
             />
             <h1>Book</h1>
             <Link href={" https://wa.me/971567208725"} className="text-[#7700ff]">Book A Call And Get Your First</Link>
@@ -164,7 +164,7 @@ setpayment(false)
               <h1 className=" text-[20px] mdl:text-[30px] font-bold text-center mt-8">Choose One </h1> 
               <div className="flex flex-wrap">
                 {acounts.map((imageSrc, index) => (
-                  <img onClick={handlePayments} className="w-[30%] " key={index} src={imageSrc} alt={`Image ${index}`} />
+                  <Image onClick={handlePayments} className="w-[30%] " key={index} src={imageSrc} alt={`Image ${index}`} />
                 ))}
               </div>
             </div>
