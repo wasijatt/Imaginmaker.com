@@ -139,7 +139,7 @@ const Page = () => {
             height={100}
             className="w-[15%] "
             src="/Aboutus/3.png"
-            alt=""
+            alt="us "
           />
           <div className="">
             <h1 className="text-xl mdl:text-3xl ">Going The Extra Mile</h1>
@@ -157,7 +157,7 @@ const Page = () => {
             height={100}
             className="w-[15%] "
             src="/Aboutus/4.png"
-            alt=""
+            alt="us "
           />
           <div className="">
             <h1 className="text-xl mdl:text-3xl ">Up For A Challenge</h1>
@@ -219,11 +219,11 @@ const Page = () => {
                 <div className="absolute top-0 left-0 w-full h-full z-50 flex justify-center items-center text-center bg-[#1E1E24] rounded-[30px] mdl:rounded-full">
                   <div>
                     <Image
-                    alt="overlay"
                       className="rounded-full m-auto"
                       src={item.overlay}
                       width={100}
                       height={100}
+                      alt="overlay"
                     />
                      <h1 className="text-lg mdl:text-xl font-light tracking-[3px]"> {item.member}</h1>
                   <p className="text-[#7700ff] text-sm mdl:text-xl">{item.dasignation}</p>
@@ -266,6 +266,7 @@ const Page = () => {
                   <div>
                     <Image
                       className="rounded-full m-auto"
+                      alt="ovelay image"
                       src={item.overlay}
                       width={100}
                       height={100}
@@ -299,6 +300,7 @@ const Page = () => {
                     <Image
                       className="rounded-full m-auto"
                       src={item.overlay}
+                      alt="ovelay image"
                       width={100}
                       height={100}
                     />

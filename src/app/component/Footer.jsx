@@ -95,7 +95,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className="mdl:hidden mt-[70px]   text-[#908f8f]">
+      <div className="mdl:hiddenre mt-[70px]   text-[#908f8f]">
           <p className=" inline ">© 2024 Imagin Maker    </p>
           <Link className="ml-4  font-bold " href={"/PrivacyPolicy"}>Terms</Link>
           <Link className="ml-4  font-bold " target="blank" href={"/PrivacyPolicy"}>

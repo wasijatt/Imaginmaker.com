@@ -142,9 +142,9 @@ setpayment(false)
             <h1>Book</h1>
             <Link href={" https://wa.me/971567208725"} className="text-[#7700ff]">Book A Call And Get Your First</Link>
             <h1 className="text-left text-xl  font-semibold">Design Free</h1>
-            <a href="" className="mt-14">
+            <Link href="" className="mt-14">
               How it works
-            </a>
+            </Link>
           </div>
         </div>
       </div>

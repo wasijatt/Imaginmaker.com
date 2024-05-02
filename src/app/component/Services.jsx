@@ -1,5 +1,5 @@
 import Link from "next/link";
-import ReviewSlider from "../component/ReviewSlider";
+// import ReviewSlider from "../component/ReviewSlider";///////
 import Image from "next/image";
 
 
@@ -46,7 +46,7 @@ const Services = () => {
         <h1 className="text-white text-center text-xl mdl:text-2xl">
           What Our Clients Say About Us
         </h1>
-        <ReviewSlider  />
+        {/* <ReviewSlider  /> */}
         <div className=" text-center">
           <Link href={"/AboutUs"} className=" hidden mdl:inline text-center px-10 mt-12 py-3 purpleBg text-white rounded-3xl">
             About Us
