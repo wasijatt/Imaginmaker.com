@@ -1,3 +1,4 @@
+"use client"
 import style from "../modulerCss/HeroSection.module.css";
 
 import Image from "next/image";
