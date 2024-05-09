@@ -45,13 +45,13 @@ for your design. Seriously.</p>
     <div className="flex flex-wrap items-center justify-center m-auto w-full mdl:w-[70%]">
     
       {MembershipData.map((item, index) => (
-        <div key={index} className={` ${style.planboxShadow} " mdl:mt-14 flex flex-wrap w-[45%] mdl:w-[31%] mdl:p-12 mdl:m-3 rounded-xl "`}>
+        <div key={index} className=" mdl:mt-14 flex flex-wrap w-[45%] mdl:w-[31%] mdl:p-6 mdl:m-3 rounded-xl ">
           
          
             <div key={index} className="max-w-sm rounded overflow-hidden ">
              
               <Image className="w-[50px] m-auto " src={item.imgsrc} alt={item.title} width={50} height={50} />
-              <div className="mdl:px-6 px-3 mdl:py-4 py-2">
+              <div className="mdl:px-1 px-3 mdl:py-4 py-2">
                 <div className="font-bold mdl:text-2xl text-lg  text-center mb-2">{item.title}</div>
                 <p className=" text-sm mdl:text-lg text-center">{item.para}</p>
               </div>

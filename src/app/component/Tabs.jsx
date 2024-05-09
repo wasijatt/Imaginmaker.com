@@ -82,14 +82,14 @@ const Tabs = ({}) => {
     ];
   
     return (
-      <div className="my-9 w-[98%]">
+      <div className="py-9 w-full bg-black mt-5">
         <div className="custom-scrollbar">
-          <div className="scroll-content">
+          <div className="scroll-content  flex justify-center">
             {tabData.map((item, index) => (
               <h1
                 key={index}
-                className={`p-6 inline text-lg mdl:text-2xl text-nowrap ${
-                  activeTab === item.content ? "active-tab text-[#7700ff] " : "text-[#333]"
+                className={`p-6 inline text-lg mdl:text-2xl text-nowrap  ${
+                  activeTab === item.content ? "active-tab text-[#7700ff] " : "text-white"
                 }`}
                 onClick={() => handleTabChange(item.content)}
               >

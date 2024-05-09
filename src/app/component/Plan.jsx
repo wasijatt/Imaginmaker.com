@@ -70,7 +70,7 @@ setpayment(false)
   return (
     <div className="w-full mdl:w-[80%] m-auto text-center">
       <h1 className="text-xl mt-5 mdl:text-[50px]">Memberships levels</h1>
-      <p className="font-bold text-sm mdl:text-xl">
+      <p className="font-bold text-sm mdl:text-xl mdl:mt-3">
         Choose a plan that&apos;s right for you.
       </p>
       <Image
@@ -80,7 +80,7 @@ setpayment(false)
         width={100}
         height={100}
       />
-      <div className="flex flex-col mdl:flex-row rounded-3xl  mdl:mt-36">
+      <div className="flex flex-col mdl:flex-row rounded-3xl  mdl:mt-26">
         {planList.map((item, index) => (
           <div
             key={index}
@@ -116,7 +116,7 @@ setpayment(false)
         >
           <div className="border-b-2 py-6 border-[#333]">
             <Image
-              className="w-[80%] mdl:w-[60%] m-auto"
+              className="w-[65%] mdl:w-[60%] m-auto"
               src="/Plan/booking.png"
               width={80}
               height={80}
@@ -133,7 +133,7 @@ setpayment(false)
           </div>
           <div className="mt-9">
             <Image
-              className="w-[80%] mdl:w-[50%] m-auto "
+              className="w-[70%] mdl:w-[50%] m-auto "
               src="/Plan/book.png"
               width={80}
               height={80}
@@ -164,7 +164,7 @@ setpayment(false)
               <h1 className=" text-[20px] mdl:text-[30px] font-bold text-center mt-8">Choose One </h1> 
               <div className="flex flex-wrap">
                 {acounts.map((imageSrc, index) => (
-                  <Image onClick={handlePayments} className="w-[30%] " key={index} src={imageSrc} alt={`Image ${index}`} />
+                  <Image onClick={handlePayments} className="w-[30%] " width={100} height={100} key={index} src={imageSrc} alt={`Image ${index}`} />
                 ))}
               </div>
             </div>

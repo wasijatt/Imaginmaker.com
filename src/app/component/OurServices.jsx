@@ -13,13 +13,13 @@ const OurServices = () => {
     "/OurServices/Graphic-Designer.jpg",
   ];
   return (
-    <div className="bg-[#181818] py-3 mdl:py-16 mt-[5vh] m-auto">
-      <h1 className=" text-[30px] mdl:text-[64px] text-white text-center">Our Services</h1>
-      <div className="flex flex-wrap m-auto w-full  mdl:w-[70%]">
+    <div className=" bg-[#181818] py-3 mdl:py-16 mt-[5vh] m-auto ">
+      <h1 className=" text-[30px] mdl:text-[50px] text-white text-center">Our Services</h1>
+      <div className="flex flex-wrap m-auto w-full  mdl:w-[65%]">
         {imageSources.map((src, index) => (
           <div key={index}
             
-            className="m-[1rem]  w-[40%] mdl:w-[30%]"
+            className="m-[.5rem]  w-[40%] mdl:w-[30%]"
           >
             <Image
               className=" w-full mdl:w-[95%] mt-5 rounded-3xl"

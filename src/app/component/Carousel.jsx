@@ -33,7 +33,7 @@ const Carousel = () => {
   useEffect(() => {
     const handleResize = () => {
       setIsDesktop(window.innerWidth > 768); 
-      setVisibleImages(window.innerWidth > 768 ? 5 : 3); 
+      setVisibleImages(window.innerWidth > 768 ? 4 : 3); 
     };
 
     handleResize(); 
@@ -61,7 +61,7 @@ const Carousel = () => {
                   whileHover={{ scale: 1.1 }}
                   transition={{ duration: 0.5 }}
                   key={index}
-                  className="w-full mdl:p-4 p-2"
+                  className="w-full mdl:p-4 p-1"
                   style={{ flex: `0 0 ${100 / visibleImages}%` }}
                 >
                   <Image
@@ -69,7 +69,7 @@ const Carousel = () => {
                     alt={image}
                     width={100}
                     height={100}
-                    className="w-[100%] justify-center m-0 mdl:mx-4 rounded-xl"
+                    className="w-[100%] justify-center  mdl:mx-2 rounded-xl"
                   />
                 </motion.div>
               ))}

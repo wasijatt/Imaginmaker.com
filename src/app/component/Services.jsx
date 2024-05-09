@@ -1,5 +1,5 @@
 import Link from "next/link";
-// import ReviewSlider from "../component/ReviewSlider";///////
+import ReviewSlider from "../component/ReviewSlider";///////
 import Image from "next/image";
 
 
@@ -11,10 +11,10 @@ const Services = () => {
   ];
 
   return (
-    <div className="bg-[#181818] rounded-3xl  w-full mdl:w-[70%] mt-16 m-auto flex flex-col mdl:flex-row p-2 mdl:p-12 justify-center items-center">
+    <div className="bg-[#181818] rounded-3xl  w-full mdl:w-[80%] mt-16 m-auto flex flex-col mdl:flex-row p-2 mdl:p-12 justify-center items-center">
       <div className=" w-full mdl:w-1/2">
         <div>
-          <h1 className="text-white text-xl mdl:text-[40px] text-center mdl:text-left w-full mdl:w-[80%] px-5 leading-sung font-bold leading-normal	 ">
+          <h1 className="text-white text-xl mdl:text-[42px] text-center mdl:text-left w-full mdl:w-[80%] px-5 leading-sung tracking-[2px] leading-normal	 ">
             A Full-Service of Design, Branding and Animation Agency
           </h1>
         </div>
@@ -23,13 +23,13 @@ const Services = () => {
 
 <div className="flex mdl:flex-col flex-wrap p-2 mdl:p-6">
     {servicesData.map((service, index) => (
-      <div key={index} className="flex mt-3  mdl:mt-7 w-[50%]  mdl:w-full">
+      <div key={index} className="flex mt-3  mdl:mt-10 w-[50%]  mdl:w-full">
         <div >
-          <Image className="w-[70] mdl:w-full" src={service.imgsrc} width={70} height={70} alt={service.heading} />
+          <Image className="w-[50] mdl:w-full"  src={service.imgsrc} width={50} height={50} alt={service.heading} />
         </div>
         <div className="ml-2 mdl:ml-5">
-          <h1 className="text-white text-sm mdl:text-2xl font-bold tracking-widest">{service.heading}</h1>
-          <p className="text-white text-xs w-full mdl:w-[70%]">{service.des}</p>
+          <h2 className="text-white text-xs mdl:text-lg   font-normal tracking-[2px]">{service.heading}</h2>
+          <p className=" text-sm text-[#BCBCBC] w-full mdl:w-[70%]">{service.des}</p>
         </div>
       
       </div>
@@ -46,7 +46,7 @@ const Services = () => {
         <h1 className="text-white text-center text-xl mdl:text-2xl">
           What Our Clients Say About Us
         </h1>
-        {/* <ReviewSlider  /> */}
+        <ReviewSlider  />
         <div className=" text-center">
           <Link href={"/AboutUs"} className=" hidden mdl:inline text-center px-10 mt-12 py-3 purpleBg text-white rounded-3xl">
             About Us

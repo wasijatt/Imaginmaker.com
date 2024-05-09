@@ -29,12 +29,12 @@ export default function HeroSection({
   };
 
   return (
-    <div className="bg-[#181818] px-[2rem] mdl:px-[4rem] py-2">
-      <div className="flex justify-between items-center ">
+    <div className="bg-black px-[2rem] mdl:px-[10rem] py-2 mdl:py-10">
+      <div className="flex justify-between items-center mdl:px-8">
         <div className="">
           <Link href="/">
             <Image
-              className=" w-[50%] h-[50%] mdl:w-[100%] mld:h-[100%] bg-transparent"
+              className=" w-[50%] h-[50%] mdl:w-[90%] mld:h-[90%] bg-transparent"
               src={leftLogo}
               alt="logo"
             />
@@ -89,10 +89,10 @@ export default function HeroSection({
         </div>
       </div>
 
-      <h1 className=" text-white text-[39px] tracking-wide mdl:ml-9	 mdl:text-[60px] font-extrabold text-center mdl:text-left w-full  mdl:w-[50%]">
+      <h1 className=" text-white text-[39px] tracking-wide mdl:ml-9	 mdl:text-[60px] font-extrabold text-center mdl:text-left w-full  mdl:w-[50%] mdl:mt-9 ">
         {HeroSectionHead}
       </h1>
-      <p className="text-white text-xl mdl:ml-9	 font-normal">
+      <p className="text-white text-xl mdl:ml-9	w-[60%]  font-normal">
         {HeroSectionPara}
       </p>
       <div className="w-[100%] text-center mt-6">
@@ -109,7 +109,7 @@ export default function HeroSection({
         <div className="inline">
           <Image alt="Heart" src={Heart} className="inline" />
         </div>
-        , guaranteed
+         Guaranteed
       </div>
     </div>
   );
