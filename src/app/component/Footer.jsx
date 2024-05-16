@@ -85,7 +85,7 @@ const Footer = () => {
               imaginmaker583@gmail.com
             </Link>
           </div>
-          <div className="w-full mdl:w-1/2 mt-7">
+          <div className="w-full mdl:w-1/2 mt-7 mdl:mt-0">
             <h1 className="footerHead">Address</h1>
             <h2 className="footerHead">Dubai Office</h2>
             <Link className="footerLink"  target="blank" href={""}>

@@ -21,7 +21,7 @@ const Services = () => {
         <div>
      
 
-<div className="flex mdl:flex-col flex-wrap p-2 mdl:p-6">
+<div className="flex mdl:flex-col flex-wrap p-2 mdl:p-6  mxl:p-4">
     {servicesData.map((service, index) => (
       <div key={index} className="flex mt-3  mdl:mt-10 w-[50%]  mdl:w-full">
         <div >
