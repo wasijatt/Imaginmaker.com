@@ -112,7 +112,7 @@ const Homepage = () => {
         el: scrollRef.current,
         smooth: true,
         damping: 0.1,
-        lerp: 0.01,
+        lerp: 0.05,
         step: 50,
         smoothMobile: true,
       });
