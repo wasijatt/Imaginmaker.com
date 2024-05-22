@@ -29,7 +29,7 @@ export default function HeroSection({
   };
 
   return (
-    <div className="bg-black px-[2rem] mdl:px-[6rem] mxl:px-[10rem]  py-2 mdl:py-10">
+    <div className="bg-black px-[2rem] mdl:px-[6rem]   py-2 mdl:py-10">
       <div className="flex justify-between items-center mdl:px-8">
         <div className="">
           <Link href="/">
