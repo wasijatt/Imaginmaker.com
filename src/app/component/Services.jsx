@@ -11,7 +11,7 @@ const Services = () => {
   ];
 
   return (
-    <div className="bg-[#181818] rounded-3xl  w-full mdl:w-[80%] mt-16 m-auto flex flex-col mdl:flex-row p-2 mdl:p-12 justify-center items-center">
+    <div className="bg-[#181818] rounded-3xl py-10  w-[90%] mdl:w-[80%] mt-16 m-auto flex flex-col mdl:flex-row p-2 mdl:p-12 justify-center items-center">
       <div className=" w-full mdl:w-1/2">
         <div>
           <h1 className="text-white text-xl mdl:text-[42px] text-center mdl:text-left w-full mdl:w-[80%] px-5 leading-sung tracking-[2px] leading-normal	 ">
@@ -21,7 +21,7 @@ const Services = () => {
         <div>
      
 
-<div className="flex mdl:flex-col flex-wrap p-2 mdl:p-6  mxl:p-4">
+<div className="hidden mdl:flex mdl:flex-col flex-wrap  mdl:p-6  ">
     {servicesData.map((service, index) => (
       <div key={index} className="flex mt-3  mdl:mt-10 w-[50%]  mdl:w-full">
         <div >
@@ -35,10 +35,11 @@ const Services = () => {
       </div>
 
     ))}
-      <Link href={"/AboutUs"} className=" mdl:hidden px-5 py-2 mt-5  w-1/2 purpleBg text-white rounded-2xl">
-            About Us
-          </Link>
+     
   </div>
+  <button href={"/AboutUs"} className=" mdl:hidden px-5 py-2 mt-5 m-auto  ml-[33%] purpleBg text-white rounded-2xl">
+            About Us
+          </button>
 
         </div>
       </div>

@@ -6,6 +6,7 @@ import leftLogo from "../../../public/images/icons/leftLogo.png";
 import middleLogo from "../../../public/images/icons/middleLogo.png";
 import Heart from "../../../public/images/icons/heart.svg";
 import { VscThreeBars } from "react-icons/vsc";
+import {motion} from "framer-motion";
 
 import { useState } from "react";
 
@@ -62,7 +63,8 @@ export default function HeroSection({
         </div>
 
         <div className="">
-          <Link href={"/getintouch"}
+          <Link
+            href={"/getintouch"}
             className={`"purpleBg text-white px-5 py-2 hidden mdl:block rounded-3xl " ${style.boxShadow}`}
           >
             Get In Touch{" "}
@@ -73,18 +75,24 @@ export default function HeroSection({
             <VscThreeBars />
           </button>
           {isOpen && (
-            <div
+            <motion.div
+            initial={{ x: "-100vw" }}
+                animate={{ x: 0 }}
+                transition={{ type: "spring", stiffness: 50 }}
               onClick={closemobileMenu}
               className="fixed inset-0 z-50  backdrop-blur-lg bg-[#000000e4] bg-opacity-50 overlay p-8  "
             >
-              <div className=" flex flex-col text-2xl mt-[30vh]  leading-10  text-center  justify-center text-white">
+              <div
+                
+                className=" flex flex-col text-2xl mt-[30vh]  leading-10  text-center  justify-center text-white"
+              >
                 <Link href={"/CaseStudy"}>Case Study</Link>
                 <Link href={"/Weblog"}>Weblog</Link>
                 <Link href={"/ "}>Home</Link>
                 <Link href={"/Services"}>Services</Link>
                 <Link href={"/OurValues"}>Our Values</Link>
               </div>
-            </div>
+            </motion.div>
           )}
         </div>
       </div>
@@ -109,7 +117,7 @@ export default function HeroSection({
         <div className="inline">
           <Image alt="Heart" src={Heart} className="inline" />
         </div>
-         Guaranteed
+        Guaranteed
       </div>
     </div>
   );
