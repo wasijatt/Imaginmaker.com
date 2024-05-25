@@ -64,7 +64,11 @@ for your design. Seriously.</p>
     <div className="hidden mdl:flex flex-wrap items-center justify-center m-auto w-full mdl:w-[70%]">
     
       {MembershipData.map((item, index) => (
+<<<<<<< HEAD
         <div key={index} className=" mdl:mt-14 flex flex-wrap mdl:w-[30%] mdl:p-6 mdl:m-3 rounded-xl ">
+=======
+        <div key={index} className=" mdl:mt-14 flex flex-wrap w-[45%] mdl:w-[30%] mdl:p-6 mdl:m-3 rounded-xl ">
+>>>>>>> 2a9efea53041e902b18b09aa76566dc4894ccf48
           
          
             <div key={index} className="max-w-sm rounded overflow-hidden ">

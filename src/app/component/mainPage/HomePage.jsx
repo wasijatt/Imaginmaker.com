@@ -203,6 +203,7 @@ const Faqs = dynamic(() => import("../Faqs"), { ssr: false });
 const Footer = dynamic(() => import("../Footer"), { ssr: false });
 const Cursor = dynamic(() => import("../Cursor"), { ssr: false });
 
+
 const Homepage = () => {
   const scrollRef = useRef(null);
   const [componentsLoaded, setComponentsLoaded] = useState(false);
@@ -231,7 +232,16 @@ const Homepage = () => {
 
   return (
     <main className="main" data-scroll-container ref={scrollRef}>
-    <Cursor/>
+      <Cursor/>
+      <section data-scroll-section data-scroll-speed="1">
+        <HeroSection
+          HeroSectionHead={"A Design Agency With a Twist"}
+          HeroSectionPara={"What You Think, We Can Design And Animate."}
+          HeroSectionButton={"See Plans"}
+        />
+        <Carousel />
+      </section>
+   
     <section className="hidden mdl:block" data-scroll-section data-scroll-speed="1">
       <HeroSection
         HeroSectionHead={"A Design Agency With a Twist"}
@@ -252,39 +262,39 @@ const Homepage = () => {
 
     </section>
 
-    <section data-scroll-section data-scroll-speed="2">
-      <div className="hidden mdl:block" data-scroll data-scroll-delay="0.1">
-        <Brands />
-      </div>
-      <div className="hidden mdl:block" data-scroll data-scroll-delay="0.2">
-        <Services />
-      </div>
-    </section>
-    <section className="-mt-[100vh] mdl:-mt-0" data-scroll-section data-scroll-speed="0">
-      <OurServices />
-    </section>
-    <section className="-mt-[20vh] mdl:-mt-0" data-scroll-section data-scroll-speed="0">
-      <MemberShip />
-    </section>
-    <section className="-mt-[25vh] mdl:-mt-0" data-scroll-section data-scroll-speed="0">
-      <Plan />
-    </section>
-    <section className="mdl:-mt-[30vh]" data-scroll-section data-scroll-speed="0">
-      <Login />
-    </section>
-    <section className=" -mt-[20vh] mdl:-mt-[20vh]" data-scroll-section data-scroll-speed="0">
-      <Simplicity />
-    </section>
-    <section  className=" -mt-[90vh] mdl:-mt-[50vh]" data-scroll-section data-scroll-speed="0">
-      <Counter />
-    </section>
-    <section  className=" -mt-12 mdl:-mt-[20vh]" data-scroll-section data-scroll-speed="0">
-      <Faqs />
-    </section>
-    <section className="mdl:-mt-20" data-scroll-section data-scroll-speed="0">
-      <Footer />
-    </section>
-  </main>
+      <section data-scroll-section data-scroll-speed="2">
+        <div data-scroll data-scroll-delay="0.1">
+          <Brands />
+        </div>
+        <div data-scroll data-scroll-delay="0.2">
+          <Services />
+        </div>
+      </section>
+      <section data-scroll-section data-scroll-speed="0">
+        <OurServices />
+      </section>
+      <section data-scroll-section data-scroll-speed="0">
+        <MemberShip />
+      </section>
+      <section data-scroll-section data-scroll-speed="0">
+        <Plan />
+      </section>
+      <section data-scroll-section data-scroll-speed="0">
+        <Login />
+      </section>
+      <section data-scroll-section data-scroll-speed="0">
+        <Simplicity />
+      </section>
+      <section data-scroll-section data-scroll-speed="0">
+        <Counter />
+      </section>
+      <section data-scroll-section data-scroll-speed="0">
+        <Faqs />
+      </section>
+      <section data-scroll-section data-scroll-speed="0">
+        <Footer />
+      </section>
+    </main>
   );
 };
 
