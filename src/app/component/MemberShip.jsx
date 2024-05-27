@@ -72,7 +72,7 @@ const MemberShip = () => {
           design. Seriously.
         </p>
       </div>
-      <div className=" mdl:flex flex-wrap items-center justify-center m-auto w-full mdl:w-[70%]">
+      <div className=" mdl:flex flex-wrap items-center justify-center m-auto w-full mdl:w-[70%] " >
         {MembershipData.map((item, index) => (
           <div
             key={index}
@@ -86,11 +86,11 @@ const MemberShip = () => {
                 width={50}
                 height={50}
               />
-              <div className="mdl:px-1 px-3 mdl:py-4 py-2">
-                <div className="font-bold mdl:text-2xl text-lg  text-center mb-2">
+              <div className= " mdl:px-1 px-3 mdl:py-4 py-2 " >
+                <div className= " font-bold mdl:text-2xl text-lg  text-center mb-2 " >
                   {item.title}
                 </div>
-                <p className=" mdl:text-lg text-center">{item.para}</p>
+                <p className= " mdl:text-lg text-center " >{item.para}</p>
               </div>
             </div>
           </div>
