@@ -39,7 +39,7 @@ const Counter = () => {
     }, []);
 
     return (
-        <div className="bg-[#191919] mt-4 mdl:mt-12 p-3 mdl:px-9 mdl:py-24 mb-3">
+        <div className="bg-[#191919] mt-4 mdl:mt-12 p-3 mdl:px-9 mdl:py-24  mb-3">
             <h1 className="text-center text-white mt-2 mdl:mt-5 font-bold tracking-[2px] text-xl mdl:text-[35px]">Why People Like Us</h1>
             <p className="text-center text-white mt-6 text-sm mdl:text-[23px]">Professional Design Agency to Provide solution</p>
             <div className="flex flex-col mdl:flex-row w-full mdl:w-[60%] m-auto  mdl:mt-7 justify-between">

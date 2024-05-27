@@ -4,7 +4,7 @@ import style from "../modulerCss/HeroSection.module.css";
 
 const Simplicity = () => {
   return (
-    <div className="flex bg-[#191919] px-6 py-6 mdl:px-20 mdl:py-28 relative  mdl:-mt-6  w-[95%] mdl:w-[65%] m-auto rounded-3xl justify-between items-center">
+    <div className="flex bg-[#191919] px-6 py-6 mdl:px-20 mdl:py-28 relative  mdl:-mt-6  w-[95%] mdl:w-[65%] m-auto rounded-3xl  justify-between items-center">
       <div className="flex flex-col w-[69%]  mdl:w-[55%] ">
 
         <Image className="w-[20px] mdl:w-[30px]" src="/Plan/quotes.png" alt="" width={30} height={100}/>

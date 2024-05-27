@@ -13,7 +13,7 @@ const OurServices = () => {
     "/OurServices/Graphic-Designer.jpg",
   ];
   return (
-    <div className=" bg-[#181818] py-3 mdl:py-16 mt-[5vh] m-auto ">
+    <div className=" bg-[#181818] py-3 mdl:py-16 mt-[5vh] m-auto mdl:h-full ">
       <h1 className=" text-[30px] mdl:text-[50px] text-white text-center">Our Services</h1>
       <div className="flex flex-wrap m-auto w-full justify-center items-center   mdl:w-[65%]">
         {imageSources.map((src, index) => (

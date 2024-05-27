@@ -46,7 +46,7 @@ const Carousel = () => {
   }, [goToNextSlide]); 
   
   return (
-    <div className="p-1 mdl:p-4 w-full purpleBg">
+    <div className="p-1 mdl:p-4 w-full purpleBg ">
       <div className="m-auto w-[90%] ">
         <div className="relative w-full mdl:p-2">
           <div className="overflow-hidden mdl:mx-3 w-full">

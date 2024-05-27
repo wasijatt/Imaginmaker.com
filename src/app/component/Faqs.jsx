@@ -67,7 +67,7 @@ const Faqs = () => {
     };
 
     return (
-      <div>
+      <div className="mdl:h-full">
         <div className="flex items-center justify-between relative " onClick={toggle} style={{ cursor: "pointer" }}>
           <h3 className="text-white text-sm mdl:text-xl py-5 mx-4 w-full bottomBorder ">{question} </h3>
           {isOpen ? <FaAngleUp className="absolute right-4 text-[#838282] w-5 h-5 " /> : <FaAngleDown className="absolute right-4 text-[#e1e1e1] w-6 h-6" />}

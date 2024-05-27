@@ -15,7 +15,7 @@ const Footer = () => {
   ];
 
   return (
-    <div className=" bg-[#191919] py-7 mt-3 px-4 mdl:p-14">
+    <div className=" bg-[#191919] py-7 mt-3 px-4 mdl:p-14 mdl:h-[40vh]">
       <div className="  flex w-full mdl:w-[90%] justify-between">
         <div className=" w-28% mdl:w-[50%] mt-2 mdl:ml-[12%] p-3">
           <Image  src="/footer/footer-Icon.png" alt="" width={100} height={100} />
