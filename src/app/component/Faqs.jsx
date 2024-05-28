@@ -67,14 +67,14 @@ const Faqs = () => {
     };
 
     return (
-      <div className="lg:h-full">
+      <div className="">
         <div className="flex items-center justify-between relative " onClick={toggle} style={{ cursor: "pointer" }}>
-          <h3 className="text-white text-sm lg:text-xl py-5 mx-4 w-full bottomBorder ">{question} </h3>
+          <h3 className="text-white text-sm mxl:text-lg 2xl:text-xl mxl:py-4 2xl:py-5 mx-5 w-full bottomBorder ">{question} </h3>
           {isOpen ? <FaAngleUp className="absolute right-4 text-[#838282] w-5 h-5 " /> : <FaAngleDown className="absolute right-4 text-[#e1e1e1] w-6 h-6" />}
            
         </div>
         <div className={`transition-opacity duration-500 ${isOpen ? 'opacity-100' : 'opacity-0'}`}>
-        {isOpen && <p className="text-[#8c8c8c] text-sm lg:text-xl py-2 px-8">{answer}</p>}
+        {isOpen && <p className="text-[#8c8c8c] text-sm mxl:text-lg 2xl:text-xl py-2 px-8">{answer}</p>}
         </div>
       </div>
     );

@@ -48,7 +48,7 @@ const Homepage = () => {
       <Cursor />
 
       <section
-        className="lg:block lg:h-[500px]"
+        className="lg:block mxl:h-[400] 2xl:h-[500px]"
         data-scroll-section
         data-scroll-speed="1"
       
@@ -61,7 +61,7 @@ const Homepage = () => {
       </section>
      
       <section
-       className=" lg:block lg:h-[455px]"
+       className=" lg:block 2xl:h-[455px] mxl:h-[400]"
         data-scroll-section
         data-scroll-speed="0"
         
@@ -71,7 +71,7 @@ const Homepage = () => {
     
 
       <section
-      className="lg:block  lg:h-[150px]"
+      className="lg:block  mxl:h-[] 2xl:h-[150px]"
         data-scroll-section
         data-scroll-speed="2"
         
@@ -106,7 +106,7 @@ const Homepage = () => {
         <MemberShip />
       </section>
       <section
-      className="lg:h-[600px]"
+      className="lg:h-[700px]"
         data-scroll-section
         data-scroll-speed="0"
       
@@ -122,7 +122,7 @@ const Homepage = () => {
         <Login />
       </section>
       <section
-      className="lg:h-[320px]"
+      className="lg:h-[380px]"
         data-scroll-section
         data-scroll-speed="0"
         
@@ -130,7 +130,7 @@ const Homepage = () => {
         <Simplicity />
       </section>
       <section
-      className="lg:h-[740px]"
+      className="lg:h-[720px]"
         data-scroll-section
         data-scroll-speed="0"
         
@@ -138,7 +138,7 @@ const Homepage = () => {
         <Counter />
       </section>
       <section
-      className=" lg:h-[1400px]"
+      className=" mxl:h-[1300] 2xl:h-[1200px]"
 
         data-scroll-section
         data-scroll-speed="0"

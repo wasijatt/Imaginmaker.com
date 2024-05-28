@@ -77,10 +77,10 @@ setpayment(false)
         className="m-auto mt-9"
         src="/plan/logo.png"
         alt="logo"
-        width={100}
-        height={100}
+        width={200}
+        height={200}
       />
-      <div className="flex flex-col lg:flex-row rounded-3xl  lg:mt-26">
+      <div className="flex flex-col lg:flex-row rounded-3xl mxl:mt-5 lg:mt-26">
         {planList.map((item, index) => (
           <div
             key={index}
