@@ -48,7 +48,7 @@ const Homepage = () => {
       <Cursor />
 
       <section
-        className="mdl:block mdl:h-[500px]"
+        className="lg:block lg:h-[500px]"
         data-scroll-section
         data-scroll-speed="1"
       
@@ -61,7 +61,7 @@ const Homepage = () => {
       </section>
      
       <section
-       className=" mdl:block mdl:h-[455px]"
+       className=" lg:block lg:h-[455px]"
         data-scroll-section
         data-scroll-speed="0"
         
@@ -71,7 +71,7 @@ const Homepage = () => {
     
 
       <section
-      className="mdl:block  mdl:h-[150px]"
+      className="lg:block  lg:h-[150px]"
         data-scroll-section
         data-scroll-speed="2"
         
@@ -81,7 +81,7 @@ const Homepage = () => {
       
       </section>
       <section
-      className="mdl:block  mdl:h-[700px]"
+      className="lg:block  lg:h-[700px]"
 
         data-scroll-section
         data-scroll-speed="0"
@@ -90,7 +90,7 @@ const Homepage = () => {
         <Services />
       </section>
       <section
-      className="mdl:h-[1050px]"
+      className="lg:h-[1050px]"
         data-scroll-section
         data-scroll-speed="0"
        
@@ -98,7 +98,7 @@ const Homepage = () => {
         <OurServices />
       </section>
       <section
-      className="mdl:h-[850px]"
+      className="lg:h-[850px]"
         data-scroll-section
         data-scroll-speed="0"
 
@@ -106,7 +106,7 @@ const Homepage = () => {
         <MemberShip />
       </section>
       <section
-      className="mdl:h-[600px]"
+      className="lg:h-[600px]"
         data-scroll-section
         data-scroll-speed="0"
       
@@ -114,7 +114,7 @@ const Homepage = () => {
         <Plan />
       </section>
       <section
-      className="mdl:h-[720px]"
+      className="lg:h-[720px]"
         data-scroll-section
         data-scroll-speed="0"
        
@@ -122,7 +122,7 @@ const Homepage = () => {
         <Login />
       </section>
       <section
-      className="mdl:h-[320px]"
+      className="lg:h-[320px]"
         data-scroll-section
         data-scroll-speed="0"
         
@@ -130,7 +130,7 @@ const Homepage = () => {
         <Simplicity />
       </section>
       <section
-      className="mdl:h-[740px]"
+      className="lg:h-[740px]"
         data-scroll-section
         data-scroll-speed="0"
         
@@ -138,7 +138,7 @@ const Homepage = () => {
         <Counter />
       </section>
       <section
-      className=" mdl:h-[1400px]"
+      className=" lg:h-[1400px]"
 
         data-scroll-section
         data-scroll-speed="0"
