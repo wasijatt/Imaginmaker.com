@@ -67,14 +67,14 @@ const Faqs = () => {
     };
 
     return (
-      <div className="mdl:h-full">
+      <div className="lg:h-full">
         <div className="flex items-center justify-between relative " onClick={toggle} style={{ cursor: "pointer" }}>
-          <h3 className="text-white text-sm mdl:text-xl py-5 mx-4 w-full bottomBorder ">{question} </h3>
+          <h3 className="text-white text-sm lg:text-xl py-5 mx-4 w-full bottomBorder ">{question} </h3>
           {isOpen ? <FaAngleUp className="absolute right-4 text-[#838282] w-5 h-5 " /> : <FaAngleDown className="absolute right-4 text-[#e1e1e1] w-6 h-6" />}
            
         </div>
         <div className={`transition-opacity duration-500 ${isOpen ? 'opacity-100' : 'opacity-0'}`}>
-        {isOpen && <p className="text-[#8c8c8c] text-sm mdl:text-xl py-2 px-8">{answer}</p>}
+        {isOpen && <p className="text-[#8c8c8c] text-sm lg:text-xl py-2 px-8">{answer}</p>}
         </div>
       </div>
     );
@@ -82,7 +82,7 @@ const Faqs = () => {
 
   return (
     <div className="bg-[#191919] border-b- border-white">
-      <div className="w-full  mdl:w-[47%] m-auto p-4 mld:px-7 py-12 ">
+      <div className="w-full  lg:w-[47%] m-auto p-4 mld:px-7 py-12 ">
         <h1 className="text-white text-center text-[40px]">FAQs</h1>
         {faqs.map((faq, index) => (
           <FaqItem key={index} question={faq.question} answer={faq.answer} />

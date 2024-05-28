@@ -36,7 +36,7 @@ const page = ()=>{
 <Capabilities/>
 
 <Services/>
-<h1 className="text-center text-xl mdl:text-[50px] my-8">Up-to-date projects</h1>
+<h1 className="text-center text-xl lg:text-[50px] my-8">Up-to-date projects</h1>
 <Carousel/>
 
 <Footer/>

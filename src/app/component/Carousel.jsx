@@ -46,10 +46,10 @@ const Carousel = () => {
   }, [goToNextSlide]); 
   
   return (
-    <div className="p-1 mdl:p-4 w-full purpleBg ">
+    <div className="p-1 lg:p-4 w-full purpleBg ">
       <div className="m-auto w-[90%] ">
-        <div className="relative w-full mdl:p-2">
-          <div className="overflow-hidden mdl:mx-3 w-full">
+        <div className="relative w-full lg:p-2">
+          <div className="overflow-hidden lg:mx-3 w-full">
             <div
               className="flex transition-transform ease-in-out  duration-1000"
               style={{
@@ -61,7 +61,7 @@ const Carousel = () => {
                   whileHover={{ scale: 1.1 }}
                   transition={{ duration: 0.5 }}
                   key={index}
-                  className="w-full mdl:p-4 p-1"
+                  className="w-full lg:p-4 p-1"
                   style={{ flex: `0 0 ${100 / visibleImages}%` }}
                 >
                   <Image
@@ -69,20 +69,20 @@ const Carousel = () => {
                     alt={image}
                     width={100}
                     height={100}
-                    className="w-[100%] justify-center  mdl:mx-2 rounded-xl"
+                    className="w-[100%] justify-center  lg:mx-2 rounded-xl"
                   />
                 </motion.div>
               ))}
             </div>
           </div>
           <button
-            className="absolute top-1/2  mdl:-ml-[100px] transform -translate-y-1/2 bg-white text-[#7700ff] font-extrabold mdl:px-6 p-2 mdl:py-6 rounded-full "
+            className="absolute top-1/2  lg:-ml-[100px] transform -translate-y-1/2 bg-white text-[#7700ff] font-extrabold lg:px-6 p-2 lg:py-6 rounded-full "
             onClick={goToPrevSlide}
           >
             <MdOutlineNavigateBefore />
           </button>
           <button
-            className="absolute top-1/2 right-0 transform -translate-y-1/2 bg-white text-[#7700ff] font-extrabold mdl:px-6 p-2 mdl:py-6 rounded-full"
+            className="absolute top-1/2 right-0 transform -translate-y-1/2 bg-white text-[#7700ff] font-extrabold lg:px-6 p-2 lg:py-6 rounded-full"
             onClick={goToNextSlide}
           >
             <MdOutlineNavigateNext />

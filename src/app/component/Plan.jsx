@@ -68,9 +68,9 @@ setpayment(false)
   ];
 
   return (
-    <div className="w-full mdl:w-[80%] m-auto text-center">
-      <h1 className="text-xl mt-5 mdl:text-[50px]">Memberships levels</h1>
-      <p className="font-bold text-sm mdl:text-xl mdl:mt-3">
+    <div className="w-full lg:w-[80%] m-auto text-center">
+      <h1 className="text-xl mt-5 lg:text-[50px]">Memberships levels</h1>
+      <p className="font-bold text-sm lg:text-xl lg:mt-3">
         Choose a plan that&apos;s right for you.
       </p>
       <Image
@@ -80,11 +80,11 @@ setpayment(false)
         width={100}
         height={100}
       />
-      <div className="flex flex-col mdl:flex-row rounded-3xl  mdl:mt-26">
+      <div className="flex flex-col lg:flex-row rounded-3xl  lg:mt-26">
         {planList.map((item, index) => (
           <div
             key={index}
-            className={`${style.planboxShadow} "border w-[98%] mdl:w-[28%] box-border	  rounded-lg p-9 mdl:mx-4 my-4"`}
+            className={`${style.planboxShadow} "border w-[98%] lg:w-[28%] box-border	  rounded-lg p-9 lg:mx-4 my-4"`}
           >
             <h2 className="text-3xl font-extrabold text-left mt-8">
               {item.title}
@@ -112,11 +112,11 @@ setpayment(false)
           </div>
         ))}
         <div
-          className={`${style.planboxShadow}" flex flex-col w-full mdl:w-[28%] p-9  " `}
+          className={`${style.planboxShadow}" flex flex-col w-full lg:w-[28%] p-9  " `}
         >
           <div className="border-b-2 py-6 border-[#333]">
             <Image
-              className="w-[65%] mdl:w-[60%] m-auto"
+              className="w-[65%] lg:w-[60%] m-auto"
               src="/Plan/booking.png"
               width={80}
               height={80}
@@ -133,7 +133,7 @@ setpayment(false)
           </div>
           <div className="mt-9">
             <Image
-              className="w-[70%] mdl:w-[50%] m-auto "
+              className="w-[70%] lg:w-[50%] m-auto "
               src="/Plan/book.png"
               width={80}
               height={80}
@@ -155,26 +155,26 @@ setpayment(false)
           onClick={handleClose}
         >
 
-          <div className="w-full mdl:w-[70%] h-full mdl:h-[400px] bg-[#ffffff] flex flex-wrap px-10 rounded-2xl ">
+          <div className="w-full lg:w-[70%] h-full lg:h-[400px] bg-[#ffffff] flex flex-wrap px-10 rounded-2xl ">
           <div className="p-6 absolute right-4" ><RxCross2 
   className="text-[#7700ff] text-[40px] bg-[#b8b7b7] rounded-full p-6 " onClick={handleClose}/>
 </div>
-            <div className={`${style.planboxShadow} "w-full mdl:w-[30%] m-4 bg-[#eeeded] p-4 rounded-3xl" `}>
+            <div className={`${style.planboxShadow} "w-full lg:w-[30%] m-4 bg-[#eeeded] p-4 rounded-3xl" `}>
               
-              <h1 className=" text-[20px] mdl:text-[30px] font-bold text-center mt-8">Choose One </h1> 
+              <h1 className=" text-[20px] lg:text-[30px] font-bold text-center mt-8">Choose One </h1> 
               <div className="flex flex-wrap">
                 {acounts.map((imageSrc, index) => (
                   <Image onClick={handlePayments} className="w-[30%] " width={100} height={100} key={index} src={imageSrc} alt={`Image ${index}`} />
                 ))}
               </div>
             </div>
-            <div className={`${style.planboxShadow} "w-full mdl:w-[30%] m-4 bg-[#eeeded] p-4 justify-between " `}>
+            <div className={`${style.planboxShadow} "w-full lg:w-[30%] m-4 bg-[#eeeded] p-4 justify-between " `}>
               <h1 className="text-3xl font-extrabold mt-8">{selectedPlan.title}</h1>
               <p className="font-sm text-left" >{selectedPlan.des}</p>
-              <h1 className="text-[15px] mdl:text-[30px] font-bold text-center mt-8">{selectedPlan.price}/month</h1>
+              <h1 className="text-[15px] lg:text-[30px] font-bold text-center mt-8">{selectedPlan.price}/month</h1>
               <p>Pause or cancel anytime</p>
             </div>
-            <div className={`${style.planboxShadow} " w-full mdl:w-[30%] m-4 bg-[#eeeded] p-4 " `}>
+            <div className={`${style.planboxShadow} " w-full lg:w-[30%] m-4 bg-[#eeeded] p-4 " `}>
          
              
             <ul className="mt-4 text-left">

@@ -15,25 +15,25 @@ const Footer = () => {
   ];
 
   return (
-    <div className=" bg-[#191919] py-7 mt-3 px-4 mdl:p-14 mdl:h-[40vh]">
-      <div className="  flex w-full mdl:w-[90%] justify-between">
-        <div className=" w-28% mdl:w-[50%] mt-2 mdl:ml-[12%] p-3">
+    <div className=" bg-[#191919] py-7 mt-3 px-4 lg:p-14 lg:h-[40vh]">
+      <div className="  flex w-full lg:w-[90%] justify-between">
+        <div className=" w-28% lg:w-[50%] mt-2 lg:ml-[12%] p-3">
           <Image  src="/footer/footer-Icon.png" alt="" width={100} height={100} />
-          <h1 className="text-[#908f8f] text-sm mdl:text-[18px]">Follow Us</h1>
-          <div className=" flex  items-center mt-32 mdl:mt-5 text-lg  mdl:text-2xl">
+          <h1 className="text-[#908f8f] text-sm lg:text-[18px]">Follow Us</h1>
+          <div className=" flex  items-center mt-32 lg:mt-5 text-lg  lg:text-2xl">
             {socialMedia.map((item, index) => (
               <Link
                 target="blank"
                 href={item.link}
                 key={index}
-                className="mr-1 mdl:mr-4 text-[#7700ff] flex items-center"
+                className="mr-1 lg:mr-4 text-[#7700ff] flex items-center"
               >
                 {Object.values(item)[0]}
           
               </Link>
             ))}
           </div>
-          <div className=" hidden mdl:flex mt-[70px]   text-[#908f8f]">
+          <div className=" hidden lg:flex mt-[70px]   text-[#908f8f]">
           <p >© 2024 Imagin Maker    </p>
           <Link className="ml-4  font-bold " href={"/PrivacyPolicy"}>Terms</Link>
           <Link className="ml-4  font-bold " target="blank" href={"/PrivacyPolicy"}>
@@ -42,7 +42,7 @@ const Footer = () => {
           </div>
         </div>
         
-        <div className="p-1 w-[33%] mdl:w-[28%]">
+        <div className="p-1 w-[33%] lg:w-[28%]">
           <h1 className="footerHead">What We Offer</h1>
               
           <Link className="footerLink " target="blank" href={""}>
@@ -62,8 +62,8 @@ const Footer = () => {
           </Link>
          
         </div>
-        <div className="mdl:flex w-[50%]">
-          <div className="w-full mdl:w-1/2">
+        <div className="lg:flex w-[50%]">
+          <div className="w-full lg:w-1/2">
             <h1 className="footerHead">Contact Us</h1>
             <h2 className="footerHead">WhatsApp</h2>
             <h2 className="footerHead"> UAE:</h2>
@@ -85,7 +85,7 @@ const Footer = () => {
               imaginmaker583@gmail.com
             </Link>
           </div>
-          <div className="w-full mdl:w-1/2 mt-7 mdl:mt-0">
+          <div className="w-full lg:w-1/2 mt-7 lg:mt-0">
             <h1 className="footerHead">Address</h1>
             <h2 className="footerHead">Dubai Office</h2>
             <Link className="footerLink"  target="blank" href={""}>
@@ -95,7 +95,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className="mdl:hidden mt-[70px]   text-[#908f8f]">
+      <div className="lg:hidden mt-[70px]   text-[#908f8f]">
           <p className=" inline ">© 2024 Imagin Maker    </p>
           <Link className="ml-4  font-bold " href={"/PrivacyPolicy"}>Terms</Link>
           <Link className="ml-4  font-bold " target="blank" href={"/PrivacyPolicy"}>

@@ -30,18 +30,18 @@ export default function HeroSection({
   };
 
   return (
-    <div className="bg-black px-[2rem] mdl:px-[6rem]  py-2 mdl:py-10">
-      <div className="flex justify-between items-center mdl:px-8">
+    <div className="bg-black px-[2rem] lg:px-[6rem]  py-2 lg:py-10">
+      <div className="flex justify-between items-center lg:px-8">
         <div className="">
           <Link href="/">
             <Image
-              className=" w-[50%] h-[50%] mdl:w-[90%] mld:h-[90%] bg-transparent"
+              className=" w-[50%] h-[50%] lg:w-[90%] mld:h-[90%] bg-transparent"
               src={leftLogo}
               alt="logo"
             />
           </Link>
         </div>
-        <div className="mdl:w-[60%] hidden  mdl:flex justify-between items-center  ">
+        <div className="lg:w-[60%] hidden  lg:flex justify-between items-center  ">
           <Link href={"/CaseStudy"} className={`${style.navLinks}`}>
             Case Study{" "}
           </Link>
@@ -65,7 +65,7 @@ export default function HeroSection({
         <div className="">
           <Link
             href={"/getintouch"}
-            className={`"purpleBg text-white px-5 py-2 hidden mdl:block rounded-3xl " ${style.boxShadow}`}
+            className={`"purpleBg text-white px-5 py-2 hidden md:block lg:block rounded-3xl " ${style.boxShadow}`}
           >
             Get In Touch{" "}
           </Link>
@@ -97,10 +97,10 @@ export default function HeroSection({
         </div>
       </div>
 
-      <h1 className=" text-white text-[39px] tracking-wide mdl:ml-9	 mdl:text-[60px] font-extrabold text-center mdl:text-left w-full  mdl:w-[50%] mdl:mt-9 ">
+      <h1 className=" text-white text-[39px] tracking-wide lg:ml-9	 lg:text-[60px] font-extrabold text-center lg:text-left w-full  lg:w-[50%] lg:mt-9 ">
         {HeroSectionHead}
       </h1>
-      <p className="text-white text-xl mdl:ml-9	w-[60%]  font-normal">
+      <p className="text-white text-xl lg:ml-9	w-[60%]  font-normal">
         {HeroSectionPara}
       </p>
       <div className="w-[100%] text-center mt-6">

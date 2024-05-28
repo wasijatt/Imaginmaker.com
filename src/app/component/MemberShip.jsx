@@ -58,7 +58,7 @@ const MemberShip = () => {
 
   return (
     <>
-      <div className="mt-2 mdl:mt-14 m-auto text-center w-full mdl:w-[30%] ">
+      <div className="mt-2 lg:mt-14 m-auto text-center w-full lg:w-[30%] ">
         <Image
           className="m-auto"
           src="/services/mem-logo.png"
@@ -72,11 +72,11 @@ const MemberShip = () => {
           design. Seriously.
         </p>
       </div>
-      <div className=" mdl:flex flex-wrap items-center justify-center m-auto w-full mdl:w-[70%] " >
+      <div className=" lg:flex flex-wrap items-center justify-center m-auto w-full lg:w-[70%] " >
         {MembershipData.map((item, index) => (
           <div
             key={index}
-            className=" mdl:mt-14 flex flex-wrap mdl:w-[30%] mdl:p-6 mdl:m-3 rounded-xl "
+            className=" lg:mt-14 flex flex-wrap lg:w-[30%] lg:p-6 lg:m-3 rounded-xl "
           >
             <div key={index} className="max-w-sm rounded overflow-hidden ">
               <Image
@@ -86,11 +86,11 @@ const MemberShip = () => {
                 width={50}
                 height={50}
               />
-              <div className= " mdl:px-1 px-3 mdl:py-4 py-2 " >
-                <div className= " font-bold mdl:text-2xl text-lg  text-center mb-2 " >
+              <div className= " lg:px-1 px-3 lg:py-4 py-2 " >
+                <div className= " font-bold lg:text-2xl text-lg  text-center mb-2 " >
                   {item.title}
                 </div>
-                <p className= " mdl:text-lg text-center " >{item.para}</p>
+                <p className= " lg:text-lg text-center " >{item.para}</p>
               </div>
             </div>
           </div>

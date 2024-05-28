@@ -88,7 +88,7 @@ const Tabs = ({}) => {
             {tabData.map((item, index) => (
               <h1
                 key={index}
-                className={`p-6 inline text-lg mdl:text-2xl text-nowrap  ${
+                className={`p-6 inline text-lg lg:text-2xl text-nowrap  ${
                   activeTab === item.content ? "active-tab text-[#7700ff] " : "text-white"
                 }`}
                 onClick={() => handleTabChange(item.content)}
