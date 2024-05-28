@@ -11,7 +11,7 @@ const Services = () => {
   ];
 
   return (
-    <div className="bg-[#181818] rounded-3xl py-10  w-[90%] mdl:w-[80%] mt-16 m-auto flex flex-col mdl:flex-row p-2 mdl:p-12 justify-center items-center mdl:h-[72vh]">
+    <div className="bg-[#181818] rounded-3xl py-10  w-[90%] mdl:w-[80%] mt-16 m-auto flex flex-col mdl:flex-row p-2 mdl:p-12 justify-center items-center ">
       <div className=" w-full mdl:w-1/2">
         <div>
           <h1 className="text-white text-xl mdl:text-[42px] text-center mdl:text-left w-full mdl:w-[80%] px-5 leading-sung tracking-[2px] leading-normal	 ">
