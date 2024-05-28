@@ -7,8 +7,8 @@ import middleLogo from "../../../public/images/icons/middleLogo.png";
 import Heart from "../../../public/images/icons/heart.svg";
 import { VscThreeBars } from "react-icons/vsc";
 import {motion} from "framer-motion";
-
-import { useState } from "react";
+import gsap from "gsap";
+import { useState ,useRef ,useEffect } from "react";
 
 export default function HeroSection({
   HeroSectionHead,
@@ -16,6 +16,26 @@ export default function HeroSection({
   HeroSectionButton,
 }) {
   const [isOpen, setIsOpen] = useState(false);
+  const headingRef = useRef(null);
+
+ 
+  useEffect(() => {
+    const words = headingRef.current.querySelectorAll('span');
+    gsap.fromTo(
+      words,
+      { opacity: 0, y: 20 },
+      { opacity: 1, y: 0, duration: 0.5, stagger: 0.3, ease: 'power3.out' }
+    );
+  }, []);
+
+  const createWordSpans = (text) => {
+    return text.split(' ').map((word, index) => (
+      <span key={index} className="inline-block">
+        {word}&nbsp;
+      </span>
+    ));
+  };
+
 
   const mobileMenu = () => {
     setIsOpen(!isOpen);
@@ -97,8 +117,10 @@ export default function HeroSection({
         </div>
       </div>
 
-      <h1 className=" text-white text-[39px] tracking-wide lg:ml-9	 lg:text-[60px] font-extrabold text-center lg:text-left w-full  lg:w-[50%] lg:mt-9 ">
-        {HeroSectionHead}
+      <h1
+      ref={headingRef}
+       className=" text-white text-[39px] tracking-wide lg:ml-9	 lg:text-[60px] font-extrabold text-center lg:text-left w-full  lg:w-[50%] lg:mt-9 ">
+      {createWordSpans(HeroSectionHead)}
       </h1>
       <p className="text-white text-xl lg:ml-9	w-[60%]  font-normal">
         {HeroSectionPara}

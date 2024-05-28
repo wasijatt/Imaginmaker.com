@@ -130,7 +130,7 @@ const Homepage = () => {
         <Simplicity />
       </section>
       <section
-      className="lg:h-[720px]"
+      className="3xl:h-[740px]"
         data-scroll-section
         data-scroll-speed="0"
         
@@ -138,7 +138,7 @@ const Homepage = () => {
         <Counter />
       </section>
       <section
-      className=" mxl:h-[1300] 2xl:h-[1200px]"
+      className=" mxl:h-[1300] 3xl:h-[1400px]"
 
         data-scroll-section
         data-scroll-speed="0"
