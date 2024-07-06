@@ -17,16 +17,33 @@ const Footer = dynamic(() => import("./../component/Footer"), {
       <div className="bg-black animate-pulse h-32 w-full"> loading</div>
     ),
   });
+  const SmoothScroll = dynamic(() => import("./../component/SmoothScroll"), {
+    ssr: false,
+    loading: () => (
+      <div className="bg-black animate-pulse h-32 w-full"> loading</div>
+    ),
+  });
+  const CustomCursor = dynamic(() => import("./../component/Cursor"), {
+    ssr: false,
+    loading: () => (
+      <div className="bg-black animate-pulse h-32 w-full"> loading</div>
+    ),
+  });
 const page = ()=>{
   
     return(
+      <SmoothScroll>
         <div>
-        <div> <HeroSection HeroSectionHead={"Online Journal"} HeroSectionPara={"Elevating Insights, Crafting Excellence, Your Gateway to Informed and Polished Content."} HeroSectionButton={"Learn about us"}/></div>
+        <div> 
+<CustomCursor/>
+          <HeroSection HeroSectionHead={"Online Journal"} HeroSectionPara={"Elevating Insights, Crafting Excellence, Your Gateway to Informed and Polished Content."} HeroSectionButton={"Learn about us"}/></div>
         
         <div className="my-[5%]"> <Simplicity/></div>
 
         <div> <Footer/></div>
         </div>
+        </SmoothScroll>
+
     )
     }
     export default page;

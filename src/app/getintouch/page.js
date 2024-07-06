@@ -1,5 +1,6 @@
 import HeroSection from "../component/HeroSection";
 import dynamic from "next/dynamic";
+import SmoothScroll from "../component/SmoothScroll";
 const Footer = dynamic(() => import("./../component/Footer"), {
   ssr: true,
   loading: () => (
@@ -17,6 +18,7 @@ const  Login = dynamic(() => import("./../component/Login"), {
 const page = ()=>{
     return(
       <div>
+        <SmoothScroll>
         <HeroSection
         HeroSectionHead={"We are Listening"}
         HeroSectionPara={"  Please fill out this form,or send us Mail"}
@@ -30,6 +32,8 @@ const page = ()=>{
 
 
 <Footer/>
+</SmoothScroll>
+
 </div>
     )
     }

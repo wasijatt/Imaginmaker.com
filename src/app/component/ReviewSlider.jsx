@@ -15,11 +15,11 @@
 
 //     tl.fromTo(
 //       imageRef.current,
-//       { x: "-50%", opacity: 0 },
-//       { x: "0%", opacity: 1, duration: 1, ease: "power4.out" }
+//       { x: "-50%", opacity: 0, scale: 0.8, rotation: -10, filter: "blur(5px)" },
+//       { x: "0%", opacity: 1, scale: 1, rotation: 0, filter: "blur(0px)", duration: 1, ease: "power4.out" }
 //     )
-//     .to(imageRef.current, { x: "50%", opacity: 0, duration: 1, delay: 2 })
-//     .set(imageRef.current, { x: "-50%" })
+//     .to(imageRef.current, { x: "50%", opacity: 0, scale: 0.8, rotation: 10, filter: "blur(5px)", duration: 1, delay: 2, ease: "power4.in" })
+//     .set(imageRef.current, { x: "-50%", scale: 0.8, rotation: -10, filter: "blur(5px)" })
 //     .call(() => {
 //       setIndex(prevIndex => (prevIndex === totalImages - 1 ? 0 : prevIndex + 1));
 //     });
@@ -45,6 +45,7 @@
 // export default Slider;
 
 
+
 "use client"
 import { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
@@ -61,11 +62,11 @@ const Slider = () => {
 
     tl.fromTo(
       imageRef.current,
-      { x: "-50%", opacity: 0 },
-      { x: "0%", opacity: 1, duration: 1, ease: "power4.out" }
+      { x: "-50%", opacity: 0, scale: 0.8, rotation: -10, filter: "blur(5px)" },
+      { x: "0%", opacity: 1, scale: 1, rotation: 0, filter: "blur(0px)", duration: 1, ease: "power4.out" }
     )
-    .to(imageRef.current, { x: "50%", opacity: 0, duration: 1, delay: 2 })
-    .set(imageRef.current, { x: "-50%" })
+    .to(imageRef.current, { x: "50%", opacity: 0, scale: 0.8, rotation: 10, filter: "blur(5px)", duration: 1, delay: 2, ease: "power4.in" })
+    .set(imageRef.current, { x: "-50%", scale: 0.8, rotation: -10, filter: "blur(5px)" })
     .call(() => {
       setIndex(prevIndex => (prevIndex === totalImages - 1 ? 0 : prevIndex + 1));
     });

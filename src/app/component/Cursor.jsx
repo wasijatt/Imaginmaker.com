@@ -1,61 +1,79 @@
-"use client"
-import { useState, useEffect } from "react";
-import Brands from "./Brands"; 
 
-const Cursor = () => {
-  const [position, setPosition] = useState({ });
-  const [brandsHovered, setBrandsHovered] = useState(false);
 
-  const handleMouseMove = (e) => {
-    setPosition({ x: e.clientX, y: e.clientY });
-  };
+'use client'
+import { useEffect } from 'react';
 
-  const handleScroll = () => {
-    setPosition((prevPosition) => ({ ...prevPosition }));
-  };
-
+const CustomCursor = () => {
   useEffect(() => {
-    window.addEventListener("mousemove", handleMouseMove);
-    window.addEventListener("scroll", handleScroll);
+    const cursor = document.createElement('div');
+    cursor.classList.add('custom-cursor');
+    document.body.appendChild(cursor);
+
+    const cursorStyle = cursor.style;
+    cursorStyle.position = 'fixed';
+    cursorStyle.top = '-30px';
+    cursorStyle.left = '-30px';
+    cursorStyle.width = '10px';
+    cursorStyle.height = '10px';
+    cursorStyle.backgroundColor = '#7700ff';
+    cursorStyle.borderRadius = '50%';
+    cursorStyle.pointerEvents = 'none';
+    cursorStyle.mixBlendMode = 'difference';
+    cursorStyle.transition = 'transform 0.5s ease-out, width 0.8s ease-out, height 0.8s ease-out, background-color 0.3s ease-out';
+    cursorStyle.transform = 'translate(-50%, -50%)';
+
+    const updateCursorPosition = (event) => {
+      const { clientX, clientY } = event;
+      cursorStyle.transform = `translate(${clientX}px, ${clientY}px)`;
+
+      const element = document.elementFromPoint(clientX, clientY);
+      if (element) {
+        const tagName = element.tagName.toLowerCase();
+        switch (tagName) {
+          case 'h1':
+            cursorStyle.width = '90px';
+            cursorStyle.height = '90px';
+            cursorStyle.backgroundColor = '#ffffff';
+            break;
+          case 'img':
+            cursorStyle.width = '100px';
+            cursorStyle.height = '100px';
+            cursorStyle.backgroundColor = '#ffffffce';
+            break;
+          case 'a':
+            cursorStyle.width = '100px';
+            cursorStyle.height = '100px';
+            cursorStyle.backgroundColor = '#ffffffce';
+            break;
+          case 'p':
+            cursorStyle.width = '40px';
+            cursorStyle.height = '40px';
+            cursorStyle.backgroundColor = '#01236b92';
+            break;
+          case 'button':
+            cursorStyle.width = '80px';
+            cursorStyle.height = '80px';
+            cursorStyle.backgroundColor = '#ffffffce';
+            break;
+          default:
+            cursorStyle.width = '10px';
+            cursorStyle.height = '10px';
+            cursorStyle.backgroundColor = '#01236b';
+        }
+      }
+    };
+
+    document.addEventListener('mousemove', updateCursorPosition);
 
     return () => {
-      window.removeEventListener("mousemove", handleMouseMove);
-      window.removeEventListener("scroll", handleScroll);
+      document.removeEventListener('mousemove', updateCursorPosition);
+      if (cursor.parentNode === document.body) {
+        document.body.removeChild(cursor);
+      }
     };
   }, []);
 
-  const handleBrandsEnter = () => {
-    setBrandsHovered(true);
-  };
-
-  const handleBrandsLeave = () => {
-    setBrandsHovered(false);
-  };
-
-  const cursorStyle = {
-    left: position.x,
-    top: position.y,
-    backgroundColor: brandsHovered ? "#7700ff7e" : "#7700ff", 
-    width: "10px",
-    height: "10px",
-    
-    zIndex: brandsHovered ? 9999 : 50, 
-  };
-
-  return (
-    <>
-      <div
-        onMouseEnter={handleBrandsEnter}
-        onMouseLeave={handleBrandsLeave}
-      >
-      
-      </div>
-      <div
-        className="fixed z-50 bg-[#7700ff7e] rounded-full pointer-events-none transition-all duration-300 ease-linear"
-        style={cursorStyle}
-      />
-    </>
-  );
+  return null; 
 };
 
-export default Cursor;
+export default CustomCursor;

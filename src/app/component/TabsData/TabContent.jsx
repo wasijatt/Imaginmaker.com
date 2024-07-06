@@ -32,7 +32,7 @@ const TabContent = ({ GraphicData }) => {
   const imagesPerSlice = Math.ceil(GraphicData.length / 5); 
 
   return (
-    <div className="flex flex-row flex-wrap w-[95%] lg:w-[85%] m-auto">
+    <div className="flex flex-row flex-wrap h-full overflow-auto w-[95%] lg:w-[85%] m-auto">
       {[...Array(4)].map((_, i) => (
         <div className=" lg:m-4 w-[49%] lg:w-[21%] h-full" key={i}>
           {GraphicData.slice(i * imagesPerSlice, (i + 1) * imagesPerSlice).map((image, index) => (

@@ -18,29 +18,48 @@ const Carousel = dynamic(() => import("./../component/Carousel"), {
     <div className="bg-black animate-pulse h-32 w-full"> loading</div>
   ),
 });
-const  Capabilities = dynamic(() => import("./../component/Capabilities"), {
+const Capabilities = dynamic(() => import("./../component/Capabilities"), {
   ssr: true,
   loading: () => (
     <div className="bg-black animate-pulse h-32 w-full"> loading</div>
   ),
 });
-const page = ()=>{
-    return(
-      <div>
+const SmoothScroll = dynamic(() => import("./../component/SmoothScroll"), {
+  ssr: false,
+  loading: () => (
+    <div className="bg-black animate-pulse h-32 w-full"> loading</div>
+  ),
+});
+const Cursor = dynamic(() => import("./../component/Cursor"), {
+  ssr: false,
+  loading: () => (
+    <div className="bg-black animate-pulse h-32 w-full"> loading</div>
+  ),
+});
+const page = () => {
+  return (
+   
+      <SmoothScroll>
         <HeroSection
-        HeroSectionHead={"IMAGIN MAKER A Graphic & UI/UX Design Agency"}
-        HeroSectionPara={"Confidence and Creativity Unite! Our team offers premium, affordable design services. Join us to shape a skilled, self-made future."}
-        HeroSectionButton={"Get in Touch"}
-      />
+          HeroSectionHead={"IMAGIN MAKER A Graphic & UI/UX Design Agency"}
+          HeroSectionPara={
+            "Confidence and Creativity Unite! Our team offers premium, affordable design services. Join us to shape a skilled, self-made future."
+          }
+          HeroSectionButton={"Get in Touch"}
+        />
 
-<Capabilities/>
+        <Capabilities />
+        <Cursor />
 
-<Services/>
-<h1 className="text-center text-xl lg:text-[50px] my-8">Up-to-date projects</h1>
-<Carousel/>
+        <Services />
+        <h1 className="text-center text-xl lg:text-[50px] my-8">
+          Up-to-date projects
+        </h1>
+        <Carousel />z
 
-<Footer/>
-</div>
-    )
-    }
-    export default page;
+        <Footer />
+      </SmoothScroll>
+   
+  );
+};
+export default page;
