@@ -21,7 +21,7 @@ const Page = () => {
       const scroll = new LocomotiveScroll({
         el: scrollRef.current,
         smooth: true,
-        lerp: 0.05,
+        lerp: 0.03,
         smoothMobile: true,
       });
 
