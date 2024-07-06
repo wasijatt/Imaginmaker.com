@@ -88,7 +88,7 @@ import Login from "../Login";
 import Cursor from "../Cursor";
 import Footer from "../Footer";
 
-const Page = () => {
+const ServicesPage = () => {
   const scrollRef = useRef(null);
   const [componentsLoaded, setComponentsLoaded] = useState(false);
 
@@ -157,4 +157,4 @@ const Page = () => {
   );
 };
 
-export default Page;
+export default ServicesPage;
