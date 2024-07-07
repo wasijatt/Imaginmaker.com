@@ -45,6 +45,7 @@ const TabContent = ({ GraphicData }) => {
               height={100}
               style={{ width: '100%' }}
               onClick={() => openPopup(i * imagesPerSlice + index)}
+              loading='lazy'
             />
           ))}
         </div>

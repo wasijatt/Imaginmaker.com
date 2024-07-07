@@ -86,12 +86,12 @@ const OurServices = () => {
   }, []);
 
   const imageSources = [
-    "/OurServices/Branding services-imaginmaker design agency.jpg",
-    "/OurServices/motion graphics services-imaginmaker design agency.jpg",
-    "/OurServices/Graphic Designing services-imaginmaker design agency.jpg",
-    "/OurServices/illustration services-imaginmaker design agency.jpg",
-    "/OurServices/ui-ux or app designing services-imaginmaker design agency.jpg",
-    "/OurServices/web design  services-imaginmaker design agency.jpg",
+    "/OurServices/branding.jpg",
+    "/OurServices/Graphic-Designer-illustration.jpg",
+    "/OurServices/Graphic-Designer.jpg",
+    "/OurServices/motion graphics.jpg",
+    "/OurServices/ui-ux.jpg",
+    "/OurServices/website-design.jpg",
   ];
 
   return (

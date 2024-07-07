@@ -1,11 +1,10 @@
-
 "use client";
 import Link from "next/link";
 import Image from "next/image";
 import style from "../modulerCss/HeroSection.module.css";
 import leftLogo from "../../../public/images/icons/leftLogo.png";
 import middleLogo from "../../../public/images/icons/middleLogo.png";
-import Heart from "../../../public/images/icons/heart.svg";
+import Heart from "../../../public/images/icons/heart.jpg";
 import { VscThreeBars } from "react-icons/vsc";
 import { motion } from "framer-motion";
 import gsap from "gsap";
@@ -51,7 +50,7 @@ export default function HeroSection({
   };
 
   return (
-    <div className="bg-[#191919] px-[2rem] lg:px-[6rem] py-2 lg:py-10">
+    <div className="bg-[#000000] px-[2rem] lg:px-[6rem] py-2 lg:py-10">
       <div className="flex justify-between items-center lg:px-8">
         <div className="">
           <Link href="/">
@@ -59,6 +58,8 @@ export default function HeroSection({
               className=" w-[50%] h-[50%] lg:w-[90%] mld:h-[90%] bg-transparent"
               src={leftLogo}
               alt="logo"
+              width={50}
+              height={50}
             />
           </Link>
         </div>
@@ -70,7 +71,7 @@ export default function HeroSection({
             Weblog
           </Link>
           <Link href={"/"} className={`${style.navLinks}`}>
-            <Image src={middleLogo} alt="logo" className="" />
+            <Image src={middleLogo} alt="logo" width={200} height={50} />
           </Link>
           <Link href={"/Services"} className={`${style.navLinks}`}>
             Services
@@ -131,7 +132,7 @@ export default function HeroSection({
       <div className="w-full text-center text-white mt-4">
         Designs you will{" "}
         <div className="inline">
-          <Image alt="Heart" src={Heart} className="inline" />
+          <Image alt="Heart" src={Heart} className="inline bg-blend-normal" width={20} height={20} />
         </div>
         Guaranteed
       </div>

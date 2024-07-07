@@ -11,7 +11,7 @@ const Modal = ({ isOpen, onClose, images, selectedIndex, onPrevious, onNext }) =
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          className="fixed inset-0 z-50 flex justify-center items-center backdrop-blur-lg bg-[#000000e4] bg-opacity-50 w-full overlay"
+          className="fixed  inset-0 z-50 flex justify-center items-center backdrop-blur-lg bg-[#000000e4] bg-opacity-50 h-full w-full overlay"
           onClick={onClose}
         >
           <motion.div

@@ -4,17 +4,21 @@
 
 body {
   margin: 0;
+  margin-bottom: 0;
   padding: 0;
+  padding-bottom: 0;
+  /* height: 100%; */
   overflow: hidden; /* prevent default scrolling */
 }
 
 html, body, #__next {
-  height: 100%;
+  /* height: 100%; */
   overflow: hidden; /* prevent default scrolling */
 }
 
 [data-scroll-container] {
   overflow: hidden;
+  min-height: 100vh;
 }
 
 .section {

@@ -11,7 +11,7 @@ const CustomCursor = () => {
 
     const cursorStyle = cursor.style;
     cursorStyle.position = 'fixed';
-    cursorStyle.top = '-20px';
+    cursorStyle.top = '-10px';
     cursorStyle.left = '-20px';
     cursorStyle.width = '10px';
     cursorStyle.height = '10px';
