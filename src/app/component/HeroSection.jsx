@@ -4,7 +4,7 @@ import Image from "next/image";
 import style from "../modulerCss/HeroSection.module.css";
 import leftLogo from "../../../public/images/icons/leftLogo.png";
 import middleLogo from "../../../public/images/icons/middleLogo.png";
-import Heart from "../../../public/images/icons/heart.jpg";
+// import Heart from "../../../public/images/icons/heart.jpg";
 import { VscThreeBars } from "react-icons/vsc";
 import { motion } from "framer-motion";
 import gsap from "gsap";
@@ -132,7 +132,7 @@ export default function HeroSection({
       <div className="w-full text-center text-white mt-4">
         Designs you will{" "}
         <div className="inline">
-          <Image alt="Heart" src={Heart} className="inline bg-blend-normal" width={20} height={20} />
+          {/* <Image alt="Heart" src={Heart} className="inline bg-blend-normal" width={20} height={20} /> */}
         </div>
         Guaranteed
       </div>
