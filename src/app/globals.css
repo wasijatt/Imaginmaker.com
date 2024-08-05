@@ -7,8 +7,7 @@ body {
   margin-bottom: 0;
   padding: 0;
   padding-bottom: 0;
-  /* height: 100%; */
-  overflow: hidden; /* prevent default scrolling */
+  overflow: hidden; 
 }
 
 html, body, #__next {
@@ -282,19 +281,6 @@ color: #7700ff;
       right: auto;
       bottom: 0;
     }
-/*     
-    html,
-    body {
-      height: 100%;
-    }
-    
-    .main {
-      overflow: hidden;
-    } */
-    
-    /* [data-scroll-container] {
-      overflow: hidden;
-    }
-     */
-
-    
+.cariborder{
+  border-radius: 10% 60% 10% 10%/50% 10% 50% 10%;
+}
