@@ -14,7 +14,7 @@ const Services = () => {
     <div className="bg-[#181818] rounded-3xl py-10  w-[90%] lg:w-[80%] mt-16 m-auto flex flex-col lg:flex-row p-2 lg:p-12 justify-center items-center ">
       <div className=" w-full lg:w-1/2">
         <div>
-          <h1 className="text-white text-xl lg:text-[42px] text-center lg:text-left w-full lg:w-[80%] px-5 leading-sung tracking-[2px] leading-normal	 ">
+          <h1 className="text-white text-xl lg:text-[38px] text-center lg:text-left w-full lg:w-[90%] px-5 leading-sung tracking-[2px] leading-normal	 ">
             A Full-Service of Design, Branding and Animation Agency
           </h1>
         </div>
