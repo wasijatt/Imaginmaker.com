@@ -23,7 +23,7 @@ const Services = () => {
 
 <div className="hidden lg:flex lg:flex-col flex-wrap  lg:p-6  ">
     {servicesData.map((service, index) => (
-      <div key={index} className="flex mt-3  lg:mt-10 w-[50%]  lg:w-full">
+      <div key={index} className="flex mt-3  lg:mt-10 w-[50%]  lg:w-full items-center">
         <div >
           <Image className="w-[50] lg:w-full"  src={service.imgsrc} width={50} height={50} alt={service.heading} />
         </div>
