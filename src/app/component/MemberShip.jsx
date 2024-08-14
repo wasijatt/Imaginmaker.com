@@ -14,60 +14,15 @@ const MemberShip = () => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             const index = currentRefs.indexOf(entry.target);
-            switch (index % 6) {
-              case 0:
-                gsap.fromTo(
-                  entry.target,
-                  { opacity: 0, x: -100 },
-                  { opacity: 1, x: 0, duration: 1, ease: "power4.out" }
-                );
-                break;
-              case 1:
-                gsap.fromTo(
-                  entry.target,
-                  { opacity: 0, y: 100 },
-                  { opacity: 1, y: 0, duration: 1, ease: "power4.out" }
-                );
-                break;
-              case 2:
-                gsap.fromTo(
-                  entry.target,
-                  { opacity: 0, scale: 0.5 },
-                  { opacity: 1, scale: 1, duration: 1, ease: "power4.out" }
-                );
-                break;
-              case 3:
-                gsap.fromTo(
-                  entry.target,
-                  { opacity: 0, rotation: 15 },
-                  { opacity: 1, rotation: 0, duration: 1, ease: "power4.out" }
-                );
-                break;
-              case 4:
-                gsap.fromTo(
-                  entry.target,
-                  { opacity: 0, x: 100 },
-                  { opacity: 1, x: 0, duration: 1, ease: "power4.out" }
-                );
-                break;
-              case 5:
-                gsap.fromTo(
-                  entry.target,
-                  { opacity: 0, y: -100 },
-                  { opacity: 1, y: 0, duration: 1, ease: "power4.out" }
-                );
-                break;
-              default:
-                gsap.fromTo(
-                  entry.target,
-                  { opacity: 0 },
-                  { opacity: 1, duration: 1, ease: "power4.out" }
-                );
-            }
+            gsap.fromTo(
+              entry.target,
+              { opacity: 0, y: 50, scale: 0.95 },
+              { opacity: 1, y: 0, scale: 1, duration: 1.2, ease: "power3.out", stagger: { amount: 0.3 } }
+            );
           }
         });
       },
-      { threshold: 0.2 }
+      { threshold: 0.1 }
     );
 
     currentRefs.forEach((ref) => {
@@ -110,51 +65,47 @@ const MemberShip = () => {
     {
       imgsrc: "/membership/Unique and all yours icone of imaginmaker.jpg",
       title: "Unique and all yours",
-      para: "Each of your designs is made especially for you and is 100% yours.",
+      para: "Each of your designs is made especially and is 100% yours.",
     },
   ];
 
   return (
-    <>
-      <div className="mt-2 lg:mt-14 m-auto text-center w-full lg:w-[30%] ">
+    <div className=" py-6 lg:py-16 mt-5 w-full">
+      <div className="text-center w-full lg:w-[30%] mx-auto mb-6">
         <Image
           className="m-auto"
           src="/services/mem-logo.png"
-          alt=""
+          alt="Membership Logo"
           width={100}
           height={100}
         />
-        <h1 className="text-3xl ">Membership benefits</h1>
-        <p>
+        <h1 className="text-2xl lg:text-3xl  mb-3">Membership Benefits</h1>
+        <p className=" text-sm lg:text-base">
           Perks so good you will never need to go anywhere else for your design. Seriously.
         </p>
       </div>
-      <div className=" lg:flex flex-wrap items-center justify-center m-auto w-full lg:w-[70%] ">
+      <div className="flex flex-wrap items-center justify-center lg:w-[70%] mx-auto">
         {MembershipData.map((item, index) => (
           <div
             key={index}
-            className=" lg:mt-14 flex flex-wrap lg:w-[30%] lg:p-6 lg:m-3 rounded-xl "
+            className="lg:mt-10 flex flex-col items-center lg:w-[30%] lg:p-6 lg:m-3 rounded-xl bg-[#e0dfdf] p-4 mb-6"
             ref={(el) => (itemRefs.current[index] = el)}
           >
-            <div key={index} className="max-w-sm rounded overflow-hidden ">
-              <Image
-                className="w-[50px] m-auto "
-                src={item.imgsrc}
-                alt={item.title}
-                width={50}
-                height={50}
-              />
-              <div className=" lg:px-1 px-3 lg:py-4 py-2 ">
-                <div className=" font-bold lg:text-2xl text-lg  text-center mb-2 ">
-                  {item.title}
-                </div>
-                <p className=" lg:text-lg text-center ">{item.para}</p>
-              </div>
+            <Image
+              className="w-16 lg:w-24 mb-4 bg-transparent"
+              src={item.imgsrc}
+              alt={item.title}
+              width={50}
+              height={50}
+            />
+            <div className="text-center">
+              <h2 className="font-bold text-lg lg:text- mb-2">{item.title}</h2>
+              <p className="text-sm lg:text-base -300">{item.para}</p>
             </div>
           </div>
         ))}
       </div>
-    </>
+    </div>
   );
 };
 

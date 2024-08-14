@@ -7,7 +7,7 @@ const Brands = () => {
   return (
     <div className=" lg:w-full bg-gray-900 flex overflow-hidden lg:p-10  py-5 px-3 justify-between brandlogo lg:h-[17vh] ">
       <div className="flex brandslide items-center justify-between">
-      <Image className="brandimg" src= {"/brands/1.png"} width={153} height= {22} alt="brands" />
+      <Image className="brandimg w-1/2 lg:w-full" src= {"/brands/1.png"} width={153} height= {22} alt="brands" />
   <Image className="brandimg " src={ "/brands/2.png"} width= {179} height= {26 } alt="brands"/>
   <Image className="brandimg" src={ "/brands/3.png"} width= {137} height= {23 } alt="brands"/>
   <Image className="brandimg" src={ "/brands/4.png"} width= {134} height= {55 } alt="brands"/>

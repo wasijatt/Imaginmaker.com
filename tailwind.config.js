@@ -8,15 +8,11 @@ module.exports = {
   theme: {
   
     screens: {
-      xs: "320px",
-      sm: "540px",
-      md: "768px",
-      mdl: "976px",
-      lg: "1024px",
-      mxl: "1162px",
-      xl: "1440px",
-      "2xl": "1570px",
-      "3xl": "1700px",
+     'sm': '640px',   // Small screens: min-width of 640px
+      'md': '768px',   // Medium screens: min-width of 768px
+      'lg': '1024px',  // Large screens: min-width of 1024px
+      'xl': '1280px',  // Extra large screens: min-width of 1280px
+      '2xl': '1536px'
     },
   },
   plugins: [],

@@ -1,4 +1,3 @@
-
 "use client";
 import { useEffect, useRef } from "react";
 import Image from "next/image";
@@ -17,61 +16,29 @@ const OurServices = () => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             const index = currentRefs.indexOf(entry.target);
-            const timeline = gsap.timeline();
-            switch (index % 6) {
-              case 0:
-                timeline.fromTo(
-                  entry.target,
-                  { opacity: 0, y: 100 },
-                  { opacity: 1, y: 0, duration: 1, ease: "power4.out" }
-                );
-                break;
-              case 1:
-                timeline.fromTo(
-                  entry.target,
-                  { opacity: 0, x: 100 },
-                  { opacity: 1, x: 0, duration: 1, ease: "power4.out" }
-                );
-                break;
-              case 2:
-                timeline.fromTo(
-                  entry.target,
-                  { opacity: 0, y: -100 },
-                  { opacity: 1, y: 0, duration: 1, ease: "power4.out" }
-                );
-                break;
-              case 3:
-                timeline.fromTo(
-                  entry.target,
-                  { opacity: 0, x: -100 },
-                  { opacity: 1, x: 0, duration: 1, ease: "power4.out" }
-                );
-                break;
-              case 4:
-                timeline.fromTo(
-                  entry.target,
-                  { opacity: 0, scale: 0.5, rotation: 15 },
-                  { opacity: 1, scale: 1, rotation: 0, duration: 1, ease: "power4.out" }
-                );
-                break;
-              case 5:
-                timeline.fromTo(
-                  entry.target,
-                  { opacity: 0, scale: 0.5, rotation: -15 },
-                  { opacity: 1, scale: 1, rotation: 0, duration: 1, ease: "power4.out" }
-                );
-                break;
-              default:
-                timeline.fromTo(
-                  entry.target,
-                  { opacity: 0, y: 100 },
-                  { opacity: 1, y: 0, duration: 1, ease: "power4.out" }
-                );
-            }
+            gsap.fromTo(
+              entry.target,
+              {
+                opacity: 0,
+                y: 50,
+                scale: 0.95,
+              },
+              {
+                opacity: 1,
+                y: 0,
+                scale: 1,
+                duration: 1.2,
+                ease: "power3.out",
+                stagger: {
+                  amount: 0.3, // Stagger effect
+                  from: "start", // Start the stagger from the start
+                },
+              }
+            );
           }
         });
       },
-      { threshold: 0.2 }
+      { threshold: 0.1 }
     );
 
     currentRefs.forEach((ref) => {
@@ -97,30 +64,34 @@ const OurServices = () => {
   return (
     <div
       ref={containerRef}
-      className="bg-[#181818] py-3 lg:py-16 mt-[5vh] m-auto"
+      className="bg-[#181818] py-6 lg:py-16 mt-[5vh] w-full"
     >
-      <h1 className="text-[30px] lg:text-[50px] text-white text-center">
+      <h1 className="text-[28px] lg:text-[50px] text-white text-center mb-6">
         Our Services
       </h1>
-      <div className="flex flex-wrap m-auto w-full justify-center items-center mxl:mt-5 lg:w-[65%]">
+      <div className="flex flex-wrap justify-center items-center mx-auto lg:w-[80%]">
         {imageSources.map((src, index) => (
           <div
             key={index}
-            className="m-[.5rem] w-[40%] lg:w-[30%]"
+            className="m-4 w-[90%] sm:w-[45%] md:w-[30%]"
             ref={(el) => (imageRefs.current[index] = el)}
           >
             <Image
-              className="w-full lg:w-[95%] mt-5 rounded-3xl"
-              width={100}
-              height={100}
+              className="w-full rounded-3xl"
               src={src}
               alt={`Service ${index + 1}`}
+              width={500}
+              height={500}
+              layout="responsive"
+              placeholder="blur"
+              blurDataURL={src} // Low-res placeholder for blur effect
+              priority={index === 0} // Prioritize the first image
             />
           </div>
         ))}
-        <div className="w-full text-center items-center mt-5">
+        <div className="w-full text-center mt-6">
           <button
-            className={`purpleBg text-white px-7 m-auto mxl:mt-5 rounded-3xl py-2 text-sm lg:text-lg ${style.boxShadow}`}
+            className={`purpleBg text-white px-8 py-3 rounded-3xl text-sm lg:text-lg ${style.boxShadow}`}
           >
             Get Your Design Done
           </button>
