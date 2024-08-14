@@ -49,6 +49,36 @@ export default function HeroSection({
     }
   };
 
+
+
+  const [rotateX, setRotateX] = useState(0);
+  const [rotateY, setRotateY] = useState(0);
+  const [activeButton, setActiveButton] = useState(null); // Track which button is being hovered
+
+  const handleMouseMove = (e , buttonId) => {
+    const { clientX, clientY } = e;
+    const { left, top, width, height } = e.target.getBoundingClientRect();
+
+    const xRotation = ((clientY - top) / height - 0.1) * -50;
+    const yRotation = ((clientX - left) / width - 0.1) * -40;
+
+    setRotateX(xRotation);
+    setRotateY(yRotation);
+    setActiveButton(buttonId); // Set the active button
+  };
+
+  const handleMouseLeave = () => {
+    setRotateX(0);
+    setRotateY(0);
+    setActiveButton(null); // Reset the active button
+  };
+
+  const buttonStyles = (buttonId) => ({
+    transform:
+      activeButton === buttonId
+        ? `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`
+        : "none",
+  });
   return (
     <div className="bg-[#000000] px-[2rem] lg:px-[6rem] py-2 lg:py-10">
       <div className="flex justify-between items-center lg:px-8">
@@ -80,13 +110,23 @@ export default function HeroSection({
             Our Values
           </Link>
         </div>
-        <div className="">
-          <Link
-            href={"/getintouch"}
-            className={`"purpleBg text-white px-5 py-2 hidden md:block lg:block rounded-3xl " ${style.boxShadow}`}
-          >
-            Get In Touch
-          </Link>
+        
+        <div className="perspective-[1000px]">
+        <Link
+        href="/getintouch"
+        className="bg-purple-600 text-white px-5 py-2 hidden md:block lg:block rounded-3xl shadow-lg transition-transform duration-300 ease-out"
+        onMouseMove={(e) => handleMouseMove(e, "button1")}
+        onMouseLeave={handleMouseLeave}
+      >
+        <span
+          className="block transform-gpu transition-transform duration-300"
+          style={{
+            transform: activeButton === "button1" ? `rotateX(${rotateX}deg) rotateY(${rotateY}deg)` : "none",
+          }}
+        >
+          Get In Touch
+        </span>
+      </Link>
         </div>
         <div className="md:hidden">
           <button className="text-[#7700ff] text-[30px]" onClick={mobileMenu}>
@@ -123,8 +163,13 @@ export default function HeroSection({
       </p>
       <div className="w-[100%] text-center mt-6">
         <button
+        id="button2"
           className={`"purpleBg px-5 py-2 rounded-3xl text-white " ${style.boxShadow}`}
-        >
+          onMouseMove={(e) => handleMouseMove(e, "button2")}
+          onMouseLeave={handleMouseLeave}
+          style={{
+            transform: activeButton === "button2" ? `rotateX(${rotateX}deg) rotateY(${rotateY}deg)` : "none",
+          }}        >
           {HeroSectionButton}
         </button>
       </div>

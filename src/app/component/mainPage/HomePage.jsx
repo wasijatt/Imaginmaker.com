@@ -34,7 +34,7 @@ export default function Home() {
       <Simplicity className="section" />
       <Counter className="section" />
       <Faqs className="section" />
-      <Footer  />
+      <Footer className= "section" />
 
     </SmoothScroll>
   );

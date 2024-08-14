@@ -41,8 +41,8 @@ const CustomCursor = () => {
             cursorStyle.backgroundColor = '#ffffffce';
             break;
           case 'a':
-            cursorStyle.width = '100px';
-            cursorStyle.height = '100px';
+            cursorStyle.width = '10px';
+            cursorStyle.height = '10px';
             cursorStyle.backgroundColor = '#ffffffce';
             break;
           case 'p':
