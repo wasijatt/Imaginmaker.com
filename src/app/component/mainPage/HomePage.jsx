@@ -35,7 +35,7 @@ export default function Home() {
       <Login className="section" />
       <Simplicity className="section" />
       <Counter className="section" />
-<<<<<<< HEAD
+
       <Faqs className="section" />
       <Footer className= "section" />
 
@@ -43,7 +43,6 @@ export default function Home() {
       {/* <Faqs className="section" /> */}
       {/* <Footer   /> */}
       
->>>>>>> 5bf3d2ac236d6d696f23924350861f6400d236c3
     </SmoothScroll>
   )
 }
