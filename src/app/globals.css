@@ -5,13 +5,8 @@
 body {
   margin: 0;
   padding: 0;
-<<<<<<< HEAD
   height: 100%;
   overflow: hidden; /* prevent default scrolling */
-=======
-  padding-bottom: 0;
-  overflow: hidden; 
->>>>>>> faf0b07ac1e8a24282c538a7878a92b8bd9b4c92
 }
 
 html, body, #__next {

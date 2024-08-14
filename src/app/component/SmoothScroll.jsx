@@ -1,4 +1,5 @@
 
+
 "use client"
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
@@ -31,7 +32,7 @@ const SmoothScroll = ({ children }) => {
             return arguments.length ? scroll.scrollTo(value, 0, 0) : scroll.scroll.instance.scroll.y;
           },
           getBoundingClientRect() {
-            return { top: 0, left: 0 , bottom:0, width: window.innerWidth, height: window.innerHeight };
+            return { top: 0, left: 0, width: window.innerWidth, height: window.innerHeight };
           },
           pinType: scrollRef.current.style.transform ? 'transform' : 'fixed',
         });

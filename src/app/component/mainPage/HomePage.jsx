@@ -38,8 +38,6 @@ export default function Home() {
 
       <Faqs className="section" />
       <Footer className= "section" />
-
-=======
       {/* <Faqs className="section" /> */}
       {/* <Footer   /> */}
       
