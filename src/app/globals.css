@@ -4,24 +4,29 @@
 
 body {
   margin: 0;
-  margin-bottom: 0;
   padding: 0;
+<<<<<<< HEAD
+  height: 100%;
+  overflow: hidden; /* prevent default scrolling */
+=======
   padding-bottom: 0;
   overflow: hidden; 
+>>>>>>> faf0b07ac1e8a24282c538a7878a92b8bd9b4c92
 }
 
 html, body, #__next {
   /* height: 100%; */
+  margin-bottom: 0;
   overflow: hidden; /* prevent default scrolling */
 }
 
 [data-scroll-container] {
   overflow: hidden;
-  min-height: 100vh;
+  /* min-height: 100vh; */
 }
 
 .section {
-  height: 80vh; 
+  /* height: 80vh;  */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -54,6 +59,7 @@ form button{
     margin-top: 40px;
 }
 .purpleBg{
+
   background: #7700ff;
 }
 .footerHead{
@@ -205,27 +211,14 @@ color: #7700ff;
       user-select: none;
     }
     
-    .has-scroll-smooth body {
+    .has-scroll-smooth  {
       overflow: hidden;
     }
     
-    .has-scroll-smooth [data-scroll-container] {
-      min-height: 100vh;
-    }
+  
     
-    [data-scroll-direction="horizontal"] [data-scroll-container] {
-      height: 100vh;
-      display: inline-block;
-      white-space: nowrap;
-    }
     
-    [data-scroll-direction="horizontal"] [data-scroll-section] {
-      display: inline-block;
-      vertical-align: top;
-      white-space: nowrap;
-      height: 100%;
-    }
-    
+   
     .c-scrollbar {
       position: absolute;
       right: 0;

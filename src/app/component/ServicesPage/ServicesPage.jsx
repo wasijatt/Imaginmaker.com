@@ -21,7 +21,9 @@ const ServicesPage = () => {
       <Cursor />
       <Simplicity  className= "section mt-32"/>
       <Login className= "section" />
-      <Footer  className= "section"/>
+     
+      <Footer className="section"  />
+     
     </SmoothScroll>
   );
 };

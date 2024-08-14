@@ -1,5 +1,6 @@
 
 import dynamic from 'next/dynamic';
+import Footer from '../Footer';
 
 const HeroSection = dynamic(() => import("../HeroSection"), { ssr: false });
 const Carousel = dynamic(() => import("../Carousel"), { ssr: false });
@@ -12,11 +13,12 @@ const Login = dynamic(() => import("../Login"), { ssr: false });
 const Simplicity = dynamic(() => import("../Simplicity"), { ssr: false });
 const Counter = dynamic(() => import("../Counter"), { ssr: false });
 const Faqs = dynamic(() => import("../Faqs"), { ssr: false });
-const Footer = dynamic(() => import("../Footer"), { ssr: false });
+// const Footer = dynamic(() => import("../Footer"), { ssr: false });
 const CustomCursor = dynamic(() => import("../Cursor"), { ssr: false });
 const SmoothScroll = dynamic(() => import("../SmoothScroll"), { ssr: false });
 export default function Home() {
   return (
+   
     <SmoothScroll>
       
       <CustomCursor/>
@@ -26,16 +28,22 @@ export default function Home() {
            HeroSectionButton={"See Plans"} />
       <Carousel className="section" />
       <Brands className="section" />
-      <Services className="section" />
+      <Services  />
       <OurServices className="section" />
       <MemberShip className="section" />
       <Plan className="section" />
       <Login className="section" />
       <Simplicity className="section" />
       <Counter className="section" />
+<<<<<<< HEAD
       <Faqs className="section" />
       <Footer className= "section" />
 
+=======
+      {/* <Faqs className="section" /> */}
+      {/* <Footer   /> */}
+      
+>>>>>>> 5bf3d2ac236d6d696f23924350861f6400d236c3
     </SmoothScroll>
-  );
+  )
 }
