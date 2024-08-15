@@ -341,11 +341,11 @@ export default function HeroSection({
 
       <h1
         ref={headingRef}
-        className="text-white text-3xl lg:w-[65%]  sm:text-4xl lg:text-6xl font-extrabold leading-relaxed	 mt-12"
+        className="text-white text-3xl lg:w-[65%]  sm:text-4xl lg:text-6xl lg:text-left text-center font-extrabold lg:leading-normal whitespace-normal		 mt-12"
       >
         {createLetterSpans(HeroSectionHead)}
       </h1>
-      <p className="text-white text-base sm:text-lg lg:text-xl lg:ml-9 mt-4">
+      <p className="text-white text-base sm:text-lg lg:text-xl lg:text-left text-center mt-2">
         {HeroSectionPara}
       </p>
       <div className="text-center mt-6">

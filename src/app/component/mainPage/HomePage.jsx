@@ -37,9 +37,8 @@ export default function Home() {
       <Counter className="section" />
 
       <Faqs className="section" />
-      <Footer className= "section" />
-      {/* <Faqs className="section" /> */}
-      {/* <Footer   /> */}
+      <Footer className= "max-h-96" />
+     
       
     </SmoothScroll>
   )

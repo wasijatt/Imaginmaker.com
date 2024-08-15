@@ -1,6 +1,4 @@
-
-
-"use client"
+"use client";
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -20,8 +18,9 @@ const SmoothScroll = ({ children }) => {
         scroll = new LocomotiveScroll({
           el: scrollRef.current,
           smooth: true,
-          lerp: 0.03,
-          multiplier: 0.8,
+          smoothMobile: true, // Ensure smooth scrolling on mobile
+          lerp: 0.03, // Adjust for smoother scrolling
+          multiplier: 0.1, // Default speed
           class: 'is-reveal',
         });
 
@@ -32,7 +31,12 @@ const SmoothScroll = ({ children }) => {
             return arguments.length ? scroll.scrollTo(value, 0, 0) : scroll.scroll.instance.scroll.y;
           },
           getBoundingClientRect() {
-            return { top: 0, left: 0, width: window.innerWidth, height: window.innerHeight };
+            return {
+              top: 0,
+              left: 0,
+              width: window.innerWidth,
+              height: window.innerHeight,
+            };
           },
           pinType: scrollRef.current.style.transform ? 'transform' : 'fixed',
         });
@@ -46,13 +50,17 @@ const SmoothScroll = ({ children }) => {
 
     return () => {
       if (scroll) {
-        scroll.destroy();
         ScrollTrigger.removeEventListener('refresh', () => scroll.update());
+        scroll.destroy();
       }
     };
   }, []);
 
-  return <div ref={scrollRef} data-scroll-container>{children}</div>;
+  return (
+    <div ref={scrollRef} data-scroll-container>
+      {children}
+    </div>
+  );
 };
 
 export default SmoothScroll;

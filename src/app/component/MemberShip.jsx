@@ -84,15 +84,15 @@ const MemberShip = () => {
           Perks so good you will never need to go anywhere else for your design. Seriously.
         </p>
       </div>
-      <div className="flex flex-wrap items-center justify-center lg:w-[70%] mx-auto">
+      <div className="flex flex-wrap items-center justify-center lg:w-[75%] mx-auto">
         {MembershipData.map((item, index) => (
           <div
             key={index}
-            className="lg:mt-10 flex flex-col items-center lg:w-[30%] lg:p-6 lg:m-3 rounded-xl bg-[#e0dfdf] p-4 mb-6"
+            className="lg:mt-10 flex flex-col items-center lg:py-10 lg:w-[30%] lg:p-6 lg:m-3 rounded-xl border-x-2 bg-[#f3f2f2] p-4 mb-6"
             ref={(el) => (itemRefs.current[index] = el)}
           >
             <Image
-              className="w-16 lg:w-24 mb-4 bg-transparent"
+              className="w-16 lg:w-24 mb-4  mix-blend-multiply"
               src={item.imgsrc}
               alt={item.title}
               width={50}
