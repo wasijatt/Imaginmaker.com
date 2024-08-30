@@ -236,34 +236,34 @@ export default function HeroSection({
     }
   };
 
-  const [rotateX, setRotateX] = useState(0);
-  const [rotateY, setRotateY] = useState(0);
-  const [activeButton, setActiveButton] = useState(null);
+  // const [rotateX, setRotateX] = useState(0);
+  // const [rotateY, setRotateY] = useState(0);
+  // const [activeButton, setActiveButton] = useState(null);
 
-  const handleMouseMove = (e, buttonId) => {
-    const { clientX, clientY } = e;
-    const { left, top, width, height } = e.target.getBoundingClientRect();
+  // const handleMouseMove = (e, buttonId) => {
+  //   const { clientX, clientY } = e;
+  //   const { left, top, width, height } = e.target.getBoundingClientRect();
 
-    const xRotation = ((clientY - top) / height - 0.1) * 50;
-    const yRotation = ((clientX - left) / width - 0.1) * -40;
+  //   const xRotation = ((clientY - top) / height - 0.1) * 50;
+  //   const yRotation = ((clientX - left) / width - 0.1) * -40;
 
-    setRotateX(xRotation);
-    setRotateY(yRotation);
-    setActiveButton(buttonId);
-  };
+  //   setRotateX(xRotation);
+  //   setRotateY(yRotation);
+  //   setActiveButton(buttonId);
+  // };
 
-  const handleMouseLeave = () => {
-    setRotateX(0);
-    setRotateY(0);
-    setActiveButton(null);
-  };
+  // const handleMouseLeave = () => {
+  //   setRotateX(0);
+  //   setRotateY(0);
+  //   setActiveButton(null);
+  // };
 
-  const buttonStyles = (buttonId) => ({
-    transform:
-      activeButton === buttonId
-        ? `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`
-        : "none",
-  });
+  // const buttonStyles = (buttonId) => ({
+  //   transform:
+  //     activeButton === buttonId
+  //       ? `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`
+  //       : "none",
+  // });
 
   return (
     <div className="bg-[#000000] px-4 sm:px-6 lg:px-12 py-4 lg:py-10">
@@ -330,9 +330,9 @@ export default function HeroSection({
           <Link
             href="/getintouch"
             className="bg-purple-600 text-white px-5 py-2 rounded-3xl shadow-lg transition-transform duration-300 ease-out"
-            onMouseMove={(e) => handleMouseMove(e, "button1")}
-            onMouseLeave={handleMouseLeave}
-            style={buttonStyles("button1")}
+            // onMouseMove={(e) => handleMouseMove(e, "button1")}
+            // onMouseLeave={handleMouseLeave}
+            // style={buttonStyles("button1")}
           >
             Get In Touch
           </Link>
@@ -351,9 +351,9 @@ export default function HeroSection({
       <div className="text-center mt-6">
         <button
           className={`purpleBg px-5 py-2 rounded-3xl text-white ${style.boxShadow}`}
-          onMouseMove={(e) => handleMouseMove(e, "button2")}
-          onMouseLeave={handleMouseLeave}
-          style={buttonStyles("button2")}
+          // onMouseMove={(e) => handleMouseMove(e, "button2")}
+          // onMouseLeave={handleMouseLeave}
+          // style={buttonStyles("button2")}
         >
           {HeroSectionButton}
         </button>

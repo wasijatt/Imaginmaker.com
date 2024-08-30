@@ -18,9 +18,9 @@ const SmoothScroll = ({ children }) => {
         scroll = new LocomotiveScroll({
           el: scrollRef.current,
           smooth: true,
-          smoothMobile: true, // Ensure smooth scrolling on mobile
-          lerp: 0.03, // Adjust for smoother scrolling
-          multiplier: 0.1, // Default speed
+          smoothMobile: true, 
+          lerp: 0.03, 
+          multiplier: 1, 
           class: 'is-reveal',
         });
 

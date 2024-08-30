@@ -15,7 +15,7 @@ const Footer = () => {
   ];
 
   return (
-    <div className=" bg-[#191919] py-7 mt-3 px-4 lg:p-14  mb-0 pb-0">
+    <div className=" bg-[#191919]  mt-3  lg:p-14  mb-0">
       <div className="  flex w-full lg:w-[90%] justify-between">
         <div className=" w-28% lg:w-[50%] mt-2 lg:ml-[12%] p-3">
           <Image  src="/footer/footer-Icon.png" alt="" width={100} height={100} />
@@ -62,7 +62,7 @@ const Footer = () => {
           </Link>
          
         </div>
-        <div className="lg:flex w-[50%]">
+        <div className="lg:flex w-[50%] ">
           <div className="w-full lg:w-1/2">
             <h1 className="footerHead">Contact Us</h1>
             <h2 className="footerHead">WhatsApp</h2>
