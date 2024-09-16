@@ -116,7 +116,7 @@ form button {
   animation: carisalslide 40s infinite linear;
 }
 .brandimg {
-  margin-left: 86px;
+  margin-left: 100px;
 }
 .brandslide:hover {
   animation-play-state: paused;

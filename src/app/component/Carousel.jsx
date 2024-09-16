@@ -49,13 +49,13 @@ const Carousel = () => {
   }, [isMobile]);
 
   return (
-    <div className="p-1 lg:p-4 w-full purpleBg flex overflow-hidden py-5 px-3 justify-between">
+    <div className="p-1 lg:p-4 w-full purpleBg flex overflow-hidden py-5 px-3 justify-between bg-[#7D40FF]">
       {/* Desktop view */}
-      <div className={`hidden lg:flex carisalslide items-center justify-between py-8 gap-4`}>
+      <div className={`hidden lg:flex carisalslide items-center justify-between py-8 gap-6 `}>
         {images.map((src, index) => (
           <div
             key={index}
-            className="w-[350px] sm:w-[45%] md:w-[30%] lg:w-[400px] xl:w-[330px] 2xl:w-[400px] p-2 m-0 lg:m-2"
+            className="  w-[350px] sm:w-[45%] md:w-[30%] lg:w-[400px] xl:w-[330px] 2xl:w-[400px] p-2 m-0 lg:m-2"
           >
             <Image
               className="rounded-2xl w-full h-auto"

@@ -1,6 +1,5 @@
-
+"use client"
 import dynamic from 'next/dynamic';
-import Footer from '../Footer';
 
 const HeroSection = dynamic(() => import("../HeroSection"), { ssr: false });
 const Carousel = dynamic(() => import("../Carousel"), { ssr: false });
@@ -16,30 +15,47 @@ const Faqs = dynamic(() => import("../Faqs"), { ssr: false });
 // const Footer = dynamic(() => import("../Footer"), { ssr: false });
 const CustomCursor = dynamic(() => import("../Cursor"), { ssr: false });
 const SmoothScroll = dynamic(() => import("../SmoothScroll"), { ssr: false });
+import style from "../../modulerCss/HeroSection.module.css"
 export default function Home() {
   return (
-   
-    <SmoothScroll>
-      
-      <CustomCursor/>
-      <HeroSection className="section" 
-        HeroSectionHead={"A Design Agency With a Twist"}
-           HeroSectionPara={"What You Think, We Can Design And Animate."}
-           HeroSectionButton={"See Plans"} />
-      <Carousel className="section" />
-      <Brands className="section" />
-      <Services  />
-      <OurServices className="section" />
-      <MemberShip className="section" />
-      <Plan className="section" />
-      <Login className="section" />
-      <Simplicity className="section" />
-      <Counter className="section" />
 
-      <Faqs className="section" />
-      <Footer className= "max-h-96" />
-     
-      
-    </SmoothScroll>
+    // <SmoothScroll>
+
+    //   <CustomCursor/>
+    //   <HeroSection className="section" 
+    //     HeroSectionHead={"A Design Agency With a Twist"}
+    //        HeroSectionPara={"What You Think, We Can Design And Animate."}
+    //        HeroSectionButton={"See Plans"} />
+    //   <Carousel className="section" />
+    //   <Brands className="section" />
+    //   <Services  />
+    //   <OurServices className="section" />
+    //   <MemberShip className="section" />
+    //   <Plan className="section" />
+    //   <Login className="section" />
+    //   <Simplicity className="section" />
+    //   <Counter className="section" />
+
+    //   <Faqs className="section" />
+
+
+
+    // </SmoothScroll>
+    <>
+      <HeroSection HeroSectionHead={"We are Creative Design Agency "}
+        HeroSectionPara={"What You Think, We Can Design And Animate."}
+        HeroSectionButton={"See Plans"} />
+      <Brands />
+      <Carousel />
+      <Services />
+     <OurServices />
+   <MemberShip/>
+   <Plan/>
+
+
+
+     <Faqs/>
+
+    </>
   )
 }

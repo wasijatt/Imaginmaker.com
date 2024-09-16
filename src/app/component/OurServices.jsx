@@ -64,12 +64,14 @@ const OurServices = () => {
   return (
     <div
       ref={containerRef}
-      className="bg-[#181818] py-6 lg:py-16 mt-[5vh] w-full"
+      className="bg-[#F9F9F9] py-6 lg:py-16 z-50 w-full flex flex-col justify-center items-center"
     >
-      <h1 className="text-[28px] lg:text-[50px] text-white text-center mb-6">
+      <h1 className="text-[28px] lg:text-[35px] text-[#1A1A1A] text-center ">
         Our Services
       </h1>
-      <div className="flex flex-wrap justify-center items-center mx-auto lg:w-[80%]">
+      <div className="w-20 h-1 rounded-full  bg-[#7D40FF]"></div>
+
+      {/* <div className="flex flex-wrap justify-center items-center mx-auto lg:w-[80%]">
         {imageSources.map((src, index) => (
           <div
             key={index}
@@ -96,7 +98,7 @@ const OurServices = () => {
             Get Your Design Done
           </button>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };

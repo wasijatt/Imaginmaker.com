@@ -5,7 +5,7 @@ import Image from "next/image";
 
 const Brands = () => {
   return (
-    <div className=" lg:w-full bg-gray-900 flex overflow-hidden lg:p-10  py-5 px-3 justify-between brandlogo lg:h-[17vh] ">
+    <div className=" lg:w-full bg-black flex overflow-hidden lg:p-10  py-5 px-3 justify-between brandlogo lg:h-[17vh] ">
       <div className="flex brandslide items-center justify-between">
       <Image className="brandimg" src= {"/brands/1.png"} width={153} height= {22} alt="brands" />
   <Image className="brandimg " src={ "/brands/2.png"} width= {179} height= {26 } alt="brands"/>

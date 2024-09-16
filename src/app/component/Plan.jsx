@@ -68,47 +68,42 @@ setpayment(false)
   ];
 
   return (
-    <div className="w-full lg:w-[84%] m-auto text-center">
-      <h1 className="text-xl mt-5 lg:text-[50px]">Memberships levels</h1>
+    <div className="w-full lg:w-[100%] m-auto flex flex-col justify-center items-center py-20 bg-black relative">
+      <div className={`${style.memberShip} " " `}></div>
+      <h1 className="text-xl text-white lg:text-[50px]">Memberships levels</h1>
+      <div className="w-28  mt-6  h-1 bg-[#7D40FF]"></div>
+
       <p className="font-bold text-sm lg:text-xl lg:mt-3">
         Choose a plan that&apos;s right for you.
       </p>
-      <Image
-        className="m-auto mt-9"
-        src="/plan/logo.png"
-        alt="logo"
-        width={200}
-        height={200}
-      />
-      <div className="flex flex-col lg:flex-row rounded-3xl mxl:mt-5 lg:mt-[50px] ">
+      
+      <div className="flex flex-col lg:flex-row justify-center items-center z-50 rounded-3xl mxl:mt-5 lg:mt-[50px] lg-w-[90%] ">
         {planList.map((item, index) => (
           <div
             key={index}
-            className={`${style.planboxShadow} "border-2 w-[98%] lg:w-[28%] box-border	bg-[#f3f2f2]  rounded-lg p-9 lg:px-12 lg:mx-2 my-8lg:my-4"`}
+            className= "text-white border-[1px] border-[#7D40FF] w-[98%] lg:w-[23%] box-border	bg-black flex flex-col justify-center items-center rounded-3xl p-9 lg:px-12 lg:mx-2 my-8lg:my-4"
           >
-            <h2 className="text-3xl font-extrabold text-left mt-8">
+            <h2 className="text-[15px] mt-4 text-white border-[1px] border-white py-1 px-4 rounded-full">
               {item.title}
             </h2>
-            <p className="font-sm text-left ">{item.des}</p>
-            <h1 className="text-[30px] font-bold text-center mt-8">
-              ${item.price}$/month
+            <h1 className="text-[35px]  font-bold  mt-4">
+              ${item.price}$
             </h1>
-            <button
-              className={`${style.boxShadow} "mt-6 rounded-3xl purpleBg text-white py-2 px-8 mt-9"`}
-              onClick={() => handleOpen(item)} 
-            >
-              Get Started
-            </button>
-            <h1 className="text-left font-extrabold mt-20">
-              What&apos;s Included:
-            </h1>
-            <ul className="mt-4 text-left">
+            <p className="text-[13px]  text-white text-center">{item.des}</p>
+
+            <ul className="mt-4  text-white">
               {item.specs.map((spec, idx) => (
                 <li key={idx} className="mb-2">
                   {spec}
                 </li>
               ))}
             </ul>
+            <button
+              className={`${style.boxShadow} "mt-[30px]  rounded-3xl purpleBg text-white py-1 px-4 "`}
+              onClick={() => handleOpen(item)} 
+            >
+              Get Started
+            </button>
           </div>
         ))}
         <div
@@ -116,7 +111,7 @@ setpayment(false)
         >
           <div className="border-b-2 py-6 border-[#333]">
             <Image
-              className="w-[65%] lg:w-[60%] m-auto"
+              className="w-[65%] lg:w-[60%] m-auto text-white"
               src="/Plan/booking.png"
               width={80}
               height={80}
@@ -141,8 +136,8 @@ setpayment(false)
             />
             <h1>Book</h1>
             <Link href={" https://wa.me/971567208725"} className="text-[#7700ff]">Book A Call And Get Your First</Link>
-            <h1 className="text-left text-xl  font-semibold">Design Free</h1>
-            <Link href="" className="mt-14">
+            <h1 className="text-left text-xl text-white font-semibold">Design Free</h1>
+            <Link href="" className=" text-white mt-14">
               How it works
             </Link>
           </div>
