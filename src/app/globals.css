@@ -33,21 +33,43 @@ html, body, #__next {
 }
 
 h1 {
-  font-family: grifter;
+  font-family: 'Clash Grotesk Bold';
+  
+}
+.clash {
+  font-family: 'Clash Grotesk Bold';
+  
 }
 h2 {
-  font-family: sf ui display;
+  font-family:' Clash Grotesk Bold';
 }
 
+h3 {
+  font-family:' Clash Grotesk';
+}
+
+
+span{
+  font-family:' Clash Grotesk Bold';
+
+}
+p{
+  font-family: 'Satoshi';
+}
+.stoshi{
+  font-family: 'Satoshi';
+}
 input {
   font-size: 19px;
   padding: 8px 16px;
-  border: none;
+  border: 1px solid #00000076;
   font-weight: 600;
-  font-family: sf ui display;
+  border-radius: 50px;
+  font-family: 'Clash Grotesk';
+  margin: 50px;
   width: 45%;
   margin: 1rem;
-  border-bottom: 1px solid #00000076;
+  
   outline: none;
 }
 form button {
@@ -234,4 +256,48 @@ html.has-scroll-dragging {
   right: auto;
   bottom: 0;
 }
+
+
+
+
+
+
+
+/* font installation */
+@font-face {
+  font-family: 'Satoshi';
+  src: url('/fonts/Satoshi-Regular.woff2') format('woff2'),
+       url('/fonts/Satoshi-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Clash Grotesk';
+  src: url('/fonts/ClashGrotesk-Regular.woff2') format('woff2'),
+       url('/fonts/ClashGrotesk-Regular.woff') format('woff');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Clash Grotesk Bold';
+  src: url('/fonts/ClashGrotesk-Bold.woff2') format('woff2'),
+       url('/fonts/ClashGrotesk-Bold.woff') format('woff');
+  font-weight: 900;
+  /* font-style: normal; */
+  font-display: swap;
+}
+
+
+
+
+
+
+
+
+
+
 

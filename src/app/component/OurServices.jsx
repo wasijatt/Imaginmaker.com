@@ -53,12 +53,7 @@ const OurServices = () => {
   }, []);
 
   const imageSources = [
-    "/OurServices/branding.jpg",
-    "/OurServices/Graphic-Designer-illustration.jpg",
-    "/OurServices/Graphic-Designer.jpg",
-    "/OurServices/motion graphics.jpg",
-    "/OurServices/ui-ux.jpg",
-    "/OurServices/website-design.jpg",
+    
   ];
 
   return (
@@ -71,26 +66,8 @@ const OurServices = () => {
       </h1>
       <div className="w-20 h-1 rounded-full  bg-[#7D40FF]"></div>
 
-      {/* <div className="flex flex-wrap justify-center items-center mx-auto lg:w-[80%]">
-        {imageSources.map((src, index) => (
-          <div
-            key={index}
-            className="m-4 w-[90%] sm:w-[45%] md:w-[30%]"
-            ref={(el) => (imageRefs.current[index] = el)}
-          >
-            <Image
-              className="w-full rounded-3xl"
-              src={src}
-              alt={`Service ${index + 1}`}
-              width={500}
-              height={500}
-              layout="responsive"
-              placeholder="blur"
-              blurDataURL={src} // Low-res placeholder for blur effect
-              priority={index === 0} // Prioritize the first image
-            />
-          </div>
-        ))}
+      <div className="flex flex-wrap justify-center items-center mx-auto lg:w-[80%]">
+       
         <div className="w-full text-center mt-6">
           <button
             className={`purpleBg text-white px-8 py-3 rounded-3xl text-sm lg:text-lg ${style.boxShadow}`}
@@ -98,7 +75,7 @@ const OurServices = () => {
             Get Your Design Done
           </button>
         </div>
-      </div> */}
+      </div>
     </div>
   );
 };

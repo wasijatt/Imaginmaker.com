@@ -62,6 +62,9 @@ const Carousel = () => {
               src={src}
               alt="carousel image"
               width={400}
+              layout="responsive"
+              quality={75}
+              loading="lazy"
               height={400}
             />
           </div>
@@ -79,13 +82,16 @@ const Carousel = () => {
             <div
               key={index}
               className="w-full  flex-shrink-0  "
-              // style={{ flex: '0 0 100%' }}
+            // style={{ flex: '0 0 100%' }}
             >
               <Image
                 className="rounded-2xl ml-4 w-[330px] h-[330px] "
                 src={src}
                 alt="carousel image"
                 width={400}
+                layout="responsive"
+                quality={75}
+                loading="lazy"
                 height={400}
               />
             </div>

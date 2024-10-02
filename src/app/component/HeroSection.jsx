@@ -1,8 +1,7 @@
 "use client";
-import Link from "next/link";
-import Image from "next/image";
+
 import style from "../modulerCss/HeroSection.module.css";
-import leftLogo from "../../../public/images/icons/leftLogo.png";
+
 import { VscThreeBars } from "react-icons/vsc";
 import { motion } from "framer-motion";
 import gsap from "gsap";
@@ -29,7 +28,7 @@ export default function HeroSection({
 
   const createLetterSpans = (text = "") => {
     return text.split('').map((letter, index) => (
-      <span key={index} className="inline-block">
+      <span key={index} className="inline-block clash ">
         {letter === ' ' ? '\u00A0' : letter}
       </span>
     ));
@@ -37,7 +36,7 @@ export default function HeroSection({
 
   return (
     <div
-      className="bg-cover bg-center relative px-4 sm:px-6 lg:px-12 py-4 lg:py-10"
+      className="pl-32 relative pr-4 sm:pr-6 lg:pr-12 py-4 lg:py-10"
       style={{
         backgroundImage: "url('/HeroSection/herobg.jpg')",
         backgroundSize: 'cover',
@@ -46,7 +45,7 @@ export default function HeroSection({
     >
       <h1
         ref={headingRef}
-        className="text-white text-3xl lg:w-[65%]  sm:text-4xl lg:text-6xl lg:text-left text-center font-extrabold lg:leading-normal whitespace-normal mt-12"
+        className="text-white text-3xl lg:w-[40%]   sm:text-4xl lg:text-6xl lg:text-left text-center  font-extrabold   mt-12"
       >
         {createLetterSpans(HeroSectionHead)}
       </h1>
@@ -55,7 +54,7 @@ export default function HeroSection({
       </p>
       <div className="text-center mt-6">
         <button
-          className={`purpleBg px-5 py-2 rounded-3xl text-white ${style.boxShadow}`}
+          className={`purpleBg px-5 lg:mt-16 py-2 rounded-3xl text-white ${style.boxShadow}`}
         >
           {HeroSectionButton}
         </button>
@@ -63,7 +62,7 @@ export default function HeroSection({
 
       <div className="text-center text-white mt-4">
         Designs you will{" "}
-        <span className="inline text-[#6600ff]">❤</span> Guaranteed
+        <span className="inline text-[#7700ff] text-[23px]">❤</span> Guaranteed
       </div>
     </div>
   );

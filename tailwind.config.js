@@ -6,7 +6,10 @@ module.exports = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-  
+    fontFamily: {
+      sans: ['Satoshi', 'sans-serif'],  // Satoshi for paragraphs
+      heading: ['Clash Grotesk', 'sans-serif'],  // Clash Grotesk for headings
+    },
     screens: {
      'sm': '640px',   // Small screens: min-width of 640px
       'md': '768px',   // Medium screens: min-width of 768px

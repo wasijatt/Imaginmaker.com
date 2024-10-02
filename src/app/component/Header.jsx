@@ -1,5 +1,6 @@
 "use client"
 import React from 'react'
+import {motion} from "framer-motion"
 import { useState } from 'react';
 import { VscThreeBars } from "react-icons/vsc";
 import Link from 'next/link';
@@ -23,14 +24,14 @@ const Header = () => {
     
   return (
     <div>
-       <div className="flex justify-between items-center px-28 h-20 bg-[#101010]  ">
+       <div className="flex justify-between items-center pl-32 pr-28 h-24 bg-[#101010]  border-b-2 border-[#333] ">
         <Link href="/">
           <Image
-            className="w-[50%] lg:w-[90%] bg-transparent"
+            className="w-[50%] lg:w-[100%] bg-transparent"
             src={middleLogo}
             alt="Imaginmaker"
-            width={200}
-            height={50}
+            width={280}
+            height={90}
           />
         </Link>
         <div className="hidden lg:flex lg:w-[45%] justify-between items-center">

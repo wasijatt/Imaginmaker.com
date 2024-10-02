@@ -76,7 +76,7 @@ const Page = () => {
   return (
     <>
       <HeroSection
-        HeroSectionHead={"Let&apos;s craft brilliance together"}
+        HeroSectionHead={"Let’s Craft Brilliance Together"}
         HeroSectionPara={
           "We deal with intricate challenges and transform them into holistic experiences."
         }

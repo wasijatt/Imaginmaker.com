@@ -12,7 +12,7 @@ const Login = dynamic(() => import("../Login"), { ssr: false });
 const Simplicity = dynamic(() => import("../Simplicity"), { ssr: false });
 const Counter = dynamic(() => import("../Counter"), { ssr: false });
 const Faqs = dynamic(() => import("../Faqs"), { ssr: false });
-// const Footer = dynamic(() => import("../Footer"), { ssr: false });
+
 const CustomCursor = dynamic(() => import("../Cursor"), { ssr: false });
 const SmoothScroll = dynamic(() => import("../SmoothScroll"), { ssr: false });
 import style from "../../modulerCss/HeroSection.module.css"
@@ -42,6 +42,8 @@ export default function Home() {
 
     // </SmoothScroll>
     <>
+     
+
       <HeroSection HeroSectionHead={"We are Creative Design Agency "}
         HeroSectionPara={"What You Think, We Can Design And Animate."}
         HeroSectionButton={"See Plans"} />
@@ -53,8 +55,10 @@ export default function Home() {
    <Plan/>
 
 
-
+   <Counter  />
+<Login/>
      <Faqs/>
+      
 
     </>
   )

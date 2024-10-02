@@ -3,6 +3,7 @@ import Link from "next/link";
 import { FaInstagramSquare ,FaLinkedin ,FaDribbble,FaFacebook,FaBehance } from "react-icons/fa";
 import { CiYoutube } from "react-icons/ci";
 import Image from "next/image";
+import style from "../modulerCss/HeroSection.module.css"
 
 const Footer = () => {
   const socialMedia = [
@@ -32,7 +33,9 @@ const Footer = () => {
           
               </Link>
             ))}
+           
           </div>
+          <Link href={"/AboutUs"} className={`${style.boxShadow} my-20 rounded-3xl mt-12 " text-white py-2 px-5 purpleBg " `}>About Agency</Link>
           <div className=" hidden lg:flex mt-[70px]   text-[#908f8f]">
           <p >© 2024 Imagin Maker    </p>
           <Link className="ml-4  font-bold " href={"/PrivacyPolicy"}>Terms</Link>
@@ -62,8 +65,8 @@ const Footer = () => {
           </Link>
          
         </div>
-        <div className="lg:flex w-[50%] ">
-          <div className="w-full lg:w-1/2">
+        <div className="lg:flex w-[50%] justify-between ">
+          <div className="w-full lg:w-[49%]">
             <h1 className="footerHead">Contact Us</h1>
             <h2 className="footerHead">WhatsApp</h2>
             <h2 className="footerHead"> UAE:</h2>
@@ -85,7 +88,7 @@ const Footer = () => {
               imaginmaker583@gmail.com
             </Link>
           </div>
-          <div className="w-full lg:w-1/2 mt-7 lg:mt-0">
+          <div className="w-full ml-6 lg:w-1/2 mt-7 lg:mt-0">
             <h1 className="footerHead">Address</h1>
             <h2 className="footerHead">Dubai Office</h2>
             <Link className="footerLink"  target="blank" href={""}>

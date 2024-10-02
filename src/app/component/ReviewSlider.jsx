@@ -24,8 +24,8 @@ const ReviewSlider = () => {
     });
 
     return () => tl.kill();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [index]);
+  
+  }, [index , totalImages]);
 
   return (
     <div className="relative w-full justify-center my-6">
@@ -36,6 +36,9 @@ const ReviewSlider = () => {
           alt={`Slide ${index + 1}`}
           width={400}
           height={400}
+          layout="responsive"
+              quality={75}
+              loading="lazy"
         />
       </div>
     </div>

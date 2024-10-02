@@ -7,16 +7,16 @@ import style from "../modulerCss/HeroSection.module.css"
 
 const Services = () => {
   const servicesData = [
-    { imgsrc: "/Services/1.jpg", heading: "Visual Versatility", des: "Tailored design and animation, bringing your vision to life effortlessly." },
-    { imgsrc: "/Services/2.jpg", heading: "Relationships", des: "Over Transactions Prioritizing your success, we believe in forging lasting partnerships." },
-    { imgsrc: "/Services/3.jpg", heading: "Social Media Impact", des: "Crafted visuals that authentically connect with your audience, elevating your brand's narrative." },
+    { imgsrc: "/Services/1.svg", heading: "Visual Versatility", des: "Tailored design and animation, bringing your vision to life effortlessly." },
+    { imgsrc: "/Services/2.svg", heading: "Relationships", des: "Over Transactions Prioritizing your success, we believe in forging lasting partnerships." },
+    { imgsrc: "/Services/3.svg", heading: "Social Media Impact", des: "Crafted visuals that authentically connect with your audience, elevating your brand's narrative." },
   ];
 
   return (
     <div className="bg-black flex flex-col justify-center items-center py-14 relative">
       <div className={`${style.radialShadow} `}></div>
       <h1 className="text-white text-[25px] border-b-2px ">What We Do?</h1>
-      <div className="w-10 h-1 bg-[#7D40FF]"></div>
+      <div className="w-10 h-1 rounded-full  bg-[#7D40FF]"></div>
       <div className="bg-[#181818] rounded-3xl py-5  w-[90%] lg:w-[80%] mt-6  m-auto flex flex-col lg:flex-row p-2 lg:p-12 justify-center items-center border-[1px] border-[#333] ">
         <div className=" w-full lg:w-1/2">
           <div>
@@ -29,12 +29,12 @@ const Services = () => {
 
             <div className="hidden lg:flex lg:flex-col flex-wrap  lg:p-6  ">
               {servicesData.map((service, index) => (
-                <div key={index} className="flex mt-3  lg:mt-10 w-[50%]  lg:w-full justify-center items-center">
+                <div key={index} className="flex">
                   <div >
-                    <Image className="w-[50] lg:w-full mix-blend-multiply" src={service.imgsrc} width={50} height={50} alt={service.heading} />
+                    <Image className="w-[50px] lg:w-[50] " src={service.imgsrc} width={50} height={50} alt={service.heading} />
                   </div>
-                  <div className="ml-2 lg:ml-4">
-                    <h2 className="text-white text-xs lg:text-[20px]   font-normal tracking-[2px]">{service.heading}</h2>
+                  <div>
+                    <h3 className="text-white text-xs lg:text-[15px]  stoshi font-semibold tracking-[2px]">{service.heading}</h3>
                     <p className=" text-sm text-[#BCBCBC] w-full lg:w-[70%]">{service.des}</p>
                   </div>
 
