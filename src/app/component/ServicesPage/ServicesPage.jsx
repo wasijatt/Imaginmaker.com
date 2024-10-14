@@ -1,7 +1,7 @@
 "use client";
 
 import HeroSection from "../HeroSection";
-import SmoothScroll from "../SmoothScroll";
+
 import Tabs from "../Tabs";
 import Simplicity from "../Simplicity";
 import Login from "../Login";
@@ -10,7 +10,7 @@ import Footer from "../Footer";
 
 const ServicesPage = () => {
   return (
-    <SmoothScroll>
+  <>
 
       <HeroSection className= "section"
         HeroSectionHead={"A Design Agency With a Twist"}
@@ -24,7 +24,7 @@ const ServicesPage = () => {
      
       <Footer className="section"  />
      
-    </SmoothScroll>
+    </>
   );
 };
 

@@ -5,6 +5,7 @@ import { useState } from 'react';
 import { VscThreeBars } from "react-icons/vsc";
 import Link from 'next/link';
 import Image from 'next/image';
+
 import style from "../modulerCss/HeroSection.module.css";
 import middleLogo from "../../../public/images/icons/middleLogo.png";
 const Header = () => {
@@ -84,7 +85,7 @@ const Header = () => {
         <div className="hidden md:block">
           <Link
             href="/getintouch"
-            className="bg-purple-600 text-white px-5 py-2 rounded-3xl shadow-lg transition-transform duration-300 ease-out"
+            className="bg-[#7700ff] text-white px-5 py-2 rounded-3xl shadow-lg transition-transform duration-300 ease-out"
             // onMouseMove={(e) => handleMouseMove(e, "button1")}
             // onMouseLeave={handleMouseLeave}
             // style={buttonStyles("button1")}

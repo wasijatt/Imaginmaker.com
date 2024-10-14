@@ -24,12 +24,7 @@ const Capabilities = dynamic(() => import("./../component/Capabilities"), {
     <div className="bg-black animate-pulse h-32 w-full"> loading</div>
   ),
 });
-const SmoothScroll = dynamic(() => import("./../component/SmoothScroll"), {
-  ssr: false,
-  loading: () => (
-    <div className="bg-black animate-pulse h-32 w-full"> loading</div>
-  ),
-});
+
 const Cursor = dynamic(() => import("./../component/Cursor"), {
   ssr: false,
   loading: () => (
@@ -39,7 +34,7 @@ const Cursor = dynamic(() => import("./../component/Cursor"), {
 const page = () => {
   return (
    
-      <SmoothScroll>
+      <>
         <HeroSection
           HeroSectionHead={"IMAGIN MAKER A Graphic & UI/UX Design Agency"}
           HeroSectionPara={
@@ -58,7 +53,7 @@ const page = () => {
         <Carousel />z
 
         <Footer />
-      </SmoothScroll>
+      </>
    
   );
 };

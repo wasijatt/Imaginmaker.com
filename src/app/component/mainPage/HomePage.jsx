@@ -44,7 +44,7 @@ export default function Home() {
     <>
      
 
-      <HeroSection HeroSectionHead={"We are Creative Design Agency "}
+      <HeroSection mainText={"We are "} subText={'Creative'} fhead={"Design Agency"}
         HeroSectionPara={"What You Think, We Can Design And Animate."}
         HeroSectionButton={"See Plans"} />
       <Brands />
@@ -53,6 +53,7 @@ export default function Home() {
      <OurServices />
    <MemberShip/>
    <Plan/>
+   <Simplicity/>
 
 
    <Counter  />

@@ -27,13 +27,13 @@ const Services = () => {
           <div>
 
 
-            <div className="hidden lg:flex lg:flex-col flex-wrap  lg:p-6  ">
+            <div className="hidden lg:flex lg:flex-col   lg:p-6  ">
               {servicesData.map((service, index) => (
-                <div key={index} className="flex">
-                  <div >
-                    <Image className="w-[50px] lg:w-[50] " src={service.imgsrc} width={50} height={50} alt={service.heading} />
+                <div key={index} className="flex gap-6 mt-6">
+                  <div className="w-[50px]" >
+                    <Image className="w-[70px] lg:w-[70] " src={service.imgsrc} width={70} height={70} alt={service.heading} />
                   </div>
-                  <div>
+                  <div className=" "> 
                     <h3 className="text-white text-xs lg:text-[15px]  stoshi font-semibold tracking-[2px]">{service.heading}</h3>
                     <p className=" text-sm text-[#BCBCBC] w-full lg:w-[70%]">{service.des}</p>
                   </div>

@@ -9,9 +9,9 @@ const Loading = () => {
   }, []);
 
   return (
-    <div className='w-full fixed h-full purpleBg'>
+    <div className='w-full fixed top-0 left-0 h-full bg-white flex justify-center items-center'>
      
-      <l-bouncy size="45" speed="1.75" color="black"></l-bouncy>
+      <l-bouncy size="45" speed="1.75" color="#7700ff"></l-bouncy>
     </div>
   );
 }

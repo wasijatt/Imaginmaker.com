@@ -27,6 +27,21 @@
     /* transform: translate(50%, 50%); */
     
   }
+  .radialsShadow::after {
+    content: "";
+    position: absolute;
+    bottom: 50%;
+    left: -150px;
+    width:300px;
+    height: 350px;
+    background: radial-gradient(circle, #7D40FF, transparent 70%);
+    box-shadow: 0px 0px 100.7px #7c40ff5b;
+    filter: blur(70px);
+    border-radius: 0px 0px 0px 40px;
+    z-index: 0;
+    /* transform: translate(50%, 50%); */
+    
+  }
   .memberShip::after {
     content: "";
     position: absolute;

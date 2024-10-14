@@ -2,13 +2,14 @@
 
 import style from "../modulerCss/HeroSection.module.css";
 
-import { VscThreeBars } from "react-icons/vsc";
-import { motion } from "framer-motion";
+
 import gsap from "gsap";
 import { useState, useRef, useEffect } from "react";
 
 export default function HeroSection({
-  HeroSectionHead = "",
+  mainText,
+  subText,
+  fhead,
   HeroSectionPara,
   HeroSectionButton,
 }) {
@@ -45,11 +46,13 @@ export default function HeroSection({
     >
       <h1
         ref={headingRef}
-        className="text-white text-3xl lg:w-[40%]   sm:text-4xl lg:text-6xl lg:text-left text-center  font-extrabold   mt-12"
+        className="text-white text-3xl    sm:text-4xl lg:text-6xl lg:text-left text-center lg:leading-10 font-extrabold   mt-12"
       >
-        {createLetterSpans(HeroSectionHead)}
+       
+   {mainText} <span className="ml-9 inline-block clash   text-[#7700ff] ">{subText}</span><br />{fhead} <span className="text-[100px] text-[#7700ff]">.</span>
+  
       </h1>
-      <p className="text-white text-base sm:text-lg lg:text-xl lg:text-left text-center mt-2">
+      <p className="text-white text-base sm:text-lg lg:text-xl lg:text-left text-center w-1/2 mt-8">
         {HeroSectionPara}
       </p>
       <div className="text-center mt-6">

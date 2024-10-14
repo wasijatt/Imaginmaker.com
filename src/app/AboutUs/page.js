@@ -1,101 +1,163 @@
 
-"use client";
+
 import Link from "next/link";
-import { useState } from "react";
+
 import HeroSection from "../component/HeroSection";
-import Footer from "../component/Footer";
+
 import Login from "../component/Login";
+import style from "../modulerCss/HeroSection.module.css"
 import Image from "next/image";
-import { FaInstagramSquare ,FaLinkedin  } from "react-icons/fa";
+
 
 const Page = () => {
 
-  const [hoveredIndex, setHoveredIndex] = useState(null);
-  const imagePaths = [
-    {
-      src: "/AboutUs/Over.jpg",
-      overlay: "/Aboutus/Madni.jpg",
-      member: "Jaan Muhammad",
-      dasignation: "Ui/Ux Designer",
-      dis: "Senior UI/UX designer in imaginmaker.",
-      socialmedia:[
-        { icon: <FaLinkedin />, link: "https://www.linkedin.com/company/imagin-maker/" , },
-        { icon: <FaInstagramSquare />, link: "https://www.instagram.com/imaginmaker/" , }
+  // const [hoveredIndex, setHoveredIndex] = useState(null);
+  // const imagePaths = [
+  //   {
+  //     src: "/AboutUs/Over.jpg",
+  //     overlay: "/Aboutus/Madni.jpg",
+  //     member: "Jaan Muhammad",
+  //     dasignation: "Ui/Ux Designer",
+  //     dis: "Senior UI/UX designer in imaginmaker.",
+  //     socialmedia: [
+  //       { icon: <FaLinkedin />, link: "https://www.linkedin.com/company/imagin-maker/", },
+  //       { icon: <FaInstagramSquare />, link: "https://www.instagram.com/imaginmaker/", }
 
-      ],
-    },
-    {
-      src: "/AboutUs/Overlay1.jpg",
-      overlay: "/AboutUs/Muhammad Wasim.jpg",
-      member: "Muhammad Wasim",
-      dasignation: "Full stack Developer",
-      dis: "Senior Devloper in imaginmaker.",
-      socialmedia:[
-        { icon: <FaLinkedin />, link: "https://www.linkedin.com/in/muhammad-wasim-57400a301/" , },
-        { icon: <FaInstagramSquare />, link: "https://www.instagram.com/wasi_development/" , }
+  //     ],
+  //   },
+  //   {
+  //     src: "/AboutUs/Overlay1.jpg",
+  //     overlay: "/AboutUs/Muhammad Wasim.jpg",
+  //     member: "Muhammad Wasim",
+  //     dasignation: "Full stack Developer",
+  //     dis: "Senior Devloper in imaginmaker.",
+  //     socialmedia: [
+  //       { icon: <FaLinkedin />, link: "https://www.linkedin.com/in/muhammad-wasim-57400a301/", },
+  //       { icon: <FaInstagramSquare />, link: "https://www.instagram.com/wasi_development/", }
 
-      ],
-    },
-    {
-      src: "/AboutUs/6.jpg",
-      overlay: "/AboutUs/Yousaf.jpg",
-      member: "Muhammad Yousaf",
-      dasignation: "Graphic Designer",
-      dis: "Senior Graphic designer in imaginmaker.",
-      socialmedia:[
-        { icon: <FaLinkedin />, link: "https://www.linkedin.com/company/imagin-maker/" , },
-        { icon: <FaInstagramSquare />, link: "https://www.instagram.com/imaginmaker/" , }
+  //     ],
+  //   },
+  //   {
+  //     src: "/AboutUs/6.jpg",
+  //     overlay: "/AboutUs/Yousaf.jpg",
+  //     member: "Muhammad Yousaf",
+  //     dasignation: "Graphic Designer",
+  //     dis: "Senior Graphic designer in imaginmaker.",
+  //     socialmedia: [
+  //       { icon: <FaLinkedin />, link: "https://www.linkedin.com/company/imagin-maker/", },
+  //       { icon: <FaInstagramSquare />, link: "https://www.instagram.com/imaginmaker/", }
 
-      ],
-    },
-    {
-      src: "/AboutUs/anas1.jpg",
-      overlay: "/AboutUs/anas.jpg",
-      member: "Muhammad Anas",
-      dasignation: "Wordpress Developer",
-      dis: " Wordpress Developer in imaginmaker.",
-      socialmedia:[
-        { icon: <FaLinkedin />, link: "https://www.linkedin.com/company/imagin-maker/" , },
-        { icon: <FaInstagramSquare />, link: "https://www.instagram.com/imaginmaker/" , }
+  //     ],
+  //   },
+  //   {
+  //     src: "/AboutUs/anas1.jpg",
+  //     overlay: "/AboutUs/anas.jpg",
+  //     member: "Muhammad Anas",
+  //     dasignation: "Wordpress Developer",
+  //     dis: " Wordpress Developer in imaginmaker.",
+  //     socialmedia: [
+  //       { icon: <FaLinkedin />, link: "https://www.linkedin.com/company/imagin-maker/", },
+  //       { icon: <FaInstagramSquare />, link: "https://www.instagram.com/imaginmaker/", }
 
-      ],
-    },
-    {
-      src: "/AboutUs/4.jpg",
-      overlay: "/AboutUs/Abdullah.jpg",
-      member: "Abdullah Rajput",
-      dasignation: "Graphic Designer",
-      dis: "Senior Graphic designer in imaginmaker.",
-      socialmedia:[
-        { icon: <FaLinkedin />, link: "https://www.linkedin.com/company/imagin-maker/" , },
-        { icon: <FaInstagramSquare />, link: "https://www.instagram.com/imaginmaker/" , }
+  //     ],
+  //   },
+  //   {
+  //     src: "/AboutUs/4.jpg",
+  //     overlay: "/AboutUs/Abdullah.jpg",
+  //     member: "Abdullah Rajput",
+  //     dasignation: "Graphic Designer",
+  //     dis: "Senior Graphic designer in imaginmaker.",
+  //     socialmedia: [
+  //       { icon: <FaLinkedin />, link: "https://www.linkedin.com/company/imagin-maker/", },
+  //       { icon: <FaInstagramSquare />, link: "https://www.instagram.com/imaginmaker/", }
 
-      ],    },
-  ];
+  //     ],
+  //   },
+  // ];
 
   return (
-    <>
+<>
+<div>
       <HeroSection
-        HeroSectionHead={"Let’s Craft Brilliance Together"}
+        mainText={`Lets Craft Brilliance `} fhead={"Together"}
         HeroSectionPara={
           "We deal with intricate challenges and transform them into holistic experiences."
         }
         HeroSectionButton={"Get in Touch"}
       />
-      <div className="lg:flex w-full lg:w-[80%] m-auto items-center p-3 lg:p-12">
-        <h1 className=" lg:w-1/2 text-center text-xl lg:text-3xl p-3">
-          Who we are
-        </h1>
-        <p className="w-full lg:w-1/2 text-center text-sm lg:text-2xl font-semibold">
-          Welcome to our design agency! We&apos;re a team committed to
-          empowering the next generation with design skills. Offering affordable
-          services, we&apos;re on a mission to make quality design accessible to
-          all. Trusted by businesses and individuals, we offer free
-          consultations to guide you. Whether an agency seeking support or an
-          individual in need, we&apos;re here to help.
-        </p>
+      <div className="lg:flex bg-black text-white  w-full justify-around  items-center p-3 lg:p-12">
+
+        <div className="lg:w-1/2  ">
+          <h1 className=" text-xl lg:text-3xl">
+            Who we are
+          </h1>
+          <div className="w-20 h-1 rounded-full  bg-[#7D40FF] z-50"></div>
+          <h1 className=" text-sm lg:text-xl my-6">
+            Welcome to Our Design Agency.
+          </h1>
+
+          <p className="w-full lg:flex-grow t text-sm lg:text-xl font-semibold">
+            Welcome to our design agency! We&apos;re a team committed to
+            empowering the next generation with design skills. Offering affordable
+            services, we&apos;re on a mission to make quality design accessible to
+            all. Trusted by businesses and individuals, we offer free
+            consultations to guide you. Whether an agency seeking support or an
+            individual in need, we&apos;re here to help.
+          </p>
+        </div>
+        <div className="lg:w-[40%] ">
+          <Image
+            width={100}
+            height={100}
+            src={"/AboutUs/who.svg"}
+            alt="Javed Somroo"
+            layout="responsive"
+            quality={75}
+            className="w-full lg:w-[400px]  "
+          />
+        </div>
+
+
       </div>
-      <div className="justify-center">
+      <div className="w-full flex px-[10%] justify-between items-center relative bg-black text-white m-auto lg:py-8">
+      <div className={`${style.radialsShadow} " bottom-1/2 " `}></div>
+
+        <div className="w-[40%]  h-200px  ">
+        
+       
+          <Image
+            width={400}
+            height={400}
+            src={"/AboutUs/javedSomroo.png"}
+            alt="Javed Somroo"
+            layout="responsive"
+            quality={75}
+            className="w-[300px]  h-[300px] z-50 "
+          />
+    
+        </div>
+
+        <div className="w-1/2">
+          <h1 className="text-xl lg:text-3xl  font-bold">Our Founder</h1>
+          <p className="text-sm lg:text-xl leading-loose	py-4 w-full  ">
+            Meet Javed Somroo, the creative force driving ImaginMaker. With 5
+            years of expertise in graphic design, branding, and professional
+            digital marketing, Javed leads our team in Pakistan, spearheading
+            innovative projects that captivate audiences worldwide. His diverse
+            skill set encompasses graphic and motion designing, digital
+            marketing, animation, UI/UX design, video editing, photography, and
+            branding, ensuring every project exceeds expectations.
+          </p>
+          <Link
+            className="text-sm text-[#7700ff]"
+            href={"https://www.linkedin.com/in/javed-somroo-bb32bb247/"}
+          >
+            Linkdin.com/JAVEDSOMROO
+          </Link>
+        </div>
+
+      </div>
+      {/* <div className="justify-center">
         <h1 className=" w-full lg:w-[80%] m-auto text-center text-xl lg:text-[40px] p-4">
           Things that define us
         </h1>
@@ -167,8 +229,8 @@ const Page = () => {
             </p>
           </div>
         </div>
-      </div>
-
+      </div> */}
+      {/* 
       <div className="lg:flex w-full p-2 lg:p-[4%] m-auto text-white bg-[#191919] mt-5">
         <div className="w-full lg:w-[70%] lg:p-8">
           <h1 className="text-xl lg:text-3xl  font-bold">Our Founder</h1>
@@ -188,19 +250,13 @@ const Page = () => {
             Linkdin.com/JAVEDSOMROO
           </Link>
         </div>
-        <Image
-          width={100}
-          height={100}
-          src={"/AboutUs/JavedSomroo.jpg"}
-          alt="Javed Somroo"
-          className="w-full lg:w-[400px]  "
-        />
-      </div>
+       
+      </div> */}
 
-      <div className="bg-[#191919] text-center text-white p-4 lg:py-28">
-        <h1 className="text-xl lg:text-[40px] font-bold"> Our Team</h1>
-        
-        <div className="hidden  lg:flex w-full m-auto justify-evenly mt-7 lg:w-[60%]">
+      
+        {/* <h1 className="text-xl lg:text-[40px] font-bold"> Our Team</h1> */}
+
+        {/* <div className="hidden  lg:flex w-full m-auto justify-evenly mt-7 lg:w-[60%]">
           {imagePaths.slice(0, 3).map((item, index) => (
             <div
               key={index}
@@ -225,16 +281,16 @@ const Page = () => {
                       height={100}
                       alt="overlay"
                     />
-                     <h1 className="text-lg lg:text-xl font-light tracking-[3px]"> {item.member}</h1>
-                  <p className="text-[#7700ff] text-sm lg:text-xl">{item.dasignation}</p>
-                  <p className="text-sm">{item.dis}</p>
-                  <p className="flex justify-center mt-4 text-[#7700ff] text-2xl">
-                    {item.socialmedia.map((social, idx) => (
-                      <Link key={idx} href={social.link} className="mr-2" target="_blank" rel="noopener noreferrer">
-                        {social.icon}
-                      </Link>
-                    ))}
-                  </p>
+                    <h1 className="text-lg lg:text-xl font-light tracking-[3px]"> {item.member}</h1>
+                    <p className="text-[#7700ff] text-sm lg:text-xl">{item.dasignation}</p>
+                    <p className="text-sm">{item.dis}</p>
+                    <p className="flex justify-center mt-4 text-[#7700ff] text-2xl">
+                      {item.socialmedia.map((social, idx) => (
+                        <Link key={idx} href={social.link} className="mr-2" target="_blank" rel="noopener noreferrer">
+                          {social.icon}
+                        </Link>
+                      ))}
+                    </p>
                   </div>
                 </div>
               )}
@@ -242,11 +298,11 @@ const Page = () => {
 
           ))}
         </div>
+ */}
 
 
 
-
-        <div className=" hidden lg:flex justify-evenly m-auto w-full lg:w-[45%]">
+        {/* <div className=" hidden lg:flex justify-evenly m-auto w-full lg:w-[45%]">
           {imagePaths.slice(3).map((item, index) => (
             <div
               key={index}
@@ -271,57 +327,57 @@ const Page = () => {
                       width={100}
                       height={100}
                     />
-                  <h1 className="text-lg lg:text-2xl font-light tracking-[3px]"> {item.member}</h1>
-                  <p className="text-[#7700ff] text-sm lg:text-xl">{item.dasignation}</p>
-                  <p className="text-sm" >{item.dis}</p>
-                  <p className="flex justify-center mt-4 text-[#7700ff] text-2xl">
-                    {item.socialmedia.map((social, idx) => (
-                      <Link key={idx} href={social.link} className="mr-2" target="_blank" rel="noopener noreferrer">
-                        {social.icon}
-                      </Link>
-                    ))}
-                  </p>
+                    <h1 className="text-lg lg:text-2xl font-light tracking-[3px]"> {item.member}</h1>
+                    <p className="text-[#7700ff] text-sm lg:text-xl">{item.dasignation}</p>
+                    <p className="text-sm" >{item.dis}</p>
+                    <p className="flex justify-center mt-4 text-[#7700ff] text-2xl">
+                      {item.socialmedia.map((social, idx) => (
+                        <Link key={idx} href={social.link} className="mr-2" target="_blank" rel="noopener noreferrer">
+                          {social.icon}
+                        </Link>
+                      ))}
+                    </p>
                   </div>
                 </div>
               )}
             </div>
-            
 
 
 
 
-          ))}
-        </div>
-      </div>
-      <div className="w-full lg:hidden text-white bg-[#181818]"> 
-      {imagePaths.map((item, index) => (
-                <div key={index} className="  w-[85%] h-full z-50 flex justify-center m-auto items-center text-center bg-[#1E1E24] rounded-2xl lg:rounded-full mt-2 py-14">
-                  <div>
-                    <Image
-                      className="rounded-full m-auto"
-                      src={item.overlay}
-                      alt="ovelay image"
-                      width={100}
-                      height={100}
-                    />
-                     <h1 className="text-lg lg:text-xl font-light tracking-[3px]"> {item.member}</h1>
-                  <p className="text-[#7700ff] text-sm lg:text-xl">{item.dasignation}</p>
-                  <p className="text-sm">{item.dis}</p>
-                  <p className="flex justify-center mt-4 text-[#7700ff] text-2xl">
-                    {item.socialmedia.map((social, idx) => (
-                      <Link key={idx} href={social.link} className="mr-2" target="_blank" rel="noopener noreferrer">
-                        {social.icon}
-                      </Link>
-                    ))}
-                  </p>
-                  </div>
-                </div>
 
           ))}
+        </div> */}
       </div>
-      <Login />
-      <Footer />
-    </>
+      {/* <div className="w-full lg:hidden text-white bg-[#181818]">
+        {imagePaths.map((item, index) => (
+          <div key={index} className="  w-[85%] h-full z-50 flex justify-center m-auto items-center text-center bg-[#1E1E24] rounded-2xl lg:rounded-full mt-2 py-14">
+            <div>
+              <Image
+                className="rounded-full m-auto"
+                src={item.overlay}
+                alt="ovelay image"
+                width={100}
+                height={100}
+              />
+              <h1 className="text-lg lg:text-xl font-light tracking-[3px]"> {item.member}</h1>
+              <p className="text-[#7700ff] text-sm lg:text-xl">{item.dasignation}</p>
+              <p className="text-sm">{item.dis}</p>
+              <p className="flex justify-center mt-4 text-[#7700ff] text-2xl">
+                {item.socialmedia.map((social, idx) => (
+                  <Link key={idx} href={social.link} className="mr-2" target="_blank" rel="noopener noreferrer">
+                    {social.icon}
+                  </Link>
+                ))}
+              </p>
+            </div>
+          </div>
+
+        ))}
+      </div> */}
+      <Login className="bg-white text-black" />
+
+      </>
   );
 };
 export default Page;

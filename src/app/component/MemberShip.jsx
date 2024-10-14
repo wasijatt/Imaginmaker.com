@@ -17,7 +17,7 @@ const MemberShip = () => {
             gsap.fromTo(
               entry.target,
               { opacity: 0, y: 50, scale: 0.95 },
-              { opacity: 1, y: 0, scale: 1, duration: 1.2, ease: "power3.out", stagger: { amount: 0.3 } }
+              { opacity: 1, y: 0, scale: 1, duration: 1.2, ease: "power3.out", stagger: { amount: 0.8 } }
             );
           }
         });
@@ -37,18 +37,13 @@ const MemberShip = () => {
   }, []);
 
   const MembershipData = [
-  
     {
       imgsrc: "/membership/flexibility icone of imaginmaker design-agency of Pakistan.png",
-
       title: "Lightning fast delivery",
       para: "Get your design one at a time in just a few days on average.",
     },
-
- 
     {
       imgsrc: "/membership/lightning-bolts icone of imagnmaker Design-agency in pakistan.png",
-
       title: "Flexible and scalable",
       para: "Scale up or down as needed, and pause or cancel at anytime.",
     },
@@ -60,28 +55,29 @@ const MemberShip = () => {
   ];
 
   return (
-    <div className=" py-6 lg:py-8 mt-5 w-full bg-[#7700ff] text-white">
-      <div className="text-center w-full lg:w-[30%] mx-auto ">
-       
-        <h1 className="text-xl lg:text-2xl w-full stoshi font-bold  mb-3">Perks so good you will never need to go  else
-        for your design. Seriously.</h1>
-        
+    <div className="py-6 lg:py-8 mt-5 w-full bg-[#7700ff] text-white">
+      <div className="text-center w-full lg:w-[30%] mx-auto">
+        <h1 className="text-xl lg:text-2xl w-full stoshi font-bold mb-3">
+          Perks so good you will never need to go elsewhere for your design. Seriously.
+        </h1>
       </div>
       <div className="flex flex-wrap items-center justify-center lg:w-[75%] mx-auto">
         {MembershipData.map((item, index) => (
           <div
             key={index}
-            className="  lg:mt-4 flex flex-col items-center justify-between lg:py-8 lg:w-[30%] lg:p-6 lg:m-3  mb-6"
+            className="lg:mt-4 flex flex-col items-center justify-between lg:py-8 lg:w-[30%] lg:p-6 lg:m-3 mb-6"
             ref={(el) => (itemRefs.current[index] = el)}
           >
             <Image
-              className="w-[40px] lg:w-24 mb-4  mix-blend-multiply"
+              className={`${
+                index === 0 ? "w-[50px]" : "w-[40px] lg:w-24"
+              } mb-4 mix-blend-multiply`}
               src={item.imgsrc}
               alt={item.title}
-              width={50}
-              height={50}
+              width={index === 0 ? 100 : 50}
+              height={index === 0 ? 50 : 50}
             />
-            <div className="text-center ">
+            <div className="text-center">
               <h2 className="font-bold text-lg lg:text- stoshi mb-2">{item.title}</h2>
               <p className="text-sm stoshi">{item.para}</p>
             </div>
@@ -93,3 +89,4 @@ const MemberShip = () => {
 };
 
 export default MemberShip;
+

@@ -17,12 +17,7 @@ const Footer = dynamic(() => import("./../component/Footer"), {
       <div className="bg-black animate-pulse h-32 w-full"> loading</div>
     ),
   });
-  const SmoothScroll = dynamic(() => import("./../component/SmoothScroll"), {
-    ssr: false,
-    loading: () => (
-      <div className="bg-black animate-pulse h-32 w-full"> loading</div>
-    ),
-  });
+
   const CustomCursor = dynamic(() => import("./../component/Cursor"), {
     ssr: false,
     loading: () => (
@@ -32,7 +27,7 @@ const Footer = dynamic(() => import("./../component/Footer"), {
 const page = ()=>{
   
     return(
-      <SmoothScroll>
+      <>
         <div>
         <div> 
 <CustomCursor/>
@@ -42,7 +37,7 @@ const page = ()=>{
 
         <div> <Footer/></div>
         </div>
-        </SmoothScroll>
+        </>
 
     )
     }

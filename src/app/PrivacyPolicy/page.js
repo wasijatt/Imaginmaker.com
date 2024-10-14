@@ -1,8 +1,8 @@
 import Image from "next/image"
-import SmoothScroll from "../component/SmoothScroll"
+
 export default function page() {
   return (
-<SmoothScroll>
+<>
 
     <div className="bg-black p-[1rem] mdl:p-[5rem] w-full h-full text-[#b5b4b4] " >
 <Image src={"/privacypolicy/privacy-policy (1) 1.png"}  alt="privacy-image" width={100} height={100}/>
@@ -149,7 +149,7 @@ By visiting this page on our website: https://imaginmaker.com/
 By phone number: +92 300 5837549
 
     </div>
-</SmoothScroll>
+</>
 
   )
 }
