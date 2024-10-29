@@ -25,12 +25,7 @@ const Capabilities = dynamic(() => import("./../component/Capabilities"), {
   ),
 });
 
-const Cursor = dynamic(() => import("./../component/Cursor"), {
-  ssr: false,
-  loading: () => (
-    <div className="bg-black animate-pulse h-32 w-full"> loading</div>
-  ),
-});
+
 const page = () => {
   return (
    
@@ -50,9 +45,8 @@ const page = () => {
         <h1 className="text-center text-xl lg:text-[50px] my-8">
           Up-to-date projects
         </h1>
-        <Carousel />z
-
-        <Footer />
+        <Carousel />
+        
       </>
    
   );
