@@ -1,24 +1,29 @@
 import mongoose from 'mongoose';
 
-export const dynamic = "force-dynamic"; // This forces dynamic behavior, preventing Next.js from treating this as static
+export const dynamic = "force-dynamic";
 
-let isConnected = false; // Track the connection status
+let isConnected = false;
 
 export const connectToDB = async () => {
+    if (!process.env.MONGO_URI) {
+        console.error("MONGO_URI is not set in the environment variables");
+        return;
+    }
+
     if (isConnected) {
-        console.log('Already connected to MongoDB');
+        console.log("Already connected to MongoDB");
         return;
     }
 
     try {
-        const db = await mongoose.connect(process.env.MONGO_URI, {
+        await mongoose.connect(process.env.MONGO_URI, {
             useNewUrlParser: true,
             useUnifiedTopology: true,
         });
 
-        isConnected = db.connections[0].readyState;
-        console.log('Connected to MongoDB');
+        isConnected = mongoose.connection.readyState === 1;
+        console.log("Connected to MongoDB");
     } catch (error) {
-        console.error('Failed to connect to MongoDB', error);
+        console.error("Failed to connect to MongoDB:", error);
     }
 };

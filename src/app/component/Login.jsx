@@ -20,15 +20,20 @@ const Login = () => {
         e.preventDefault();
         try {
             const response = await axios.post("/api/users", formData);
+            
             if (response.data.success) {
-                toast.success("Thank you!");
+                toast.success(response.data.message || "Thank you!");
                 setFormData({ FirstName: "", email: "", phone: "", interestedIn: "" });
             } else {
-                toast.error(response.data.message);
+                toast.error(response.data.message || "Registration failed");
             }
         } catch (error) {
             console.error("Error submitting form:", error);
-            toast.error("An error occurred while registration");
+            if (error.response && error.response.data && error.response.data.message) {
+                toast.error(error.response.data.message);
+            } else {
+                toast.error("An error occurred during registration");
+            }
         }
     };
 
@@ -36,9 +41,7 @@ const Login = () => {
         <div className="flex flex-col lg:flex-row justify-center items-center">
             <Toaster position="top-center" />
             <div className="flex flex-col justify-center items-center p-[5%] lg:p-[10%] text-center lg:w-[70%] lg:text-left relative">
-                <h1 className="text-xl lg:text-[45px] font-extrabold">
-                    Have an idea?
-                </h1>
+                <h1 className="text-xl lg:text-[45px] font-extrabold">Have an idea?</h1>
                 <div className="w-20 h-1 rounded-full mt-2 lg:mt-4 bg-[#7D40FF]"></div>
                 <p className="text-[10px] lg:text-sm mt-3 lg:mt-5 stoshi text-center">
                     Bring your next project to life. Please fill in the information below
@@ -75,7 +78,7 @@ const Login = () => {
                     <input
                         className="w-full lg:w-[40%] mb-2"
                         type="text"
-                        placeholder="Interested In" 
+                        placeholder="Interested In"
                         name="interestedIn"
                         value={formData.interestedIn}
                         onChange={handleChange}
