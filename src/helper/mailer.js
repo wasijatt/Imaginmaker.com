@@ -1,4 +1,4 @@
-import { resend } from 'resend'; // Ensure you import the resend instance
+import resend from './resend'; // Import the resend instance
 import createApiResponse from "@/emailTypes/apiResponse";
 
 export async function sendVerificationEmail(firstName, email) {
