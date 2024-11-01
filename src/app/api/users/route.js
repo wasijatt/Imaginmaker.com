@@ -18,7 +18,7 @@ export async function POST(request) {
         }
 
         // Check for existing user
-        const existingUser = await User.findOne({ $or: [{ email }, { phone }] });
+        const existingUser = await User.findOne({ email });
         if (existingUser) {
             return NextResponse.json({ success: false, message: "User with this email or phone already exists" }, { status: 409 });
         }

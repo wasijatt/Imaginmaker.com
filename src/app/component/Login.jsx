@@ -1,4 +1,4 @@
-"use client";
+"use client"
 import style from "../modulerCss/HeroSection.module.css";
 import axios from "axios";
 import { useState } from "react";
@@ -22,18 +22,14 @@ const Login = () => {
             const response = await axios.post("/api/users", formData);
             
             if (response.data.success) {
-                toast.success(response.data.message || "Thank you!");
+                toast.success(`Registration successful! A welcome email has been sent to ${formData.email}`);
                 setFormData({ FirstName: "", email: "", phone: "", interestedIn: "" });
             } else {
                 toast.error(response.data.message || "Registration failed");
             }
         } catch (error) {
             console.error("Error submitting form:", error);
-            if (error.response && error.response.data && error.response.data.message) {
-                toast.error(error.response.data.message);
-            } else {
-                toast.error("An error occurred during registration");
-            }
+            toast.error("An error occurred during registration");
         }
     };
 
@@ -95,4 +91,5 @@ const Login = () => {
         </div>
     );
 };
+
 export default Login;

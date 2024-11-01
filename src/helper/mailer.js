@@ -1,21 +1,17 @@
-import nodemailer from 'nodemailer';
+import { resend } from 'resend'; // Ensure you import the resend instance
 import createApiResponse from "@/emailTypes/apiResponse";
 
-const transporter = nodemailer.createTransport({
-    host: process.env.EMAIL_HOST,
-    port: process.env.EMAIL_PORT,
-    auth: {
-        user: process.env.EMAIL_USERNAME,
-        pass: process.env.EMAIL_PASSWORD,
-    },
-});
-
 export async function sendVerificationEmail(firstName, email) {
-    try {
-        const emailContent = `<div><h1>Welcome, ${firstName}!</h1></div>`;
+    const emailContent = `<div><h1>Welcome, ${firstName}!</h1></div>`;
 
-        await transporter.sendMail({
-            from: '"Your App Name" <no-reply@yourapp.com>',
+    try {
+        // Log email details before sending
+        console.log(`Sending email to: ${email}`);
+        console.log(`Email subject: Welcome to Our Service!`);
+        console.log(`Email content: ${emailContent}`);
+
+        await resend.emails.send({
+            from: process.env.EMAIL_FROM, // Use your verified domain email
             to: email,
             subject: 'Welcome to Our Service!',
             html: emailContent,
