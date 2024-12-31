@@ -15,7 +15,7 @@ const Footer = () => {
     };
 
     return (
-        <footer className="relative bg-black text-white xl:h-[65vh] overflow-hidden">
+        <footer className="min-w-full w-full relative bg-black text-white xl:h-[65vh] overflow-hidden">
             {/* Background SVG */}
             <div className="hidden xl:block absolute inset-0 z-0 opacity-30" style={{ width: '30%', height: '30%' }}>
                 <Image
@@ -30,7 +30,7 @@ const Footer = () => {
                 />
             </div>
 
-            <div className="relative z-10 max-w-7xl mx-auto px-4 py-16 sm:px-6 lg:px-8 xl:mt-[2rem] xl:left-[4.5rem]">
+            <div className=" relative z-10 max-w-7xl mx-auto px-4 py-16 sm:px-6 lg:px-8 xl:mt-[2rem] xl:left-[4.5rem]">
                 <div className="grid grid-cols-1 lg:grid-cols-4 gap-12 lg:gap-8">
                     {/* Logo and Social Section */}
                     <div className="text-center lg:text-left space-y-8 xl:space-y-5">
@@ -61,11 +61,11 @@ const Footer = () => {
 
                         <Link
                             href="/about"
-                            className={`${satoshi.className} inline-block bg-[#7D40FF] shadow-[1px_1px_10px_1px_rgba(125,64,255,55)] text-white px-6 py-2 rounded-full text-sm font-bold hover:bg-[#6930D9] transition-colors`}
+                            className={`${satoshi.className} inline-block bg-[#7D40FF] shadow-[1px_1px_10px_1px_rgba(125,64,255,55)] text-white px-6 py-2 rounded-full text-sm font-bold hover:bg-[#6930D9] transition-colors mb-10`}
                         >
                             About Agency
                         </Link>
-                        <div className="mt-16 pt-8 xl:pt-8">
+                        <div className=" hidden md:block mt-16 pt-8 xl:pt-8">
                             <div className="flex flex-col sm:flex-row justify-between items-center gap-4 ">
                                 <p className="text-gray-400 text-[14px] relative">© 2024 Imagin Maker</p>
                                 <div className={`${satoshi.className} flex gap-6 xl:gap-3 relative xl:right-[1rem]`}>
@@ -142,7 +142,19 @@ const Footer = () => {
                         </div>
                     </div>
                 </div>
-
+                <div className=" block mt-16 pt-8 xl:pt-8">
+                    <div className="flex flex-col sm:flex-row justify-between items-center gap-4 ">
+                        <p className="text-gray-400 text-[14px] relative">© 2024 Imagin Maker</p>
+                        <div className={`${satoshi.className} flex gap-6 xl:gap-3 relative xl:right-[1rem]`}>
+                            <Link href="/terms" className="text-gray-white hover:text-white font-semibold transition-colors">
+                                Terms
+                            </Link>
+                            <Link href="/privacy" className="text-gray-white hover:text-white font-bold transition-colors">
+                                Privacy
+                            </Link>
+                        </div>
+                    </div>
+                </div>
 
 
 

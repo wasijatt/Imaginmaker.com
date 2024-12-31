@@ -7,7 +7,7 @@ import HomeStar from './ui/star';
 
 export default function HeroSection() {
   return (
-    <section className="min-w-max w-full h-[60vh] xl:h-[90vh] 2xl:h-[80vh] relative overflow-hidden">
+    <section className="w-full max-w-[100vw] min-w-max h-[60vh] xl:h-[90vh] 2xl:h-[80vh] relative overflow-hidden">
       <Image
         src="/HeroSection/herobg.jpg"
         alt="Hero background"
@@ -16,9 +16,9 @@ export default function HeroSection() {
         quality={100}
         priority
       />
-      <div className="min-w-full absolute inset-0 bg-black bg-opacity-0" />
-      <div className="max-w-full container mx-auto px-8 py-16 md:py-32 flex flex-col justify-center h-full relative z-10  ">
-        <div className="max-w-full lg:mx-24">
+      <div className="min-w-max overflow-hidden absolute inset-0 bg-black bg-opacity-0" />
+      <div className="max-w-full overflow-hidden container mx-auto px-8 py-16 md:py-32 flex flex-col justify-center h-full relative z-10  ">
+        <div className="lg:mx-24">
           <div className='relative top-28 2xl:left-[-2rem]'>
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-4 leading-tight">
               We are{" "}

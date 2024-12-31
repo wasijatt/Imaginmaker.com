@@ -31,7 +31,7 @@ const services = [
 
 export default function ServicesSection() {
   return (
-    <section className="container mx-auto px-4 py-7">
+    <section className="overflow-hidden container mx-auto px-4 py-7">
       {/* Heading */}
       <div className="text-center mb-16">
         <h2 className="text-4xl md:text-[3rem] font-bold relative top-[4rem] inline-block">
