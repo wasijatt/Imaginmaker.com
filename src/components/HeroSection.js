@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import { ArrowRight, Heart } from 'lucide-react';
 import { cn } from "@/lib/utils";
 import { clashGrotesk } from "@/lib/clashGroteskfont";
@@ -30,7 +31,7 @@ export default function HeroSection() {
               </span>
               <br />
               Design Agency
-              <span className="font-bold text-[#9F00FF] relative lg:left-[31rem] lg:-top-8 overflow-hidden">
+              <span className="font-bold text-[#9F00FF] relative lg:left-[31rem] lg:-top-8">
                 <svg width="15" height="16" viewBox="0 0 15 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <g filter="url(#filter0_i_3172_140)">
                     <circle cx="7.5" cy="8" r="7.5" fill="url(#paint0_linear_3172_140)" />
@@ -72,9 +73,11 @@ export default function HeroSection() {
           </div>
 
           <div className="space-y-8 flex flex-col items-center relative right-[10rem] top-8 md:left-[-5rem] 2xl:left-[1rem] 2xl:top-[3rem]">
-            <button className={`${satoshi.className} bg-[#7D40FF] hover:bg-purple-[#6F00FF] shadow-[#8F00FF] border-2 border-[#7D40FF] text-white mt-20 ml-80 px-12 2xl:py-[6px] 2xl:px-[28px] lg:px-8 py-0 md:py-1 flex rounded-full text-lg font-bold transition-all duration-200 relative md:top-6 transform hover:scale-105 shadow-sm hover:shadow-purple-500/25`}>
+            <Link href="/case-study">
+            <button className={`${satoshi.className} bg-[#7D40FF] hover:bg-purple-[#6F00FF] shadow-[#8F00FF] border-2 border-[#7D40FF] text-white mt-20 ml-80 px-12 2xl:py-[6px] 2xl:px-[28px] lg:px-8 py-0 md:py-1 flex rounded-full text-lg font-bold transition-all duration-200 relative md:top-6 transform hover:scale-105 shadow-sm hover:shadow-purple-500/25`} >
               See Plans
             </button>
+            </Link>
 
             <div className="hidden md:flex items-center gap-2 text-gray-300 ml-80">
               <span className='flex relative'> Designs <span className='space-x-3'> you&apos;ll</span>
