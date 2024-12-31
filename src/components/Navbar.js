@@ -18,7 +18,7 @@ const Navbar = () => {
             )}
         >
             <div className="max-w-7xl mx-auto flex items-center">
-                <div className="flex items-center justify-between flex-1 md:flex-none relative 2xl:left-[-6rem] ">
+                <div className="flex items-center justify-between flex-1 md:flex-none relative 2xl:left-[-6rem]">
                     {/* Logo */}
                     <Link href="/" aria-label="Home">
                         <Logo />
@@ -35,12 +35,12 @@ const Navbar = () => {
                 </div>
 
                 {/* Desktop Navigation */}
-                <div className="hidden md:flex-1 md:flex items-center justify-center space-x-14 2xl:space-x-20 relative 2xl:left-[12rem] xl:left-[11.5rem]">
-                    {["Case Study", "Journel", "Our Values", "Services"].map((item) => (
+                <div className="hidden md:flex-1 md:flex items-center justify-center space-x-8 2xl:space-x-20 relative 2xl:left-[12rem]">
+                    {["Case Study", "Journel", "Services", "Our Values"].map((item) => (
                         <Link
                             key={item}
                             href={`/${item.toLowerCase().replace(/\s/g, "-")}`}
-                            className={`text-white hover:text-[#6F00FF] transition-colors`}
+                            className="text-white hover:text-[#6F00FF] transition-colors"
                         >
                             {item}
                         </Link>
