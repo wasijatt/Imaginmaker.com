@@ -30,7 +30,7 @@ export default function HeroSection() {
               </span>
               <br />
               Design Agency
-              <span className="font-bold text-[#9F00FF] relative lg:left-[31rem] lg:-top-8">
+              <span className="font-bold text-[#9F00FF] relative lg:left-[31rem] lg:-top-8 overflow-hidden">
                 <svg width="15" height="16" viewBox="0 0 15 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <g filter="url(#filter0_i_3172_140)">
                     <circle cx="7.5" cy="8" r="7.5" fill="url(#paint0_linear_3172_140)" />
