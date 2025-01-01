@@ -1,97 +1,88 @@
-'use client';
+'use client'
 
-import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import Image from 'next/image';
+import Image from 'next/image'
+import { Button } from "@/components/ui/button"
+import { satoshi } from '@/lib/fonts'
 
-const Button = ({ onClick, children }) => (
-    <button
-        className="bg-gradient-to-r from-purple-500 to-pink-500 text-white px-6 py-2 rounded-full font-bold text-lg shadow-lg hover:shadow-xl transition duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-opacity-50"
-        onClick={onClick}
-    >
-        {children}
-    </button>
-);
+export default function CaseStudyFirstSection() {
+  return (
+    <section className="relative min-h-[70vh ] w-full overflow-hidden">
+      {/* Background Image */}
+      <div className="absolute inset-0 z-0">
+            <Image
+              src="/HeroSection/herobg.jpg"
+              alt="Hero background"
+              fill
+              style={{ objectFit: 'cover' }}
+              quality={100}
+              priority
+            />
+      </div>
 
-const Page = ({ children, isVisible, zIndex }) => (
-    <AnimatePresence>
-        {isVisible && (
-            <motion.div
-                initial={{ rotateY: -90, opacity: 0 }}
-                animate={{ rotateY: 0, opacity: 1 }}
-                exit={{ rotateY: 90, opacity: 0 }}
-                transition={{ duration: 0.5, type: 'spring', stiffness: 50 }}
-                style={{ zIndex }}
-                className="absolute inset-0 bg-gradient-to-br from-purple-100 to-pink-100 rounded-r-lg shadow-lg overflow-hidden flex flex-col items-center justify-center p-8 text-center"
-            >
-                {children}
-            </motion.div>
-        )}
-    </AnimatePresence>
-);
+      {/* Content Container */}
+      <div className="relative z-10 mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
+        <div className="flex flex-col ">
+          <div className="max-w-2xl 2xl:mb-32 mb-10 relative md:top-[4rem]">
+            {/* Heading with Purple Dot */}
+            <h1 className="mb-6 text-5xl font-bold tracking-tight text-white sm:text-6xl lg:text-7xl">
+              Case Study
+              <br />
+              Analysis
+              <span className="font-bold text-[#9F00FF] relative md:top-[-2.5rem] md:left-[17rem] top-[-1.8rem] left-[11.5rem] sm:left-[14.5rem]">
+                <svg width="15" height="16" viewBox="0 0 15 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g filter="url(#filter0_i_3172_140)">
+                    <circle cx="7.5" cy="8" r="7.5" fill="url(#paint0_linear_3172_140)" />
+                  </g>
+                  <defs>
+                    <filter id="filter0_i_3172_140" x="-1.15385" y="0.5" width="16.1538" height="15" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+                      <feFlood floodOpacity="0" result="BackgroundImageFix" />
+                      <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+                      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+                      <feOffset dx="-1.15385" />
+                      <feGaussianBlur stdDeviation="0.634615" />
+                      <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1" />
+                      <feColorMatrix type="matrix" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.11 0" />
+                      <feBlend mode="normal" in2="shape" result="effect1_innerShadow_3172_140" />
+                    </filter>
+                    <linearGradient id="paint0_linear_3172_140" x1="9.80769" y1="12.0385" x2="-6.51228" y2="12.9245" gradientUnits="userSpaceOnUse">
+                      <stop stopColor="#7D40FF" />
+                      <stop offset="1" stopColor="#6F00FF" />
+                    </linearGradient>
+                  </defs>
+                </svg>
 
-const BookStyleBirthdayCard = () => {
-    const [currentPage, setCurrentPage] = useState(0);
+                </span>
+            </h1>
 
-    const nextPage = () => {
-        setCurrentPage((prev) => Math.min(prev + 1, 3));
-    };
 
-    return (
-        <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-purple-400 to-pink-500 p-4">
-            <div className="relative w-full max-w-lg aspect-[2/3] bg-white rounded-lg shadow-2xl overflow-hidden">
-                  <Image
-                    src="/HeroSection/wedding-Night-2.jpg"
-                    alt="Hero background"
-                    fill
-                    style={{ objectFit: 'cover' }}
-                    quality={100}
-                    priority
-                  />
-                <AnimatePresence>
-                    {currentPage === 0 && (
-                        <motion.div
-                            initial={{ opacity: 1 }}
-                            exit={{ opacity: 0 }}
-                            className="absolute inset-0 flex flex-col items-center justify-center p-8 text-center"
-                        >
-                            <h1 className="text-4xl font-bold mb-8 bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-pink-600">
-                                Happy Birthday
-                                <br />
-                                Dear Brother!
-                            </h1>
-                            <Button onClick={nextPage}>Open Card</Button>
-                        </motion.div>
-                    )}
-                </AnimatePresence>
+            {/* Description Text */}
+            <p className="mb-8 text-lg text-gray-200 sm:text-xl">
+              Unlocking insights, perfecting excellence—your go-to for polished
+              content. Dive into our enriching case study experience!
+            </p>
 
-                <Page isVisible={currentPage >= 1} zIndex={1}>
-                    <h2 className="text-3xl font-bold mb-6 text-purple-600">My Wonderful Brother</h2>
-                    <p className="mb-8 text-lg text-gray-700">
-                        On this special day, I want to celebrate the incredible bond we share. Your presence in my life is a gift I cherish every day.
-                    </p>
-                    <Button onClick={nextPage}>Next</Button>
-                </Page>
-
-                <Page isVisible={currentPage >= 2} zIndex={2}>
-                    <h2 className="text-3xl font-bold mb-6 text-pink-600">A Brother's Love</h2>
-                    <p className="mb-8 text-lg text-gray-700">
-                        Your kindness, humor, and unwavering support have been my strength through thick and thin. Thank you for being not just a brother, but also my best friend.
-                    </p>
-                    <Button onClick={nextPage}>Next</Button>
-                </Page>
-
-                <Page isVisible={currentPage >= 3} zIndex={3}>
-                    <h2 className="text-3xl font-bold mb-6 text-purple-600">Birthday Wishes</h2>
-                    <p className="mb-8 text-lg text-gray-700">
-                        May this year bring you endless joy, success in all your endeavors, and countless reasons to smile. Here's to another year of laughter and unforgettable moments together!
-                    </p>
-                    <p className="text-xl font-bold text-pink-600 mb-8">With love, Your Sibling ❤️</p>
-                    <Button onClick={() => setCurrentPage(0)}>Close Card</Button>
-                </Page>
+            {/* Arrow SVG */}
+            <div>
+              <Image
+                src="/casestudy/arrowsvg.svg" // Replace with your actual SVG path
+                alt="Decorative arrow"
+                width={280}
+                height={20}
+                className="max-w-[280px]"
+              />
             </div>
-        </div>
-    );
-};
+          </div>
 
-export default BookStyleBirthdayCard;
+          {/* Button - Centered */}
+          <div className="flex justify-center w-full">
+            <Button 
+              className={`${satoshi.className} bg-[#8D40FF] shadow-[0.5px_0.2px_7px_0.2px_rgba(125,64,255,55)] px-12 py-2 text-lg hover:bg-purple-700 rounded-full font-bold text-whiteb 2xl:relative 2xl:top-[3rem]`}
+            >
+              Join Us
+            </Button>
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}
