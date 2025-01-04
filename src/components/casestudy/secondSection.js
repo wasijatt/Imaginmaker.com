@@ -74,7 +74,7 @@ export default function FeaturedProjects() {
                 <Button 
                   className=" bg-[#6D40FF] shadow-[0.5px_0.2px_7px_0.2px_rgba(125,64,255,55)] text-white rounded-full py-1 px-5"
                 >
-                  Let's Go
+                  Let&apos;s Go
                 </Button>
               </div>
             </div>
@@ -93,7 +93,7 @@ export default function FeaturedProjects() {
                 />
               </div>
               <p className="text-lg text-gray-300">
-                Redefining The Growth Capital's brand essence! Our innovative
+                Redefining The Growth Capital&apos;s brand essence! Our innovative
                 approach combines research and design to elevate your financial
                 services, creating a comprehensive platform aligned with your
                 objectives.
@@ -116,7 +116,7 @@ export default function FeaturedProjects() {
                 <Button 
                   className="bg-[#6D40FF] shadow-[0.5px_0.2px_7px_0.2px_rgba(125,64,255,55)] text-white rounded-full py-1 px-5"
                 >
-                  Let's Go
+                  Let&apos;s Go
                 </Button>
               </div>
             </div>

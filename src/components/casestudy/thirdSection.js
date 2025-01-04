@@ -1,9 +1,11 @@
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
+import { clashGrotesk } from '@/lib/clashGroteskfont';
+import { satoshi } from '@/lib/fonts';
 
 const ContactSection = () => {
   return (
-    <section className="relative min-h-screen w-full overflow-hidden">
+    <section className="relative min-h-[70vh] 2xl:h-[85vh] w-full overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image
@@ -16,18 +18,18 @@ const ContactSection = () => {
       </div>
 
       {/* Content Container */}
-      <div className="relative z-1o mx-auto max-w-7xl px-4 text-center">
+      <div className="relative z-1o mx-auto max-w-7xl px-4 text-center mt-12 2xl:mt-24">
         {/* Top Section */}
         <div className="mb-20 space-y-6">
           <p className="text-gray-300">Need help with a project?</p>
-          <h2 className="text-4xl font-bold text-white sm:text-5xl md:text-6xl">
-            Let's Talk!
+          <h2 className={`${clashGrotesk.className} text-4xl font-bold text-white sm:text-5xl md:text-6xl tracking-wide`}>
+            Let&apos;s Talk!
           </h2>
-          <div className="mx-auto h-1 w-24 bg-purple-600" />
+          <div className="mx-auto h-1 w-24 bg-[#6D40FF]" />
           <div>
             <Button
               variant="secondary"
-              className="bg-purple-600 px-8 py-6 text-lg hover:bg-purple-700"
+              className={`${satoshi.className} bg-[#6D40FF] shadow-[0.5px_0.2px_7px_0.2px_rgba(125,64,255,55)] text-white px-9 py-3 text-lg hover:bg-purple-700 rounded-full font-bold`}
             >
               Contact Us
             </Button>
@@ -35,19 +37,19 @@ const ContactSection = () => {
         </div>
 
         {/* Bottom Card */}
-        <div className="relative mx-auto max-w-5xl overflow-hidden rounded-2xl bg-black/60 backdrop-blur-sm">
+        <div className="relative mx-auto max-w-5xl overflow-hidden rounded-3xl py-16">
           {/* Card Background Image */}
           <div className="absolute inset-0">
             <Image
               src="/casestudy/bottomthirdcard.svg"
               alt="Card background"
               fill
-              className="object-cover opacity-100"
+              className="object-cover opacity-100 "
             />
           </div>
 
           {/* Card Content */}
-          <div className="relative flex flex-col items-center justify-between gap-8 p-8 md:flex-row md:p-12">
+          <div className="relative flex flex-col items-center justify-between gap-8 p-10 md:flex-row md:p-12">
             <div className="flex items-start space-x-4">
               <Image
                 src="/casestudy/third commas.svg"
@@ -63,9 +65,9 @@ const ContactSection = () => {
             </div>
             <Button
               variant="secondary"
-              className="w-full bg-purple-600 px-8 py-6 text-lg hover:bg-purple-700 md:w-auto"
+              className={`${satoshi.className} w-full bg-[#6D40FF] shadow-[0.5px_0.2px_7px_0.2px_rgba(125,64,255,55)] text-white px-9 py-4 rounded-full text-lg hover:bg-purple-700 md:w-auto font-bold`}
             >
-              Let's work together
+              Let&apos;s work together
             </Button>
           </div>
         </div>
