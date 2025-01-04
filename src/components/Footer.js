@@ -15,9 +15,9 @@ const Footer = () => {
     };
 
     return (
-        <footer className="min-w-full w-full relative bg-black text-white xl:h-[65vh] overflow-hidden">
+        <footer className="min-w-full w-full relative bg-black text-white xl:h-[65vh] 2xl:h-[45vh] overflow-hidden">
             {/* Background SVG */}
-            <div className="hidden xl:block absolute inset-0 z-0 opacity-30" style={{ width: '30%', height: '30%' }}>
+            <div className="hidden xl:block absolute inset-0 z-0 opacity-30 " style={{ width: '30%', height: '30%' }}>
                 <Image
                     src="/footer/pen-footer.svg"
                     alt="Background Design"
@@ -27,6 +27,7 @@ const Footer = () => {
                     style={{ width: '10rem', height: '10rem' }}
                     objectFit="cover"
                     quality={100}
+                    className='relative 2xl:left-[15rem]'
                 />
             </div>
 

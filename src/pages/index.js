@@ -24,7 +24,7 @@ export default function Home() {
 
 
   return (
-    <main className={`${clashGrotesk.className} ${satoshi.className} sm:min-w-[100vw]`}>
+    <main className={`${clashGrotesk.className} ${satoshi.className}`}>
       <Navbar />
       <HeroSection />
       <LogoMarquee/>
