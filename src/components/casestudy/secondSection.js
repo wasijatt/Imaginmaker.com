@@ -11,7 +11,7 @@ export default function FeaturedProjects() {
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/dark-texture.jpg" // Replace with your actual background image
+          src="/casestudy/secondbg.jpg" // Replace with your actual background image
           alt="Background texture"
           layout="fill"
           className="object-cover opacity-20"
@@ -56,8 +56,9 @@ export default function FeaturedProjects() {
                 showcases a multidisciplinary approach, creating an all-in-one
                 online ordering platform to enhance restaurant services.
               </p>
-              <div className="flex flex-wrap items-center gap-4 sm:gap-6">
-                <Link 
+              <div className="flex flex-wrap items-center gap-4 2xl:gap-16 sm:gap-6">
+<div className='gap-5 flex flex-wrap'>
+<Link 
                   href="#" 
                   className={`${satoshi.className} text-gray-400 transition-colors hover:text-white underline font-bold`}
                 >
@@ -69,8 +70,9 @@ export default function FeaturedProjects() {
                 >
                   Cafe & Restaurant
                 </Link>
+</div>
                 <Button 
-                  className="bg-purple-600 hover:bg-purple-700 "
+                  className=" bg-[#6D40FF] shadow-[0.5px_0.2px_7px_0.2px_rgba(125,64,255,55)] text-white rounded-full py-1 px-5"
                 >
                   Let's Go
                 </Button>
@@ -96,8 +98,9 @@ export default function FeaturedProjects() {
                 services, creating a comprehensive platform aligned with your
                 objectives.
               </p>
-              <div className="flex flex-wrap items-center gap-4 sm:gap-6">
-                <Link 
+              <div className="flex flex-wrap items-center gap-4 sm:gap-6 2xl:gap-16">
+<div className='flex flex-wrap gap-4 sm:gap-6'>
+<Link 
                   href="#" 
                   className="text-gray-400 transition-colors hover:text-white underline"
                 >
@@ -109,8 +112,9 @@ export default function FeaturedProjects() {
                 >
                   Real-Estate
                 </Link>
+</div>
                 <Button 
-                  className="bg-purple-600 hover:bg-purple-700"
+                  className="bg-[#6D40FF] shadow-[0.5px_0.2px_7px_0.2px_rgba(125,64,255,55)] text-white rounded-full py-1 px-5"
                 >
                   Let's Go
                 </Button>

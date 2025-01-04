@@ -76,7 +76,7 @@ export default function CaseStudyFirstSection() {
           {/* Button - Centered */}
           <div className="flex justify-center w-full">
             <Button 
-              className={`${satoshi.className} bg-[#8D40FF] shadow-[0.5px_0.2px_7px_0.2px_rgba(125,64,255,55)] px-12 py-2 text-lg hover:bg-purple-700 rounded-full font-bold text-whiteb 2xl:relative 2xl:top-[3rem]`}
+              className={`${satoshi.className} bg-[#8D40FF] shadow-[0.5px_0.2px_7px_0.2px_rgba(125,64,255,55)] px-12 py-2 text-lg hover:bg-purple-700 rounded-full font-bold text-white 2xl:relative 2xl:top-[3rem]`}
             >
               Join Us
             </Button>
