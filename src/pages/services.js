@@ -1,9 +1,17 @@
-import React from 'react'
+import { useState } from 'react';
+import { Search } from 'lucide-react';
+import { clashGrotesk } from '@/lib/clashGroteskfont';
+import { satoshi } from '@/lib/fonts';
+import Navbar from '@/components/Navbar';
+import ServicesFirstSection from '@/components/services/firstSection';
 
-const services = () => {
+export default function services() {
+
+
   return (
-    <div>services</div>
+    <main className={`${clashGrotesk.className} ${satoshi.className}`}>
+      <Navbar />
+      <ServicesFirstSection />
+    </main>
   )
 }
-
-export default services

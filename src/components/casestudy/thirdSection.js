@@ -29,7 +29,7 @@ const ContactSection = () => {
           <div>
             <Button
               variant="secondary"
-              className={`${satoshi.className} bg-[#6D40FF] shadow-[0.5px_0.2px_7px_0.2px_rgba(125,64,255,55)] text-white px-9 py-3 text-lg hover:bg-purple-700 rounded-full font-bold`}
+              className={`${satoshi.className} bg-[#6D40FF] shadow-[0.5px_0.2px_7px_0.2px_rgba(125,64,255,55)] text-white px-9 py-3 text-lg hover:bg-[#7D40FF] rounded-full font-bold`}
             >
               Contact Us
             </Button>
@@ -65,9 +65,9 @@ const ContactSection = () => {
             </div>
             <Button
               variant="secondary"
-              className={`${satoshi.className} w-full bg-[#6D40FF] shadow-[0.5px_0.2px_7px_0.2px_rgba(125,64,255,55)] text-white px-9 py-4 rounded-full text-lg hover:bg-purple-700 md:w-auto font-bold`}
+              className={`${satoshi.className} w-full bg-[#6D40FF] shadow-[0.5px_0.2px_7px_0.2px_rgba(125,64,255,55)] text-white px-9 py-4 rounded-full text-lg hover:bg-[#7D40FF] md:w-auto font-bold`}
             >
-              Let&apos;s work together
+              Let&apos;s Connect
             </Button>
           </div>
         </div>

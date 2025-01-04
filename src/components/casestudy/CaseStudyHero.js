@@ -21,10 +21,10 @@ export default function CaseStudyFirstSection() {
 
       {/* Content Container */}
       <div className="relative z-10 mx-auto max-w-7xl px-8 py-20 sm:px-6 lg:px-8">
-        <div className="flex flex-col ">
-          <div className="max-w-2xl 2xl:mb-32 mb-10 relative md:top-[4rem]">
+        <div className="flex flex-col mt-10">
+          <div className="max-w-2xl 2xl:mb-32 mb-10 relative md:top-[4rem] ">
             {/* Heading with Purple Dot */}
-            <h1 className="mb-6 text-5xl font-bold tracking-tight text-white sm:text-6xl lg:text-7xl">
+            <h1 className="mb-6 -mt-4 text-5xl font-bold tracking-tight text-white sm:text-6xl lg:text-7xl">
               Case Study
               <br />
               Analysis
