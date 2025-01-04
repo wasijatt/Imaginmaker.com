@@ -27,7 +27,7 @@ export default function FeaturedProjects() {
         </div>
 
         {/* Project Cards */}
-        <div className="space-y-20 md:space-y-32">
+        <div className="space-y-20 md:space-y-32 px-8">
           {/* QuickCrave Project */}
           <div className="grid gap-8 2xl:gap-32 lg:grid-cols-2 lg:gap-12">
             {/* Project Image */}

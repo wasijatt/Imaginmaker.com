@@ -42,7 +42,7 @@ const Footer = () => {
                             className="mx-auto lg:mx-0 mb-8"
                         />
 
-                        <div className="space-y-4 xl:space-y-4">
+                        <div className=" hidden space-y-4 xl:space-y-4">
                             <p className={`${satoshi.className} text-[#9A9A9A] font-bold`}>Follow us</p>
                             <div className="flex justify-center lg:justify-start gap-6 xl:gap-4">
                                 {[Instagram, Facebook, Linkedin, Youtube, Pinterest].map((Icon, index) => (
@@ -61,7 +61,7 @@ const Footer = () => {
 
                         <Link
                             href="/about"
-                            className={`${satoshi.className} inline-block bg-[#7D40FF] shadow-[1px_1px_10px_1px_rgba(125,64,255,55)] text-white px-6 py-2 rounded-full text-sm font-bold hover:bg-[#6930D9] transition-colors mb-10`}
+                            className={`${satoshi.className} hidden md:inline-block bg-[#7D40FF] shadow-[1px_1px_10px_1px_rgba(125,64,255,55)] text-white px-6 py-2 rounded-full text-sm font-bold hover:bg-[#6930D9] transition-colors mb-10`}
                         >
                             About Agency
                         </Link>
@@ -79,7 +79,7 @@ const Footer = () => {
                             </div>
                         </div>
                     </div>
-                    
+
 
                     {/* What We Offer Section */}
                     <div className="text-center lg:text-left relative xl:left-[11rem] xl:top-[2rem]">
@@ -142,7 +142,30 @@ const Footer = () => {
                         </div>
                     </div>
                 </div>
-                <div className=" block mt-16 pt-8 xl:pt-8">
+                <Link
+                    href="/about"
+                    className={`${satoshi.className} md:hidden block bg-[#7D40FF] shadow-[1px_1px_10px_1px_rgba(125,64,255,55)] text-white px-4 mx-10 py-2 rounded-full text-sm font-bold hover:bg-[#6930D9] transition-colors mb-14 mt-12 text-center`}
+                >
+                    About Agency
+                </Link>
+                <div className="md:hidden block space-y-4 xl:space-y-4 mt-6">
+                            <p className={`${satoshi.className} text-[#9A9A9A] font-bold text-center`}>Follow us</p>
+                            <div className="flex justify-center lg:justify-start gap-6 xl:gap-4">
+                                {[Instagram, Facebook, Linkedin, Youtube, Pinterest].map((Icon, index) => (
+                                    <a
+                                        key={index}
+                                        href="#"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="text-white hover:text-[#7D40FF] transition-colors"
+                                    >
+                                        <Icon className="w-6 h-6" />
+                                    </a>
+                                ))}
+                            </div>
+                        </div>
+
+                <div className=" block md:hidden mt-6 pt-8 xl:pt-8">
                     <div className="flex flex-col sm:flex-row justify-between items-center gap-4 ">
                         <p className="text-gray-400 text-[14px] relative">© 2024 Imagin Maker</p>
                         <div className={`${satoshi.className} flex gap-6 xl:gap-3 relative xl:right-[1rem]`}>

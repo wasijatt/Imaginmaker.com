@@ -20,7 +20,7 @@ export default function CaseStudyFirstSection() {
       </div>
 
       {/* Content Container */}
-      <div className="relative z-10 mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
+      <div className="relative z-10 mx-auto max-w-7xl px-8 py-20 sm:px-6 lg:px-8">
         <div className="flex flex-col ">
           <div className="max-w-2xl 2xl:mb-32 mb-10 relative md:top-[4rem]">
             {/* Heading with Purple Dot */}

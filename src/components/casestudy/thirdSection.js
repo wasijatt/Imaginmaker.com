@@ -18,7 +18,7 @@ const ContactSection = () => {
       </div>
 
       {/* Content Container */}
-      <div className="relative z-1o mx-auto max-w-7xl px-4 text-center mt-12 2xl:mt-24">
+      <div className="relative z-1o mx-auto max-w-7xl px-8 text-center mt-12 2xl:mt-24">
         {/* Top Section */}
         <div className="mb-20 space-y-6">
           <p className="text-gray-300">Need help with a project?</p>
