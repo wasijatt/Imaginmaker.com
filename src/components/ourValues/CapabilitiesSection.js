@@ -1,125 +1,158 @@
-import { clashGrotesk } from '@/lib/clashGroteskfont';
-import { satoshi } from '@/lib/fonts';
-import Image from 'next/image';
+import Image from 'next/image'
+import { Button } from '@/components/ui/button'
+import { satoshi } from '@/lib/fonts'
 
 export default function CapabilitiesSection() {
-  const services = [
-    {
-      title: "Graphic Design",
-      description:
-        "We master graphic design, from shadow to coding, exemplified by our success with top brands. Our motion team, ready to take on any challenge, specializes in future business needs, be it B2B, B2C or SaaS products.",
-      image: "/ourValues/1.png",
-      imagePosition: "order-1",
-      textPosition: "order-2",
-      buttonPosition: "order-3",
-      titlePosition: "order-1",
-      descPosition: "order-2",
-    },
-    {
-      title: "Motion Design",
-      description:
-        "We're motion experts, turning concepts into captivating animations. Our nimble team, inspired by successful collaborations, specializes in bringing brands to life with dynamic visuals.",
-      image: "/ourValues/2.png",
-      imagePosition: "order-2",
-      textPosition: "order-1",
-      buttonPosition: "order-3",
-      titlePosition: "order-1",
-      descPosition: "order-2",
-    },
-    {
-      title: "UI/UX Design",
-      description:
-        "Crafting seamless user flows. Specializing in UI/UX design, we transform ideas into intuitive interfaces. From conceptualization to launch, our expertise ensures user-centric solutions that ignite growth.",
-      image: "/ourValues/3.png",
-      imagePosition: "order-1",
-      textPosition: "order-2",
-      buttonPosition: "order-3",
-      titlePosition: "order-1",
-      descPosition: "order-2",
-    },
-    {
-      title: "Branding",
-      description:
-        "We're branding experts, transforming ideas into compelling brand identities. Our nimble team, backed by industry leading experience, specializes in creating memorable experiences that resonate with your brand.",
-      image: "/ourValues/4.png",
-      imagePosition: "order-2",
-      textPosition: "order-1",
-      buttonPosition: "order-3",
-      titlePosition: "order-1",
-      descPosition: "order-2",
-    },
-  ];
-
   return (
-    <section className="relative">
+    <section className="relative min-h-screen w-full overflow-hidden bg-black text-white">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image
           src="/ourvalues/ourvaluesecondbg.svg"
           alt="Background"
           fill
-          className="object-cover"
+          className="object-cover opacity-30"
           priority
         />
-        <div className="absolute inset-0 bg-black/90" />
       </div>
 
-      {/* Content */}
-      <div className="relative z-10 px-9 py-16 md:py-24 justify-center">
-        {/* Main Heading */}
-        <div className="mx-auto max-w-7xl text-center">
-          <h2 className="text-3xl font-bold text-white sm:text-4xl md:text-5xl">
+      {/* Content Container */}
+      <div className="relative z-10 mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+        {/* Heading with underline */}
+        <div className="mb-16 text-center">
+          <h2 className="mb-4 text-4xl font-bold sm:text-5xl lg:text-6xl">
             Capabilities
           </h2>
-          <div className="mx-auto mt-4 h-1 w-24 bg-[#6D40FF]" />
+          <div className="mx-auto h-1 w-24 bg-[#6D40FF]"></div>
         </div>
 
-        {/* Services Grid */}
-        <div className="mx-auto mt-16 max-w-7xl space-y-20 md:-space-y-28">
-          {services.map((service) => (
-            <div
-              key={service.title}
-              className="flex flex-col gap-8 md:gap-2"
-            >
-              {/* Flexible Container */}
-              <div className="flex flex-col md:flex-row items-center gap-8">
-                {/* Image Container */}
-                <div className={`flex-1 ${service.imagePosition}`}>
-                  <div className="relative aspect-square w-full overflow-hidden rounded-2xl">
-                    <Image
-                      src={service.image}
-                      alt={service.title}
-                      width={440}
-                      height={440}
-                      className="object-cover md:mt-28 relative"
-                    />
-                  </div>
-                </div>
-
-                {/* Content Container */}
-                <div className={`flex flex-1 flex-col items-start justify-center space-y-6 md:px-44 md:mt-44 ${service.textPosition}`}>
-                  {/* Title */}
-                  <h3 className={`${clashGrotesk.className} text-2xl font-bold text-white sm:text-3xl -mt-28 ${service.titlePosition}`}>
-                    {service.title}
-                  </h3>
-                  
-                  {/* Description */}
-                  <p className={`${satoshi.className} text-gray-400 ${service.descPosition}`}>
-                    {service.description}
-                  </p>
-                  
-                  {/* Button */}
-                  <div className={service.buttonPosition}>
-                    <button className="rounded-full bg-[#6D40FF] shadow-[0.5px_0.2px_7px_0.2px_rgba(125,64,255,55)] px-6 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-[#7D40FF] mb-36">
-                      Read Us
-                    </button>
-                  </div>
-                </div>
-              </div>
+        {/* Capabilities Grid */}
+        <div className="grid gap-16 lg:gap-24">
+          {/* Graphic Design */}
+          <div className="grid gap-8 lg:grid-cols-2 lg:gap-12 px-8">
+            <div className="relative mx-auto aspect-square w-full max-w-[440px]">
+              <Image
+                src="/ourvalues/1.png"
+                alt="Graphic Design Illustration"
+                width={440}
+                height={440}
+                className="rounded-lg object-cover md:mt-32"
+              />
             </div>
-          ))}
+            <div className="flex flex-col justify-center">
+              <h3 className="mb-6 text-3xl font-bold sm:text-4xl -mt-24 md:mt-24">
+                Graphic Design
+              </h3>
+              <p className={`${satoshi.className} mb-8 text-gray-300 md:text-[15xpx] `}>
+                We master graphic design, from ideation to coding, exemplified
+                by our success with cplus.com. Our remote team excels in
+                crafting exceptional websites for diverse business needs, be it
+                B2B, B2C, or SaaS products. Our comprehensive approach ensures
+                that every design not only looks stunning but also delivers
+                measurable results for our clients across various industries.
+              </p>
+              <Button 
+                className={`${satoshi.className} font-bold bg-[#6D40FF] shadow-[0.5px_0.2px_7px_0.2px_rgba(125,64,255,55)] hover:bg-[#7D40FF] rounded-full py-2 w-32`}
+              >
+                Reach Us
+              </Button>
+            </div>
+          </div>
+
+          {/* Motion Design */}
+          <div className="grid gap-8 lg:grid-cols-2 lg:gap-12 px-8">
+            <div className="relative mx-auto aspect-square w-full max-w-[440px] lg:order-2">
+              <Image
+                src="/ourvalues/2.png"
+                alt="Motion Design Illustration"
+                width={440}
+                height={440}
+                className="rounded-lg object-cover"
+              />
+            </div>
+            <div className="flex flex-col justify-center lg:order-1 md:-mt-46 md:px-16 -mt-44">
+              <h3 className="mb-6 text-3xl font-bold sm:text-4xl mt-28">
+                Motion Design
+              </h3>
+              <p className={`${satoshi.className} mb-8 line-clamp-4 text-gray-300 text-[18px]`}>
+                Our motion design expertise brings static concepts to life through
+                fluid animations and engaging interactions. We specialize in creating
+                dynamic visual experiences that capture attention and convey messages
+                effectively. From micro-interactions to full-scale animated productions,
+                our team delivers motion design that enhances user engagement and
+                strengthens brand storytelling.
+              </p>
+              <Button 
+                className={`${satoshi.className} font-bold bg-[#6D40FF] shadow-[0.5px_0.2px_7px_0.2px_rgba(125,64,255,55)] hover:bg-[#7D40FF] rounded-full py-2 w-32`}>
+                Reach us
+              </Button>
+            </div>
+          </div>
+
+          {/* UI/UX Design */}
+          <div className="grid gap-8 lg:grid-cols-2 lg:gap-12 px-8 md:-mt-24">
+            <div className="relative mx-auto aspect-square w-full max-w-[440px]">
+              <Image
+                src="/ourvalues/3.png"
+                alt="UI/UX Design Illustration"
+                width={440}
+                height={440}
+                className="rounded-lg object-cover"
+              />
+            </div>
+            <div className="flex flex-col justify-center -mt-28 md:px-20">
+              <h3 className="mb-6 text-3xl font-bold sm:text-4xl">
+                UI/UX Design
+              </h3>
+              <p className="mb-8 line-clamp-4 text-gray-300 ">
+                Our UI/UX design process focuses on creating intuitive, user-centric 
+                interfaces that delight and engage. We combine aesthetics with 
+                functionality, ensuring every interaction is purposeful and enjoyable. 
+                From wireframing to prototyping, we craft seamless digital experiences 
+                that not only meet but exceed user expectations, driving satisfaction 
+                and conversion rates for our clients.
+              </p>
+              <Button 
+                className={`${satoshi.className} bg-[#6D40FF] shadow-[0.5px_0.2px_7px_0.2px_rgba(125,64,255,55)] hover:bg-[#7D40FF] font-bold rounded-full py-2 w-32`}
+              >
+                Reach us
+              </Button>
+            </div>
+          </div>
+
+          {/* Branding */}
+          <div className="grid gap-8 lg:grid-cols-2 lg:gap-12 px-8 md:-mt-20">
+            <div className="relative mx-auto aspect-square w-full max-w-[440px] lg:order-2">
+              <Image
+                src="/ourvalues/4.png"
+                alt="Branding Illustration"
+                width={440}
+                height={440}
+                className="rounded-lg object-cover"
+              />
+            </div>
+            <div className="flex flex-col justify-center lg:order-1 -mt-28 md:px-16">
+              <h3 className="mb-6 text-3xl font-bold sm:text-4xl">
+                Branding
+              </h3>
+              <p className="mb-8 line-clamp-4 text-gray-300">
+                Our branding expertise goes beyond logos and color palettes. We create 
+                comprehensive brand identities that resonate with target audiences and 
+                stand out in crowded markets. From brand strategy and positioning to 
+                visual identity and voice, we develop cohesive branding solutions that 
+                build recognition, trust, and loyalty. Let us help you tell your unique 
+                story and make a lasting impression.
+              </p>
+              <Button 
+                className={`${satoshi.className} font-bold bg-[#6D40FF] shadow-[0.5px_0.2px_7px_0.2px_rgba(125,64,255,55)] hover:bg-[#7D40FF] rounded-full py-2 w-32`}
+              >
+                Reach us
+              </Button>
+            </div>
+          </div>
         </div>
       </div>
     </section>
-  );
+  )
 }
+

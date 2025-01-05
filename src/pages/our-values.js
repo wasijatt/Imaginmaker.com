@@ -5,6 +5,7 @@ import { satoshi } from '@/lib/fonts';
 import Navbar from '@/components/Navbar';
 import OurValueHeroSection from '@/components/ourValues/ourvalueHero';
 import CapabilitiesSection from '@/components/ourValues/CapabilitiesSection';
+import Footer from '@/components/Footer';
 
 export default function services() {
 
@@ -14,6 +15,7 @@ export default function services() {
       <Navbar />
       <OurValueHeroSection/>
       <CapabilitiesSection/>
+      <Footer/>
     </main>
   )
 }
