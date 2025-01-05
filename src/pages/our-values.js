@@ -4,6 +4,7 @@ import { clashGrotesk } from '@/lib/clashGroteskfont';
 import { satoshi } from '@/lib/fonts';
 import Navbar from '@/components/Navbar';
 import OurValueHeroSection from '@/components/ourValues/ourvalueHero';
+import CapabilitiesSection from '@/components/ourValues/CapabilitiesSection';
 
 export default function services() {
 
@@ -12,6 +13,7 @@ export default function services() {
     <main className={`${clashGrotesk.className} ${satoshi.className}`}>
       <Navbar />
       <OurValueHeroSection/>
+      <CapabilitiesSection/>
     </main>
   )
 }

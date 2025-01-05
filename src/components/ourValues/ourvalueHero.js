@@ -19,10 +19,10 @@ export default function OurValueHeroSection() {
       </div>
 
       {/* Content Container */}
-      <div className="relative z-10 mx-auto max-w-6xl px-4 py-20 sm:px-6 lg:px-8">
+      <div className="relative z-10 mx-auto max-w-6xl px-8 py-20 sm:px-6 lg:px-8">
         <div className="flex flex-col items-start space-y-6">
           {/* Heading with dot */}
-          <h1 className={`${clashGrotesk.className} flex flex-col items-start text-4xl font-bold text-white sm:text-5xl md:text-6xl lg:text-7xl relative top-[2rem] mb-6 2xl:top-[6rem] 2xl:mb-24 tracking-wide`}>
+          <h1 className={`${clashGrotesk.className} flex flex-col items-start text-4xl font-bold text-white sm:text-5xl md:text-6xl lg:text-7xl relative top-[3.5rem] mb-12 2xl:top-[6rem] 2xl:mb-24 tracking-wide`}>
             Imagin Maker A
             <span className="flex items-center">
               Design Agency
@@ -58,7 +58,7 @@ export default function OurValueHeroSection() {
           </p>
 
           {/* Arrow Image */}
-          <div className="relative h-8 w-60">
+          <div className="relative h-8 w-60 px-8">
             <Image
               src="/casestudy/arrowsvg.svg"
               alt="Decorative arrow"
@@ -68,7 +68,7 @@ export default function OurValueHeroSection() {
           </div>
 
           {/* Button */}
-          <div className="flex w-full justify-center pt-4">
+          <div className="flex w-full justify-center pt-4 ">
             <button className="rounded-full bg-[#6D40FF] shadow-[0.5px_0.2px_7px_0.2px_rgba(125,64,255,55)]  px-8 py-3 text-base font-semibold text-white transition-colors hover:bg-[#7D40FF] focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2">
               Get In Touch
             </button>

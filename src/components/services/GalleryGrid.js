@@ -13,7 +13,7 @@ export default function GalleryGrid({ items, activeCategory }) {
   return (
     <>
     {/* <div className="flex"> */}
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 p-4 md:p-0">
+    <div className=" grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 p-4 md:p-0">
       <AnimatePresence>
         {filteredItems?.map((item) => (
           <motion.div
@@ -29,14 +29,17 @@ export default function GalleryGrid({ items, activeCategory }) {
               src={item.imageUrl}
               alt={item.title}
               className="object-cover transition-transform duration-300 hover:scale-105"
-              fill
-              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+              width={640}
+              height={640}
+              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw h-inherit"
             />
           </motion.div>
         ))}
       </AnimatePresence>
     </div>
-    {/* <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 p-4 md:p-0">
+
+
+    {/* <div className=" hidden relative mt-10 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 p-4 md:p-0">
       <AnimatePresence>
         {filteredItems?.map((item) => (
           <motion.div
