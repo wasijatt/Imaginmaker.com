@@ -1,10 +1,12 @@
 import React from "react";
 import { cn } from "@/lib/utils";
+import { satoshi } from "@/lib/fonts";
+import { clashGrotesk } from "@/lib/clashGroteskfont";
 
 export default function CategoryNav({ categories, activeCategory, onCategoryChange }) {
   return (
-    <nav className="w-full overflow-x-auto pb-2 mb-8">
-      <ul className="flex gap-8 min-w-max px-4 md:px-0 md:justify-center">
+    <nav className={`${satoshi.className} w-full overflow-x-auto pb-2 mb-8`}>
+      <ul className={`${clashGrotesk.className} flex gap-8 min-w-max px-4 md:px-0 md:justify-cente font-bold`}>
         {categories.map((category) => (
           <li key={category}>
             <button
