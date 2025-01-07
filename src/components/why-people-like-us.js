@@ -1,10 +1,10 @@
 'use client'
 
-import { useEffect, useRef, useState } from 'react'
-import Image from 'next/image'
-import useInView from '@/components/ui/react-intersection-observer'
-import { satoshi } from '@/lib/fonts'
-import { clashGrotesk } from '@/lib/clashGroteskfont'
+import { useEffect, useRef, useState } from 'react';
+import Image from 'next/image';
+import useInView from '@/components/ui/react-intersection-observer';
+import { satoshi } from '@/lib/fonts';
+import { clashGrotesk } from '@/lib/clashGroteskfont';
 
 const StatBoxProps = {
     icon: 'string',
