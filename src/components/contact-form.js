@@ -26,7 +26,7 @@ export default function ContactForm() {
     }
 
     return (
-        <section className="py-20 px-4 xl:h-[110vh] md:px-6 lg:px-8 bg-white overflow-hidden">
+        <section className="py-20 px-4 xl:h-[110vh] md:px-6 lg:px-8 bg-white overflow-hidden w-full">
             <div className="max-w-6xl mx-auto">
                 <div className="text-center mb-12">
                     <div className="relative inline-block">

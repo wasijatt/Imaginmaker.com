@@ -8,7 +8,7 @@ import HomeStar from './ui/star';
 
 export default function HeroSection() {
   return (
-    <section className="w-full max-w-[100vw] min-w-max h-[60vh] xl:h-[90vh] 2xl:h-[80vh] relative overflow-hidden">
+    <section className="w-full h-[60vh] xl:h-[90vh] 2xl:h-[80vh] relative overflow-hidden">
       <Image
         src="/HeroSection/herobg.jpg"
         alt="Hero background"

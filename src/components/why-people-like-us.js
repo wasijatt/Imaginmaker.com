@@ -75,7 +75,7 @@ export default function WhyPeopleLikeUs() {
     ]
 
     return (
-        <section className="bg-black py-20 px-4 md:px-6 lg:px-8">
+        <section className="bg-black py-20 px-4 md:px-6 lg:px-8 w-full overflow-hidden">
             <div className="max-w-7xl mx-auto">
                 <div className="text-center mb-16">
                     <h2 className={`${clashGrotesk.className} text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4`}>
