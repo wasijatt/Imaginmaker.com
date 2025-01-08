@@ -122,7 +122,7 @@ export default function ContactFirstSection() {
                                 className={`${satoshi.className} relative inline-flex items-center justify-center rounded-full bg-[#6D40FF] shadow-[0.5px_0.2px_7px_0.2px_rgba(125,64,255,55)] px-6 py-2.5 sm:px-8 sm:py-3 text-base sm:text-lg text-white transition-all duration-300 hover:bg-[#7D40FF] focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-offset-2 focus:ring-offset-black font-bold tracking-normal`}
                             >
                                 <span className="relative z-10">Hire Us</span>
-                                <div className="absolute inset-0 -z-10 animate-pulse rounded-full bg-purple-500/50 blur-lg" />
+                                <div className="absolute inset-0 -z-10 animate-pulse rounded-full bg-[#6D40FF] shadow-[0.5px_0.2px_7px_0.2px_rgba(125,64,255,55)] blur-lg" />
                             </Link>
                         </div>
                     </div>
