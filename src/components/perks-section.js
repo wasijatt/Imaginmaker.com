@@ -98,7 +98,7 @@ export default function PerksSection() {
     ]
 
     return (
-        <section className="bg-[#7D40FF] py-16 sm:py-24 px-4 md:px-6 lg:px-8 xl:h-[62vh]">
+        <section className="bg-[#7D40FF] py-16 sm:py-24 px-4 md:px-6 lg:px-8 xl:h-[62vh] w-full overflow-hidden">
             <div className="max-w-7xl mx-auto">
                 <h2 className={`${satoshi.className} text-center text-white text-2xl sm:text-3xl md:text-4xl lg:text-[40px] font-bold max-w-4xl mx-auto mb-16 sm:mb-24 leading-tight xl:mt-[-4rem] xl:text-[1.5rem]`}>
                     <span className="block">Perks so good you&apos;ll never need to go anywhere else </span>

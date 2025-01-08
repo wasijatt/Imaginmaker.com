@@ -13,7 +13,7 @@ const Navbar = () => {
     return (
         <nav
             className={cn(
-                "fixed top-0 w-full z-50 bg-black py-4 2xl:py-7 px-6 shadow-[gray_0px_0px_4px_0px]",
+                "fixed top-0 w-full z-50 bg-black py-4 2xl:py-7 px-6 shadow-[gray_0px_0px_4px_0px] overflow-hidden",
                 satoshi.className
             )}
         >

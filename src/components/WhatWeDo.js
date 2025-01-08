@@ -137,7 +137,7 @@ function TestimonialCarousel() {
 
     return (
         <>
-            <div className='relative xl:top-[-0.6rem] xl:left-[-1rem]'>
+            <div className='relative xl:top-[-0.6rem] xl:left-[-1rem] w-full overflow-hidden'>
                 <div>
                     <div className={`${satoshi.className} flex justify-center items-center relative top-[15rem] left-[-10rem]`}>
                         <Link href="/About-us">

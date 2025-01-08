@@ -21,7 +21,7 @@ export default function CapabilitiesSection() {
         {/* Heading with underline */}
         <div className="mb-16 text-center">
           <h2 className="mb-4 text-4xl font-bold sm:text-5xl lg:text-6xl">
-            Capabilities.
+            Capabilities
           </h2>
           <div className="mx-auto h-1 w-24 bg-[#6D40FF]"></div>
         </div>
