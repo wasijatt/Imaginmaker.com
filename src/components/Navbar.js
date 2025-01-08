@@ -17,7 +17,7 @@ const Navbar = () => {
                 satoshi.className
             )}
         >
-            <div className="max-w-7xl mx-auto flex items-center">
+            <div className="max-w-7xl mx-auto flex items-center w-full overflow-hidden">
                 <div className="flex items-center justify-between flex-1 md:flex-none relative 2xl:left-[-6rem]">
                     {/* Logo */}
                     <Link href="/" aria-label="Home">

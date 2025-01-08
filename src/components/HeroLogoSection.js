@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export function LogoMarquee() {
     return (
-        <div className="bg-black overflow-hidden py-4 sm:py-6">
+        <div className="bg-black overflow-hidden py-4 sm:py-6 w-full">
             <div className="relative flex gap-0">
                 {/* First set of logos */}
                 <div className="flex animate-marquee whitespace-nowrap gap-0">

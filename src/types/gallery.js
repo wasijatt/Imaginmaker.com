@@ -20,7 +20,7 @@ export const exampleGalleryItems = [
     category: 'Graphic Design',
     imageUrl: '/public/Graphic design poster/1.webp',
     title: 'Example Title',
-    width: 300,
-    height: 400,
+    width: 100,
+    height: 200,
   },
 ];

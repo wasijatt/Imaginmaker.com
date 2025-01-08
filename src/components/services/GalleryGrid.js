@@ -1,68 +1,160 @@
-import React, { useEffect, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import Image from "next/image";
+import Image from 'next/image'
 
-export default function GalleryGrid({ items, activeCategory }) {
-  const [filteredItems, setFilteredItems] = useState(items);
+export default function GalleryGrid() {
+  const topRowImages = [
+    {
+      src: "/Graphic design poster/01.webp",
+      alt: "Paris Discount Offer",
+      className: "aspect-square"
+    },
+    {
+      src: "/Graphic design poster/2.webp",
+      alt: "Black is Tech",
+      className: "aspect-square"
+    },
+    {
+      src: "/Graphic design poster/3.webp",
+      alt: "Professional Profile",
+      className: "aspect-square"
+    }
+  ]
 
-  useEffect(() => {
-    const filtered = items.filter((item) => item.category === activeCategory);
-    setFilteredItems(filtered);
-  }, [activeCategory, items]);
+  const bottomRowImages = [
+    {
+      src: "/Graphic design poster/04.webp",
+      alt: "Coffee Discount",
+      className: "aspect-square"
+    },
+    {
+      src: "/Graphic design poster/05.webp",
+      alt: "Fashion Sale",
+      className: "aspect-square"
+    },
+    {
+      src: "/Graphic design poster/06.webp",
+      alt: "Black Friday MacBook",
+      className: "aspect-square"
+    },
+    {
+      src: "/Graphic design poster/07.webp",
+      alt: "Cappuccino Offer",
+      className: "aspect-square"
+    },
+    {
+      src: "/Graphic design poster/09.webp",
+      alt: "Cappuccino Offer",
+      className: "aspect-square"
+    },
+    {
+      src: "/Graphic design poster/10.webp",
+      alt: "Cappuccino Offer",
+      className: "aspect-square"
+    },
+    {
+      src: "/Graphic design poster/11.webp",
+      alt: "Cappuccino Offer",
+      className: "aspect-square"
+    },
+    {
+      src: "/Graphic design poster/12.webp",
+      alt: "Cappuccino Offer",
+      className: "aspect-square"
+    },
+    {
+      src: "/Graphic design poster/13.webp",
+      alt: "Cappuccino Offer",
+      className: "aspect-square"
+    },
+    {
+      src: "/Graphic design poster/14.webp",
+      alt: "Cappuccino Offer",
+      className: "aspect-square"
+    },
+    {
+      src: "/Graphic design poster/24.webp",
+      alt: "Cappuccino Offer",
+      className: "aspect-square"
+    },
+    {
+      src: "/Graphic design poster/16.webp",
+      alt: "Cappuccino Offer",
+      className: "aspect-square"
+    },
+    {
+      src: "/Graphic design poster/23.webp",
+      alt: "Cappuccino Offer",
+      className: "aspect-square"
+    },
+    {
+      src: "/Graphic design poster/18.webp",
+      alt: "Cappuccino Offer",
+      className: "aspect-square"
+    },
+    {
+      src: "/Graphic design poster/19.webp",
+      alt: "Cappuccino Offer",
+      className: "aspect-square"
+    },
+    {
+      src: "/Graphic design poster/20.webp",
+      alt: "Cappuccino Offer",
+      className: "aspect-square"
+    },
+    {
+      src: "/Graphic design poster/21.webp",
+      alt: "Cappuccino Offer",
+      className: "aspect-square"
+    },
+    {
+      src: "/Graphic design poster/22.webp",
+      alt: "Cappuccino Offer",
+      className: "aspect-square"
+    },
+  ]
 
   return (
-    <>
-    {/* <div className="flex"> */}
-    <div className=" grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 p-4 md:p-0">
-      <AnimatePresence>
-        {filteredItems?.map((item) => (
-          <motion.div
-          key={item.id}
-            layout
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 0.9 }}
-            transition={{ duration: 0.3 }}
-            className="relative aspect-[3/4] overflow-hidden rounded-lg"
-            >
-            <Image
-              src={item.imageUrl}
-              alt={item.title}
-              className="object-cover transition-transform duration-300 hover:scale-105"
-              width={640}
-              height={640}
-              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw h-inherit"
-            />
-          </motion.div>
+    <div className="mx-auto max-w-7xl p-4 md:p-6 lg:p-8">
+      {/* Top Row - 3 columns */}
+      <div className="mb-4 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {topRowImages.map((image, index) => (
+          <div
+            key={index}
+            className="group relative overflow-hidden rounded-xl bg-gray-100 transition-transform hover:scale-[1.02]"
+          >
+            <div className="relative aspect-square">
+              <Image
+                src={image.src}
+                alt={image.alt}
+                fill
+                className="object-cover transition-transform duration-300 group-hover:scale-105"
+              />
+            </div>
+          </div>
         ))}
-      </AnimatePresence>
+      </div>
+
+      {/* Bottom Row - 4 columns */}
+      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        {bottomRowImages.map((image, index) => (
+          <div
+            key={index}
+            className="group relative overflow-hidden rounded-xl bg-gray-100 transition-transform hover:scale-[1.02]"
+          >
+            <div className="relative aspect-square">
+              <Image
+                src={image.src}
+                alt={image.alt}
+                fill
+                className="object-cover transition-transform duration-300 group-hover:scale-105"
+              />
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
 
 
-    {/* <div className=" hidden relative mt-10 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 p-4 md:p-0">
-      <AnimatePresence>
-        {filteredItems?.map((item) => (
-          <motion.div
-          key={item.id}
-          layout
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          exit={{ opacity: 0, scale: 0.9 }}
-          transition={{ duration: 0.3 }}
-          className="relative aspect-[3/4] overflow-hidden rounded-lg"
-          >
-            <Image
-              src={item.imageUrl}
-              alt={item.title}
-              className="object-cover transition-transform duration-300 hover:scale-105"
-              fill
-              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-              />
-          </motion.div>
-        ))}
-      </AnimatePresence>
-    </div> */}
-        {/* </div> */}
-        </>
-  );
+
+  )
 }
+
