@@ -4,6 +4,7 @@ import { clashGrotesk } from '@/lib/clashGroteskfont';
 import { satoshi } from '@/lib/fonts';
 import Navbar from '@/components/Navbar';
 import AboutHeroSection from '@/components/about/first';
+import AboutSecondSection from '@/components/about/aboutsecond';
 
 export default function about() {
 
@@ -12,6 +13,7 @@ export default function about() {
         <main className={`${clashGrotesk.className} ${satoshi.className}`}>
             <Navbar />
             <AboutHeroSection/>
+            <AboutSecondSection/>
         </main>
     )
 }
