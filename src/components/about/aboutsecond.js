@@ -73,7 +73,7 @@ export default function AboutSecondSection() {
           <div className="relative h-[352px] order-2 lg:order-1 md:-mt-16 md:-right-28">
             <div className="absolute inset-0 rounded-3xl">
               <Image
-                src="/about/about2.svg"
+                src="/about/about2.jpg"
                 alt="Founder"
                 width={350}
                 height={350}

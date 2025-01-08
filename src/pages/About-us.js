@@ -5,6 +5,7 @@ import { satoshi } from '@/lib/fonts';
 import Navbar from '@/components/Navbar';
 import AboutHeroSection from '@/components/about/first';
 import AboutSecondSection from '@/components/about/aboutsecond';
+import AboutContactForm from '@/components/about/aboutthird';
 
 export default function about() {
 
@@ -14,6 +15,7 @@ export default function about() {
             <Navbar />
             <AboutHeroSection/>
             <AboutSecondSection/>
+            <AboutContactForm/>
         </main>
     )
 }
