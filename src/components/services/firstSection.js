@@ -25,7 +25,7 @@ export default function ServicesFirstSection() {
                         <br />
                         <span className="flex items-center">
                             for Achieving Goals
-                            <svg className='relative left-[0.3rem] max-sm:left-[-13.5rem] max-sm:top-6' width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <svg className='relative left-[0.3rem] max-sm:left-[-13rem] max-sm:top-6' width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <g filter="url(#filter0_i_3597_81)">
                                     <circle cx="7.5" cy="7.5" r="7.5" fill="url(#paint0_linear_3597_81)" />
                                 </g>
@@ -68,7 +68,7 @@ export default function ServicesFirstSection() {
 
                     {/* CTA Button */}
                     <div className="absolute bottom-28 left-0 right-0 flex justify-center w-full">
-                        <button className={`${satoshi.className} rounded-full bg-[#6D40FF] shadow-[0.5px_0.2px_7px_0.2px_rgba(125,64,255,55)]  px-8 py-3 text-base text-white transition-all hover:bg-[#7D40FF] focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 sm:px-10 font-bold`}>
+                        <button className={`${satoshi.className} rounded-full bg-[#6D40FF] shadow-[0.5px_0.2px_7px_0.2px_rgba(125,64,255,55)] px-8 py-3 text-base text-white transition-all hover:bg-[#7D40FF] focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 sm:px-10 font-bold`}>
                             Connect With Us
                         </button>
                     </div>
