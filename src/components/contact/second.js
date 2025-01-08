@@ -33,7 +33,7 @@ export default function ContactSecondSection() {
       <div className="relative z-10 mx-auto max-w-6xl px-4 py-12 md:px-6 lg:px-8">
         <div className="grid gap-8 lg:grid-cols-2 lg:gap-12">
           {/* Contact Form */}
-          <div className="space-y-6 rounded-2xl bg-transparent p-6 backdrop-blur-sm mt-28">
+          <div className="space-y-6 rounded-2xl bg-transparent p-6 backdrop-blur-sm mt-16 md:mt-28">
             <form onSubmit={handleSubmit} className="space-y-6" id="contact-form">
               <div>
                 <input
