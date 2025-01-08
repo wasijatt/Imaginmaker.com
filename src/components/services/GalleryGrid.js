@@ -134,7 +134,7 @@ export default function GalleryGrid() {
       </div>
 
       {/* Bottom Row - 4 columns */}
-      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4 mb-0">
         {bottomRowImages.map((image, index) => (
           <div
             key={index}
