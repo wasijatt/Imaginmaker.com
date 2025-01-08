@@ -35,7 +35,7 @@ export default function ContactFirstSection() {
 
                         <div className="flex flex-col">
                             <h1 className={`${clashGrotesk.className} text-4xl sm:text-5xl lg:text-8xl font-bold tracking-wide text-white`}>
-                                We'
+                                We&apos;
                                 re
                             </h1>
                             <h1

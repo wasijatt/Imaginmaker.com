@@ -4,6 +4,7 @@ import { clashGrotesk } from '@/lib/clashGroteskfont';
 import { satoshi } from '@/lib/fonts';
 import ContactFirstSection from '@/components/contact/first';
 import Navbar from '@/components/Navbar';
+import ContactSecondSection from '@/components/contact/second';
 
 export default function contact() {
 
@@ -12,6 +13,7 @@ export default function contact() {
         <main className={`${clashGrotesk.className} ${satoshi.className}`}>
             <Navbar/>
             <ContactFirstSection />
+            <ContactSecondSection/>
         </main>
     )
 }
