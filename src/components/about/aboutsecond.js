@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export default function AboutSecondSection() {
   return (
-    <section className="relative bg-black text-white py-16">
+    <section className="relative bg-black text-white py-16 w-full overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image

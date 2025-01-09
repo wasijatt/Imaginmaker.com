@@ -50,7 +50,7 @@ const Navbar = () => {
                 <div className="hidden md:block flex-1 text-right relative 2xl:left-[6rem]">
                     <Link
                         href="/contact"
-                        className="bg-gradient-to-r from-[#7D40FF] via-[#6F00FF] to-[#8F00FF] text-white px-6 py-2 2xl:py-[10px] rounded-full hover:opacity-90 transition-all duration-300 font-medium"
+                        className="bg-gradient-to-r from-[#7D40FF] via-[#6F00FF] to-[#8F00FF] text-white px-6 py-4 2xl:py-[10px] rounded-full hover:opacity-90 transition-all duration-300 font-medium "
                     >
                         Contact Us
                     </Link>

@@ -19,7 +19,7 @@ export default function AboutHeroSection() {
             <div className="absolute inset-0 bg-gradient-to-br" />
 
             {/* Content Container */}
-            <div className="relative z-10 container mx-auto px-4 md:mt-28">
+            <div className="relative z-10 container mx-auto px-8 md:mt-28">
                 <div className="max-w-2xl">
                     {/* Heading with Purple Dot */}
                     <div className="flex items-start mb-6">

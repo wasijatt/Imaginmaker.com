@@ -7,7 +7,7 @@ import { satoshi } from "@/lib/fonts"
 
 export default function ContactForm() {
   return (
-    <section className="w-full py-12 md:py-24 bg-white">
+    <section className="w-full py-12 md:py-24 bg-white overflow-hidden">
       <div className="container px-4 md:px-6">
         <div className="flex flex-col items-center space-y-8 max-w-4xl mx-auto">
           <div className="text-center space-y-2">
