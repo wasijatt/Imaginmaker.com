@@ -45,7 +45,7 @@ export default function HeroSection() {
           </div>
 
           {/* Subtitle */}
-          <p className="mb-6 text-lg text-gray-300 md:text-xl">
+          <p className="mb-6 text-lg tracking-wide text-gray-300 md:text-xl">
             What You Think, We Can Design for your Businesses!
           </p>
 
