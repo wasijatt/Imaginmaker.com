@@ -29,19 +29,19 @@ export default function ContactForm() {
               <div className="flex flex-col space-y-12">
                 <Input
                   placeholder="Full Name"
-                  className="h-12 rounded-full border-2 border-gray-600 px-12"
+                  className="h-12 rounded-full border-2 border-gray-600 md:px-12 px-6"
                   required
                 />
                 <Input
                   placeholder="Phone"
                   type="tel"
-                  className="h-12 rounded-full border-2 border-gray-600 px-12"
+                  className="h-12 rounded-full border-2 border-gray-600 md:px-12 px-6"
                   required
                 />
                 <Input
                   placeholder="Email"
                   type="email"
-                  className="h-12 rounded-full border-2 border-gray-600 px-12"
+                  className="h-12 rounded-full border-2 border-gray-600 md:px-12 px-6"
                   required
                 />
               </div>
@@ -50,7 +50,7 @@ export default function ContactForm() {
               <div>
                 <Textarea
                   placeholder="Message "
-                  className="h-full min-h-[144px] border-2 border-gray-600 resize-none rounded-3xl p-6 w-96"
+                  className="h-full min-h-[144px] border-2 border-gray-600 resize-none rounded-3xl p-6 md:w-96"
                   required
                 />
               </div>
