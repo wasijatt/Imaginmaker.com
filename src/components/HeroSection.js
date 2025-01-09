@@ -7,7 +7,7 @@ import { satoshi } from '@/lib/fonts'
 
 export default function HeroSection() {
   return (
-    <section className="relative md:min-h-[600px] h-[65vh] md:h-[70vh] lg:h-[75vh] xl:h-[75vh] 2xl:h-[70vh] w-full overflow-hidden px-6">
+    <section className="relative md:min-h-[600px] h-[70vh] md:h-[70vh] lg:h-[75vh] xl:h-[75vh] 2xl:h-[70vh] w-full overflow-hidden px-6">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image
