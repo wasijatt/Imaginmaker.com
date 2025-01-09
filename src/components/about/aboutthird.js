@@ -50,7 +50,7 @@ export default function ContactForm() {
               <div>
                 <Textarea
                   placeholder="Message "
-                  className="h-full min-h-[144px] border-2 border-gray-600 resize-none rounded-3xl p-6 md:w-96 w-80 -mt-36 md:mt-0"
+                  className="h-full min-h-[144px] border-2 border-gray-600 resize-none rounded-3xl p-6 md:w-96 w-[21.3rem] -mt-36 md:mt-0"
                   required
                 />
               </div>
