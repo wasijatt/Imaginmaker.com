@@ -15,7 +15,7 @@ const Footer = () => {
     };
 
     return (
-        <footer className="w-full relative bg-black text-white xl:h-[65vh] overflow-hidden">
+        <footer className="w-full relative bg-black text-white xl:h-[65vh] overflow-hidden md:h-[50vh] 2xl:h-[45vh]">
             {/* Background SVG */}
             <div className="hidden xl:block absolute inset-0 z-0 opacity-30 " style={{ width: '30%', height: '30%' }}>
                 <Image
@@ -24,7 +24,7 @@ const Footer = () => {
                     layout="intrinsic"
                     width={100}
                     height={100}
-                    style={{ width: '10rem', height: '10rem' }}
+                    style={{ width: '12rem', height: '12rem' }}
                     objectFit="cover"
                     quality={100}
                     className='relative 2xl:left-[15rem]'
@@ -43,7 +43,7 @@ const Footer = () => {
                             className="mx-auto lg:mx-0 mb-8"
                         />
 
-                        <div className=" hidden space-y-4 xl:space-y-4">
+                        <div className=" hidden md:block space-y-4 xl:space-y-4">
                             <p className={`${satoshi.className} text-[#9A9A9A] font-bold`}>Follow us</p>
                             <div className="flex justify-center lg:justify-start gap-6 xl:gap-4">
                                 {[Instagram, Facebook, Linkedin, Youtube, Pinterest].map((Icon, index) => (

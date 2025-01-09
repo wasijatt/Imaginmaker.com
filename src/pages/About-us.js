@@ -6,6 +6,7 @@ import Navbar from '@/components/Navbar';
 import AboutHeroSection from '@/components/about/first';
 import AboutSecondSection from '@/components/about/aboutsecond';
 import AboutContactForm from '@/components/about/aboutthird';
+import Footer from '@/components/Footer';
 
 export default function about() {
 
@@ -16,6 +17,7 @@ export default function about() {
             <AboutHeroSection/>
             <AboutSecondSection/>
             <AboutContactForm/>
+            <Footer/>
         </main>
     )
 }

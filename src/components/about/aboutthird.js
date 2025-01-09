@@ -3,57 +3,63 @@
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
+import { satoshi } from "@/lib/fonts"
 
-export default function AboutContactForm() {
+export default function ContactForm() {
   return (
-    <section className="w-full py-12 md:py-24">
+    <section className="w-full py-12 md:py-24 bg-white">
       <div className="container px-4 md:px-6">
-        <div className="flex flex-col items-center space-y-4 text-center">
-          <div className="space-y-2">
+        <div className="flex flex-col items-center space-y-8 max-w-4xl mx-auto">
+          <div className="text-center space-y-2">
             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">
               Let&apos;s Work Together!
             </h2>
-            <div className="mx-auto h-1 w-20 bg-purple-600" />
+            <div className="mx-auto h-1 w-20 bg-[#6D40FF]" />
           </div>
+          
           <form 
-            className="mx-auto w-full max-w-4xl space-y-8"
+            className="w-full"
             onSubmit={(e) => {
               e.preventDefault()
               // Handle form submission
             }}
           >
-            <div className="grid gap-6 md:grid-cols-2">
-              <div className="space-y-4">
+            <div className="grid gap-48 md:grid-cols-2 mt-24">
+              {/* Left Column - Input Fields */}
+              <div className="flex flex-col space-y-12">
                 <Input
                   placeholder="Full Name"
-                  className="rounded-full border-gray-200"
+                  className="h-12 rounded-full border-2 border-gray-600 px-12"
                   required
                 />
                 <Input
                   placeholder="Phone"
                   type="tel"
-                  className="rounded-full border-gray-200"
+                  className="h-12 rounded-full border-2 border-gray-600 px-12"
                   required
                 />
                 <Input
                   placeholder="Email"
                   type="email"
-                  className="rounded-full border-gray-200"
+                  className="h-12 rounded-full border-2 border-gray-600 px-12"
                   required
                 />
               </div>
+              
+              {/* Right Column - Message Textarea */}
               <div>
                 <Textarea
-                  placeholder="Message"
-                  className="min-h-[180px] resize-none rounded-3xl border-gray-200"
+                  placeholder="Message "
+                  className="h-full min-h-[144px] border-2 border-gray-600 resize-none rounded-3xl p-6 w-96"
                   required
                 />
               </div>
             </div>
-            <div className="flex justify-center">
+            
+            <div className="mt-12 md:mt-28 flex justify-center">
               <Button 
                 type="submit"
-                className="rounded-full bg-purple-600 px-8 hover:bg-purple-500"
+                className={`${satoshi.className} bg-[#6D40FF] shadow-[0.5px_0.2px_7px_0.2px_rgba(125,64,255,55)] h-12 rounded-full px-12 text-white hover:bg-[#6D40FF]`}
               >
                 Send
               </Button>

@@ -23,9 +23,9 @@ export default function ServicesFirstSection() {
                     <h1 className="mb-6 text-4xl font-bold tracking-wide text-white sm:text-5xl md:text-6xl lg:text-6xl">
                         Personalized Solutions
                         <br />
-                        <span className="flex items-center">
+                        <span className="flex items-center mb-6">
                             for Achieving Goals
-                            <svg className='relative left-[0.3rem] max-sm:left-[-12rem] max-sm:top-6 ' width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <svg className='relative left-[0.3rem] max-sm:left-[-11.3rem] max-sm:top-6 ' width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <g filter="url(#filter0_i_3597_81)">
                                     <circle cx="7.5" cy="7.5" r="7.5" fill="url(#paint0_linear_3597_81)" />
                                 </g>
