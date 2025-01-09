@@ -25,7 +25,7 @@ export default function HeroSection() {
         <div className="flex flex-col items-start">
           {/* Heading Section */}
           <div className="relative mb-6 ">
-            <h1 className="text-4xl font-bold text-white md:text-6xl lg:text-7xl tracking-wide">
+            <h1 className="text-3xl font-bold text-white md:text-6xl lg:text-7xl tracking-wide">
               <span>We are{' '}</span>
               <span className={`${clashGrotesk.className} relative inline-block text-[#6D40FF] font-medium `}>
                 Creative
