@@ -29,8 +29,8 @@ export default function Home() {
       <HeroSection />
       <LogoMarquee/>
        <AnimatedCarousel/>
-      {/* <WhatWeDo/>
-      <HeroServices/>
+      <WhatWeDo/>
+      {/* <HeroServices/>
       <PerksSection/>
       <MembershipSection/>
       <WhyPeopleLikeUs/>

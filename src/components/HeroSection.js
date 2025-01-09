@@ -31,7 +31,7 @@ export default function HeroSection() {
                 Creative
                 {/* Star SVG */}
                 <svg
-                  className="absolute -right-8 -top-6 h-8 w-8 text-[#6D40FF]"
+                  className="absolute -right-6 -top-3 h-8 w-8 text-[#6D40FF]"
                   viewBox="0 0 24 24"
                   fill="currentColor"
                 >
