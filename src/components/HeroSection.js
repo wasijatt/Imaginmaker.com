@@ -40,7 +40,7 @@ export default function HeroSection() {
               </span>
               <br />
               <span>Design Agency</span>
-              <span className="inline-block h-5 w-5 rounded-full bg-[#6D40FF] align-middle ml-1" />
+              <span className="inline-block h-4 w-4 rounded-full bg-[#6D40FF] align-middle ml-1" />
             </h1>
           </div>
 
