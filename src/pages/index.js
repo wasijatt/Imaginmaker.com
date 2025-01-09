@@ -27,14 +27,14 @@ export default function Home() {
     <main className={`${clashGrotesk.className} ${satoshi.className}`}>
       <Navbar />
       <HeroSection />
-      <LogoMarquee/>
+      {/* <LogoMarquee/>
       <AnimatedCarousel/>
       <WhatWeDo/>
       <HeroServices/>
       <PerksSection/>
       <MembershipSection/>
       <WhyPeopleLikeUs/>
-      <ContactForm/>
+      <ContactForm/> */}
       <Footer/>
     </main>
   )
