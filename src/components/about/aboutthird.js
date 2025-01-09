@@ -10,7 +10,7 @@ export default function ContactForm() {
     <section className="w-full py-12 md:py-24 bg-white overflow-hidden">
       <div className="container px-4 md:px-6">
         <div className="flex flex-col items-center space-y-8 max-w-4xl mx-auto">
-          <div className="text-center space-y-2">
+          <div className="text-center space-y-2 mt-10">
             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">
               Let&apos;s Work Together!
             </h2>
@@ -24,24 +24,24 @@ export default function ContactForm() {
               // Handle form submission
             }}
           >
-            <div className="grid gap-48 md:grid-cols-2 mt-24">
+            <div className="grid gap-48 md:grid-cols-2 mt-8">
               {/* Left Column - Input Fields */}
-              <div className="flex flex-col space-y-12">
+              <div className="flex flex-col md:space-y-12 space-y-8">
                 <Input
                   placeholder="Full Name"
-                  className="h-12 rounded-full border-2 border-gray-600 md:px-12 px-6"
+                  className="h-12 rounded-full border-2 border-gray-600 md:px-12"
                   required
                 />
                 <Input
                   placeholder="Phone"
                   type="tel"
-                  className="h-12 rounded-full border-2 border-gray-600 md:px-12 px-6"
+                  className="h-12 rounded-full border-2 border-gray-600 md:px-12"
                   required
                 />
                 <Input
                   placeholder="Email"
                   type="email"
-                  className="h-12 rounded-full border-2 border-gray-600 md:px-12 px-6"
+                  className="h-12 rounded-full border-2 border-gray-600 md:px-12"
                   required
                 />
               </div>
@@ -50,7 +50,7 @@ export default function ContactForm() {
               <div>
                 <Textarea
                   placeholder="Message "
-                  className="h-full min-h-[144px] border-2 border-gray-600 resize-none rounded-3xl p-6 md:w-96"
+                  className="h-full min-h-[144px] border-2 border-gray-600 resize-none rounded-3xl p-6 md:w-96 w-80 -mt-36 md:mt-0"
                   required
                 />
               </div>
