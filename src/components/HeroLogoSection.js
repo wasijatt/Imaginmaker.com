@@ -13,8 +13,8 @@ export function LogoMarquee() {
                         <Image
                             src="/logoanimation/animationlogo1.png"
                             alt="Company Logo 1"
-                            width={200}
-                            height={70}
+                            width={250}
+                            height={100}
                             className="max-h-8 sm:max-h-10 md:max-h-12 w-auto"
                         />
                     </div>

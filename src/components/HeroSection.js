@@ -62,7 +62,7 @@ export default function HeroSection() {
           {/* Button and Footer Text Container */}
           <div className="flex w-full flex-col items-center space-y-4">
             {/* Button */}
-            <button className={`${satoshi.className} rounded-full bg-[#6D40FF] shadow-[0.5px_0.2px_7px_0.2px_rgba(125,64,255,55)] px-8 py-3 text-lg font-semibold text-white transition-colors hover:bg-purple-700 md:mt-10 `}>
+            <button className={`${satoshi.className} tracking-normal rounded-full bg-[#6D40FF] shadow-[0.5px_0.2px_7px_0.2px_rgba(125,64,255,55)] px-8 py-3 text-lg font-semibold text-white transition-colors hover:bg-purple-700 md:mt-10 `}>
               See Plans
             </button>
 
