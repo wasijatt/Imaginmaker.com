@@ -30,12 +30,12 @@ export default function Home() {
       <LogoMarquee/>
        <AnimatedCarousel/>
       <WhatWeDo/>
-      {/* <HeroServices/>
-      <PerksSection/>
+      <HeroServices/>
+      {/* <PerksSection/>
       <MembershipSection/>
       <WhyPeopleLikeUs/>
       <ContactForm/> 
-      <Footer/>  */}
+      <Footer/>   */}
     </main>
   )
 }

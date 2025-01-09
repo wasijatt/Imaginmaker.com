@@ -41,12 +41,12 @@ export default function ServicesSection() {
       </div>
 
       {/* Services Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-16 mb-16 relative xl:gap-x-[-330px] xl:gap-y-16 p-24">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-16 mb-16 relative xl:gap-x-[-330px] xl:gap-y-16 p-24 mt-10">
         {services.map((service, index) => (
           <Link
             href="/services"
             key={service.title}
-            className={`group relative w-full h-[260px] block ${index % 2 === 0 ? 'md:mt-0' : 'md:mt-12'}`}
+            className={`group relative w-full h-[260px] block mb-10 md:mb-0 ${index % 2 === 0 ? 'md:mt-0' : 'md:mt-12'}`}
           >
             {/* Main Card */}
             <div className="relative inset-0 bg-white rounded-[18px] xl:w-[17rem] xl:h-[17.0rem] xl:p-0 xl:space-x-0 border-[1px] border-[#6F00FF] border-b-[13px] p-6 transition-all duration-500 ease-in-out group-hover:scale-[1.03] group-hover:shadow-lg">
@@ -77,7 +77,7 @@ export default function ServicesSection() {
         <Link href="/contact">
           <Button
             size="lg"
-            className="bg-[#6F00FF] hover:bg-[#7F00FF] text-white px-7 py-2 rounded-full text-lg font-bold transition-colors duration-300 relative top-[-3rem] shadow-[1px_1px_10px_1px_rgba(125,64,255,55)]"
+            className="bg-[#6F00FF] hover:bg-[#7F00FF] text-white px-7 py-2 rounded-full text-lg font-bold transition-colors duration-300 relative top-[-3rem] shadow-[1px_1px_10px_1px_rgba(125,64,255,55)] -mt-96"
           >
             Get your Design Done
           </Button>
