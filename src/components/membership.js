@@ -7,11 +7,11 @@ import Image from "next/image";
 export default function MembershipSection() {
     return (
         <section
-            className="relative min-h-screen w-full overflow-hidden bg-cover bg-start "
+            className="relative min-h-screen w-full overflow-hidden bg-cover bg-start"
             style={{ backgroundImage: "url('/membership/bg.webp')" }}
         >
             {/* Content */}
-            <div className="relative z-10 mx-auto max-w-7xl py-24 sm:px-6 lg:px-8 px-3">
+            <div className="relative z-10 mx-auto max-w-7xl px-4 py-24 sm:px-6 lg:px-8">
                 {/* Header */}
                 <div className={`${clashGrotesk.className} text-center mb-20`}>
                     <h2 className="text-5xl font-bold text-white mb-4">Memberships Levels</h2>
@@ -20,10 +20,10 @@ export default function MembershipSection() {
                 </div>
 
                 {/* Pricing Grid */}
-                <div className="grid gap-16 lg:grid-cols-3 lg:gap-12 max-w-5xl mx-auto relative top-10 center px-6">
+                <div className="grid gap-8 lg:grid-cols-3 lg:gap-12 max-w-5xl mx-auto relative top-10">
                     {/* Standard Plan */}
                     <div
-                        className="relative pt-24 pb-6 bg-[#070707] backdrop-blur-sm rounded-2xl border-[#7D40FF] border-[1px] xl:w-[20rem] xl:h-[33rem] xl:right-[3.5rem] px-8 w-[25rem]"
+                        className="relative pt-16 px-6 pb-6 bg-[#070707] backdrop-blur-sm rounded-2xl border-[#7D40FF] border-[1px] xl:w-[20rem] xl:h-[33rem] xl:right-[3.5rem]"
                         style={{
                             backgroundImage: "url('/membership/standard-bg.svg')",
                             backgroundRepeat: 'no-repeat',
@@ -68,7 +68,7 @@ export default function MembershipSection() {
 
                     {/* Pro Plan */}
                     <div
-                        className="relative pt-24 px-8 pb-6 bg-[#070707] backdrop-blur-sm rounded-2xl border border-[#7D40FF] xl:right-[2.5rem] w-[25rem]"
+                        className="relative pt-16 px-6 pb-6 bg-[#070707] backdrop-blur-sm rounded-2xl border border-[#7D40FF] xl:right-[2.5rem]"
                         style={{
                             backgroundImage: "url('/membership/pro-bg.svg')",
                             backgroundRepeat: 'no-repeat',
@@ -110,7 +110,7 @@ export default function MembershipSection() {
                     </div>
 
                     {/* Book a Call Section */}
-                    <div className="flex flex-col space-y-12 text-white px-0">
+                    <div className="flex flex-col space-y-12 text-white ">
                         <div className="space-y-6 ">
                             <Image
                                 src="/membership/book call 1.svg"
@@ -147,7 +147,7 @@ export default function MembershipSection() {
                 </div>
 
                 {/* Bottom Quote */}
-                <div className="mt-[8rem] px-8">
+                <div className="mt-[15rem]">
                     <div
                         className="relative w-full max-w-4xl mx-auto px-8 py-16 rounded-[25px] overflow-hidden border-t-[0.5px] border-[#262424]"
                         style={{
@@ -167,7 +167,7 @@ export default function MembershipSection() {
                         />
 
                         {/* Content */}
-                        <div className="relative z-10 flex flex-col items-center md:items-start gap-8 mt-10 ">
+                        <div className="relative z-10 flex flex-col items-center md:items-start gap-8 mt-10">
                             <div className="flex flex-col text-center md:text-left w-full">
                                 <div className="flex flex-col gap-6">
                                     <div className="flex flex-col gap-2 px-10">
@@ -181,7 +181,7 @@ export default function MembershipSection() {
                                                     alt="colon"
                                                     width={20}
                                                     height={32}
-                                                    className="relative top-[-1.5rem] xl:right-[20rem] right-[14rem] md:block"
+                                                    className="relative top-[-1.5rem] xl:right-[20rem] right-[19rem]  md:block"
                                                 />
                                             </div>
                                             <div className="w-24 h-0.5 bg-[#F9F9F9] mt-2" />

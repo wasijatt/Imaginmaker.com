@@ -65,10 +65,10 @@ export default function ServicesSection() {
                   />
                 </div>
               </div>
-              <h3 className="text-lg sm:text-xl font-bold mb-2 sm:mb-4 text-center group-hover:scale-[0.9523] transition-transform duration-500 ease-out">
+              <h3 className="text-lg sm:text-xl font-bold mb-2 sm:mb-4 text-center group-hover:scale-[0.9523] transition-transform duration-500 ease-out text-black">
                 {service.title}
               </h3>
-              <p className={`${satoshi.className} text-sm sm:text-base text-[gray-900] text-center leading-relaxed line-clamp-3 group-hover:scale-[0.9523] transition-transform duration-500 ease-out font-medium `}>
+              <p className={`${satoshi.className} text-sm sm:text-base text-gray-900 text-center leading-relaxed line-clamp-3 group-hover:scale-[0.9523] transition-transform duration-500 ease-out font-medium `}>
                 {service.description}
               </p>
             </div>
