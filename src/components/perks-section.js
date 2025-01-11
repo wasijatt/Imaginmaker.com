@@ -98,14 +98,14 @@ export default function PerksSection() {
     ]
 
     return (
-        <section className="bg-[#7D40FF] py-16 sm:py-24 px-4 md:px-6 lg:px-8 xl:h-[62vh] w-full overflow-hidden">
+        <section className="bg-[#7D40FF] py-16 sm:py-24 px-4 md:px-6 lg:px-8 xl:h-[62vh] 2xl:h-[50vh] w-full overflow-hidden">
             <div className="max-w-7xl mx-auto">
-                <h2 className={`${satoshi.className} text-center text-white text-2xl sm:text-3xl md:text-4xl lg:text-[40px] font-bold max-w-4xl mx-auto mb-16 sm:mb-24 leading-tight xl:mt-[-4rem] xl:text-[1.5rem]`}>
+                <h2 className={`${satoshi.className} text-center text-white text-2xl sm:text-3xl md:text-4xl lg:text-[40px] font-bold max-w-4xl mx-auto mb-16 sm:mb-24 leading-tight xl:mt-[-4rem] xl:text-[1.5rem] mt-2 2xl:-mt-3`}>
                     <span className="block">Perks so good you&apos;ll never need to go anywhere else </span>
                     <span className="block">for your design. Seriously.</span>
                 </h2>
 
-                <div className={`${satoshi.className} grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 sm:gap-8 lg:gap-16 max-w-6xl mx-auto font-bold text-[#F9F9F9] xl:mt-[-5rem]`}>
+                <div className={`${satoshi.className} grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 sm:gap-8 lg:gap-16 max-w-6xl mx-auto font-bold text-[#F9F9F9] xl:mt-[-5rem] 2xl:-mt-10`}>
                     {perks.map((perk, index) => (
                         <Perk
                             key={index}

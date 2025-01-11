@@ -31,11 +31,11 @@ export default function Home() {
        <AnimatedCarousel/>
       <WhatWeDo/>
       <ServicesSection/>
-      {/* <PerksSection/>
-      <MembershipSection/>
+       <PerksSection/>
+      {/* <MembershipSection/>
       <WhyPeopleLikeUs/>
       <ContactForm/> 
-      <Footer/>   */}
+      <Footer/>    */}
     </main>
   )
 }
