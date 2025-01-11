@@ -35,7 +35,7 @@ export default function Home() {
       <MembershipSection />
       <WhyPeopleLikeUs />
      <ContactForm/> 
-      {/* <Footer/>    */}
+      <Footer/>   
     </main>
   )
 }
