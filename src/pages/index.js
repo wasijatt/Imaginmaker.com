@@ -32,10 +32,10 @@ export default function Home() {
       <WhatWeDo/>
       <ServicesSection/>
        <PerksSection/>
-      {/* <MembershipSection/>
-      <WhyPeopleLikeUs/>
+       <MembershipSection/>
+      {/* <WhyPeopleLikeUs/>
       <ContactForm/> 
-      <Footer/>    */}
+      <Footer/>     */}
     </main>
   )
 }
