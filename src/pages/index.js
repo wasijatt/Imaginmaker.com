@@ -34,8 +34,8 @@ export default function Home() {
       <PerksSection />
       <MembershipSection />
       <WhyPeopleLikeUs />
-      {/* <ContactForm/> 
-      <Footer/>     */}
+     <ContactForm/> 
+      {/* <Footer/>    */}
     </main>
   )
 }
