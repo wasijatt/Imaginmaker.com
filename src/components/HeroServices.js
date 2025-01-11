@@ -1,88 +1,89 @@
-'use client';
-
-import Link from 'next/link';
-import Image from 'next/image';
-import { Button } from '@/components/ui/button';
-import { clashGrotesk } from '@/lib/clashGroteskfont';
-import { satoshi } from '@/lib/fonts';
+import Image from 'next/image'
+import Link from 'next/link'
+import { Button } from "@/components/ui/button"
+import { satoshi } from '@/lib/fonts'
 
 const services = [
   {
-    icon: '/heroServices/1.svg',
-    title: 'Graphic Design',
-    description: 'Crafting impactful visuals that bring your brand to life, from logos to full-scale branding solutions.',
+    title: "Graphic Design",
+    icon: "/heroServices/1.svg",
+    description: "Crafting impactful visuals that bring your brand to life, from logos to full-scale branding solutions.",
+    href: "/services",
+    position: "up"
   },
   {
-    icon: '/heroServices/2.svg',
-    title: 'Motion Design',
-    description: 'Transform your brand with stunning animations that captivate and engage. Our motion design brings your ideas to life with creativity and precision.',
+    title: "Motion Design",
+    icon: "/heroServices/2.svg",
+    description: "Transform your brand with dynamic animations that captivate and engage. Our motion design brings your ideas to life with creativity and precision.",
+    href: "/services",
+    position: "down"
   },
   {
-    icon: '/heroServices/3.svg',
-    title: 'UI/UX Design',
-    description: 'Designing intuitive and visually appealing interfaces that enhance user experience, making every interaction seamless and enjoyable.',
+    title: "UI/UX Design",
+    icon: "/heroServices/3.svg",
+    description: "Designing intuitive and visually appealing interfaces that enhance user experiences, making every interactive exercise are enjoyable.",
+    href: "/services",
+    position: "up"
   },
   {
-    icon: '/heroServices/4.svg',
-    title: 'Branding',
-    description: 'Creating distinctive brand identities that connect with your audiences and elevate your business.',
-  },
-];
+    title: "Branding",
+    icon: "/heroServices/4.svg",
+    description: "Creating distinct visual identities that resonate with your audiences and elevate your business.",
+    href: "/services",
+    position: "down"
+  }
+]
 
 export default function ServicesSection() {
   return (
-    <section className="overflow-hidden container mx-auto px-4 py-7 w-full">
-      {/* Heading */}
-      <div className="text-center mb-16">
-        <h2 className="text-4xl md:text-[3rem] font-bold relative top-[4rem] inline-block">
+    <section className="py-8 sm:py-16 px-14 max-w-7xl mx-auto">
+      <div className="text-center mb-8 sm:mb-16 mt-10">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">
           Our Services
-          <span className="absolute bottom-[-12px] xl:left-24 left-16 w-[85px] h-1 bg-[#6F00FF]" />
         </h2>
+        <div className="w-24 h-1 bg-[#6D40FF] mx-auto"></div>
       </div>
 
-      {/* Services Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-16 mb-16 relative xl:gap-x-[-330px] xl:gap-y-16 p-24 mt-10">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 mb-8 sm:mb-16 relative mt-20">
         {services.map((service, index) => (
-          <Link
-            href="/services"
-            key={service.title}
-            className={`group relative w-full h-[260px] block mb-10 md:mb-0 ${index % 2 === 0 ? 'md:mt-0' : 'md:mt-12'}`}
+          <Link 
+            key={index} 
+            href={service.href}
+            className={`group block ${
+              service.position === 'down' ? 'md:translate-y-8' : ''
+            }`}
           >
-            {/* Main Card */}
-            <div className="relative inset-0 bg-white rounded-[18px] xl:w-[17rem] xl:h-[17.0rem] xl:p-0 xl:space-x-0 border-[1px] border-[#6F00FF] border-b-[13px] p-6 transition-all duration-500 ease-in-out group-hover:scale-[1.03] group-hover:shadow-lg">
-              <div className="flex justify-center mb-16">
-                <div className="p-3 rounded-lg mb-[-50px] mt-[14px]">
+            <div className="p-4 sm:p-6 md:p-8 rounded-3xl border border-[#6D40FF] border-b-[10px] h-full transition-all duration-500 ease-out group-hover:scale-105 group-hover:shadow-lg bg-white transform-gpu">
+              <div className="flex justify-center mb-4 sm:mb-6 group-hover:scale-[0.9523] transition-transform duration-500 ease-out">
+                <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 relative">
                   <Image
                     src={service.icon}
-                    alt={`${service.title} icon`}
-                    width={68}
-                    height={68}
-                    className="w-17 h-17"
+                    alt={service.title}
+                    width={64}
+                    height={64}
+                    className="text-[#6D40FF]"
                   />
                 </div>
               </div>
-              <div className={`flex justify-center relative top-[-10px] ${clashGrotesk.className}`}>
-                <h3 className="text-[26px] font-bold text-center mb-[2px] mt-[-12px]">{service.title}</h3>
-              </div>
-              <div className={`flex justify-center relative p-2 xl:p-0 xl:pl-[14px] xl:pr-[14px] ${satoshi.className}`}>
-                <p className="text-[#1A1A1A] text-center text-sm font-medium ">{service.description}</p>
-              </div>
+              <h3 className="text-lg sm:text-xl font-bold mb-2 sm:mb-4 text-center group-hover:scale-[0.9523] transition-transform duration-500 ease-out">
+                {service.title}
+              </h3>
+              <p className={`${satoshi.className} text-sm sm:text-base text-[gray-900] text-center leading-relaxed line-clamp-3 group-hover:scale-[0.9523] transition-transform duration-500 ease-out font-medium `}>
+                {service.description}
+              </p>
             </div>
           </Link>
         ))}
       </div>
 
-      {/* CTA Button */}
-      <div className={`text-center ${satoshi.className}`}>
-        <Link href="/contact">
-          <Button
-            size="lg"
-            className="bg-[#6F00FF] hover:bg-[#7F00FF] text-white px-7 py-2 rounded-full text-lg font-bold transition-colors duration-300 relative top-[-3rem] shadow-[1px_1px_10px_1px_rgba(125,64,255,55)] -mt-96"
-          >
-            Get your Design Done
-          </Button>
-        </Link>
+      <div className="text-center">
+        <Button 
+          className={`${satoshi.className} rounded-full bg-[#6D40FF] shadow-[0.5px_0.2px_7px_0.2px_rgba(125,64,255,55)] hover:bg-[#7D40FF] text-white px-6 sm:px-8 py-2 sm:py-3 text-sm mt-10`}
+        >
+          Get your Design Done
+        </Button>
       </div>
     </section>
-  );
+  )
 }
+

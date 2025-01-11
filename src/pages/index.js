@@ -9,13 +9,13 @@ import { clashGrotesk } from '@/lib/clashGroteskfont';
 import { LogoMarquee } from '@/components/HeroLogoSection';
 import AnimatedCarousel from '@/components/Homecarousels';
 import WhatWeDo from '@/components/WhatWeDo';
-import HeroServices from '@/components/HeroServices'
 import { satoshi } from '@/lib/fonts';
 import PerksSection from '@/components/perks-section';
 import MembershipSection from '@/components/membership';
 import WhyPeopleLikeUs from '@/components/why-people-like-us';
 import ContactForm from '@/components/contact-form';
 import Footer from '@/components/Footer';
+import ServicesSection from '@/components/HeroServices';
 
 // import Footer from '@/components/Footer';
 
@@ -30,7 +30,7 @@ export default function Home() {
       <LogoMarquee/>
        <AnimatedCarousel/>
       <WhatWeDo/>
-      <HeroServices/>
+      <ServicesSection/>
       {/* <PerksSection/>
       <MembershipSection/>
       <WhyPeopleLikeUs/>
