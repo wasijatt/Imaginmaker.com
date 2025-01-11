@@ -60,7 +60,7 @@ export default function PerksSection() {
             icon: "/perksSection/1.svg",
             title: "Lightning fast delivery",
             description: "Get your design one at a time in just a few days on average.",
-            iconSize: 41, // Larger icon
+            iconSize: 35, // Larger icon
             titlePosition: { marginTop: '30px' },
             // descriptionPosition: { marginRight: '10px' },
             titleFontSize: '1.2rem', // Example font size for title
@@ -73,7 +73,7 @@ export default function PerksSection() {
             icon: "/perksSection/2.svg",
             title: "Flexible and scalable",
             description: "Scale up or down as needed, and pause or cancel at anytime.",
-            iconSize: 72,
+            iconSize: 55,
             titlePosition: { marginTop: '30px' },
             // descriptionPosition: { marginRight: '10px' },
             titleFontSize: '1.2rem', // Example font size for title
@@ -86,7 +86,7 @@ export default function PerksSection() {
             icon: "/perksSection/3.svg",
             title: "Unique and all yours",
             description: "Each of your designs is made especially for you and is 100% yours.",
-            iconSize: 59,
+            iconSize: 45,
             titlePosition: { marginTop: '30px' },
             // descriptionPosition: { marginRight: '10px' },
             titleFontSize: '1.2rem', // Example font size for title
