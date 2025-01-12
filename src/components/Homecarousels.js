@@ -1,107 +1,109 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
-import Image from 'next/image';
+import { useState, useEffect, useRef } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 
-export default function AnimatedCarousel() {
-    const [isHovered, setIsHovered] = useState(false);
-    const [hoveredIndex, setHoveredIndex] = useState(null);
-    const scrollerRef = useRef(null);
+const images = [
+  '/Carousel/appDesigning.webp',
+  '/Carousel/branding.webp',
+//   '/Carousel/carouselsatic.png',
+  '/Carousel/illustration.webp',
+  '/Carousel/posterdesign.webp',
+  '/Carousel/productDesigning.webp',
+  '/Carousel/websiteLandingPage.webp',
+];
 
-    const images = [
-        '/Carousel/appDesigning.webp',
-        '/Carousel/branding.webp',
-        '/Carousel/illustration.webp',
-        '/Carousel/posterdesign.webp',
-        '/Carousel/productDesigning.webp',
-        '/Carousel/websiteLandingPage.webp',
-    ];
+export default function Carousel() {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
 
-    const allImages = [...images, ...images];
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
-    useEffect(() => {
-        const scroller = scrollerRef.current;
-        if (scroller) {
-            const scrollWidth = scroller.scrollWidth;
-            const animationDuration = 60; // Decreased from 45 to 30 seconds for even faster speed
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % images.length);
+    }, 3000);
+    return () => clearInterval(timer);
+  }, [currentIndex]);
 
-            scroller.style.setProperty('--scroll-width', `${scrollWidth / 2}px`);
-            scroller.style.setProperty('--animation-duration', `${animationDuration}s`);
+  const slideVariants = {
+    enter: { x: '100%', opacity: 0 },
+    center: { x: 0, opacity: 1 },
+    exit: { x: '-100%', opacity: 0 },
+  };
 
-            // Set initial scroll position to the end
-            scroller.scrollLeft = scroller.scrollWidth / 2;
-
-            // Add a small delay to start the animation
-            setTimeout(() => {
-                scroller.classList.add('scrolling');
-            }, 100);
-        }
-    }, []);
-
-    return (
-        <div className="w-full bg-[#7D40FF] overflow-hidden py-6 relative">
-            <div className="absolute inset-0 bg-[#7D40FF]" /> {/* Background color filler */}
-            <div
-                ref={scrollerRef}
-                className={`flex gap-4 py-4 w-max will-change-transform relative z-0 ${isHovered ? 'paused' : 'scrolling'
-                    }`}
-                onMouseEnter={() => setIsHovered(true)}
-                onMouseLeave={() => {
-                    setIsHovered(false);
-                    setHoveredIndex(null);
+  return (
+    <div className="w-full overflow-hidden bg-purple-600 p-4 h-[38vh]">
+      <div className="relative mx-auto max-w-28xl">
+        {isMobile ? (
+          <div className="flex gap-4">
+            <AnimatePresence initial={false}>
+              <motion.div
+                key={currentIndex}
+                variants={slideVariants}
+                initial="enter"
+                animate="center"
+                exit="exit"
+                transition={{
+                  x: { type: 'spring', stiffness: 300, damping: 30 },
+                  opacity: { duration: 0.2 },
                 }}
+                className="relative w-full shrink-0 overflow-hidden rounded-3xl bg-white mt-4"
+              >
+                <img
+                  src={images[currentIndex]}
+                  alt={`Slide ${currentIndex + 1}`}
+                  className="aspect-[4/3] w-full object-cover"
+                />
+              </motion.div>
+            </AnimatePresence>
+          </div>
+        ) : (
+          <div className="relative overflow-hidden">
+            <motion.div
+              className="flex gap-6"
+              animate={{ x: `${-currentIndex * 25}%` }}
+              transition={{ type: 'spring', stiffness: 300, damping: 30 }}
             >
-                {allImages.map((image, index) => (
-                    <div
-                        key={index}
-                        className={`relative w-[280px] sm:w-[320px] md:w-[280px] h-[200px] sm:h-[240px] md:h-[240px] 
-                             overflow-hidden flex-shrink-0 transition-all duration-500 ease-in-out lg:rounded-[22px] rounded-[20px]
-                            ${hoveredIndex === index ? 'scale-95 shadow-xl' : 'scale-100'}`}
-                        onMouseEnter={() => {
-                            setHoveredIndex(index);
-                        }}
-                    >
-                        <Image
-                            src={image}
-                            alt={`Carousel image ${index + 1}`}
-                            fill
-                            className="object-cover transition-transform duration-500 ease-in-out"
-                            priority={index < images.length}
-                        />
-                    </div>
-                ))}
-            </div>
+              {[...images, ...images.slice(0, 3)].map((image, index) => (
+                <motion.div
+                  key={index}
+                  className="relative w-1/4 shrink-0 overflow-hidden rounded-3xl bg-white md:h-[300px] md:w-[300px] mt-8"
+                >
+                  <img
+                    src={image}
+                    alt={`Slide ${(index % images.length) + 1}`}
+                    className="aspect-[4/3] w-full object-cover"
+                  />
+                </motion.div>
+              ))}
+            </motion.div>
+          </div>
+        )}
 
-            <style jsx global>{`
-                @keyframes scroll {
-                    0% {
-                        transform: translateX(calc(-50% - 1rem));
-                    }
-                    100% {
-                        transform: translateX(0);
-                    }
-                }
-
-                .scrolling {
-                    animation: scroll var(--animation-duration) linear infinite;
-                    animation-direction: normal;
-                }
-
-                .paused {
-                    animation-play-state: paused;
-                }
-
-                .scrolling > div,
-                .paused > div {
-                    transition: all 0.5s ease-in-out;
-                }
-
-                .scrolling > div:hover,
-                .paused > div:hover {
-                    z-index: 10;
-                }
-            `}</style>
-        </div>
-    );
+        {!isMobile && (
+          <>
+            <button
+              onClick={() => setCurrentIndex((prev) => (prev - 1 + images.length) % images.length)}
+              className="absolute left-4 top-1/2 -translate-y-1/2 rounded-full bg-white/80 p-2 shadow-lg transition-all hover:bg-white"
+            >
+              <ChevronLeft className="h-6 w-6" />
+            </button>
+            <button
+              onClick={() => setCurrentIndex((prev) => (prev + 1) % images.length)}
+              className="absolute right-4 top-1/2 -translate-y-1/2 rounded-full bg-white/80 p-2 shadow-lg transition-all hover:bg-white"
+            >
+              <ChevronRight className="h-6 w-6" />
+            </button>
+          </>
+        )}
+      </div>
+    </div>
+  );
 }
-
