@@ -77,7 +77,7 @@ export default function ServicesSection() {
             <div className="relative grid lg:grid-cols-2 gap-12 z-10">
               {/* Left Column */}
               <div className="space-y-12 md:px-8">
-                <h1 className="text-4xl md:text-5xl font-bold text-white leading-tight">
+                <h1 className="text-3xl md:text-5xl font-bold text-white leading-tight">
                   A Full-Service of<br />
                   Design, Branding<br />
                   and Animation Agency<span className="inline-block h-3 w-3 rounded-full bg-[#6D40FF] align-middle ml-1" />
@@ -85,7 +85,7 @@ export default function ServicesSection() {
 
                 <div className="space-y-8 ">
                   {/* Service Items */}
-                  <div className="flex gap-6 ">
+                  <div className="md:flex gap-6 hidden">
                     <div className="flex-shrink-0 w-12 h-12 relative">
                       <Image
                         src="/WhatWeDo/whatwedo1.png"
@@ -100,7 +100,7 @@ export default function ServicesSection() {
                     </div>
                   </div>
 
-                  <div className="flex gap-6">
+                  <div className="md:flex gap-6 hidden">
                     <div className="flex-shrink-0 w-12 h-12 relative">
                       <Image
                         src="/WhatWeDo/whatwedo2.png"
@@ -115,7 +115,7 @@ export default function ServicesSection() {
                     </div>
                   </div>
 
-                  <div className="flex gap-6">
+                  <div className="md:flex gap-6 hidden">
                     <div className="flex-shrink-0 w-12 h-12 relative">
                       <Image
                         src="/WhatWeDo/whatwedo3.png"
@@ -134,17 +134,17 @@ export default function ServicesSection() {
 
               {/* Right Column */}
               <div className="flex flex-col justify-center">
-                <h2 className={`${satoshi.className} text-[0.8rem] md:text-[1.2rem] font-bold text-white text-center md:-mb-12 mt-6 -mb-20`}>
+                <h2 className={`${satoshi.className} text-[01rem] md:text-[1.2rem] font-bold text-white text-center md:-mb-12 -mt-12 -mb-20 `}>
                   What Our Clients Say About Us
                 </h2>
 
                 {/* Testimonials Carousel */}
-                <div className="relative h-[300px] overflow-hidden mb-8">
+                <div className="relative h-[300px] overflow-hidden mb-2 md:mb-12">
                   <div className="absolute inset-0 flex items-center justify-center">
                     {testimonialItems.map((testimonial, index) => (
                       <div
                         key={testimonial.id}
-                        className={`absolute w-full px-6 transition-all duration-500 ease-in-out ${
+                        className={`absolute w-full px-2 transition-all duration-500 ease-in-out ${
                           index === 0
                             ? 'opacity-100 translate-x-0 scale-100'
                             : 'opacity-0 translate-x-full scale-70'
@@ -154,9 +154,9 @@ export default function ServicesSection() {
                           <Image
                             src={testimonial.image}
                             alt={`Testimonial ${testimonial.id}`}
-                            width={380}
-                            height={200}
-                            className="rounded-3xl shadow-lg"
+                            width={400}
+                            height={300}
+                            className="rounded-2xl shadow-lg"
                           />
                         </div>
                       </div>

@@ -50,10 +50,10 @@ export default function LogoMarquee() {
   }, [controls, containerWidth]);
 
   return (
-    <div className="w-full bg-black py-4 sm:py-6 md:py-8 lg:py-10 overflow-hidden">
+    <div className="w-full bg-black py-4 sm:py-6 md:py-8 lg:py-8 overflow-hidden">
       <div ref={containerRef} className="relative">
         <motion.div
-          className="flex space-x-6 sm:space-x-8 md:space-x-12 lg:space-x-16 whitespace-nowrap"
+          className="flex space-x-6 sm:space-x-8 md:space-x-6 lg:space-x-6 whitespace-nowrap"
           animate={controls}
           style={{ width: `${containerWidth * 2}px` }}
         >
@@ -66,7 +66,7 @@ export default function LogoMarquee() {
               <img
                 src={logo.url}
                 alt={logo.alt}
-                className="h-6 sm:h-8 md:h-10 lg:h-12 w-auto object-contain brightness-0 invert"
+                className="h-6 sm:h-8 md:h-10 lg:h-6 w-auto object-contain brightness-0 invert"
               />
             </div>
           ))}

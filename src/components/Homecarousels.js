@@ -39,7 +39,7 @@ export default function Carousel() {
   };
 
   return (
-    <div className="w-full overflow-hidden bg-purple-600 p-4 h-[38vh]">
+    <div className="w-full overflow-hidden bg-purple-600 p-4 h-[40vh]">
       <div className="relative mx-auto max-w-28xl">
         {isMobile ? (
           <div className="flex gap-4">
@@ -74,7 +74,7 @@ export default function Carousel() {
               {[...images, ...images.slice(0, 3)].map((image, index) => (
                 <motion.div
                   key={index}
-                  className="relative w-1/4 shrink-0 overflow-hidden rounded-3xl bg-white md:h-[300px] md:w-[300px] mt-8"
+                  className="relative w-1/4 shrink-0 overflow-hidden rounded-3xl bg-white md:h-[300px] md:w-[300px] md:-mt-0 lg:mt-8"
                 >
                   <img
                     src={image}
