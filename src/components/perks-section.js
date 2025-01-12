@@ -67,7 +67,8 @@ export default function PerksSection() {
             descriptionFontSize: '1.1rem',
             titleColor: '#FFFFFF', // Example color for title
             descriptionColor: '#F9F9F9', // Example color for description
-            iconPosition: { marginTop: '16px' }
+            iconPosition: { marginTop: '16px' },
+            
         },
         {
             icon: "/perksSection/2.svg",
@@ -89,8 +90,8 @@ export default function PerksSection() {
             iconSize: 45,
             titlePosition: { marginTop: '30px' },
             // descriptionPosition: { marginRight: '10px' },
-            titleFontSize: '1.2rem', // Example font size for title
-            descriptionFontSize: '1rem',
+            titleFontSize: '1.1rem', // Example font size for title
+            descriptionFontSize: '0.8rem ',
             titleColor: '#FFFFFF', // Example color for title
             descriptionColor: '#F9F9F9', // Example color for description
             iconPosition: { marginTop: '26px' }
@@ -98,9 +99,9 @@ export default function PerksSection() {
     ]
 
     return (
-        <section className="bg-[#7D40FF] py-16 sm:py-24 px-4 md:px-6 lg:px-8 xl:h-[62vh] 2xl:h-[50vh] w-full overflow-hidden">
+        <section className="bg-[#7D40FF] py-16 sm:py-24 px-8 md:px-6 lg:px-8 xl:h-[62vh] 2xl:h-[50vh] w-full overflow-hidden">
             <div className="max-w-7xl mx-auto">
-                <h2 className={`${satoshi.className} text-center text-white text-2xl sm:text-3xl md:text-4xl lg:text-[40px] font-bold max-w-4xl mx-auto mb-16 sm:mb-24 leading-tight xl:mt-[-4rem] xl:text-[1.5rem] mt-2 2xl:-mt-3`}>
+                <h2 className={`${satoshi.className} text-center text-white text-[14px] sm:text-3xl md:text-4xl lg:text-[40px] font-bold max-w-4xl mx-auto mb-16 sm:mb-24 leading-tight xl:mt-[-4rem] xl:text-[1.5rem] mt-2 2xl:-mt-3`}>
                     <span className="block">Perks so good you&apos;ll never need to go anywhere else </span>
                     <span className="block">for your design. Seriously.</span>
                 </h2>
