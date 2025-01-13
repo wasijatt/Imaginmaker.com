@@ -64,7 +64,7 @@ export default function PerksSection() {
             titlePosition: { marginTop: '30px' },
             // descriptionPosition: { marginRight: '10px' },
             titleFontSize: '1.2rem', // Example font size for title
-            descriptionFontSize: '1.1rem',
+            descriptionFontSize: '1rem',
             titleColor: '#FFFFFF', // Example color for title
             descriptionColor: '#F9F9F9', // Example color for description
             iconPosition: { marginTop: '16px' },
@@ -91,7 +91,7 @@ export default function PerksSection() {
             titlePosition: { marginTop: '30px' },
             // descriptionPosition: { marginRight: '10px' },
             titleFontSize: '1.1rem', // Example font size for title
-            descriptionFontSize: '0.8rem ',
+            descriptionFontSize: '1rem ',
             titleColor: '#FFFFFF', // Example color for title
             descriptionColor: '#F9F9F9', // Example color for description
             iconPosition: { marginTop: '26px' }
