@@ -119,8 +119,8 @@ export default function ServicesSection() {
                       <Image
                         src={testimonial.image}
                         alt={`Testimonial ${testimonial.id}`}
-                        width={450}
-                        height={250}
+                        width={650}
+                        height={450}
                         className="rounded-3xl shadow-lg"
                       />
                     </div>
