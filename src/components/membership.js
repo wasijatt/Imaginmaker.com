@@ -179,7 +179,7 @@ export default function MembershipSection() {
                                                     alt="colon"
                                                     width={20}
                                                     height={32}
-                                                    className="relative top-[-1.8rem] xl:right-[20rem] right-[14.5rem]  md:block"
+                                                    className="relative top-[-1.8rem] xl:right-[20rem] right-[12rem]  md:block"
                                                 />
                                             </div>
                                             <div className="w-24 h-0.5 bg-[#F9F9F9] mt-2" />
