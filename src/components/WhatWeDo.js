@@ -42,7 +42,7 @@ export default function ServicesSection() {
   }, []);
 
   return (
-    <section className="relative min-h-screen w-full overflow-hidden">
+    <section className="relative min-h-screen w-full overflow-hidden bg-black">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image
@@ -50,7 +50,7 @@ export default function ServicesSection() {
           alt="Background"
           width={700}
           height={500}
-          className="object-cover"
+          className="object-cover h-100% w-full overflow-hidden md:block hidden"
           priority
         />
       </div>

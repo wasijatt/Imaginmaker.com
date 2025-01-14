@@ -168,18 +168,18 @@ export default function MembershipSection() {
                         <div className="relative z-10 flex flex-col items-center md:items-start gap-8 mt-10 md:hidden">
                             <div className="flex flex-col text-center md:text-left w-full">
                                 <div className="flex flex-col gap-6">
-                                    <div className="flex flex-col gap-2 px-10">
+                                    <div className="flex flex-col gap-2 px-1">
                                         <div className="flex flex-col items-center md:items-start">
                                             <div className="flex items-center gap-2">
-                                                <p className={`${satoshi.className} xl:text-[26px] md:text-[32px] text-white font-medium`}>
-                                                    Simplicity Speaks Louder:
+                                                <p className={`${satoshi.className} xl:text-[26px] md:text-[32px] text-white font-medium text-lg`}>
+                                                    Simplicity Speaks Louder: 
                                                 </p>
                                                 <Image
                                                     src="/membership/colon.svg"
                                                     alt="colon"
                                                     width={20}
                                                     height={32}
-                                                    className="relative top-[-1.5rem] xl:right-[20rem] -left-[14rem]  md:block"
+                                                    className="relative top-[-1.8rem] xl:right-[20rem] right-[14.5rem]  md:block"
                                                 />
                                             </div>
                                             <div className="w-24 h-0.5 bg-[#F9F9F9] mt-2" />
@@ -199,7 +199,7 @@ export default function MembershipSection() {
                                             {/* Button - Absolute positioned for desktop */}
                                             <div className="static md:absolute top-0 right-0 mt-8 md:mt-0">
                                                 <Button
-                                                    className={`${satoshi.className} bg-[#7D40FF] shadow-[0.5px_0.2px_7px_0.2px_rgba(125,64,255,55)]  hover:bg-[#6930D9] text-white px-8 py-3 rounded-full text-base font-bold transition-all duration-200 hover:scale-105`}
+                                                    className={`${satoshi.className} bg-[#7D40FF] shadow-[0.5px_0.2px_7px_0.2px_rgba(125,64,255,55)]  hover:bg-[#6930D9] text-white px-8 py-4 rounded-full text-base font-bold transition-all duration-200 hover:scale-105`}
                                                 >
                                                     Let&apos;s work together
                                                 </Button>
