@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { satoshi } from '@/lib/fonts';
+import Link from 'next/link';
 
 const testimonials = [
   {
@@ -235,9 +236,11 @@ export default function ServicesSection() {
 
       {/* Button */}
       <div className="text-center -mt-12">
+        <Link href="/About-us">
         <Button className={`${satoshi.className} bg-[#7D40FF] shadow-[0.5px_0.2px_7px_0.2px_rgba(125,64,255,55)]  hover:bg-[#6930D9] text-white px-8 py-2 rounded-full font-bold -mt-44`}>
           About Us
         </Button>
+        </Link>
       </div>
     </div>
   </div>
