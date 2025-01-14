@@ -48,7 +48,8 @@ export default function ServicesSection() {
         <Image
           src="/WhatWeDo/whatwedobackgroungraidient.webp"
           alt="Background"
-          fill
+          width={700}
+          height={500}
           className="object-cover"
           priority
         />
