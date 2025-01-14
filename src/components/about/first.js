@@ -68,7 +68,7 @@ export default function AboutHeroSection() {
 
             {/* Button - Centered in the section */}
             <div className="absolute bottom-20 left-1/2 transform -translate-x-1/2 -mb-6">
-                <button className={`${satoshi.className} bg-[#6D40FF] shadow-[0.5px_0.2px_7px_0.2px_rgba(125,64,255,55)] text-white px-8 py-3 rounded-full text-lg font-bold hover:bg-[#6D40FF] transition-colors duration-200`}>
+                <button className={`${satoshi.className} bg-[#6D40FF] shadow-[0.5px_0.2px_7px_0.2px_rgba(125,64,255,55)] text-white px-8 py-3 rounded-full text-lg font-bold hover:bg-[#7D40FF] transition-colors duration-200`}>
                     Connect
                 </button>
             </div>

@@ -84,10 +84,10 @@ export default function MembershipSection() {
                     </div>
 
                     {/* Book a Call Section */}
-                    <div className={`${satoshi.className} text-center sm:text-left mb-10 mt-10 relative md:left-20 space-y-8`}>
+                    <div className={`${satoshi.className} text-center md:text-left sm:text-left mb-10 mt-10 relative md:left-20 space-y-8`}>
                         <Image src="/membership/book call 1.svg" alt="Book a call" width={120} height={120} className="mx-auto sm:mx-0 mt-20 tracking-wider relative md:left-36" />
                         <h3 className="text-xl sm:text-2xl font-bold mt-4 text-white">Book a Call</h3>
-                        <p className="md:text-lg text-sm text-white mt-2 px-12 tracking-wider">If you need something different, lets call. We&apos;d love to help you.</p>
+                        <p className="md:text-lg text-sm text-white mt-2 px-12 md:px-0 tracking-wider text-left">If you need something different, lets call. We&apos;d love to help you.</p>
                         <Button className="bg-transparent text-white hover:underline font-bold mt-8 tracking-wider">Book a Call</Button>
                         <div className="mt-6">
                             <Image src="/membership/book call 2.svg" alt="Design illustration" width={200} height={200} className="mx-auto" />
@@ -143,7 +143,7 @@ export default function MembershipSection() {
                                                 <span className="text-white"> </span>
                                             </p>
                                             <h2 className={`${satoshi.className} text-white text-[30px] font-normal`}>
-                                            <span className={`${clashGrotesk.className} text-purple-700 font-bold tracking-wider`}>Imagin Maker&apos;s</span> Approach
+                                                <span className={`${clashGrotesk.className} text-purple-700 font-bold tracking-wider`}>Imagin Maker&apos;s</span> Approach
                                             </h2>
                                             <p className="text-[25px] text-white mt-1 font-normal tracking-wider leading-tight">
                                                 to More Impactful Designs.
@@ -163,7 +163,7 @@ export default function MembershipSection() {
                             </div>
                         </div>
 
-{/* mobile bottom */}
+                        {/* mobile bottom */}
 
                         <div className="relative z-10 flex flex-col items-center md:items-start gap-8 mt-10 md:hidden">
                             <div className="flex flex-col text-center md:text-left w-full">
@@ -172,7 +172,7 @@ export default function MembershipSection() {
                                         <div className="flex flex-col items-center md:items-start">
                                             <div className="flex items-center gap-2">
                                                 <p className={`${satoshi.className} xl:text-[26px] md:text-[32px] text-white font-medium text-lg`}>
-                                                    Simplicity Speaks Louder: 
+                                                    Simplicity Speaks Louder:
                                                 </p>
                                                 <Image
                                                     src="/membership/colon.svg"
@@ -190,10 +190,10 @@ export default function MembershipSection() {
                                                 <span className="text-white"> </span>
                                             </p>
                                             <h2 className={`${clashGrotesk.className} text-[#7D40FF] text-[30px] font-bold tracking-wide`}>
-                                           Imagin Maker&apos;s
+                                                Imagin Maker&apos;s
                                             </h2>
                                             <p className="text-[20px] text-white mt-1 font-normal tracking-wider leading-tight p-1">
-                                            Approach to More Impactful Designs.
+                                                Approach to More Impactful Designs.
                                             </p>
 
                                             {/* Button - Absolute positioned for desktop */}
