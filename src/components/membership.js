@@ -87,7 +87,7 @@ export default function MembershipSection() {
                     <div className={`${satoshi.className} text-center sm:text-left mb-10 mt-10 relative md:left-20 space-y-8`}>
                         <Image src="/membership/book call 1.svg" alt="Book a call" width={120} height={120} className="mx-auto sm:mx-0 mt-20 tracking-wider relative md:left-36" />
                         <h3 className="text-xl sm:text-2xl font-bold mt-4 text-white">Book a Call</h3>
-                        <p className="md:text-lg text-sm text-white mt-2 px-12 tracking-wider">If you need something different, let's call. We'd love to help you.</p>
+                        <p className="md:text-lg text-sm text-white mt-2 px-12 tracking-wider">If you need something different, lets call. We&apos;d love to help you.</p>
                         <Button className="bg-transparent text-white hover:underline font-bold mt-8 tracking-wider">Book a Call</Button>
                         <div className="mt-6">
                             <Image src="/membership/book call 2.svg" alt="Design illustration" width={200} height={200} className="mx-auto" />
