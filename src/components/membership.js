@@ -33,7 +33,7 @@ export default function MembershipSection() {
                     >
                         <PriceBadge price="1000" period="Mo" icon="/membership/pen 1.svg" />
                         <div className="text-center mb-6">
-                            <div className={`${satoshi.className} text-xs font-black text-white mb-3 border-[1.5px] rounded-full py-1 px-6 mx-auto w-fit`}>STANDARD</div>
+                            <div className={`${satoshi.className} text-xs font-black text-white mb-3 mt-5 border-[1.5px] rounded-full py-1 px-6 mx-auto w-fit`}>STANDARD</div>
                             <div className="text-3xl sm:text-4xl font-bold text-white mb-4">
                                 $999<span className="text-sm font-medium text-white relative">/Mo</span>
                             </div>
@@ -48,7 +48,7 @@ export default function MembershipSection() {
                             ))}
                         </div>
                         <div className="mt-6">
-                            <Button className="w-full bg-[#7D40FF] hover:bg-[#8D40FF] py-2 text-white rounded-full font-bold text-sm">Get Started</Button>
+                            <Button className={`${satoshi.className} w-full bg-[#7D40FF] hover:bg-[#8D40FF] py-2 text-white rounded-full font-bold text-sm tracking-wider`}>Get Started</Button>
                         </div>
                     </div>
 
@@ -64,7 +64,7 @@ export default function MembershipSection() {
                     >
                         <PriceBadge price="1800" period="project" icon="/membership/lcd 1.svg" />
                         <div className="text-center mb-6">
-                            <div className={`${satoshi.className} text-xs font-black text-white mb-3 border-[1.5px] rounded-full py-1 px-6 mx-auto w-fit`}>PRO</div>
+                            <div className={`${satoshi.className} text-xs font-black text-white mb-3 border-[1.5px] rounded-full py-1 px-6 mx-auto w-fit mt-5`}>PRO</div>
                             <div className="text-3xl sm:text-4xl font-bold text-white mb-4">
                                 $1799<span className="text-sm font-medium text-white relative">/Mo</span>
                             </div>
@@ -79,7 +79,7 @@ export default function MembershipSection() {
                             ))}
                         </div>
                         <div className="mt-6">
-                            <Button className="w-full bg-[#7D40FF] hover:bg-[#8D40FF] py-2 text-white rounded-full font-bold text-sm">Get Started</Button>
+                            <Button className={`${satoshi.className} w-full bg-[#7D40FF] hover:bg-[#8D40FF] py-2 text-white rounded-full font-bold text-sm tracking-wide`}>Get Started</Button>
                         </div>
                     </div>
 
@@ -118,7 +118,54 @@ export default function MembershipSection() {
                         />
 
                         {/* Content */}
-                        <div className="relative z-10 flex flex-col items-center md:items-start gap-8 mt-10">
+                        <div className="relative z-10 md:flex flex-col items-center md:items-start gap-8 mt-10 hidden">
+                            <div className="flex flex-col text-center md:text-left w-full">
+                                <div className="flex flex-col gap-6">
+                                    <div className="flex flex-col gap-2 px-10">
+                                        <div className="flex flex-col items-center md:items-start">
+                                            <div className="flex items-center gap-2">
+                                                <p className={`${satoshi.className} xl:text-[26px] md:text-[32px] text-white font-medium`}>
+                                                    Simplicity Speaks Louder:
+                                                </p>
+                                                <Image
+                                                    src="/membership/colon.svg"
+                                                    alt="colon"
+                                                    width={20}
+                                                    height={32}
+                                                    className="relative top-[-1.5rem] xl:right-[20rem] md:-right-[5rem] md:-top-[1.8rem] md:block"
+                                                />
+                                            </div>
+                                            <div className="w-24 h-0.5 bg-[#F9F9F9] mt-2" />
+                                        </div>
+
+                                        <div className="relative">
+                                            <p className={`${satoshi.className} text-3xl md:text-[40px] font-bold leading-tight`}>
+                                                <span className="text-white"> </span>
+                                            </p>
+                                            <h2 className={`${satoshi.className} text-white text-[30px] font-normal`}>
+                                            <span className={`${clashGrotesk.className} text-purple-700 font-bold tracking-wider`}>Imagin Maker&apos;s</span> Approach
+                                            </h2>
+                                            <p className="text-[25px] text-white mt-1 font-normal tracking-wider leading-tight">
+                                                to More Impactful Designs.
+                                            </p>
+
+                                            {/* Button - Absolute positioned for desktop */}
+                                            <div className="static md:absolute top-0 right-0 mt-8 md:mt-0">
+                                                <Button
+                                                    className={`${satoshi.className} bg-[#7D40FF] shadow-[0.5px_0.2px_7px_0.2px_rgba(125,64,255,55)]  hover:bg-[#6930D9] text-white px-8 py-4 rounded-full text-base font-bold transition-all duration-200 hover:scale-105`}
+                                                >
+                                                    Let&apos;s work together
+                                                </Button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+{/* mobile bottom */}
+
+                        <div className="relative z-10 flex flex-col items-center md:items-start gap-8 mt-10 md:hidden">
                             <div className="flex flex-col text-center md:text-left w-full">
                                 <div className="flex flex-col gap-6">
                                     <div className="flex flex-col gap-2 px-10">
@@ -140,27 +187,19 @@ export default function MembershipSection() {
 
                                         <div className="relative">
                                             <p className={`${satoshi.className} text-3xl md:text-[40px] font-bold leading-tight`}>
-
-                                                {/* <Image
-                                                    src="/membership/logo.svg"
-                                                    alt="Imagin Maker"
-                                                    width={200}
-                                                    height={40}
-                                                    className="inline-block mr-2"
-                                                /> */}
                                                 <span className="text-white"> </span>
                                             </p>
-                                            <h2 className={`${satoshi.className} text-white text-[30px] font-normal`}>
-                                                <span className="text-purple-700 font-bold tracking-wider">Imagin Maker&apos;s</span> Approach
+                                            <h2 className={`${clashGrotesk.className} text-[#7D40FF] text-[30px] font-bold tracking-wide`}>
+                                           Imagin Maker&apos;s
                                             </h2>
-                                            <p className="text-[25px] text-white mt-1 font-normal tracking-wider leading-tight">
-                                                to More Impactful Designs.
+                                            <p className="text-[20px] text-white mt-1 font-normal tracking-wider leading-tight p-1">
+                                            Approach to More Impactful Designs.
                                             </p>
 
                                             {/* Button - Absolute positioned for desktop */}
                                             <div className="static md:absolute top-0 right-0 mt-8 md:mt-0">
                                                 <Button
-                                                    className={`${satoshi.className} bg-[#7D40FF] shadow-[0.5px_0.2px_7px_0.2px_rgba(125,64,255,55)]  hover:bg-[#6930D9] text-white px-8 py-4 rounded-full text-base font-bold transition-all duration-200 hover:scale-105`}
+                                                    className={`${satoshi.className} bg-[#7D40FF] shadow-[0.5px_0.2px_7px_0.2px_rgba(125,64,255,55)]  hover:bg-[#6930D9] text-white px-8 py-3 rounded-full text-base font-bold transition-all duration-200 hover:scale-105`}
                                                 >
                                                     Let&apos;s work together
                                                 </Button>
