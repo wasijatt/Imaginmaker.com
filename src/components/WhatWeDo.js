@@ -106,7 +106,7 @@ export default function ServicesSection() {
             </h2>
 
             {/* Testimonials Carousel */}
-            <div className="relative h-[350px] overflow-hidden mb-8">
+            <div className="relative h-[350px] overflow-hidden mb-0">
               <div className="absolute inset-0 flex items-center justify-center">
                 {testimonialItems.map((testimonial, index) => (
                   <div
@@ -117,13 +117,12 @@ export default function ServicesSection() {
                         : 'opacity-0 translate-x-full scale-70'
                     }`}
                   >
-                    <div className="flex justify-center items-center">
+                    <div className="flex justify-center items-center h-28 w-10">
                       <Image
                         src={testimonial.image}
                         alt={`Testimonial ${testimonial.id}`}
-                        width={650}
-                        height={450}
-                        className="rounded-3xl shadow-lg"
+                        fill
+                        className="rounded-2xl shadow-lg"
                       />
                     </div>
                   </div>
@@ -132,7 +131,7 @@ export default function ServicesSection() {
             </div>
 
             {/* Button */}
-            <div className="text-center -mt-24">
+            <div className="text-center -mt-20">
               <Button
                 href="/About-us"
                 className="bg-[#6D40FF] shadow-lg hover:bg-[#7D40FF] text-white px-8 py-2 rounded-full font-bold"
@@ -144,109 +143,101 @@ export default function ServicesSection() {
 
           {/* Large Screen Layout */}
 
-  {/* Background Image with Overlay */}
-  <div className="absolute inset-0 z-0 rounded-lg overflow-hidden hidden md:grid">
-    <Image
-      src="/WhatWeDo/Whatwedoboxpenbackground-01.png"
-      alt="Background"
-      fill
-      className="object-cover rounded-3xl"
-      priority
-    />
-    <div className="absolute inset-0 bg-black opacity-0"></div>
-  </div>
-
-  {/* Content */}
-  <div className="relative z-10 hidden md:grid lg:grid-cols-2 gap-12 p-10">
-    {/* Left Column */}
-    <div className="space-y-12 md:px-8">
-      <h1 className="text-4xl md:text-5xl font-bold text-white leading-tight tracking-wide">
-        A Full-Service of
-        <br />
-        Design, Branding
-        <br />
-        and Animation Agency
-        <span className="inline-block h-3 w-3 rounded-full bg-[#6D40FF] align-middle ml-1" />
-      </h1>
-
-      <div className="space-y-8">
-        {/* Service Items */}
-        {[1, 2, 3].map((index) => (
-          <div key={index} className="flex gap-6">
-            <div className="flex-shrink-0 w-12 h-12 relative">
-              <Image
-                src={`/WhatWeDo/whatwedo${index}.png`}
-                alt={`Visual ${index}`}
-                width={48}
-                height={48}
-              />
-            </div>
-            <div>
-              <h3 className={`${satoshi.className} text-white font-semibold text-xl mb-2 `}>
-                {index === 1
-                  ? 'Visual Versatility'
-                  : index === 2
-                  ? 'Relationships Over Transactions'
-                  : 'Social Media Impact'}
-              </h3>
-              <p className={`${satoshi.className} text-gray-400 text-xl`}>
-                {index === 1
-                  ? 'Tailored design and animation, bringing your vision into sharpness.'
-                  : index === 2
-                  ? 'Prioritizing your success, we believe in forging lasting partnerships.'
-                  : 'Crafted results that authentically connect with your audience, elevating your brand narrative.'}
-              </p>
-            </div>
+          <div className="absolute inset-0 z-0 rounded-lg overflow-hidden hidden md:grid">
+            <Image
+              src="/WhatWeDo/Whatwedoboxpenbackground-01.png"
+              alt="Background"
+              fill
+              className="object-cover rounded-3xl"
+              priority
+            />
+            <div className="absolute inset-0 bg-black opacity-0"></div>
           </div>
-        ))}
-      </div>
-    </div>
 
-    {/* Right Column */}
-    <div className="flex flex-col justify-center mt-10">
-      <h2 className={`${satoshi.className} text-[1.2rem] font-bold text-white text-center -mb-6 tracking-wide`}>
-        What Our Clients Say About Us
-      </h2>
+          <div className="relative z-10 hidden md:grid lg:grid-cols-2 gap-12 p-10">
+            <div className="space-y-12 md:px-8">
+              <h1 className="text-4xl md:text-5xl font-bold text-white leading-tight tracking-wide">
+                A Full-Service of
+                <br />
+                Design, Branding
+                <br />
+                and Animation Agency
+                <span className="inline-block h-3 w-3 rounded-full bg-[#6D40FF] align-middle ml-1" />
+              </h1>
 
-      {/* Testimonials Carousel */}
-      <div className="relative h-[300px] overflow-hidden mb-8">
-        <div className="absolute inset-0 flex items-center justify-center">
-          {testimonialItems.map((testimonial, index) => (
-            <div
-              key={testimonial.id}
-              className={`absolute w-full px-6 transition-all duration-500 ease-in-out ${
-                index === 0
-                  ? 'opacity-100 translate-x-0 scale-100'
-                  : 'opacity-0 translate-x-full scale-70'
-              }`}
-            >
-              <div className="flex justify-center items-center">
-                <Image
-                  src={testimonial.image}
-                  alt={`Testimonial ${testimonial.id}`}
-                  width={410}
-                  height={210}
-                  className="rounded-3xl shadow-lg"
-                />
+              <div className="space-y-8">
+                {[1, 2, 3].map((index) => (
+                  <div key={index} className="flex gap-6">
+                    <div className="flex-shrink-0 w-12 h-12 relative">
+                      <Image
+                        src={`/WhatWeDo/whatwedo${index}.png`}
+                        alt={`Visual ${index}`}
+                        width={48}
+                        height={48}
+                      />
+                    </div>
+                    <div>
+                      <h3 className={`${satoshi.className} text-white font-semibold text-xl mb-2`}>
+                        {index === 1
+                          ? 'Visual Versatility'
+                          : index === 2
+                          ? 'Relationships Over Transactions'
+                          : 'Social Media Impact'}
+                      </h3>
+                      <p className={`${satoshi.className} text-gray-400 text-xl`}>
+                        {index === 1
+                          ? 'Tailored design and animation, bringing your vision into sharpness.'
+                          : index === 2
+                          ? 'Prioritizing your success, we believe in forging lasting partnerships.'
+                          : 'Crafted results that authentically connect with your audience, elevating your brand narrative.'}
+                      </p>
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
-          ))}
+
+            <div className="flex flex-col justify-center mt-10">
+              <h2 className={`${satoshi.className} text-[1.2rem] font-bold text-white text-center -mb-6 tracking-wide`}>
+                What Our Clients Say About Us
+              </h2>
+
+              <div className="relative h-[300px] overflow-hidden mb-8">
+                <div className="absolute inset-0 flex items-center justify-center">
+                  {testimonialItems.map((testimonial, index) => (
+                    <div
+                      key={testimonial.id}
+                      className={`absolute w-full px-6 transition-all duration-500 ease-in-out ${
+                        index === 0
+                          ? 'opacity-100 translate-x-0 scale-100'
+                          : 'opacity-0 translate-x-full scale-70'
+                      }`}
+                    >
+                      <div className="flex justify-center items-center">
+                        <Image
+                          src={testimonial.image}
+                          alt={`Testimonial ${testimonial.id}`}
+                          width={410}
+                          height={210}
+                          className="rounded-3xl shadow-lg"
+                        />
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div className="text-center -mt-12">
+                <Link href="/About-us">
+                  <Button className={`${satoshi.className} bg-[#7D40FF] shadow-[0.5px_0.2px_7px_0.2px_rgba(125,64,255,55)] hover:bg-[#6930D9] text-white px-8 py-2 rounded-full font-bold -mt-44`}>
+                    About Us
+                  </Button>
+                </Link>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-
-      {/* Button */}
-      <div className="text-center -mt-12">
-        <Link href="/About-us">
-        <Button className={`${satoshi.className} bg-[#7D40FF] shadow-[0.5px_0.2px_7px_0.2px_rgba(125,64,255,55)]  hover:bg-[#6930D9] text-white px-8 py-2 rounded-full font-bold -mt-44`}>
-          About Us
-        </Button>
-        </Link>
-      </div>
-    </div>
-  </div>
-</div>
-
-        </div>
     </section>
   );
 }
