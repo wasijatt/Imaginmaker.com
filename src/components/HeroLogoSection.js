@@ -53,7 +53,7 @@ export default function LogoMarquee() {
     <div className="w-full bg-black py-4 sm:py-6 md:py-8 lg:py-10 overflow-hidden">
       <div ref={containerRef} className="relative">
         <motion.div
-          className="flex space-x-4 sm:space-x-6 md:space-x-8 lg:space-x-10 whitespace-nowrap"
+          className="flex space-x-6 sm:space-x-6 md:space-x-8 lg:space-x-10 whitespace-nowrap"
           animate={controls}
           style={{ width: `${containerWidth * 2}px` }}
         >
