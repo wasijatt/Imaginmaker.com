@@ -182,7 +182,7 @@ export default function MembershipSection() {
                                                     className="relative top-[-1.8rem] xl:right-[20rem] right-[12rem]  md:block"
                                                 />
                                             </div>
-                                            <div className="w-24 h-0.5 bg-[#F9F9F9] mt-2" />
+                                            <div className="w-20 h-0.5 bg-[#F9F9F9] mt-2" />
                                         </div>
 
                                         <div className="relative">
