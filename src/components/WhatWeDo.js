@@ -64,7 +64,7 @@ export default function ServicesSection() {
         </div>
 
         {/* Main Content Container */}
-        <div className="container mx-auto relative bg-zinc-900/80 rounded-3xl p-8 backdrop-blur-sm">
+        <div className="container mx-auto relative bg-[#1a1919] rounded-3xl p-8 backdrop-blur-sm">
           {/* Small Screen Layout */}
           <div className="md:hidden">
             <h1 className="text-2xl font-bold text-white text-center mb-6 tracking-wide">

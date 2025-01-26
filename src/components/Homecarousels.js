@@ -55,7 +55,7 @@ export default function AnimatedCarousel() {
                     <div
                         key={index}
                         className={`relative sm:w-[320px] md:w-[280px] h-[150px] w-[160px] sm:h-[240px] md:h-[240px] 
-                             overflow-hidden flex-shrink-0 transition-all duration-500 ease-in-out lg:rounded-[22px] rounded-[20px]
+                             overflow-hidden flex-shrink-0 transition-all duration-500 ease-in-out lg:rounded-[22px] rounded-[12px]
                             ${hoveredIndex === index ? 'scale-95 shadow-xl' : 'scale-100'}`}
                         onMouseEnter={() => {
                             setHoveredIndex(index);
