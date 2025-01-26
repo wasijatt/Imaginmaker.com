@@ -39,7 +39,7 @@ export default function AnimatedCarousel() {
     }, []);
 
     return (
-        <div className="w-full bg-[#7D40FF] overflow-hidden py-6 relative">
+        <div className="w-full bg-[#7D40FF] overflow-hidden py-0 relative">
             <div className="absolute inset-0 bg-[#7D40FF]" /> {/* Background color filler */}
             <div
                 ref={scrollerRef}
@@ -54,7 +54,7 @@ export default function AnimatedCarousel() {
                 {allImages.map((image, index) => (
                     <div
                         key={index}
-                        className={`relative w-[280px] sm:w-[320px] md:w-[280px] h-[200px] sm:h-[240px] md:h-[240px] 
+                        className={`relative sm:w-[320px] md:w-[280px] h-[150px] w-[160px] sm:h-[240px] md:h-[240px] 
                              overflow-hidden flex-shrink-0 transition-all duration-500 ease-in-out lg:rounded-[22px] rounded-[20px]
                             ${hoveredIndex === index ? 'scale-95 shadow-xl' : 'scale-100'}`}
                         onMouseEnter={() => {

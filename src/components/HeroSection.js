@@ -7,7 +7,7 @@ import { satoshi } from '@/lib/fonts'
 
 export default function HeroSection() {
   return (
-    <section className="relative md:min-h-[500px] h-[50vh] md:h-[70vh] lg:h-[75vh] xl:h-[75vh] 2xl:h-[70vh] w-full overflow-hidden px-6">
+    <section className="relative md:min-h-[500px] h-[53vh] md:h-[70vh] lg:h-[75vh] xl:h-[75vh] 2xl:h-[70vh] w-full overflow-hidden px-6">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image
@@ -21,7 +21,7 @@ export default function HeroSection() {
       </div>
 
       {/* Content Container */}
-      <div className="relative z-10 mx-auto max-w-6xl px-4 py-20 my-14 md:mt-28 -mt-4">
+      <div className="relative z-10 mx-auto max-w-6xl px-4 py-20 my-14 md:mt-28 -mt-4 ">
         <div className="flex flex-col items-start">
           {/* Heading Section */}
           <div className="relative mb-6 ">
