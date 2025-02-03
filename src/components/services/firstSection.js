@@ -25,7 +25,27 @@ export default function ServicesFirstSection() {
                         <br />
                         <span className="flex items-center mb-6">
                             for Achieving Goals
-                            <span className="inline-block h-4 w-4 rounded-full bg-[#6D40FF] align-middle ml-1" />
+                            <svg className='relative left-[0.3rem] max-sm:left-[-11.3rem] max-sm:top-6 ' width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <g filter="url(#filter0_i_3597_81)">
+                                    <circle cx="7.5" cy="7.5" r="7.5" fill="url(#paint0_linear_3597_81)" />
+                                </g>
+                                <defs>
+                                    <filter id="filter0_i_3597_81" x="-1.15385" y="0" width="16.1538" height="15" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                                        <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+                                        <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+                                        <feOffset dx="-1.15385" />
+                                        <feGaussianBlur stdDeviation="0.634615" />
+                                        <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1" />
+                                        <feColorMatrix type="matrix" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.11 0" />
+                                        <feBlend mode="normal" in2="shape" result="effect1_innerShadow_3597_81" />
+                                    </filter>
+                                    <linearGradient id="paint0_linear_3597_81" x1="9.80769" y1="11.5385" x2="-6.51228" y2="12.4245" gradientUnits="userSpaceOnUse">
+                                        <stop stop-color="#7D40FF" />
+                                        <stop offset="1" stop-color="#6F00FF" />
+                                    </linearGradient>
+                                </defs>
+                            </svg>
 
                         </span>
                     </h1>
