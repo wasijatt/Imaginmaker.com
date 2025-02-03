@@ -5,7 +5,7 @@ export const Input = ({ type = "text", placeholder, className = "", ...props }) 
     <input
       type={type}
       placeholder={placeholder}
-      className={`rounded-full border-gray-200 px-4 py-2 focus:outline-none focus:ring-1 focus:ring-purple-600 ${className}`}
+      className={`rounded-full px-4 py-2 focus:outline-none focus:ring-1 focus:ring-[#6D40FF] border-2 border-black hover:border-none ${className}`}
       {...props}
     />
   );

@@ -1,10 +1,11 @@
+import { satoshi } from "@/lib/fonts";
 import React from "react";
 
 export const Textarea = ({ placeholder, className = "", ...props }) => {
   return (
     <textarea
       placeholder={placeholder}
-      className={`min-h-[180px] resize-none rounded-3xl border-gray-900 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-purple-600 ${className}`}
+      className={`min-h-[180px] resize-none rounded-3xl border-2 border-gray-900 px-8 py-2 focus:outline-none focus:ring-1 focus:ring-[#6D40FF] ${satoshi.className}`}
       {...props}
     />
   );

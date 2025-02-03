@@ -23,7 +23,7 @@ export default function FeaturedProjects() {
         {/* Section Title */}
         <div className="mb-20 text-center">
           <h2 className="text-4xl font-bold text-white sm:text-5xl">Featured Projects</h2>
-          <div className="mx-auto mt-4 h-1 w-48 bg-purple-600"></div>
+          <div className="mx-auto mt-4 h-1 w-32 bg-[#6D40FF]"></div>
         </div>
 
         {/* Project Cards */}
@@ -113,6 +113,7 @@ export default function FeaturedProjects() {
                   Real-Estate
                 </Link>
 </div>
+
                 <Button 
                   className="bg-[#6D40FF] shadow-[0.5px_0.2px_7px_0.2px_rgba(125,64,255,55)] text-white rounded-full py-1 px-5"
                 >

@@ -13,9 +13,9 @@ export default function Navbar() {
 
   const navLinks = [
     { href: '/case-study', label: 'Case Study' },
-    { href: '/journals', label: 'Journals' },
+    { href: '/journal', label: 'Journals' },
     { href: '/services', label: 'Services' },
-    { href: '/values', label: 'Our Values' },
+    { href: '/our-values', label: 'Our Values' },
   ];
 
   return (

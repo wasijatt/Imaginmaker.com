@@ -2,6 +2,7 @@ import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { clashGrotesk } from '@/lib/clashGroteskfont';
 import { satoshi } from '@/lib/fonts';
+import Link from 'next/link';
 
 const ContactSection = () => {
   return (
@@ -27,12 +28,14 @@ const ContactSection = () => {
           </h2>
           <div className="mx-auto h-1 w-24 bg-[#6D40FF]" />
           <div>
+            <Link href={'/contact'}>
             <Button
               variant="secondary"
               className={`${satoshi.className} bg-[#6D40FF] shadow-[0.5px_0.2px_7px_0.2px_rgba(125,64,255,55)] text-white px-9 py-3 text-lg hover:bg-[#7D40FF] rounded-full font-bold`}
-            >
+              >
               Contact Us
             </Button>
+              </Link>
           </div>
         </div>
 
@@ -54,18 +57,18 @@ const ContactSection = () => {
               <Image
                 src="/casestudy/third commas.svg"
                 alt="Quote mark"
-                width={40}
-                height={40}
+                width={35}
+                height={35}
                 className="mt-1"
               />
-              <h3 className="text-left text-2xl font-semibold text-white md:text-3xl">
+              <h3 className="text-left font-semibold text-white md:text-3xl text-md">
                 Have an idea? We can help.<br />
                 Start your project →
               </h3>
             </div>
             <Button
               variant="secondary"
-              className={`${satoshi.className} w-full bg-[#6D40FF] shadow-[0.5px_0.2px_7px_0.2px_rgba(125,64,255,55)] text-white px-9 py-4 rounded-full text-lg hover:bg-[#7D40FF] md:w-auto font-bold`}
+              className={`${satoshi.className} w-full bg-[#6D40FF] shadow-[0.5px_0.2px_7px_0.2px_rgba(125,64,255,55)] text-white md:px-8 px-2 py-3 rounded-full text-lg hover:bg-[#7D40FF] md:w-auto font-bold`}
             >
               Let&apos;s Connect
             </Button>

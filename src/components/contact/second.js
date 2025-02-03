@@ -3,6 +3,7 @@
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
+import { satoshi } from "@/lib/fonts"
 
 export default function ContactForm() {
   return (
@@ -13,7 +14,7 @@ export default function ContactForm() {
             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">
               Let&apos;s Work Together!
             </h2>
-            <div className="mx-auto h-1 w-20 bg-purple-600" />
+            <div className="mx-auto h-[3px] w-24 bg-[#6D40FF]" />
           </div>
           
           <form 
@@ -40,7 +41,7 @@ export default function ContactForm() {
                 <Input
                   placeholder="Email"
                   type="email"
-                  className="h-12 rounded-full border-2 border-black px-6"
+                  className="h-12 rounded-full border border-[#6D40FF] px-6"
                   required
                 />
               </div>
@@ -58,7 +59,7 @@ export default function ContactForm() {
             <div className="mt-8 md:mt-20 flex justify-center">
               <Button 
                 type="submit"
-                className="h-12 rounded-full bg-purple-600 px-12 text-white hover:bg-purple-500"
+                className={`${satoshi.className} h-12 rounded-full bg-[#6D40FF] shadow-[0.5px_0.2px_7px_0.2px_rgba(125,64,255,55)] px-12 text-white hover:bg-[#7D40FF] font-bold`}
               >
                 Send
               </Button>
