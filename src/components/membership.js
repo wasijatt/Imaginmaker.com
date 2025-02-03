@@ -3,10 +3,11 @@ import { PriceBadge } from "@/components/ui/price-badge";
 import { clashGrotesk } from "@/lib/clashGroteskfont";
 import { satoshi } from "@/lib/fonts";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function MembershipSection() {
     return (
-        <section
+        <section id="membership"
             className="relative min-h-screen w-full overflow-hidden bg-cover bg-start"
             style={{ backgroundImage: "url('/membership/bg.webp')" }}
         >
@@ -48,7 +49,9 @@ export default function MembershipSection() {
                             ))}
                         </div>
                         <div className="mt-6">
-                            <Button className={`${satoshi.className} w-full bg-[#7D40FF] hover:bg-[#8D40FF] py-2 text-white rounded-full font-bold text-sm tracking-wider`}>Get Started</Button>
+                            <Link href={'/contact'}>
+                            <Button className={`${satoshi.className} w-full bg-[#6D40FF] hover:bg-[#7D40FF] py-2 text-white rounded-full font-bold text-sm tracking-wider`}>Get Started</Button>
+                            </Link>
                         </div>
                     </div>
 
@@ -79,7 +82,9 @@ export default function MembershipSection() {
                             ))}
                         </div>
                         <div className="mt-6">
-                            <Button className={`${satoshi.className} w-full bg-[#7D40FF] hover:bg-[#8D40FF] py-2 text-white rounded-full font-bold text-sm tracking-wide`}>Get Started</Button>
+                        <Link href={'/contact'}>
+                            <Button className={`${satoshi.className} w-full bg-[#6D40FF] hover:bg-[#7D40FF] py-2 text-white rounded-full font-bold text-sm tracking-wide`}>Get Started</Button>
+                            </Link>
                         </div>
                     </div>
 
@@ -151,11 +156,13 @@ export default function MembershipSection() {
 
                                             {/* Button - Absolute positioned for desktop */}
                                             <div className="static md:absolute top-0 right-0 mt-8 md:mt-0">
+                                            <Link href={'/contact'}>
                                                 <Button
                                                     className={`${satoshi.className} bg-[#7D40FF] shadow-[0.5px_0.2px_7px_0.2px_rgba(125,64,255,55)]  hover:bg-[#6930D9] text-white px-8 py-4 rounded-full text-base font-bold transition-all duration-200 hover:scale-105`}
                                                 >
                                                     Let&apos;s work together
                                                 </Button>
+                                                </Link>
                                             </div>
                                         </div>
                                     </div>
@@ -182,7 +189,7 @@ export default function MembershipSection() {
                                                     className="relative top-[-1.8rem] xl:right-[20rem] right-[12rem]  md:block"
                                                 />
                                             </div>
-                                            <div className="w-20 h-0.5 bg-[#F9F9F9] mt-2" />
+                                            <div className="w-12 h-0.5 bg-[#F9F9F9] mt-2 relative right-4" />
                                         </div>
 
                                         <div className="relative">
@@ -201,7 +208,7 @@ export default function MembershipSection() {
                                                 <Button
                                                     className={`${satoshi.className} bg-[#7D40FF] shadow-[0.5px_0.2px_7px_0.2px_rgba(125,64,255,55)]  hover:bg-[#6930D9] text-white px-8 py-4 rounded-full text-base font-bold transition-all duration-200 hover:scale-105`}
                                                 >
-                                                    Let&apos;s work together
+                                                    Let&apos;s Connect
                                                 </Button>
                                             </div>
                                         </div>

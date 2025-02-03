@@ -4,8 +4,16 @@ import Image from 'next/image'
 import { Heart } from 'lucide-react'
 import { clashGrotesk } from '@/lib/clashGroteskfont'
 import { satoshi } from '@/lib/fonts'
+import { useRef } from 'react'
 
 export default function HeroSection() {
+  const scrollToMembership = () => {
+    const membershipSection = document.getElementById('membership');
+    if (membershipSection) {
+      membershipSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <section className="relative md:min-h-[500px] h-[53vh] md:h-[70vh] lg:h-[75vh] xl:h-[75vh] 2xl:h-[70vh] w-full overflow-hidden px-6">
       {/* Background Image */}
@@ -27,7 +35,7 @@ export default function HeroSection() {
           <div className="relative mb-6 ">
             <h1 className="text-3xl font-bold text-white md:text-6xl lg:text-7xl tracking-wide">
               <span>We are{' '}</span>
-              <span className={`${clashGrotesk.className} relative inline-block text-[#6D40FF] font-medium `}>
+              <span className={`${clashGrotesk.className} relative inline-block text-[#6D40FF] font-medium`}>
                 Creative
                 {/* Star SVG */}
                 <svg
@@ -62,7 +70,10 @@ export default function HeroSection() {
           {/* Button and Footer Text Container */}
           <div className="flex w-full flex-col items-center space-y-4">
             {/* Button */}
-            <button className={`${satoshi.className} tracking-normal rounded-full bg-[#6D40FF] shadow-[0.5px_0.2px_7px_0.2px_rgba(125,64,255,55)] px-8 py-2 text-lg font-semibold text-white transition-colors hover:bg-purple-700 md:mt-10 `}>
+            <button 
+              onClick={scrollToMembership} 
+              className={`${satoshi.className} tracking-normal rounded-full bg-[#6D40FF] shadow-[0.5px_0.2px_7px_0.2px_rgba(125,64,255,55)] px-8 py-2 text-lg font-semibold text-white transition-colors hover:bg-[#6D40FF] md:mt-10`}
+            >
               See Plans
             </button>
 

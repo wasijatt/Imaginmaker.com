@@ -44,7 +44,7 @@ export default function ServicesSection() {
         <div className="w-24 h-1 bg-[#6D40FF] mx-auto"></div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 mb-8 sm:mb-16 relative mt-20">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 mb-8 sm:mb-16 relative mt-12">
         {services.map((service, index) => (
           <Link 
             key={index} 
@@ -78,7 +78,7 @@ export default function ServicesSection() {
 
       <div className="text-center">
         <Button 
-          className={`${satoshi.className} rounded-full bg-[#6D40FF] shadow-[0.5px_0.2px_7px_0.2px_rgba(125,64,255,55)] hover:bg-[#7D40FF] text-white px-6 sm:px-8 py-3 sm:py-3 text-sm mt-10`}
+          className={`${satoshi.className} rounded-full bg-[#6D40FF] shadow-[0.5px_0.2px_7px_0.2px_rgba(125,64,255,55)] hover:bg-[#7D40FF] text-white px-6 sm:px-8 py-3 sm:py-3 text-sm mt-0`}
         >
           Get your Design Done
         </Button>
