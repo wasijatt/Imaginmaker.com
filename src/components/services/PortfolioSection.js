@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import { CategoryNav } from "./CategoryNav";
-import { ImageModal } from "./image-modal";
 import { portfolioItems } from "@/data/portfolio-item";
 
 export function PortfolioGallery() {
