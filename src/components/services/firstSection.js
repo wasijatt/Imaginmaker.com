@@ -38,7 +38,7 @@ export default function ServicesFirstSection() {
                                         <feGaussianBlur stdDeviation="0.634615" />
                                         <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1" />
                                         <feColorMatrix type="matrix" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.11 0" />
-                                        <feBlend mode="normal" in2="shape" result="effect1_innerShadow_3597_81" />
+                                         <feBlend mode="normal" in2="shape" result="effect1_innerShadow_3597_81" />
                                     </filter>
                                     <linearGradient id="paint0_linear_3597_81" x1="9.80769" y1="11.5385" x2="-6.51228" y2="12.4245" gradientUnits="userSpaceOnUse">
                                         <stop stop-color="#7D40FF" />

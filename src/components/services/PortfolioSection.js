@@ -1,66 +1,57 @@
-import React, { useState } from "react";
-import { categories } from "@/types/gallery";
-import { galleryItems } from "@/data/galleryItems"; 
-import CategoryNav from "./CategoryNav";  // Add this import
-import GalleryGrid from "./GalleryGrid";  // Add this import
-import { Button } from "../ui/button";
-import { satoshi } from "@/lib/fonts";
-import Image from "next/image";
-import Footer from "../Footer";
+"use client";
 
-export default function PortfolioSection() {
-  const [activeCategory, setActiveCategory] = useState(categories[0]);
+import { useState } from "react";
+import { CategoryNav } from "./CategoryNav";
+import { ImageModal } from "./image-modal";
+import { portfolioItems } from "@/data/portfolio-item";
+
+export function PortfolioGallery() {
+  const [activeCategory, setActiveCategory] = useState("graphic");
+  const [selectedItem, setSelectedItem] = useState(null);
+
+  const filteredItems = portfolioItems.filter((item) => item.category === activeCategory);
+
+  const handleNext = () => {
+    const currentIndex = filteredItems.findIndex((item) => item.id === selectedItem?.id);
+    const nextItem = filteredItems[(currentIndex + 1) % filteredItems.length];
+    setSelectedItem(nextItem);
+  };
+
+  const handlePrevious = () => {
+    const currentIndex = filteredItems.findIndex((item) => item.id === selectedItem?.id);
+    const previousItem = filteredItems[currentIndex === 0 ? filteredItems.length - 1 : currentIndex - 1];
+    setSelectedItem(previousItem);
+  };
 
   return (
-    <section className="container mx-auto py-12 md:py-24">
-      <CategoryNav
-        categories={categories}
-        activeCategory={activeCategory}
-        onCategoryChange={setActiveCategory}
-      />
-      <GalleryGrid
-        items={galleryItems}
-        activeCategory={activeCategory}
-      />
+    <div className="container mx-auto px-4 py-12">
+      <CategoryNav activeCategory={activeCategory} onCategoryChange={setActiveCategory} />
 
-        {/* Bottom Card */}
-        <div className="relative mx-auto max-w-5xl overflow-hidden rounded-3xl py-16 mt-[10rem]">
-          {/* Card Background Image */}
-          <div className="absolute inset-0">
-            <Image
-              src="/casestudy/bottomthirdcard.svg"
-              alt="Card background"
-              fill
-              className="object-cover opacity-100 "
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 auto-rows-[200px]">
+        {filteredItems.map((item) => (
+          <div
+            key={item.id}
+            className="relative cursor-pointer overflow-hidden rounded-lg"
+            style={{
+              gridRow: `span ${Math.ceil(item.height / (item.width / 2))}`,
+            }}
+            onClick={() => setSelectedItem(item)}
+          >
+            <img
+              src={item.image || "/placeholder.svg"}
+              alt={item.title}
+              className="w-full h-full object-cover transition-transform hover:scale-105"
             />
           </div>
+        ))}
+      </div>
 
-          {/* Card Content */}
-          <div className="relative flex flex-col items-center justify-between gap-8 p-10 md:flex-row md:p-12">
-            <div className="flex items-start space-x-4">
-              <Image
-                src="/casestudy/third commas.svg"
-                alt="Quote mark"
-                width={40}
-                height={40}
-                className="mt-1"
-              />
-              <h3 className="text-left text-2xl font-semibold text-white md:text-3xl">
-                Have an idea? We can help.<br />
-                Start your project →
-              </h3>
-            </div>
-            <Button
-              variant="secondary"
-              className={`${satoshi.className} w-full bg-[#6D40FF] shadow-[0.5px_0.2px_7px_0.2px_rgba(125,64,255,55)] text-white px-9 py-4 rounded-full text-lg hover:bg-[#7D40FF] md:w-auto font-bold`}
-            >
-              Let&apos;s Connect
-            </Button>
-          </div>
-        </div>
-
-
-    </section>
-    
+      <ImageModal
+        item={selectedItem}
+        onClose={() => setSelectedItem(null)}
+        onNext={handleNext}
+        onPrevious={handlePrevious}
+      />
+    </div>
   );
 }

@@ -1,28 +1,32 @@
-import React from "react";
-import { cn } from "@/lib/utils";
-import { satoshi } from "@/lib/fonts";
-import { clashGrotesk } from "@/lib/clashGroteskfont";
+"use client";
 
-export default function CategoryNav({ categories, activeCategory, onCategoryChange }) {
+import { cn } from "@/lib/utils";
+
+export function CategoryNav({ activeCategory, onCategoryChange }) {
+  const categories = [
+    { label: "Graphic Design", value: "graphic" },
+    { label: "Motion Design", value: "motion" },
+    { label: "UI/UX Design", value: "ui-ux" },
+    { label: "Branding", value: "branding" },
+  ];
+
   return (
-    <nav className={`${satoshi.className} w-full overflow-x-auto pb-2 mb-8`}>
-      <ul className={`${clashGrotesk.className} flex gap-8 min-w-max px-4 md:px-0 md:justify-cente font-bold`}>
-        {categories.map((category) => (
-          <li key={category}>
-            <button
-              onClick={() => onCategoryChange(category)}
-              className={cn(
-                "text-lg font-medium relative py-2 transition-colors hover:text-primary",
-                "after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-full after:origin-left after:scale-x-0 after:bg-primary after:transition-transform",
-                activeCategory === category && "text-primary after:scale-x-100",
-                activeCategory !== category && "text-muted-foreground"
-              )}
-            >
-              {category}
-            </button>
-          </li>
-        ))}
-      </ul>
+    <nav className="flex justify-center space-x-8 mb-8">
+      {categories.map(({ label, value }) => (
+        <button
+          key={value}
+          onClick={() => onCategoryChange(value)}
+          className={cn(
+            "text-lg font-medium pb-2 px-1 relative transition-colors hover:text-primary",
+            activeCategory === value ? "text-primary" : "text-muted-foreground"
+          )}
+        >
+          {label}
+          {activeCategory === value && (
+            <span className="absolute bottom-0 left-0 w-full h-0.5 bg-primary" />
+          )}
+        </button>
+      ))}
     </nav>
   );
 }

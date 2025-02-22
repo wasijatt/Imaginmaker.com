@@ -4,8 +4,9 @@ import { clashGrotesk } from '@/lib/clashGroteskfont';
 import { satoshi } from '@/lib/fonts';
 import Navbar from '@/components/Navbar';
 import ServicesFirstSection from '@/components/services/firstSection';
-import PortfolioSection from '@/components/services/PortfolioSection';
+import { PortfolioGallery } from '@/components/services/PortfolioSection';
 import Footer from '@/components/Footer';
+import { PinterestGallery } from '@/components/services/GalleryGrid';
 
 export default function services() {
 
@@ -14,8 +15,8 @@ export default function services() {
     <main className={`${clashGrotesk.className} ${satoshi.className}`}>
       <Navbar />
       <ServicesFirstSection />
-      <PortfolioSection/>
-      <Footer/>
+      <PinterestGallery />
+      {/* <Footer/> */}
     </main>
   )
 }

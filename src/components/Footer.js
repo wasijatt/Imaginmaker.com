@@ -61,7 +61,7 @@ const Footer = () => {
                         </div>
 
                         <Link
-                            href="/about"
+                            href="/About-us"
                             className={`${satoshi.className} hidden md:inline-block bg-[#7D40FF] shadow-[1px_1px_10px_1px_rgba(125,64,255,55)] text-white px-6 py-2 rounded-full text-sm font-bold hover:bg-[#6930D9] transition-colors mb-10`}
                         >
                             About Agency
@@ -144,7 +144,7 @@ const Footer = () => {
                     </div>
                 </div>
                 <Link
-                    href="/about"
+                    href="/About-us"
                     className={`${satoshi.className} md:hidden block bg-[#7D40FF] shadow-[1px_1px_10px_1px_rgba(125,64,255,55)] text-white px-4 mx-10 py-2 rounded-full text-sm font-bold hover:bg-[#6930D9] transition-colors mb-14 mt-12 text-center`}
                 >
                     About Agency
