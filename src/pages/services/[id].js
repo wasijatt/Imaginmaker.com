@@ -52,7 +52,7 @@ export default function ImagePage() {
       <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mt-4">
         {relatedItems.map((img) => (
           <Link key={img.id} href={`/services/${img.id}`} passHref>
-            <div className="relative w-full h-40">
+            <div className="relative w-full h-60">
               <Image
                 src={img.image}
                 alt={img.title}

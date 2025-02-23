@@ -5,6 +5,7 @@ import { cn } from "@/lib/utils";
 export function CategoryNav({ activeCategory, onCategoryChange }) {
   const categories = [
     { label: "Graphic Design", value: "graphic" },
+    { label: "NFT's", value: "nft" },
     { label: "Motion Design", value: "motion" },
     { label: "UI/UX Design", value: "ui-ux" },
     { label: "Branding", value: "branding" },
