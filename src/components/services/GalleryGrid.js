@@ -1,29 +1,13 @@
 import { useState } from "react";
 import { CategoryNav } from "./CategoryNav";
 import Link from "next/link";
-import Image from 'next/image';
-
-const portfolioItems = [
-  { id: "1", title: "Tech Conference", category: "graphic", image: "/Graphic design poster/01.webp", height: 500 },
-  { id: "2", title: "Tech Conference", category: "graphic", image: "/Graphic design poster/04.webp", height: 200 },
-  { id: "3", title: "Paris Perfume", category: "graphic", image: "/Graphic design poster/07.webp", height: 500 },
-  { id: "4", title: "Tech Conference", category: "graphic", image: "/Graphic design poster/04.webp", height: 500 },
-  { id: "5", title: "Tech Conference", category: "graphic", image: "/Graphic design poster/2.webp", height: 200 },
-  { id: "6", title: "Paris Perfume", category: "graphic", image: "/Graphic design poster/05.webp", height: 500 },
-  { id: "7", title: "Tech Conference", category: "graphic", image: "/Graphic design poster/08.webp", height: 600 },
-  { id: "8", title: "Tech Conference", category: "graphic", image: "/Graphic design poster/08.webp", height: 200 },
-  { id: "9", title: "Paris Perfume", category: "graphic", image: "/Graphic design poster/03.webp", height: 500 },
-  { id: "10", title: "Tech Conference", category: "graphic", image: "/Graphic design poster/06.webp", height: 500 },
-  { id: "11", title: "Tech Conference", category: "graphic", image: "/Graphic design poster/11.webp", height: 200 },
-  { id: "12", title: "Paris Perfume", category: "graphic", image: "/Graphic design poster/12.webp", height: 500 },
-
-
-];
+import Image from "next/image";
+import { portfolioItems } from "@/data/portfolio-item"; // Import from the data file
 
 export function PinterestGallery() {
   const [activeCategory, setActiveCategory] = useState("graphic");
 
-  const filteredItems = portfolioItems.filter(item => item.category === activeCategory);
+  const filteredItems = portfolioItems.filter((item) => item.category === activeCategory);
 
   return (
     <div className="container mx-auto px-4 py-6">
@@ -35,7 +19,7 @@ export function PinterestGallery() {
         {filteredItems.map((item) => (
           <div key={item.id} className="relative mb-4 break-inside-avoid">
             <Link href={`/services/${item.id}`} passHref>
-              <div className="relative w-full h-[300px]">
+              <div className="relative w-full" style={{ height: `${item.height}px` }}>
                 <Image
                   src={item.image}
                   alt={item.title}
