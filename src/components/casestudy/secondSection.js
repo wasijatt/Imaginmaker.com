@@ -71,11 +71,13 @@ export default function FeaturedProjects() {
                   Cafe & Restaurant
                 </Link>
 </div>
+<Link href={"/QuickCraveCafe"}>
                 <Button 
                   className=" bg-[#6D40FF] shadow-[0.5px_0.2px_7px_0.2px_rgba(125,64,255,55)] text-white rounded-full py-1 px-5"
                 >
                   Let&apos;s Go
                 </Button>
+                </Link>
               </div>
             </div>
           </div>
