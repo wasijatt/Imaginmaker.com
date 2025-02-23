@@ -4,12 +4,20 @@ import Link from "next/link";
 import Image from 'next/image';
 
 const portfolioItems = [
-  { id: "1", title: "Tech Conference", category: "graphic", image: "/Graphic design poster/01.webp" },
-  { id: "2", title: "Paris Perfume", category: "graphic", image: "/Graphic design poster/07.webp" },
-  { id: "3", title: "New Branding", category: "branding", image: "/Branding/02.webp" },
-  { id: "4", title: "Luxury Packaging", category: "branding", image: "/Branding/05.webp" },
-  { id: "5", title: "Minimal Poster", category: "graphic", image: "/Graphic design poster/04.webp" },
-  { id: "6", title: "Streetwear Logo", category: "branding", image: "/Branding/06.webp" },
+  { id: "1", title: "Tech Conference", category: "graphic", image: "/Graphic design poster/01.webp", height: 500 },
+  { id: "2", title: "Tech Conference", category: "graphic", image: "/Graphic design poster/04.webp", height: 200 },
+  { id: "3", title: "Paris Perfume", category: "graphic", image: "/Graphic design poster/07.webp", height: 500 },
+  { id: "4", title: "Tech Conference", category: "graphic", image: "/Graphic design poster/04.webp", height: 500 },
+  { id: "5", title: "Tech Conference", category: "graphic", image: "/Graphic design poster/2.webp", height: 200 },
+  { id: "6", title: "Paris Perfume", category: "graphic", image: "/Graphic design poster/05.webp", height: 500 },
+  { id: "7", title: "Tech Conference", category: "graphic", image: "/Graphic design poster/08.webp", height: 600 },
+  { id: "8", title: "Tech Conference", category: "graphic", image: "/Graphic design poster/08.webp", height: 200 },
+  { id: "9", title: "Paris Perfume", category: "graphic", image: "/Graphic design poster/03.webp", height: 500 },
+  { id: "10", title: "Tech Conference", category: "graphic", image: "/Graphic design poster/06.webp", height: 500 },
+  { id: "11", title: "Tech Conference", category: "graphic", image: "/Graphic design poster/11.webp", height: 200 },
+  { id: "12", title: "Paris Perfume", category: "graphic", image: "/Graphic design poster/12.webp", height: 500 },
+
+
 ];
 
 export function PinterestGallery() {
