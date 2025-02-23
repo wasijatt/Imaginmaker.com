@@ -11,13 +11,13 @@ export function CategoryNav({ activeCategory, onCategoryChange }) {
   ];
 
   return (
-    <nav className="flex justify-center space-x-8 mb-8">
+    <nav className="flex justify-center space-x-2 mb-8">
       {categories.map(({ label, value }) => (
         <button
           key={value}
           onClick={() => onCategoryChange(value)}
           className={cn(
-            "text-lg font-medium pb-2 px-1 relative transition-colors hover:text-primary",
+            "md:text-lg text:sm font-medium pb-2 px-1 relative transition-colors hover:text-primary",
             activeCategory === value ? "text-primary" : "text-muted-foreground"
           )}
         >
