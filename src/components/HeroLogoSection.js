@@ -2,6 +2,7 @@
 
 import { useRef, useEffect, useState } from 'react';
 import { motion, useAnimation } from 'framer-motion';
+import Image from 'next/image';
 
 export default function LogoMarquee() {
   const logos = [
@@ -63,9 +64,11 @@ export default function LogoMarquee() {
               className="flex items-center justify-center"
               style={{ width: `${containerWidth / logos.length}px` }}
             >
-              <img
+              <Image
                 src={logo.url}
                 alt={logo.alt}
+                width={48}
+                height={48}
                 className="h-6 sm:h-8 md:h-10 lg:h-12 w-auto object-contain brightness-0 invert"
               />
             </div>

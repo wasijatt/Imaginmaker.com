@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
 import Link from "next/link";
+import Image from 'next/image';
 
 export default function ImagePage() {
   const router = useRouter();
@@ -27,11 +28,16 @@ export default function ImagePage() {
       <div className="grid md:grid-cols-[1fr,400px] gap-8">
         {/* Left: Image Display */}
         <div className="relative bg-black flex items-center justify-center h-[80vh]">
-          <img
-            src={item.image}
-            alt={item.title}
-            className="w-full h-full object-contain"
-          />
+          <div className="relative w-full h-full">
+            <Image
+              src={item.image}
+              alt={item.title}
+              fill
+              className="object-contain"
+              sizes="(max-width: 768px) 100vw, 60vw"
+              priority
+            />
+          </div>
         </div>
 
         {/* Right: Details */}
@@ -46,11 +52,15 @@ export default function ImagePage() {
       <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mt-4">
         {relatedItems.map((img) => (
           <Link key={img.id} href={`/services/${img.id}`} passHref>
-            <img
-              src={img.image}
-              alt={img.title}
-              className="w-full h-40 object-cover rounded-lg cursor-pointer hover:opacity-80 transition"
-            />
+            <div className="relative w-full h-40">
+              <Image
+                src={img.image}
+                alt={img.title}
+                fill
+                className="object-cover rounded-lg hover:opacity-80 transition"
+                sizes="(max-width: 768px) 50vw, 33vw"
+              />
+            </div>
           </Link>
         ))}
       </div>

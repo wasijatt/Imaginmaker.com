@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { CategoryNav } from "./CategoryNav";
 import Link from "next/link";
+import Image from 'next/image';
 
 const portfolioItems = [
   { id: "1", title: "Tech Conference", category: "graphic", image: "/Graphic design poster/01.webp" },
@@ -26,11 +27,15 @@ export function PinterestGallery() {
         {filteredItems.map((item) => (
           <div key={item.id} className="relative mb-4 break-inside-avoid">
             <Link href={`/services/${item.id}`} passHref>
-              <img
-                src={item.image}
-                alt={item.title}
-                className="w-full rounded-lg shadow-md hover:scale-105 transition-transform duration-200 cursor-pointer"
-              />
+              <div className="relative w-full h-[300px]">
+                <Image
+                  src={item.image}
+                  alt={item.title}
+                  fill
+                  className="rounded-lg object-cover hover:scale-105 transition-transform duration-200 cursor-pointer"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                />
+              </div>
             </Link>
           </div>
         ))}

@@ -3,6 +3,7 @@
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import Image from 'next/image';
 
 export function PinterestModal({ item, onClose, onNext, onPrevious }) {
   if (!item) return null;
@@ -37,11 +38,16 @@ export function PinterestModal({ item, onClose, onNext, onPrevious }) {
             >
               <ChevronRight className="h-6 w-6" />
             </Button>
-            <img
-              src={item.image || "/placeholder.svg"}
-              alt={item.title}
-              className="w-full h-full object-contain"
-            />
+            <div className="relative w-full h-full">
+              <Image
+                src={item.image || "/placeholder.svg"}
+                alt={item.title}
+                fill
+                className="object-contain"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                priority
+              />
+            </div>
           </div>
 
           {/* Details Section */}

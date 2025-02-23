@@ -3,6 +3,8 @@
 import { useState } from "react";
 import { CategoryNav } from "./CategoryNav";
 import { portfolioItems } from "@/data/portfolio-item";
+import Image from 'next/image';
+import { PinterestModal } from "./pinterest-modal";
 
 export function PortfolioGallery() {
   const [activeCategory, setActiveCategory] = useState("graphic");
@@ -36,16 +38,20 @@ export function PortfolioGallery() {
             }}
             onClick={() => setSelectedItem(item)}
           >
-            <img
-              src={item.image || "/placeholder.svg"}
-              alt={item.title}
-              className="w-full h-full object-cover transition-transform hover:scale-105"
-            />
+            <div className="relative w-full h-full">
+              <Image
+                src={item.image || "/placeholder.svg"}
+                alt={item.title}
+                fill
+                className="object-cover transition-transform hover:scale-105"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              />
+            </div>
           </div>
         ))}
       </div>
 
-      <ImageModal
+      <PinterestModal
         item={selectedItem}
         onClose={() => setSelectedItem(null)}
         onNext={handleNext}
