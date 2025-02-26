@@ -19,12 +19,13 @@ export function PinterestGallery() {
         {filteredItems.map((item) => (
           <div key={item.id} className="relative mb-4 break-inside-avoid">
             <Link href={`/services/${item.id}`} passHref>
-              <div className="relative w-full" style={{ height: `${item.height}px` }}>
+              <div className="relative w-full h-auto">
                 <Image
                   src={item.image}
                   alt={item.title}
-                  fill
-                  className="rounded-lg object-cover hover:scale-105 transition-transform duration-200 cursor-pointer"
+                  width={400} // Adjust based on requirement
+                  height={300} // Adjust based on requirement
+                  className="rounded-lg object-contain w-full h-auto hover:scale-105 transition-transform duration-200 cursor-pointer"
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 />
               </div>
