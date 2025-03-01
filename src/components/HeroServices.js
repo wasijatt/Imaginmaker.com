@@ -8,28 +8,28 @@ const services = [
     title: "Graphic Design",
     icon: "/heroServices/1.svg",
     description: "Crafting impactful visuals that bring your brand to life, from logos to full-scale branding solutions.",
-    href: "/services",
+    href: "services/services",
     position: "up"
   },
   {
     title: "Motion Design",
     icon: "/heroServices/2.svg",
     description: "Transform your brand with dynamic animations that captivate and engage. Our motion design brings your ideas to life with creativity and precision.",
-    href: "/services",
+    href: "/services/services",
     position: "down"
   },
   {
     title: "UI/UX Design",
     icon: "/heroServices/3.svg",
     description: "Designing intuitive and visually appealing interfaces that enhance user experiences, making every interactive exercise are enjoyable.",
-    href: "/services",
+    href: "services/services",
     position: "up"
   },
   {
     title: "Branding",
     icon: "/heroServices/4.svg",
     description: "Creating distinct visual identities that resonate with your audiences and elevate your business.",
-    href: "/services",
+    href: "services/services",
     position: "down"
   }
 ]
