@@ -5,6 +5,8 @@ import { satoshi } from '@/lib/fonts';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import CafeSection from '@/components/QuickCraveCafe/first';
+// import DiagonalSection from '@/components/QuickCraveCafe/quickcravesecond';
+
 
 
 export default function QuickCraveCafe() {
@@ -14,6 +16,7 @@ export default function QuickCraveCafe() {
         <main className={`${clashGrotesk.className} ${satoshi.className}`}>
             <Navbar/>
             <CafeSection/>
+           {/* <DiagonalSection/> */}
             <Footer/>
         </main>
     )

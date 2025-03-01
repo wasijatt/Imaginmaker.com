@@ -1,0 +1,57 @@
+import React from "react";
+
+const DesignSystemArticle = () => {
+  return (
+    <article>
+      <header>
+        <h1>Getting Started with Design Systems</h1>
+        <p><strong>Date:</strong> March 15, 2023</p>
+        <p><strong>Category:</strong> Design</p>
+        <img src="/journal/journal1.png" alt="Design System" />
+      </header>
+      
+      <section>
+        <p>
+          Design systems have become an essential tool for teams building digital products. They provide a 
+          single source of truth for design elements, patterns, and guidelines, ensuring consistency across 
+          products and streamlining the workflow between designers and developers.
+        </p>
+      </section>
+      
+      <section>
+        <h2>What is a Design System?</h2>
+        <p>
+          A design system is a collection of reusable components, guided by clear standards, that can be 
+          assembled to build any number of applications. It's more than just a UI kit or pattern library—it's 
+          a complete set of standards, documentation, and principles along with the toolkit to achieve those standards.
+        </p>
+      </section>
+      
+      <section>
+        <h2>Key Components of a Design System</h2>
+        <h3>1. Design Tokens</h3>
+        <p>
+          Design tokens are the visual design atoms of the design system—specifically, they are named entities that 
+          store visual design attributes. They are used in place of hard-coded values in order to maintain a 
+          scalable and consistent visual system.
+        </p>
+        <pre>
+          <code>
+{`:root {
+  --color-primary: #0066ff;
+  --color-secondary: #0099ff;
+  --spacing-small: 8px;
+  --spacing-medium: 16px;
+  --spacing-large: 24px;
+  --font-size-small: 14px;
+  --font-size-medium: 16px;
+  --font-size-large: 20px;
+}`}
+          </code>
+        </pre>
+      </section>
+    </article>
+  );
+};
+
+export default DesignSystemArticle;

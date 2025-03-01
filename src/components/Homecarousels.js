@@ -15,6 +15,8 @@ export default function AnimatedCarousel() {
         '/Carousel/posterdesign.webp',
         '/Carousel/productDesigning.webp',
         '/Carousel/websiteLandingPage.webp',
+        '/Carousel/posterdesign.webp',
+        '/Carousel/illustration.webp',
     ];
 
     const allImages = [...images, ...images];

@@ -13,7 +13,7 @@ export default function Navbar() {
 
   const navLinks = [
     { href: '/case-study', label: 'Case Study' },
-    { href: '/journal', label: 'Journals' },
+    { href: '/journals/journal', label: 'Journals' },
     { href: '/services/services', label: 'Services' },
     { href: '/our-values', label: 'Our Values' },
   ];

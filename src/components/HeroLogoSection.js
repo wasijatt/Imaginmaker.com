@@ -6,11 +6,11 @@ import Image from 'next/image';
 
 export default function LogoMarquee() {
   const logos = [
-    { url: "/logoanimation/animationlogo1.png", alt: "Company Logo 1" },
-    { url: "/logoanimation/animationlogo2.png", alt: "Company Logo 2" },
-    { url: "/logoanimation/animationlogo3.png", alt: "Company Logo 3" },
-    { url: "/logoanimation/animationlogo4.png", alt: "Company Logo 4" },
-    { url: "/logoanimation/animationlogo5.png", alt: "Company Logo 5" },
+    { url: "/logoanimation/1.svg", alt: "Company Logo 1" },
+    { url: "/logoanimation/2.svg", alt: "Company Logo 2" },
+    { url: "/logoanimation/3.svg", alt: "Company Logo 3" },
+    { url: "/logoanimation/4.svg", alt: "Company Logo 4" },
+    { url: "/logoanimation/5.svg", alt: "Company Logo 5" },
   ];
 
   const containerRef = useRef(null);
