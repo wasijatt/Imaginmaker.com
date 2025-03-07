@@ -24,7 +24,7 @@ export default function MembershipSection() {
                 <div className="space-y-10 lg:grid lg:grid-cols-3 lg:gap-12 lg:space-y-0 max-w-5xl mx-auto relative">
                     {/* Standard Plan */}
                     <div
-                        className="relative pt-12 px-12 pb-6 bg-[#070707] backdrop-blur-sm rounded-2xl border-[#7D40FF] border-[1px] mx-auto lg:w-auto"
+                        className="relative pt-12 px-12 pb-6 md:pt-16 bg-[#070707] backdrop-blur-sm rounded-2xl border-[#7D40FF] border-[1px] mx-auto lg:w-auto"
                         style={{
                             backgroundImage: "url('/membership/standard-bg.svg')",
                             backgroundRepeat: 'no-repeat',
@@ -57,7 +57,7 @@ export default function MembershipSection() {
 
                     {/* Pro Plan */}
                     <div
-                        className="relative pt-12 px-12 pb-6 bg-[#070707] backdrop-blur-sm rounded-2xl border-[#7D40FF] border-[1px] mx-auto lg:w-auto"
+                        className="relative pt-12 px-12 pb-6 md:pt-16 bg-[#070707] backdrop-blur-sm rounded-2xl border-[#7D40FF] border-[1px] mx-auto lg:w-auto"
                         style={{
                             backgroundImage: "url('/membership/pro-bg.svg')",
                             backgroundRepeat: 'no-repeat',
