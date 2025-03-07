@@ -15,9 +15,9 @@ const Footer = () => {
     };
 
     return (
-        <footer className="w-full relative bg-black text-white xl:h-[65vh] overflow-hidden md:h-[50vh] 2xl:h-[45vh]">
+        <footer className="w-full relative bg-black text-white md:h-[70vh] overflow-hidden 2xl:h-[45vh]">
             {/* Background SVG */}
-            <div className="hidden xl:block absolute inset-0 z-0 opacity-30 " style={{ width: '30%', height: '30%' }}>
+            <div className="hidden xl:block absolute inset-0 z-0 opacity-25 " style={{ width: '30%', height: '30%' }}>
                 <Image
                     src="/footer/pen-footer.svg"
                     alt="Background Design"
@@ -27,7 +27,7 @@ const Footer = () => {
                     style={{ width: '12rem', height: '12rem' }}
                     objectFit="cover"
                     quality={100}
-                    className='relative 2xl:left-[15rem]'
+                    className='relative md:left-[24rem]'
                 />
             </div>
 
@@ -66,7 +66,7 @@ const Footer = () => {
                         >
                             About Agency
                         </Link>
-                        <div className=" hidden md:block mt-16 pt-8 xl:pt-8">
+                        <div className=" hidden md:block mt-16 pt-8 md:pt-8">
                             <div className="flex flex-col sm:flex-row justify-between items-center gap-4 ">
                                 <p className="text-gray-400 text-[14px] relative">© 2024 Imagin Maker</p>
                                 <div className={`${satoshi.className} flex gap-6 xl:gap-3 relative xl:right-[1rem]`}>

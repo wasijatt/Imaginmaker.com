@@ -19,7 +19,7 @@ export default function OurValueHeroSection() {
       </div>
 
       {/* Content Container */}
-      <div className="relative z-10 mx-auto max-w-6xl px-8 py-20 sm:px-6 lg:px-8">
+      <div className="relative z-10 mx-auto max-w-6xl px-8 py-20 sm:px-6 md:px-8">
         <div className="flex flex-col items-start space-y-6">
           {/* Heading with dot */}
           <h1 className={`${clashGrotesk.className} flex flex-col items-start text-4xl font-bold text-white sm:text-5xl md:text-6xl lg:text-7xl relative top-[3.5rem] mb-12 2xl:top-[6rem] 2xl:mb-24 tracking-wide`}>

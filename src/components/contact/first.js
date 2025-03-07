@@ -19,8 +19,8 @@ export default function ContactFirstSection() {
             </div>
 
             {/* Content Container */}
-            <div className="relative z-10 mx-auto max-w-6xl px-8 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-20 2xl:mt-28 mt-16">
-                <div className="flex flex-col items-start space-y-6 sm:space-y-8">
+            <div className="relative z-10 mx-auto max-w-6xl px-8 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-20 2xl:mt-28 mt-16 ">
+                <div className="flex flex-col items-start space-y-6 sm:space-y-8 md:-mt-12">
                     {/* Heading with SVG Elements */}
                     <div className="relative">
                         {/* Purple Circle SVG */}
