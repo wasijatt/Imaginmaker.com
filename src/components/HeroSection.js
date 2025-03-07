@@ -20,7 +20,7 @@ export default function HeroSection() {
       h-[53vh] 
       sm:h-[60vh] 
       md:min-h-[500px] md:h-[70vh] 
-      lg:h-[75vh] 
+      lg:h-[80vh] 
       xl:h-[75vh] 
       2xl:h-[70vh]
       /* Special case for 1024x600 screens */
@@ -36,12 +36,12 @@ export default function HeroSection() {
       <div
         className="relative z-10 mx-auto max-w-6xl px-2 sm:px-4 
         py-10 sm:py-16 md:py-20
-        mt-4 sm:mt-8 md:mt-28
-        [height:600px]:[width:1024px]:py-10 [height:600px]:[width:1024px]:mt-6"
+        mt-4 sm:mt-8 md:mt-0 2xl:mt-28
+        [height:600px]:[width:1024px]:py-10 [height:600px]:[width:1024px]:mt-[12rem]"
       >
         <div className="flex flex-col items-start">
           {/* Heading Section */}
-          <div className="relative mb-4 sm:mb-6 [height:600px]:[width:1024px]:mb-4">
+          <div className="relative mb-4 sm:mb-6 [height:600px]:[width:1024px]:mb-3">
             <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold text-white tracking-wide">
               <span>We are </span>
               <span className={`${clashGrotesk.className} relative inline-block text-[#6D40FF] font-medium`}>
@@ -62,7 +62,7 @@ export default function HeroSection() {
           </div>
 
           {/* Subtitle */}
-          <p className="mb-4 sm:mb-6 text-base sm:text-lg md:text-xl tracking-wide text-gray-300 [height:600px]:[width:1024px]:mb-4 [height:600px]:[width:1024px]:text-base">
+          <p className="mb-4 sm:mb-6 text-base sm:text-lg md:text-xl tracking-wide text-gray-300 [height:600px]:[width:1024px]:mb-3 [height:600px]:[width:1024px]:text-base">
             What You Think, We Can Design for your Businesses!
           </p>
 
