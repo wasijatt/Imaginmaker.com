@@ -3,7 +3,7 @@
 "use client"
 import { useState } from 'react';
 import { Search } from 'lucide-react';
-import Navbar from '../components/Navbar';
+import Navbar from '@/components/Navbar';
 import HeroSection from '@/components/HeroSection';
 import { clashGrotesk } from '@/lib/clashGroteskfont';
 import AnimatedCarousel from '@/components/Homecarousels';

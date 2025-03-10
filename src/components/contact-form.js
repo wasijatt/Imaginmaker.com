@@ -11,12 +11,63 @@ export default function ContactForm() {
         phone: '',
         interestedIn: ''
     })
+    const [status, setStatus] = useState({ 
+        loading: false, 
+        error: null,
+        success: false 
+    });
 
     const handleSubmit = async (e) => {
-        e.preventDefault()
-        // Handle form submission
-        console.log(formData)
-    }
+        e.preventDefault();
+        setStatus({ loading: true, error: null, success: false });
+
+        try {
+            // Log the form data being sent
+            console.log('Sending form data:', formData);
+
+            const response = await fetch('/api/contact', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData)
+            });
+
+            // Log the raw response
+            console.log('Response status:', response.status);
+
+            // Try to parse the response as JSON
+            let data;
+            try {
+                data = await response.json();
+                console.log('Response data:', data);
+            } catch (parseError) {
+                console.error('Error parsing response:', parseError);
+                throw new Error('Invalid server response');
+            }
+
+            if (!response.ok) {
+                throw new Error(data.message || 'Submission failed');
+            }
+
+            // Show success state
+            setStatus({ loading: false, error: null, success: true });
+            
+            // Clear form
+            setFormData({
+                fullName: '',
+                email: '',
+                phone: '',
+                interestedIn: ''
+            });
+            
+            alert('Thank you for your submission! We will contact you soon.');
+        } catch (error) {
+            console.error('Form submission error:', error);
+            setStatus({ loading: false, error: error.message, success: false });
+            alert(error.message || 'Error submitting form. Please try again.');
+        }
+    };
 
     const handleChange = (e) => {
         setFormData({
@@ -40,62 +91,82 @@ export default function ContactForm() {
                     </p>
                 </div>
 
-                <form onSubmit={handleSubmit} className="max-w-4xl mx-auto">
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div>
-                            <input
-                                type="text"
-                                name="fullName"
-                                placeholder="Full Name"
-                                value={formData.fullName}
-                                onChange={handleChange}
-                                className={`${satoshi.className} w-full px-6 py-3 rounded-full border border-gray-800 focus:border-[#7D40FF] focus:ring-2 focus:ring-[#7D40FF]/20 outline-none transition-all duration-200 text-gray-800 placeholder:text-gray-400`}
-                                required
-                            />
-                        </div>
-                        <div>
-                            <input
-                                type="email"
-                                name="email"
-                                placeholder="Email"
-                                value={formData.email}
-                                onChange={handleChange}
-                                className={`${satoshi.className} w-full px-6 py-3 rounded-full border border-gray-800 focus:border-[#7D40FF] focus:ring-2 focus:ring-[#7D40FF]/20 outline-none transition-all duration-200 text-gray-800 placeholder:text-gray-400`}
-                                required
-                            />
-                        </div>
-                        <div>
-                            <input
-                                type="tel"
-                                name="phone"
-                                placeholder="Phone"
-                                value={formData.phone}
-                                onChange={handleChange}
-                                className={`${satoshi.className} w-full px-6 py-3 rounded-full border border-gray-800 focus:border-[#7D40FF] focus:ring-2 focus:ring-[#7D40FF]/20 outline-none transition-all duration-200 text-gray-800 placeholder:text-gray-400`}
-                                required
-                            />
-                        </div>
-                        <div>
-                            <input
-                                type="text"
-                                name="interestedIn"
-                                placeholder="Interested in"
-                                value={formData.interestedIn}
-                                onChange={handleChange}
-                                className={`${satoshi.className} w-full px-6 py-3 rounded-full border border-gray-800 focus:border-[#7D40FF] focus:ring-3 focus:ring-[#7D40FF]/20 outline-none transition-all duration-200 text-gray-800 placeholder:text-gray-400`}
-                                required
-                            />
+                {status.success ? (
+                    <div className="max-w-4xl mx-auto text-center">
+                        <div className="bg-green-50 p-8 rounded-lg border border-green-200">
+                            <h3 className={`${clashGrotesk.className} text-2xl font-bold text-green-700 mb-3`}>
+                                Thank You!
+                            </h3>
+                            <p className={`${satoshi.className} text-green-600`}>
+                                Your message has been received. We&apos;ll get back to you soon.
+                            </p>
+                            <button
+                                onClick={() => setStatus({ loading: false, error: null, success: false })}
+                                className={`${satoshi.className} mt-6 bg-green-600 text-white px-6 py-2 rounded-full text-base font-medium hover:bg-green-700 transition-all`}
+                            >
+                                Send Another Message
+                            </button>
                         </div>
                     </div>
-                    <div className="mt-16 text-center">
-                        <button
-                            type="submit"
-                            className={`${satoshi.className} bg-[#7D40FF] shadow-[1px_1px_10px_1px_rgba(125,64,255,55)] text-white px-12 py-2 rounded-full text-[1.3rem] font-medium transition-all duration-200 hover:bg-[#6930D9] transform hover:scale-105 hover:shadow-[#7D40FF]/25`}
-                        >
-                            Let&apos;s Go
-                        </button>
-                    </div>
-                </form>
+                ) : (
+                    <form onSubmit={handleSubmit} className="max-w-4xl mx-auto">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <input
+                                    type="text"
+                                    name="fullName"
+                                    placeholder="Full Name"
+                                    value={formData.fullName}
+                                    onChange={handleChange}
+                                    className={`${satoshi.className} w-full px-6 py-3 rounded-full border border-gray-800 focus:border-[#7D40FF] focus:ring-2 focus:ring-[#7D40FF]/20 outline-none transition-all duration-200 text-gray-800 placeholder:text-gray-400`}
+                                    required
+                                />
+                            </div>
+                            <div>
+                                <input
+                                    type="email"
+                                    name="email"
+                                    placeholder="Email"
+                                    value={formData.email}
+                                    onChange={handleChange}
+                                    className={`${satoshi.className} w-full px-6 py-3 rounded-full border border-gray-800 focus:border-[#7D40FF] focus:ring-2 focus:ring-[#7D40FF]/20 outline-none transition-all duration-200 text-gray-800 placeholder:text-gray-400`}
+                                    required
+                                />
+                            </div>
+                            <div>
+                                <input
+                                    type="tel"
+                                    name="phone"
+                                    placeholder="Phone"
+                                    value={formData.phone}
+                                    onChange={handleChange}
+                                    className={`${satoshi.className} w-full px-6 py-3 rounded-full border border-gray-800 focus:border-[#7D40FF] focus:ring-2 focus:ring-[#7D40FF]/20 outline-none transition-all duration-200 text-gray-800 placeholder:text-gray-400`}
+                                    required
+                                />
+                            </div>
+                            <div>
+                                <input
+                                    type="text"
+                                    name="interestedIn"
+                                    placeholder="Interested in"
+                                    value={formData.interestedIn}
+                                    onChange={handleChange}
+                                    className={`${satoshi.className} w-full px-6 py-3 rounded-full border border-gray-800 focus:border-[#7D40FF] focus:ring-3 focus:ring-[#7D40FF]/20 outline-none transition-all duration-200 text-gray-800 placeholder:text-gray-400`}
+                                    required
+                                />
+                            </div>
+                        </div>
+                        <div className="mt-16 text-center">
+                            <button
+                                type="submit"
+                                disabled={status.loading}
+                                className={`${satoshi.className} bg-[#7D40FF] shadow-[1px_1px_10px_1px_rgba(125,64,255,55)] text-white px-12 py-2 rounded-full text-[1.3rem] font-medium transition-all duration-200 hover:bg-[#6930D9] transform hover:scale-105 hover:shadow-[#7D40FF]/25 ${status.loading ? 'opacity-70 cursor-not-allowed' : ''}`}
+                            >
+                                {status.loading ? 'Sending...' : 'Let\'s Go'}
+                            </button>
+                        </div>
+                    </form>
+                )}
             </div>
         </section>
     )

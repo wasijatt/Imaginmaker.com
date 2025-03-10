@@ -2,7 +2,7 @@ import Head from "next/head";
 import Image from "next/image";
 import { MDXRemote } from "next-mdx-remote";
 import { serialize } from "next-mdx-remote/serialize";
-import { getAllPosts, getPostBySlug } from "@/lib/server/mdx";
+import { getAllPosts, getPostBySlug } from "lib/server/mdx";
 import ShareButtons from "@/components/journal/share-button";
 import RelatedPosts from "@/components/journal/RelatedPosts";
 import MDXComponents from "@/components/journal/mdx-component";

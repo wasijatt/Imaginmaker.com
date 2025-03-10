@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Link from "next/link";
 import Image from "next/image";
-import { getAllPosts } from "@/lib/server/mdx";
+import { getAllPosts } from "lib/server/mdx";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 

@@ -6,7 +6,7 @@ import BlogHeader from '@/components/journal/hero';
 import SubscribeSection from '@/components/journal/journalThird';
 import BlogSection from '@/components/journal/blog';
 import Hero from '@/components/journal/hero';
-import { getAllPosts } from '@/lib/server/mdx';
+import { getAllPosts } from 'lib/server/mdx';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 
