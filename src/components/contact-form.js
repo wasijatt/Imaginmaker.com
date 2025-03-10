@@ -93,16 +93,16 @@ export default function ContactForm() {
 
                 {status.success ? (
                     <div className="max-w-4xl mx-auto text-center">
-                        <div className="bg-green-50 p-8 rounded-lg border border-green-200">
-                            <h3 className={`${clashGrotesk.className} text-2xl font-bold text-green-700 mb-3`}>
+                        <div className="bg-[#bcaddd] p-8 rounded-lg border border-[#6D40FF]">
+                            <h3 className={`${clashGrotesk.className} text-2xl font-bold text-[#7D40FF] mb-3`}>
                                 Thank You!
                             </h3>
-                            <p className={`${satoshi.className} text-green-600`}>
+                            <p className={`${satoshi.className} text-[#7D40FF]`}>
                                 Your message has been received. We&apos;ll get back to you soon.
                             </p>
                             <button
                                 onClick={() => setStatus({ loading: false, error: null, success: false })}
-                                className={`${satoshi.className} mt-6 bg-green-600 text-white px-6 py-2 rounded-full text-base font-medium hover:bg-green-700 transition-all`}
+                                className={`${satoshi.className} mt-6 bg-[#7D40FF] text-white px-6 py-2 rounded-full text-base font-medium hover:bg-[#7D40FF] transition-all`}
                             >
                                 Send Another Message
                             </button>
