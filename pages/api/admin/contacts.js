@@ -1,7 +1,7 @@
 // pages/api/contact.js - Update this file with the following code
-import dbConnect from '../../lib/mongodb';
-import Contact from '../../models/Contact';
-import { sendMail } from '../../lib/mail';
+import dbConnect from 'lib/mongodb';
+import Contact from 'models/Contact';
+import { sendMail } from 'lib/mail';
 import mongoose from 'mongoose'; // Add this import
 
 export default async function handler(req, res) {
