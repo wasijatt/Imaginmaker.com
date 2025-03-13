@@ -1,7 +1,7 @@
 // pages/api/contact.js
-import dbConnect from 'lib/mongodb';
-import Contact from 'models/Contact';
-import { sendMail } from 'lib/mail';
+import dbConnect from '../../lib/mongodb';
+import Contact from '../../models/Contact';
+import { sendMail } from '../../lib/mail';
 
 export default async function handler(req, res) {
   // Set CORS headers for API routes
@@ -26,7 +26,7 @@ export default async function handler(req, res) {
       console.error('Missing required MONGODB_URI environment variable');
       return res.status(500).json({
         success: false,
-        message: 'Server configuration error: Missing MONGODB_URI'
+        message: 'Server configuration error: Missing database connection string'
       });
     }
 
@@ -34,7 +34,7 @@ export default async function handler(req, res) {
       console.error('Missing required SMTP environment variables');
       return res.status(500).json({
         success: false,
-        message: 'Server configuration error: Missing SMTP configuration'
+        message: 'Server configuration error: Missing email configuration'
       });
     }
 
@@ -42,7 +42,7 @@ export default async function handler(req, res) {
       console.error('Missing ADMIN_EMAIL environment variable');
       return res.status(500).json({
         success: false,
-        message: 'Server configuration error: Missing ADMIN_EMAIL'
+        message: 'Server configuration error: Missing admin email'
       });
     }
 
@@ -58,8 +58,18 @@ export default async function handler(req, res) {
       });
     }
     
-    const body = req.body;
-    console.log('Processing form data:', body);
+    // Parse body with error handling
+    let body;
+    try {
+      body = typeof req.body === 'string' ? JSON.parse(req.body) : req.body;
+      console.log('Processing form data:', body);
+    } catch (parseError) {
+      console.error('Error parsing request body:', parseError);
+      return res.status(400).json({
+        success: false,
+        message: 'Invalid request format'
+      });
+    }
 
     // Validate required fields
     if (!body.fullName || !body.email || !body.phone) {
