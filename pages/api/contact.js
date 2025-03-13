@@ -50,41 +50,51 @@ export default async function handler(req, res) {
     console.log('Database used:', mongoose.connection.db.databaseName);
 
     // Send confirmation email to user
-    console.log('Sending confirmation email to user');
-    const userEmailResult = await sendMail({
-      to: body.email,
-      subject: 'Thank you for contacting Imaginmaker',
-      html: `
-        <h2>Thank you for contacting us!</h2>
-        <p>Dear ${body.fullName},</p>
-        <p>We have received your message and will get back to you soon.</p>
-        <p>Best regards,</p>
-        <p>The Imaginmaker Team</p>
-      `
-    });
+    try {
+      console.log('Sending confirmation email to user');
+      const userEmailResult = await sendMail({
+        to: body.email,
+        subject: 'Thank you for contacting Imaginmaker',
+        html: `
+          <h2>Thank you for contacting us!</h2>
+          <p>Dear ${body.fullName},</p>
+          <p>We have received your message and will get back to you soon.</p>
+          <p>Best regards,</p>
+          <p>The Imaginmaker Team</p>
+        `
+      });
 
-    if (!userEmailResult.success) {
-      console.error('Failed to send user email:', userEmailResult.error);
+      if (!userEmailResult.success) {
+        console.error('Failed to send user email:', userEmailResult.error);
+      }
+    } catch (emailError) {
+      console.error('Error sending user confirmation email:', emailError);
+      // Continue with the response - we don't want email failures to affect the form submission
     }
 
     // Send notification email to admin
-    console.log('Sending admin notification email');
-    const adminEmailResult = await sendMail({
-      to: process.env.ADMIN_EMAIL,
-      subject: 'New Contact Form Submission',
-      html: `
-        <h2>New Contact Form Submission</h2>
-        <p><strong>Name:</strong> ${body.fullName}</p>
-        <p><strong>Email:</strong> ${body.email}</p>
-        <p><strong>Phone:</strong> ${body.phone}</p>
-        ${body.interestedIn ? `<p><strong>Interested In:</strong> ${body.interestedIn}</p>` : ''}
-        ${body.message ? `<p><strong>Message:</strong> ${body.message}</p>` : ''}
-        <p><a href="${process.env.NEXT_PUBLIC_SITE_URL || ''}/admin/contacts" target="_blank">View in admin dashboard</a></p>
-      `
-    });
+    try {
+      console.log('Sending admin notification email');
+      const adminEmailResult = await sendMail({
+        to: process.env.ADMIN_EMAIL,
+        subject: 'New Contact Form Submission',
+        html: `
+          <h2>New Contact Form Submission</h2>
+          <p><strong>Name:</strong> ${body.fullName}</p>
+          <p><strong>Email:</strong> ${body.email}</p>
+          <p><strong>Phone:</strong> ${body.phone}</p>
+          ${body.interestedIn ? `<p><strong>Interested In:</strong> ${body.interestedIn}</p>` : ''}
+          ${body.message ? `<p><strong>Message:</strong> ${body.message}</p>` : ''}
+          <p><a href="${process.env.NEXT_PUBLIC_SITE_URL || ''}/admin/contacts" target="_blank">View in admin dashboard</a></p>
+        `
+      });
 
-    if (!adminEmailResult.success) {
-      console.error('Failed to send admin email:', adminEmailResult.error);
+      if (!adminEmailResult.success) {
+        console.error('Failed to send admin email:', adminEmailResult.error);
+      }
+    } catch (emailError) {
+      console.error('Error sending admin notification email:', emailError);
+      // Continue with the response - we don't want email failures to affect the form submission
     }
 
     return res.status(200).json({
@@ -95,6 +105,16 @@ export default async function handler(req, res) {
 
   } catch (error) {
     console.error('Server error:', error);
+    
+    // Specific error handling for MongoDB connection issues
+    if (error.name === 'MongooseServerSelectionError') {
+      return res.status(500).json({
+        success: false,
+        message: 'Unable to connect to database. Please check your database configuration.',
+        error: error.message
+      });
+    }
+    
     return res.status(500).json({
       success: false,
       message: error.message || 'Internal server error'
