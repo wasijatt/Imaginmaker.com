@@ -35,6 +35,24 @@ export default function ContactForm() {
 
             // Log the raw response
             console.log('Response status:', response.status);
+            
+            // Check if the response is OK before trying to parse JSON
+            if (!response.ok) {
+                const errorText = await response.text();
+                let errorMessage = 'Submission failed';
+                
+                try {
+                    // Try to parse the error response as JSON
+                    const errorData = JSON.parse(errorText);
+                    errorMessage = errorData.message || errorMessage;
+                } catch (parseError) {
+                    // If parsing fails, use the raw text
+                    console.error('Error parsing error response:', parseError);
+                    errorMessage = errorText || errorMessage;
+                }
+                
+                throw new Error(errorMessage);
+            }
 
             // Try to parse the response as JSON
             let data;
@@ -44,10 +62,6 @@ export default function ContactForm() {
             } catch (parseError) {
                 console.error('Error parsing response:', parseError);
                 throw new Error('Invalid server response');
-            }
-
-            if (!response.ok) {
-                throw new Error(data.message || 'Submission failed');
             }
 
             // Show success state
@@ -61,11 +75,10 @@ export default function ContactForm() {
                 interestedIn: ''
             });
             
-            alert('Thank you for your submission! We will contact you soon.');
         } catch (error) {
             console.error('Form submission error:', error);
             setStatus({ loading: false, error: error.message, success: false });
-            alert(error.message || 'Error submitting form. Please try again.');
+            alert(`Error: ${error.message || 'Error submitting form. Please try again.'}`);
         }
     };
 

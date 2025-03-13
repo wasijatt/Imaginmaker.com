@@ -5,6 +5,16 @@ import { sendMail } from 'lib/mail';
 import mongoose from 'mongoose';
 
 export default async function handler(req, res) {
+  // Set CORS headers for API routes
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+  
+  // Handle preflight requests
+  if (req.method === 'OPTIONS') {
+    return res.status(200).end();
+  }
+
   if (req.method !== 'POST') {
     return res.status(405).json({ success: false, message: 'Method not allowed' });
   }
@@ -12,8 +22,25 @@ export default async function handler(req, res) {
   console.log('Contact form submission received');
   
   try {
+    // Make sure all required environment variables are set
+    if (!process.env.MONGODB_URI || !process.env.SMTP_HOST || !process.env.ADMIN_EMAIL) {
+      console.error('Missing required environment variables');
+      return res.status(500).json({
+        success: false,
+        message: 'Server configuration error: Missing required environment variables'
+      });
+    }
+
     console.log('Connecting to database...');
-    await dbConnect();
+    try {
+      await dbConnect();
+    } catch (dbConnectError) {
+      console.error('Database connection error:', dbConnectError);
+      return res.status(500).json({
+        success: false,
+        message: 'Database connection failed: ' + dbConnectError.message
+      });
+    }
     
     const body = req.body;
     console.log('Processing form data:', body);
@@ -27,7 +54,7 @@ export default async function handler(req, res) {
       });
     }
 
-    console.log('Attempting to create contact in database');
+    // Create contact data object based on the schema
     const contactData = {
       fullName: body.fullName,
       email: body.email,
@@ -38,18 +65,29 @@ export default async function handler(req, res) {
     
     console.log('Contact data to save:', contactData);
     
-    const contact = new Contact(contactData);
-    const savedContact = await contact.save();
-    
-    if (!savedContact || !savedContact._id) {
-      throw new Error('Failed to save contact data');
+    // Create and save the contact document
+    let savedContact;
+    try {
+      const contact = new Contact(contactData);
+      savedContact = await contact.save();
+      
+      if (!savedContact || !savedContact._id) {
+        throw new Error('Failed to save contact data');
+      }
+      
+      console.log('Contact saved successfully with ID:', savedContact._id);
+      console.log('Collection used:', contact.collection.name);
+      console.log('Database used:', mongoose.connection.db.databaseName);
+    } catch (saveError) {
+      console.error('Error saving contact:', saveError);
+      return res.status(500).json({
+        success: false,
+        message: 'Error saving contact: ' + saveError.message
+      });
     }
-    
-    console.log('Contact saved successfully with ID:', savedContact._id);
-    console.log('Collection used:', contact.collection.name);
-    console.log('Database used:', mongoose.connection.db.databaseName);
 
     // Send confirmation email to user
+    let userEmailSent = false;
     try {
       console.log('Sending confirmation email to user');
       const userEmailResult = await sendMail({
@@ -64,6 +102,7 @@ export default async function handler(req, res) {
         `
       });
 
+      userEmailSent = userEmailResult.success;
       if (!userEmailResult.success) {
         console.error('Failed to send user email:', userEmailResult.error);
       }
@@ -73,6 +112,7 @@ export default async function handler(req, res) {
     }
 
     // Send notification email to admin
+    let adminEmailSent = false;
     try {
       console.log('Sending admin notification email');
       const adminEmailResult = await sendMail({
@@ -89,6 +129,7 @@ export default async function handler(req, res) {
         `
       });
 
+      adminEmailSent = adminEmailResult.success;
       if (!adminEmailResult.success) {
         console.error('Failed to send admin email:', adminEmailResult.error);
       }
@@ -100,7 +141,11 @@ export default async function handler(req, res) {
     return res.status(200).json({
       success: true,
       message: 'Form submitted successfully',
-      data: savedContact
+      data: {
+        id: savedContact._id,
+        userEmailSent,
+        adminEmailSent
+      }
     });
 
   } catch (error) {
