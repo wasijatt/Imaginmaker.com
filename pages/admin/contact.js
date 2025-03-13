@@ -1,5 +1,5 @@
+// pages/admin/contacts.js
 import { useState, useEffect } from 'react';
-import { useRouter } from 'next/router';
 import Head from 'next/head';
 
 export default function AdminContacts() {
@@ -8,7 +8,6 @@ export default function AdminContacts() {
   const [error, setError] = useState(null);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [authPassword, setAuthPassword] = useState('');
-  const router = useRouter();
 
   // Simple admin auth check
   const authenticateAdmin = (password) => {
@@ -26,12 +25,7 @@ export default function AdminContacts() {
   const fetchContacts = async () => {
     try {
       setLoading(true);
-      const response = await fetch('/api/admin/contacts', {
-        method: 'GET',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      });
+      const response = await fetch('/api/admin/contacts');
 
       if (!response.ok) {
         throw new Error('Failed to fetch contacts');

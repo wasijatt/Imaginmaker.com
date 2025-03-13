@@ -36,32 +36,21 @@ export default function ContactForm() {
             // Log the raw response
             console.log('Response status:', response.status);
             
-            // Check if the response is OK before trying to parse JSON
-            if (!response.ok) {
-                const errorText = await response.text();
-                let errorMessage = 'Submission failed';
-                
-                try {
-                    // Try to parse the error response as JSON
-                    const errorData = JSON.parse(errorText);
-                    errorMessage = errorData.message || errorMessage;
-                } catch (parseError) {
-                    // If parsing fails, use the raw text
-                    console.error('Error parsing error response:', parseError);
-                    errorMessage = errorText || errorMessage;
-                }
-                
-                throw new Error(errorMessage);
-            }
-
-            // Try to parse the response as JSON
+            let responseText = await response.text();
+            console.log('Raw response:', responseText);
+            
             let data;
             try {
-                data = await response.json();
-                console.log('Response data:', data);
+                // Try to parse as JSON
+                data = JSON.parse(responseText);
             } catch (parseError) {
-                console.error('Error parsing response:', parseError);
-                throw new Error('Invalid server response');
+                console.error('Error parsing response as JSON:', parseError);
+                throw new Error('Server returned an invalid response. Please try again later.');
+            }
+            
+            // Check if the response indicates an error
+            if (!response.ok || !data.success) {
+                throw new Error(data.message || 'Form submission failed. Please try again.');
             }
 
             // Show success state
@@ -78,7 +67,6 @@ export default function ContactForm() {
         } catch (error) {
             console.error('Form submission error:', error);
             setStatus({ loading: false, error: error.message, success: false });
-            alert(`Error: ${error.message || 'Error submitting form. Please try again.'}`);
         }
     };
 
@@ -169,6 +157,13 @@ export default function ContactForm() {
                                 />
                             </div>
                         </div>
+                        
+                        {status.error && (
+                            <div className="mt-4 p-3 bg-red-100 text-red-700 rounded-lg border border-red-400">
+                                <p>{status.error}</p>
+                            </div>
+                        )}
+                        
                         <div className="mt-16 text-center">
                             <button
                                 type="submit"

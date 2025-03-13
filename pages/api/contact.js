@@ -1,8 +1,7 @@
 // pages/api/contact.js
-import dbConnect from 'lib/mongodb';
-import Contact from 'models/Contact';
-import { sendMail } from 'lib/mail';
-import mongoose from 'mongoose';
+import dbConnect from '../../lib/mongodb';
+import Contact from '../../models/Contact';
+import { sendMail } from '../../lib/mail';
 
 export default async function handler(req, res) {
   // Set CORS headers for API routes
@@ -23,17 +22,34 @@ export default async function handler(req, res) {
   
   try {
     // Make sure all required environment variables are set
-    if (!process.env.MONGODB_URI || !process.env.SMTP_HOST || !process.env.ADMIN_EMAIL) {
-      console.error('Missing required environment variables');
+    if (!process.env.MONGODB_URI) {
+      console.error('Missing required MONGODB_URI environment variable');
       return res.status(500).json({
         success: false,
-        message: 'Server configuration error: Missing required environment variables'
+        message: 'Server configuration error: Missing MONGODB_URI'
+      });
+    }
+
+    if (!process.env.SMTP_HOST || !process.env.SMTP_USER || !process.env.SMTP_PASSWORD) {
+      console.error('Missing required SMTP environment variables');
+      return res.status(500).json({
+        success: false,
+        message: 'Server configuration error: Missing SMTP configuration'
+      });
+    }
+
+    if (!process.env.ADMIN_EMAIL) {
+      console.error('Missing ADMIN_EMAIL environment variable');
+      return res.status(500).json({
+        success: false,
+        message: 'Server configuration error: Missing ADMIN_EMAIL'
       });
     }
 
     console.log('Connecting to database...');
     try {
       await dbConnect();
+      console.log('Connected to database successfully');
     } catch (dbConnectError) {
       console.error('Database connection error:', dbConnectError);
       return res.status(500).json({
@@ -66,18 +82,15 @@ export default async function handler(req, res) {
     console.log('Contact data to save:', contactData);
     
     // Create and save the contact document
-    let savedContact;
     try {
       const contact = new Contact(contactData);
-      savedContact = await contact.save();
+      const savedContact = await contact.save();
       
       if (!savedContact || !savedContact._id) {
         throw new Error('Failed to save contact data');
       }
       
       console.log('Contact saved successfully with ID:', savedContact._id);
-      console.log('Collection used:', contact.collection.name);
-      console.log('Database used:', mongoose.connection.db.databaseName);
     } catch (saveError) {
       console.error('Error saving contact:', saveError);
       return res.status(500).json({
@@ -142,7 +155,6 @@ export default async function handler(req, res) {
       success: true,
       message: 'Form submitted successfully',
       data: {
-        id: savedContact._id,
         userEmailSent,
         adminEmailSent
       }
@@ -150,16 +162,6 @@ export default async function handler(req, res) {
 
   } catch (error) {
     console.error('Server error:', error);
-    
-    // Specific error handling for MongoDB connection issues
-    if (error.name === 'MongooseServerSelectionError') {
-      return res.status(500).json({
-        success: false,
-        message: 'Unable to connect to database. Please check your database configuration.',
-        error: error.message
-      });
-    }
-    
     return res.status(500).json({
       success: false,
       message: error.message || 'Internal server error'
