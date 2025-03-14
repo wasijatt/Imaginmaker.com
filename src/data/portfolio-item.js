@@ -56,6 +56,13 @@ export const portfolioItems = [
   { id: "55", title: "Paris Perfume", description: 'hey', category: "graphic", image: "/Graphic design poster/54.webp"},
   { id: "56", title: "Paris Perfume", description: 'hey', category: "graphic", image: "/Graphic design poster/3.webp"},
   { id: "57", title: "Paris Perfume", description: 'hey', category: "graphic", image: "/Graphic design poster/56.webp"},
+  { id: "3", title: "Bitcoin Trading App Animation", description: 'hey', category: "motion", video: "/motionDesign/Bitcoin-trading-app-animation.mp4", height: 300 },
+  { id: "3", title: "Bitcoin Trading App Animation", description: 'hey', category: "motion", video: "/motionDesign/Bitcoin-trading-app-animation.mp4", height: 300 },
+  { id: "3", title: "Bitcoin Trading App Animation", description: 'hey', category: "motion", video: "/motionDesign/Bitcoin-trading-app-animation.mp4", height: 300 },
+  { id: "3", title: "Bitcoin Trading App Animation", description: 'hey', category: "motion", video: "/motionDesign/Bitcoin-trading-app-animation.mp4", height: 300 },
+  { id: "3", title: "Bitcoin Trading App Animation", description: 'hey', category: "motion", video: "/motionDesign/Bitcoin-trading-app-animation.mp4", height: 300 },
+  { id: "3", title: "Bitcoin Trading App Animation", description: 'hey', category: "motion", video: "/motionDesign/Bitcoin-trading-app-animation.mp4", height: 300 },
+
   { id: "58", title: "4 season nft", description: 'hey', category: "nft", image: "/NFT's/4-season.jpg"},
   { id: "59", title: "Antarkatka-House", description: 'hey', category: "nft", image: "/NFT's/Antarkatka-House.jpg"},
   { id: "60", title: "NFT's/Baloom Land", description: 'hey', category: "nft", image: "/NFT's/Baloom Land.jpg"},

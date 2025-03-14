@@ -14,34 +14,25 @@ export default function HeroSection() {
   }
 
   return (
-    <section
-      className="relative w-full overflow-hidden px-4 sm:px-6
-      /* Height adjustments for different screens */
-      h-[53vh] 
-      sm:h-[60vh] 
-      md:min-h-[500px] md:h-[70vh] 
-      lg:h-[80vh] 
-      xl:h-[75vh] 
-      2xl:h-[70vh]
-      /* Special case for 1024x600 screens */
-      [height:600px]:[width:1024px]:h-[85vh]"
-    >
+    <section className="relative w-full overflow-hidden px-4 sm:px-6 min-h-[500px] h-[calc(80svh-80px)]">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
-        <Image src="/HeroSection/herobg.jpg" alt="Background" fill className="object-cover opacity-100" priority />
+        <Image
+          src="/HeroSection/herobg.jpg"
+          alt="Background"
+          fill
+          className="object-cover opacity-100"
+          priority
+          sizes="100vw"
+        />
         <div className="absolute inset-0" />
       </div>
 
       {/* Content Container */}
-      <div
-        className="relative z-10 mx-auto max-w-6xl px-2 sm:px-4 
-        py-10 sm:py-16 md:py-20
-        mt-4 sm:mt-8 md:mt-0 2xl:mt-28
-        [height:600px]:[width:1024px]:py-10 [height:600px]:[width:1024px]:mt-[12rem]"
-      >
+      <div className="relative z-10 mx-auto max-w-6xl px-2 sm:px-4 py-10 sm:py-16 md:py-20 flex flex-col justify-center h-full">
         <div className="flex flex-col items-start">
           {/* Heading Section */}
-          <div className="relative mb-4 sm:mb-6 [height:600px]:[width:1024px]:mb-3">
+          <div className="relative mb-4 sm:mb-6">
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold text-white tracking-wide">
               <span>We are </span>
               <span className={`${clashGrotesk.className} relative inline-block text-[#6D40FF] font-medium`}>
@@ -62,31 +53,30 @@ export default function HeroSection() {
           </div>
 
           {/* Subtitle */}
-          <p className="mb-4 sm:mb-6 text-base sm:text-lg md:text-xl tracking-wide text-gray-300 [height:600px]:[width:1024px]:mb-3 [height:600px]:[width:1024px]:text-base">
+          <p className="mb-4 sm:mb-6 text-base sm:text-lg md:text-xl tracking-wide text-gray-300">
             What You Think, We Can Design for your Businesses!
           </p>
 
           {/* Arrow Image */}
-          <div className="mb-8 sm:mb-10 md:mb-12 [height:600px]:[width:1024px]:mb-4">
+          <div className="mb-6 sm:mb-8 md:mb-10">
             <Image
               src="/casestudy/arrowsvg.svg"
               alt="Arrow"
-              width={200}
+              width={250}
               height={40}
               className="w-[180px] sm:w-[220px] md:w-[250px] h-auto"
             />
           </div>
 
           {/* Button and Footer Text Container */}
-          <div className="flex w-full flex-col items-center space-y-3 sm:space-y-4 [height:600px]:[width:1024px]:space-y-2">
+          <div className="flex w-full flex-col items-center space-y-3 sm:space-y-4 mt-4 sm:mt-6">
             {/* Button */}
             <button
               onClick={scrollToMembership}
               className={`${satoshi.className} tracking-normal rounded-full bg-[#6D40FF] shadow-[0.5px_0.2px_7px_0.2px_rgba(125,64,255,55)] 
-                px-6 sm:px-8 py-2 
+                px-6 sm:px-8 py-2 sm:py-2.5
                 text-base sm:text-lg 
-                font-semibold text-white transition-colors hover:bg-[#6D40FF]/90 
-                mt-4 sm:mt-6 md:mt-10 [height:600px]:[width:1024px]:mt-2 [height:600px]:[width:1024px]:py-1.5 [height:600px]:[width:1024px]:text-base`}
+                font-semibold text-white transition-colors hover:bg-[#6D40FF]/90`}
             >
               See Plans
             </button>

@@ -4,6 +4,10 @@ import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Image from 'next/image';
+import dynamic from 'next/dynamic';
+
+// Dynamically import Lottie to avoid SSR issues
+const Lottie = dynamic(() => import('lottie-react'), { ssr: false });
 
 export function PinterestModal({ item, onClose, onNext, onPrevious }) {
   if (!item) return null;
@@ -12,7 +16,7 @@ export function PinterestModal({ item, onClose, onNext, onPrevious }) {
     <Dialog open={!!item} onOpenChange={onClose}>
       <DialogContent className="max-w-6xl p-0 gap-0 bg-background">
         <div className="grid md:grid-cols-[1fr,400px] h-[80vh]">
-          {/* Image Section */}
+          {/* Image/Video Section */}
           <div className="relative bg-black flex items-center justify-center">
             <Button
               variant="ghost"
@@ -39,14 +43,28 @@ export function PinterestModal({ item, onClose, onNext, onPrevious }) {
               <ChevronRight className="h-6 w-6" />
             </Button>
             <div className="relative w-full h-full">
-              <Image
-                src={item.image || "/placeholder.svg"}
-                alt={item.title}
-                fill
-                className="object-contain"
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                priority
-              />
+              {item.video ? (
+                item.video.endsWith('.json') ? (
+                  <Lottie animationData={item.video} loop={true} />
+                ) : (
+                  <video
+                    src={item.video}
+                    loop
+                    muted
+                    autoPlay
+                    className="object-contain w-full h-full"
+                  />
+                )
+              ) : (
+                <Image
+                  src={item.image || "/placeholder.svg"}
+                  alt={item.title}
+                  fill
+                  className="object-contain"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  priority
+                />
+              )}
             </div>
           </div>
 

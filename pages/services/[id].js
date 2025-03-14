@@ -1,11 +1,12 @@
+"use client";
+
 import { useRouter } from "next/router";
 import portfolioItems from "@/data/portfolio-item";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
-import { Button } from "@/components/ui/button";
-import { ChevronLeft, ChevronRight, X } from "lucide-react";
-import Link from "next/link";
 import Image from 'next/image';
+import dynamic from 'next/dynamic';
+
+// Dynamically import Lottie to avoid SSR issues
+const Lottie = dynamic(() => import('lottie-react'), { ssr: false });
 
 export default function ImagePage() {
   const router = useRouter();
@@ -23,20 +24,32 @@ export default function ImagePage() {
 
   return (
     <main className="container mx-auto px-4 py-6">
-      {/* <Navbar /> */}
-
       <div className="grid md:grid-cols-[1fr,400px] gap-8">
-        {/* Left: Image Display */}
+        {/* Left: Image/Video Display */}
         <div className="relative bg-black flex items-center justify-center h-[80vh]">
           <div className="relative w-full h-full">
-            <Image
-              src={item.image}
-              alt={item.title}
-              fill
-              className="object-contain"
-              sizes="(max-width: 768px) 100vw, 60vw"
-              priority
-            />
+            {item.video ? (
+              item.video.endsWith('.json') ? (
+                <Lottie animationData={item.video} loop={true} />
+              ) : (
+                <video
+                  src={item.video}
+                  loop
+                  muted
+                  autoPlay
+                  className="object-contain w-full h-full"
+                />
+              )
+            ) : (
+              <Image
+                src={item.image}
+                alt={item.title}
+                fill
+                className="object-contain"
+                sizes="(max-width: 768px) 100vw, 60vw"
+                priority
+              />
+            )}
           </div>
         </div>
 
@@ -64,8 +77,6 @@ export default function ImagePage() {
           </Link>
         ))}
       </div>
-
-      {/* <Footer /> */}
     </main>
   );
 }

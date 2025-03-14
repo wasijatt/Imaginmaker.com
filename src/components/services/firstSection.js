@@ -1,3 +1,4 @@
+"use client"
 import { clashGrotesk } from '@/lib/clashGroteskfont';
 import { satoshi } from '@/lib/fonts';
 import Image from 'next/image';
