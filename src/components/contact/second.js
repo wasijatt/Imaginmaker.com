@@ -20,43 +20,56 @@ export default function ContactForm() {
     setStatus({ loading: true, error: null, success: false });
 
     try {
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData)
-      });
+        // Log the form data being sent
+        console.log('Sending form data:', formData);
 
-      // Check if the response is JSON before trying to parse it
-      const contentType = response.headers.get('content-type');
-      if (!contentType || !contentType.includes('application/json')) {
-        console.error('Non-JSON response received:', contentType);
-        throw new Error(`Server returned an invalid response (${response.status}). Please try again later.`);
-      }
+        const response = await fetch('/api/contact', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(formData)
+        });
 
-      const data = await response.json();
+        // Log detailed information about the response
+        console.log('Response status:', response.status);
+        console.log('Response headers:', Object.fromEntries([...response.headers.entries()]));
+        
+        // Try to get the raw response text first
+        const responseText = await response.text();
+        console.log('Raw response text:', responseText);
+        
+        // If we can't parse as JSON, show the raw response
+        let data;
+        try {
+            data = JSON.parse(responseText);
+            console.log('Parsed data:', data);
+        } catch (parseError) {
+            console.error('Failed to parse response as JSON:', parseError);
+            throw new Error(`Server returned non-JSON response: ${responseText.substring(0, 100)}...`);
+        }
+        
+        // Check if the response indicates an error
+        if (!response.ok || !data.success) {
+            throw new Error(data.message || 'Form submission failed. Please try again.');
+        }
 
-      if (!response.ok) {
-        throw new Error(data.message || 'Submission failed');
-      }
-
-      // Clear form
-      setFormData({
-        fullName: '',
-        email: '',
-        phone: '',
-        message: ''
-      });
-      
-      // Set success state instead of using an alert
-      setStatus({ loading: false, error: null, success: true });
-      
+        // Show success state
+        setStatus({ loading: false, error: null, success: true });
+        
+        // Clear form
+        setFormData({
+            fullName: '',
+            email: '',
+            phone: '',
+            interestedIn: ''
+        });
+        
     } catch (error) {
-      console.error('Form submission error:', error);
-      setStatus({ loading: false, error: error.message, success: false });
+        console.error('Form submission error:', error);
+        setStatus({ loading: false, error: error.message, success: false });
     }
-  };
+};
 
   const handleChange = (e) => {
     const { name, value } = e.target;

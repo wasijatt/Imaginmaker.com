@@ -20,11 +20,11 @@ export default function ContactForm() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         setStatus({ loading: true, error: null, success: false });
-
+    
         try {
             // Log the form data being sent
             console.log('Sending form data:', formData);
-
+    
             const response = await fetch('/api/contact', {
                 method: 'POST',
                 headers: {
@@ -32,27 +32,30 @@ export default function ContactForm() {
                 },
                 body: JSON.stringify(formData)
             });
-
-            // Log the raw response
+    
+            // Log detailed information about the response
             console.log('Response status:', response.status);
+            console.log('Response headers:', Object.fromEntries([...response.headers.entries()]));
             
-            let responseText = await response.text();
-            console.log('Raw response:', responseText);
+            // Try to get the raw response text first
+            const responseText = await response.text();
+            console.log('Raw response text:', responseText);
             
+            // If we can't parse as JSON, show the raw response
             let data;
             try {
-                // Try to parse as JSON
                 data = JSON.parse(responseText);
+                console.log('Parsed data:', data);
             } catch (parseError) {
-                console.error('Error parsing response as JSON:', parseError);
-                throw new Error('Server returned an invalid response. Please try again later.');
+                console.error('Failed to parse response as JSON:', parseError);
+                throw new Error(`Server returned non-JSON response: ${responseText.substring(0, 100)}...`);
             }
             
             // Check if the response indicates an error
             if (!response.ok || !data.success) {
                 throw new Error(data.message || 'Form submission failed. Please try again.');
             }
-
+    
             // Show success state
             setStatus({ loading: false, error: null, success: true });
             
@@ -69,7 +72,6 @@ export default function ContactForm() {
             setStatus({ loading: false, error: error.message, success: false });
         }
     };
-
     const handleChange = (e) => {
         setFormData({
             ...formData,
