@@ -18,7 +18,7 @@ export default function ServicesFirstSection() {
             </div>
 
             {/* Content Container */}
-            <div className="relative z-10 mx-auto max-w-7xl px-8 py-20 sm:px-6 lg:px-8 min-h-[600px] 2xl:mt-18 lg:mt-6 2xl:top-24 top-10 mb-8">
+            <div className="relative z-10 mx-auto max-w-7xl px-8 py-20 sm:px-6 lg:px-8 min-h-[500px] 2xl:mt-10 lg:mt-2 2xl:top-8 top-10 mb-8">
                 <div className={`${clashGrotesk.className} max-w-3xl tracking-wide`}>
                     {/* Heading with Purple Dot */}
                     <h1 className="mb-6 text-4xl font-bold tracking-wide text-white sm:text-5xl md:text-6xl lg:text-6xl">
