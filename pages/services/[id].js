@@ -4,6 +4,7 @@ import { useRouter } from "next/router";
 import portfolioItems from "@/data/portfolio-item";
 import Image from 'next/image';
 import dynamic from 'next/dynamic';
+import Link from "next/link";
 
 // Dynamically import Lottie to avoid SSR issues
 const Lottie = dynamic(() => import('lottie-react'), { ssr: false });
