@@ -17,10 +17,10 @@ const Footer = () => {
   // Social media links
   const socialLinks = [
     { Icon: Instagram, url: "https://www.instagram.com/imaginmaker/" },
-    { Icon: Facebook, url: "#" },
-    { Icon: Linkedin, url: "#" },
-    { Icon: Youtube, url: "#" },
-    { Icon: Pinterest, url: "#" },
+    { Icon: Facebook, url: "https://www.facebook.com/imaginmaker/" },
+    { Icon: Linkedin, url: "https://www.linkedin.com/imaginmaker/" },
+    { Icon: Youtube, url: "https://www.instagram.com/imaginmaker/" },
+    { Icon: Pinterest, url: "https://www.pinterest.com/imaginmaker/" },
   ]
 
   return (
