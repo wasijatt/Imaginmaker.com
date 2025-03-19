@@ -44,10 +44,12 @@ export function PortfolioGallery() {
             <div className="relative w-full h-full">
               {item.video ? (
                 item.video.endsWith('.json') ? (
+                  // Lottie Animation for JSON files
                   <div className="w-full h-full flex items-center justify-center">
-                    <p className="text-white">Lottie Animation</p>
+                    <Lottie animationData={item.video} loop={true} />
                   </div>
                 ) : (
+                  // Video files
                   <video
                     src={item.video}
                     loop
@@ -57,6 +59,7 @@ export function PortfolioGallery() {
                   />
                 )
               ) : (
+                // Image files
                 <Image
                   src={item.image || "/placeholder.svg"}
                   alt={item.title}

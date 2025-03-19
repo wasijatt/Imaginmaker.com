@@ -10,13 +10,19 @@ import Footer from '@/components/Footer';
 import { PinterestGallery } from '@/components/services/GalleryGrid';
 
 export default function services() {
-
+  const [activeCategory, setActiveCategory] = useState("graphic");
+  const [activeSubcategory, setActiveSubcategory] = useState(null);
 
   return (
     <main className={`${clashGrotesk.className} ${satoshi.className}`}>
       <Navbar />
       <ServicesFirstSection />
-      <PinterestGallery />
+      <PinterestGallery 
+        activeCategory={activeCategory} 
+        onCategoryChange={setActiveCategory}
+        activeSubcategory={activeSubcategory}
+        onSubcategoryChange={setActiveSubcategory}
+      />
       {/* <Footer/> */}
     </main>
   )

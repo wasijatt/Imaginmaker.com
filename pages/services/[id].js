@@ -31,8 +31,10 @@ export default function ImagePage() {
           <div className="relative w-full h-full">
             {item.video ? (
               item.video.endsWith('.json') ? (
+                // Lottie Animation for JSON files
                 <Lottie animationData={item.video} loop={true} />
               ) : (
+                // Video files
                 <video
                   src={item.video}
                   loop
@@ -42,6 +44,7 @@ export default function ImagePage() {
                 />
               )
             ) : (
+              // Image files
               <Image
                 src={item.image}
                 alt={item.title}

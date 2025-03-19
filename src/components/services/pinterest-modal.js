@@ -45,8 +45,10 @@ export function PinterestModal({ item, onClose, onNext, onPrevious }) {
             <div className="relative w-full h-full">
               {item.video ? (
                 item.video.endsWith('.json') ? (
+                  // Lottie Animation for JSON files
                   <Lottie animationData={item.video} loop={true} />
                 ) : (
+                  // Video files
                   <video
                     src={item.video}
                     loop
@@ -56,6 +58,7 @@ export function PinterestModal({ item, onClose, onNext, onPrevious }) {
                   />
                 )
               ) : (
+                // Image files
                 <Image
                   src={item.image || "/placeholder.svg"}
                   alt={item.title}
