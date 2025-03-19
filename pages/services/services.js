@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { useState } from 'react';
 import { Search } from 'lucide-react';
 import { clashGrotesk } from '@/lib/clashGroteskfont';
@@ -9,7 +9,7 @@ import { PortfolioGallery } from '@/components/services/PortfolioSection';
 import Footer from '@/components/Footer';
 import { PinterestGallery } from '@/components/services/GalleryGrid';
 
-export default function services() {
+export default function Services() { // Renamed to "Services" (uppercase)
   const [activeCategory, setActiveCategory] = useState("graphic");
   const [activeSubcategory, setActiveSubcategory] = useState(null);
 
@@ -25,5 +25,5 @@ export default function services() {
       />
       {/* <Footer/> */}
     </main>
-  )
+  );
 }

@@ -5,9 +5,10 @@ import { CategoryNav } from "./CategoryNav";
 import { portfolioItems } from "@/data/portfolio-item";
 import Image from 'next/image';
 import dynamic from 'next/dynamic';
+import { PinterestModal } from "./pinterest-modal";
 
-// Dynamically import PinterestModal to avoid SSR issues
-const PinterestModal = dynamic(() => import('./pinterest-modal'), { ssr: false });
+// Dynamically import Lottie to avoid SSR issues
+const Lottie = dynamic(() => import('lottie-react'), { ssr: false });
 
 export function PortfolioGallery() {
   const [activeCategory, setActiveCategory] = useState("graphic");
