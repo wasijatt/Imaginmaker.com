@@ -1,13 +1,12 @@
-"use client";
-
 import { useRouter } from "next/router";
 import { portfolioItems } from "@/data/portfolio-item"; // Ensure correct import
-import Image from 'next/image';
-import dynamic from 'next/dynamic';
+import Image from "next/image";
+import dynamic from "next/dynamic";
 import Link from "next/link";
+import { Facebook, Instagram, Linkedin } from "lucide-react"; // Import Lucide icons
 
 // Dynamically import Lottie to avoid SSR issues
-const Lottie = dynamic(() => import('lottie-react'), { ssr: false });
+const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
 
 export default function ImagePage() {
   const router = useRouter();
@@ -27,10 +26,10 @@ export default function ImagePage() {
     <main className="container mx-auto px-4 py-6">
       <div className="grid md:grid-cols-[1fr,400px] gap-8">
         {/* Left: Image/Video Display */}
-        <div className="relative bg-black flex items-center justify-center h-[80vh] rounded-lg overflow-hidden shadow-lg">
+        <div className="relative flex items-center justify-center h-[80vh] rounded-lg overflow-hidden shadow-lg">
           <div className="relative w-full h-full">
             {item.video ? (
-              item.video.endsWith('.json') ? (
+              item.video.endsWith(".json") ? (
                 // Lottie Animation for JSON files
                 <Lottie animationData={item.video} loop={true} />
               ) : (
@@ -64,6 +63,38 @@ export default function ImagePage() {
             {item.description || "No description available"}
           </p>
 
+          {/* Contact Info Description */}
+          <p className="text-gray-800 text-sm font-bold">
+            You can also reach out to us on our social media platforms:
+          </p>
+
+          {/* Social Media Icons */}
+          <div className="flex space-x-4 mt-2">
+            <a
+              href="https://facebook.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-black hover:text-[#6D40FF] transition-colors duration-200"
+            >
+              <Facebook size={24} />
+            </a>
+            <a
+              href="https://instagram.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-black hover:text-[#6D40FF] transition-colors duration-200"
+            >
+              <Instagram size={24} />
+            </a>
+            <a
+              href="https://linkedin.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-black hover:text-[#6D40FF] transition-colors duration-200"
+            >
+              <Linkedin size={24} />
+            </a>
+          </div>
           {/* Contact Button */}
           <Link href="/contact" passHref>
             <button className="mt-4 px-6 py-2 bg-[#6D40FF] text-white rounded-full hover:bg-[#7D40FF] transition-all duration-200">
@@ -78,12 +109,12 @@ export default function ImagePage() {
       <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mt-4">
         {relatedItems.map((img) => (
           <Link key={img.id} href={`/services/${img.id}`} passHref>
-            <div className="relative w-full h-60 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-200">
+            <div className="relative w-full aspect-square rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-200">
               {img.video ? (
-                img.video.endsWith('.json') ? (
+                img.video.endsWith(".json") ? (
                   // Lottie Animation for JSON files
-                  <div className="w-full h-full flex items-center justify-center bg-black">
-                    <Lottie animationData={img.video} loop={true} />
+                  <div className="absolute inset-0 flex items-center justify-center bg-black">
+                    <Lottie animationData={img.video} loop={true} className="w-full h-full" />
                   </div>
                 ) : (
                   // Video files
@@ -92,7 +123,7 @@ export default function ImagePage() {
                     loop
                     muted
                     autoPlay
-                    className="object-cover w-full h-full"
+                    className="absolute inset-0 w-full h-full object-cover"
                   />
                 )
               ) : (
