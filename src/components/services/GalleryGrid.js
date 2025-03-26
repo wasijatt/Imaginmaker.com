@@ -6,9 +6,13 @@ import Link from "next/link";
 import Image from "next/image";
 import { portfolioItems } from "@/data/portfolio-item";
 import dynamic from 'next/dynamic';
+import { useLottieLoader } from '@/utils/lottieLoader';
 
 // Dynamically import Lottie to avoid SSR issues
-const Lottie = dynamic(() => import('lottie-react'), { ssr: false });
+const Lottie = dynamic(() => import('lottie-react'), { 
+  ssr: false,
+  loading: () => <div>Loading...</div>
+});
 
 export function PinterestGallery() {
   const [activeCategory, setActiveCategory] = useState("graphic");
@@ -21,7 +25,6 @@ export function PinterestGallery() {
 
   return (
     <div className="container mx-auto px-4 py-6">
-      {/* Category Navigation */}
       <CategoryNav 
         activeCategory={activeCategory} 
         onCategoryChange={setActiveCategory} 
@@ -29,30 +32,22 @@ export function PinterestGallery() {
         onSubcategoryChange={setActiveSubcategory}
       />
 
-      {/* Masonry Grid */}
       <div className="columns-1 sm:columns-2 md:columns-3 gap-4 space-y-4">
         {filteredItems.map((item) => (
           <div key={item.id} className="relative mb-4 break-inside-avoid">
             <Link href={`/services/${item.id}`} passHref>
               <div className="relative w-full h-auto">
-                {item.video ? (
-                  item.video.endsWith('.json') ? (
-                    // Lottie Animation for JSON files
-                    <div className="w-full h-full flex items-center justify-center">
-                      <Lottie animationData={item.video} loop={true} />
-                    </div>
-                  ) : (
-                    // Video files
-                    <video
-                      src={item.video}
-                      loop
-                      muted
-                      autoPlay
-                      className="rounded-lg object-cover w-full h-auto hover:scale-105 transition-transform duration-200 cursor-pointer"
-                    />
-                  )
+                {item.video && item.video.endsWith('.json') ? (
+                  <LottieItem item={item} />
+                ) : item.video ? (
+                  <video
+                    src={item.video}
+                    loop
+                    muted
+                    autoPlay
+                    className="rounded-lg object-cover w-full h-auto hover:scale-105 transition-transform duration-200 cursor-pointer"
+                  />
                 ) : (
-                  // Image files
                   <Image
                     src={item.image}
                     alt={item.title}
@@ -67,6 +62,24 @@ export function PinterestGallery() {
           </div>
         ))}
       </div>
+    </div>
+  );
+}
+
+function LottieItem({ item }) {
+  const animationData = useLottieLoader(item.video);
+
+  if (!animationData) {
+    return <div className="w-full h-64 flex items-center justify-center">Loading...</div>;
+  }
+
+  return (
+    <div className="w-full h-full flex items-center justify-center">
+      <Lottie 
+        animationData={animationData}
+        loop={true} 
+        className="rounded-lg hover:scale-105 transition-transform duration-200 cursor-pointer"
+      />
     </div>
   );
 }
