@@ -540,6 +540,78 @@ export const portfolioItems = [
     video: "/lottie/Wow lottie animation.json",  // ✅ Fixed path
     height: 300,
   },
+  {
+    id: "62",
+    title: "Winnier lottre car poster animation",
+    description: "A cool animation for a Bitcoin trading app.",
+    category: "motion",
+    subcategory: "Poster Animation",
+    video: "/lottie/Winnier lottre car poster animation.json", // Video file
+    height: 300,
+  },
+  {
+    id: "63",
+    title: "Saqle head phone poster animation",
+    description: "A cool animation for a Bitcoin trading app.",
+    category: "motion",
+    subcategory: "Poster Animation",
+    video: "/lottie/Saqle head phone poster animation.json", // Video file
+    height: 300,
+  },
+  {
+    id: "64",
+    title: "Saqle head phone poster animation",
+    description: "A cool animation for a Bitcoin trading app.",
+    category: "motion",
+    subcategory: "Poster Animation",
+    video: "/lottie/Saqle head phone poster animation.json", // Video file
+    height: 300,
+  },
+  {
+    id: "65",
+    title: "Product chaines poster animation",
+    description: "A cool animation for a Bitcoin trading app.",
+    category: "motion",
+    subcategory: "Poster Animation",
+    video: "/lottie/Product chaines poster animation.json", // Video file
+    height: 300,
+  },
+  {
+    id: "66",
+    title: "Mango juice poster animation",
+    description: "A cool animation for a Bitcoin trading app.",
+    category: "motion",
+    subcategory: "Poster Animation",
+    video: "/lottie/Mango juice poster animation.json", // Video file
+    height: 300,
+  },
+  {
+    id: "67",
+    title: "loader truck construction poster animation",
+    description: "A cool animation for a Bitcoin trading app.",
+    category: "motion",
+    subcategory: "Poster Animation",
+    video: "/lottie/loader truck construction poster animation.json", // Video file
+    height: 300,
+  },
+  {
+    id: "68",
+    title: "kitchen product sale poster animation",
+    description: "A cool animation for a Bitcoin trading app.",
+    category: "motion",
+    subcategory: "Poster Animation",
+    video: "/lottie/kitchen product sale poster animation.json", // Video file
+    height: 300,
+  },
+  {
+    id: "69",
+    title: "Black friday bag poster animation",
+    description: "A cool animation for a Bitcoin trading app.",
+    category: "motion",
+    subcategory: "Poster Animation",
+    video: "/lottie/Black friday bag poster animation.json", // Video file
+    height: 300,
+  },
 
  
   // Add more items as needed
