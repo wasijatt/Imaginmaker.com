@@ -423,6 +423,123 @@ export const portfolioItems = [
     video: "/lottie/Towmi logo For derivers splash screen.json",  // ✅ Fixed path
     height: 300,
   },
+  {
+    id: "49",
+    title: "Box animation lottie json aniamtion for app and website",
+    description: "Lottie animation for C2You logo.",
+    category: "motion",
+    subcategory: "Lottie Animation",
+    video: "/lottie/Box animation lottie json aniamtion for app and website.json",  // ✅ Fixed path
+    height: 300,
+  },
+  {
+    id: "50",
+    title: "dog with man charector lottie animation for app and website",
+    description: "Lottie animation for C2You logo.",
+    category: "motion",
+    subcategory: "Lottie Animation",
+    video: "/lottie/dog with man charector lottie animation for app and website.json",  // ✅ Fixed path
+    height: 300,
+  },
+  {
+    id: "51",
+    title: "happy winner lottie charector animation",
+    description: "Lottie animation for C2You logo.",
+    category: "motion",
+    subcategory: "Lottie Animation",
+    video: "/lottie/happy winner lottie charector animation.json",  // ✅ Fixed path
+    height: 300,
+  },
+  {
+    id: "52",
+    title: "Lottie Bitcoin trading app animation for app website",
+    description: "Lottie animation for C2You logo.",
+    category: "motion",
+    subcategory: "Lottie Animation",
+    video: "/lottie/Lottie Bitcoin trading app animation for app website.json",  // ✅ Fixed path
+    height: 300,
+  },
+  {
+    id: "53",
+    title: "lottie explainer animation for website",
+    description: "Lottie animation for C2You logo.",
+    category: "motion",
+    subcategory: "Lottie Animation",
+    video: "/lottie/lottie explainer animation for website.json",  // ✅ Fixed path
+    height: 300,
+  },
+  {
+    id: "54",
+    title: "lottie home page banner animation for app and website",
+    description: "Lottie animation for C2You logo.",
+    category: "motion",
+    subcategory: "Lottie Animation",
+    video: "/lottie/lottie home page banner animation for app and website.json",  // ✅ Fixed path
+    height: 300,
+  },
+  {
+    id: "55",
+    title: "Lottie tree animation for website aND APP",
+    description: "Lottie animation for C2You logo.",
+    category: "motion",
+    subcategory: "Lottie Animation",
+    video: "/lottie/Lottie tree animation for website aND APP.json",  // ✅ Fixed path
+    height: 300,
+  },
+  {
+    id: "56",
+    title: "lotttie lead conversition aniamtion for app and websites",
+    description: "Lottie animation for C2You logo.",
+    category: "motion",
+    subcategory: "Lottie Animation",
+    video: "/lottie/lotttie lead conversition aniamtion for app and websites.json",  // ✅ Fixed path
+    height: 300,
+  },
+  {
+    id: "57",
+    title: "mans with delivery box lottie animation for appa  and websites",
+    description: "Lottie animation for C2You logo.",
+    category: "motion",
+    subcategory: "Lottie Animation",
+    video: "/lottie/mans with delivery box lottie animation for appa  and websites.json",  // ✅ Fixed path
+    height: 300,
+  },
+  {
+    id: "58",
+    title: "parents with child lotttie charector animation",
+    description: "Lottie animation for C2You logo.",
+    category: "motion",
+    subcategory: "Lottie Animation",
+    video: "/lottie/parents with child lotttie charector animation.json",  // ✅ Fixed path
+    height: 300,
+  },
+  {
+    id: "59",
+    title: "Star floting lottie json animation for website",
+    description: "Lottie animation for C2You logo.",
+    category: "motion",
+    subcategory: "Lottie Animation",
+    video: "/lottie/Star floting lottie json animation for website.json",  // ✅ Fixed path
+    height: 300,
+  },
+  {
+    id: "60",
+    title: "Super Hero lottie Json charector animation",
+    description: "Lottie animation for C2You logo.",
+    category: "motion",
+    subcategory: "Lottie Animation",
+    video: "/lottie/Super Hero lottie Json charector animation.json",  // ✅ Fixed path
+    height: 300,
+  },
+  {
+    id: "61",
+    title: "Wow lottie animation",
+    description: "Lottie animation for C2You logo.",
+    category: "motion",
+    subcategory: "Lottie Animation",
+    video: "/lottie/Wow lottie animation.json",  // ✅ Fixed path
+    height: 300,
+  },
 
  
   // Add more items as needed
