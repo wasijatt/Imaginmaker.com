@@ -1,43 +1,34 @@
-"use client";
+"use client"
 
-import { Dialog, DialogContent } from "@/components/ui/dialog";
-import { ChevronLeft, ChevronRight, X } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import Image from 'next/image';
-import dynamic from 'next/dynamic';
-import { useLottieLoader } from '@/utils/lottieLoader';
+import { Dialog, DialogContent } from "@/components/ui/dialog"
+import { ChevronLeft, ChevronRight, X } from "lucide-react"
+import { Button } from "@/components/ui/button"
+import Image from "next/image"
+import dynamic from "next/dynamic"
+import { useLottieLoader } from "@/utils/lottieLoader"
 
 // Dynamically import Lottie to avoid SSR issues
-const Lottie = dynamic(() => import('lottie-react'), { 
+const Lottie = dynamic(() => import("lottie-react"), {
   ssr: false,
-  loading: () => <div>Loading...</div>
-});
+  loading: () => <div>Loading...</div>,
+})
 
 export function PinterestModal({ item, onClose, onNext, onPrevious }) {
-  if (!item) return null;
+  if (!item) return null
 
   return (
     <Dialog open={!!item} onOpenChange={onClose}>
       <DialogContent className="max-w-6xl p-0 gap-0 bg-background">
-        <div className="grid md:grid-cols-[1fr,400px] h-[80vh]">
+        <div className="grid grid-cols-1 md:grid-cols-[1fr,400px] h-[80vh] max-h-[90vh] md:max-h-[80vh]">
           {/* Media Section */}
           <div className="relative bg-black flex items-center justify-center">
-            <NavigationButtons 
-              onPrevious={onPrevious} 
-              onNext={onNext} 
-              onClose={onClose} 
-            />
+            <NavigationButtons onPrevious={onPrevious} onNext={onNext} onClose={onClose} />
             <MediaRenderer item={item} />
           </div>
 
           {/* Details Section */}
           <div className="relative p-6 overflow-y-auto">
-            <Button
-              variant="ghost"
-              size="icon"
-              className="absolute top-2 right-2 hidden md:flex"
-              onClick={onClose}
-            >
+            <Button variant="ghost" size="icon" className="absolute top-2 right-2 hidden md:flex" onClick={onClose}>
               <X className="h-6 w-6" />
             </Button>
             <div className="space-y-4">
@@ -48,7 +39,7 @@ export function PinterestModal({ item, onClose, onNext, onPrevious }) {
         </div>
       </DialogContent>
     </Dialog>
-  );
+  )
 }
 
 function NavigationButtons({ onPrevious, onNext, onClose }) {
@@ -79,24 +70,16 @@ function NavigationButtons({ onPrevious, onNext, onClose }) {
         <ChevronRight className="h-6 w-6" />
       </Button>
     </>
-  );
+  )
 }
 
 function MediaRenderer({ item }) {
-  if (item.video && item.video.endsWith('.json')) {
-    return <LottieRenderer item={item} />;
+  if (item.video && item.video.endsWith(".json")) {
+    return <LottieRenderer item={item} />
   }
 
   if (item.video) {
-    return (
-      <video
-        src={item.video}
-        loop
-        muted
-        autoPlay
-        className="object-contain w-full h-full"
-      />
-    );
+    return <video src={item.video} loop muted autoPlay className="object-contain w-full h-full" />
   }
 
   return (
@@ -108,25 +91,16 @@ function MediaRenderer({ item }) {
       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
       priority
     />
-  );
+  )
 }
 
 function LottieRenderer({ item }) {
-  const animationData = useLottieLoader(item.video);
+  const animationData = useLottieLoader(item.video)
 
   if (!animationData) {
-    return (
-      <div className="w-full h-full flex items-center justify-center bg-black text-white">
-        Loading...
-      </div>
-    );
+    return <div className="w-full h-full flex items-center justify-center bg-black text-white">Loading...</div>
   }
 
-  return (
-    <Lottie 
-      animationData={animationData}
-      loop={true} 
-      className="w-full h-full object-contain"
-    />
-  );
+  return <Lottie animationData={animationData} loop={true} className="w-full h-full object-contain" />
 }
+
