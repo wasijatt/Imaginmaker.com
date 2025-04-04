@@ -1,4 +1,4 @@
-/** @type {import('next').NextConfig} */
+// next.config.js
 const nextConfig = {
   reactStrictMode: true,
   images: {
@@ -13,11 +13,16 @@ const nextConfig = {
         pathname: '/**',
       },
     ],
+    formats: ['image/webp'],
+    minimumCacheTTL: 3600,
+  },
+  experimental: {
+    optimizeCss: true,
+    scrollRestoration: true,
   },
   pageExtensions: ['js', 'jsx', 'mdx'],
   webpack: (config, { isServer }) => {
     if (!isServer) {
-      // Don't resolve 'fs' module on the client to prevent this error
       config.resolve.fallback = {
         fs: false,
         path: false,
@@ -27,4 +32,4 @@ const nextConfig = {
   }
 }
 
-module.exports = nextConfig 
+module.exports = nextConfig

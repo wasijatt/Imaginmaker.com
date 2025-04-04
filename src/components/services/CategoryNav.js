@@ -9,7 +9,7 @@ export function CategoryNav({ activeCategory, onCategoryChange, activeSubcategor
     {
       label: "Motion Design",
       value: "motion",
-      subcategories: ["Logo Animation", "Poster Animation", "Lottie Animation"],
+      subcategories: ["Logo", "Poster", "Lottie"],
     },
     { label: "UI/UX Design", value: "ui-ux", subcategories: ["web design", "app design"] },
     { label: "Branding", value: "branding", subcategories: ["logo design", "brand identity"] },

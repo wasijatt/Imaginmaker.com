@@ -3,15 +3,7 @@
 import { Dialog, DialogContent } from "@/components/ui/dialog"
 import { ChevronLeft, ChevronRight, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import Image from "next/image"
-import dynamic from "next/dynamic"
-import { useLottieLoader } from "@/utils/lottieLoader"
-
-// Dynamically import Lottie to avoid SSR issues
-const Lottie = dynamic(() => import("lottie-react"), {
-  ssr: false,
-  loading: () => <div>Loading...</div>,
-})
+import { MediaRenderer } from "./MediaRenderer"
 
 export function PinterestModal({ item, onClose, onNext, onPrevious }) {
   if (!item) return null
@@ -23,7 +15,7 @@ export function PinterestModal({ item, onClose, onNext, onPrevious }) {
           {/* Media Section */}
           <div className="relative bg-black flex items-center justify-center">
             <NavigationButtons onPrevious={onPrevious} onNext={onNext} onClose={onClose} />
-            <MediaRenderer item={item} />
+            <MediaRenderer item={item} className="object-contain" priority />
           </div>
 
           {/* Details Section */}
@@ -72,35 +64,3 @@ function NavigationButtons({ onPrevious, onNext, onClose }) {
     </>
   )
 }
-
-function MediaRenderer({ item }) {
-  if (item.video && item.video.endsWith(".json")) {
-    return <LottieRenderer item={item} />
-  }
-
-  if (item.video) {
-    return <video src={item.video} loop muted autoPlay className="object-contain w-full h-full" />
-  }
-
-  return (
-    <Image
-      src={item.image || "/placeholder.svg"}
-      alt={item.title}
-      fill
-      className="object-contain"
-      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-      priority
-    />
-  )
-}
-
-function LottieRenderer({ item }) {
-  const animationData = useLottieLoader(item.video)
-
-  if (!animationData) {
-    return <div className="w-full h-full flex items-center justify-center bg-black text-white">Loading...</div>
-  }
-
-  return <Lottie animationData={animationData} loop={true} className="w-full h-full object-contain" />
-}
-

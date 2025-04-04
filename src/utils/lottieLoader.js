@@ -1,5 +1,8 @@
 import { useState, useEffect } from "react";
 
+// Simple in-memory cache
+const animationCache = new Map();
+
 export function useLottieLoader(animationPath) {
   const [animationData, setAnimationData] = useState(null);
   const [error, setError] = useState(null);
@@ -8,12 +11,18 @@ export function useLottieLoader(animationPath) {
     async function loadAnimation() {
       if (!animationPath) return;
 
+      // Check cache first
+      if (animationCache.has(animationPath)) {
+        setAnimationData(animationCache.get(animationPath));
+        return;
+      }
+
       try {
-        // ✅ Fetch JSON from the public folder
         const response = await fetch(animationPath);
         if (!response.ok) throw new Error("Failed to load animation");
 
         const json = await response.json();
+        animationCache.set(animationPath, json); // Cache the result
         setAnimationData(json);
       } catch (error) {
         console.error("Error loading Lottie animation:", error);
