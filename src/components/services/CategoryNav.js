@@ -18,7 +18,7 @@ export function CategoryNav({ activeCategory, onCategoryChange, activeSubcategor
   const activeCategoryData = categories.find((cat) => cat.value === activeCategory)
 
   return (
-    <nav className="relative w-full mt-20">
+    <nav className="relative w-full mt-20 ">
       {/* Main Categories */}
       <div className="flex justify-start md:justify-center overflow-x-auto md:overflow-visible pl-6 pr-4 mb-8 scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-100 -webkit-overflow-scrolling: touch">
         {categories.map(({ label, value }, index) => (

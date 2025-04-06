@@ -28,7 +28,7 @@ export function PinterestGallery() {
         onSubcategoryChange={setActiveSubcategory}
         />
 
-      <div className="columns-2 md:columns-3 gap-4">
+      <div className="columns-2 md:columns-3 gap-4 w-full">
         {filteredItems.map((item) => (
           <div key={item.id} className="mb-4 break-inside-avoid">
             <Link href={`/services/${item.id}`} passHref>
@@ -54,7 +54,7 @@ export function PinterestGallery() {
           </div>
     </div>
         {/* Bottom Card */}
-        <div className="relative mx-auto max-w-5xl overflow-hidden rounded-3xl py-16 mt-32 mb-32">
+        <div className="relative mx-auto max-w-5xl overflow-hidden rounded-3xl py-16 mt-10 mb-32">
           {/* Card Background Image */}
           <div className="absolute inset-0">
             <Image
