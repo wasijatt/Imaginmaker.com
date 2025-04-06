@@ -1,10 +1,8 @@
 // pages/api/contact.js
 import { sendMail } from '../../lib/mail';
-import Contact from '../../models/Contact';
-import dbConnect from '../../lib/mongodb';
 
 export default async function handler(req, res) {
-  // Set response headers first
+  // Set response headers
   res.setHeader('Content-Type', 'application/json');
   
   if (req.method !== 'POST') {
@@ -12,49 +10,52 @@ export default async function handler(req, res) {
   }
 
   try {
-    await dbConnect();
-
-    // Validate required fields
-    const { fullName, email, phone, message, interestedIn } = req.body;
+    const { fullName, email, phone, message } = req.body;
     
+    // Basic validation
     if (!fullName || !email || !phone) {
       return res.status(400).json({ 
         success: false, 
-        message: 'Missing required fields' 
+        message: 'Full name, email, and phone are required' 
       });
     }
 
-    // Save to database
-    const newContact = new Contact({ 
-      fullName, 
-      email, 
-      phone, 
-      message: message || '', 
-      interestedIn: interestedIn || '' 
-    });
-    await newContact.save();
-
-    // Send emails
-    const userEmailPromise = sendMail({
-      to: email,
-      subject: 'Thank you for contacting us!',
-      html: `<p>Hi ${fullName},</p><p>Thank you for reaching out. We'll get back to you soon.</p>`,
-    });
-
-    const adminEmailPromise = sendMail({
+    // Send email to admin
+    const adminEmail = await sendMail({
       to: process.env.ADMIN_EMAIL,
       subject: 'New Contact Form Submission',
-      html: `<p>You have a new contact form submission from ${fullName} (${email}).</p>`,
+      html: `
+        <h3>New Contact Submission</h3>
+        <p><strong>Name:</strong> ${fullName}</p>
+        <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Phone:</strong> ${phone}</p>
+        <p><strong>Message:</strong> ${message || 'No message provided'}</p>
+        <p>Received at: ${new Date().toLocaleString()}</p>
+      `
     });
 
-    const [userEmailResponse, adminEmailResponse] = await Promise.all([
-      userEmailPromise,
-      adminEmailPromise
-    ]);
+    // Send confirmation to user
+    const userEmail = await sendMail({
+      to: email,
+      subject: 'Thank you for contacting us!',
+      html: `
+        <p>Hi ${fullName},</p>
+        <p>Thank you for reaching out. We've received your message and will get back to you soon.</p>
+        <p>Here's what you submitted:</p>
+        <ul>
+          <li><strong>Phone:</strong> ${phone}</li>
+          <li><strong>Message:</strong> ${message || 'No message provided'}</li>
+        </ul>
+        <p>Best regards,<br>Your Company Team</p>
+      `
+    });
 
-    if (!userEmailResponse.success || !adminEmailResponse.success) {
-      console.error('Email sending issues:', { userEmailResponse, adminEmailResponse });
-      // Still return success since the form was submitted, just log email issues
+    if (!adminEmail.success || !userEmail.success) {
+      console.error('Email sending issues:', { adminEmail, userEmail });
+      return res.status(500).json({
+        success: false,
+        message: 'Form received but email notifications failed'
+      });
     }
 
     return res.status(200).json({ 
@@ -63,10 +64,11 @@ export default async function handler(req, res) {
     });
     
   } catch (error) {
-    console.error('Error in contact form submission:', error);
+    console.error('Contact form error:', error);
     return res.status(500).json({ 
       success: false, 
-      message: error.message || 'Internal server error' 
+      message: 'Internal server error',
+      error: process.env.NODE_ENV === 'development' ? error.message : undefined
     });
   }
 }

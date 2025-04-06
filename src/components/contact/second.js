@@ -33,22 +33,10 @@ export default function ContactForm() {
         body: JSON.stringify(formData)
       });
 
-      // First check if response is OK
-      if (!response.ok) {
-        // Try to get error message from response
-        const errorText = await response.text();
-        throw new Error(
-          errorText.startsWith('{') 
-            ? JSON.parse(errorText).message 
-            : `Server error: ${response.status}`
-        );
-      }
-
-      // If response is OK, parse as JSON
-      const data = await response.json();
+      const result = await response.json();
       
-      if (!data.success) {
-        throw new Error(data.message || 'Form submission failed');
+      if (!response.ok || !result.success) {
+        throw new Error(result.message || 'Failed to submit form');
       }
 
       setStatus({ loading: false, error: null, success: true });
@@ -60,7 +48,6 @@ export default function ContactForm() {
       });
       
     } catch (error) {
-      console.error('Form submission error:', error);
       setStatus({ 
         loading: false, 
         error: error.message || 'Failed to submit form. Please try again later.', 
@@ -147,7 +134,6 @@ export default function ContactForm() {
                     onChange={handleChange}
                     placeholder="Message"
                     className="min-h-[232px] w-full resize-none rounded-3xl border-2 border-black p-6"
-                    required
                   />
                 </div>
               </div>
