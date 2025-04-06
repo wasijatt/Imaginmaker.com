@@ -618,7 +618,7 @@ export const portfolioItems = [
     description: "NFT artwork",
     category: "nft",
     subcategory: "art",
-    image: "/NFTs/four-season.jpg", // Make sure this path is correct
+    image: "/NFTs/four-season.webp", // Make sure this path is correct
     height: 300,
     width: 300
   },
@@ -628,7 +628,7 @@ export const portfolioItems = [
     description: "NFT artwork",
     category: "nft",
     subcategory: "art",
-    image: "/NFTs/Antarkatka-House.jpg", // Make sure this path is correct
+    image: "/NFTs/Antarkatka-House.webp", // Make sure this path is correct
     height: 300,
     width: 300
   },
@@ -638,7 +638,7 @@ export const portfolioItems = [
     description: "NFT artwork",
     category: "nft",
     subcategory: "art",
-    image: "/NFTs/Baloom Land.jpg", // Make sure this path is correct
+    image: "/NFTs/Baloom Land.webp", // Make sure this path is correct
     height: 300,
     width: 300
   },
@@ -648,7 +648,7 @@ export const portfolioItems = [
     description: "NFT artwork",
     category: "nft",
     subcategory: "art",
-    image: "/NFTs/Cyberpunk-City-final.jpg", // Make sure this path is correct
+    image: "/NFTs/Cyberpunk-City-final.webp", // Make sure this path is correct
     height: 300,
     width: 300
   },
@@ -658,7 +658,7 @@ export const portfolioItems = [
     description: "NFT artwork",
     category: "nft",
     subcategory: "art",
-    image: "/NFTs/Egypt-Desert.jpg", // Make sure this path is correct
+    image: "/NFTs/Egypt-Desert.webp", // Make sure this path is correct
     height: 300,
     width: 300
   },
@@ -668,7 +668,7 @@ export const portfolioItems = [
     description: "NFT artwork",
     category: "nft",
     subcategory: "art",
-    image: "/NFTs/four-season.jpg", // Make sure this path is correct
+    image: "/NFTs/four-season.webp", // Make sure this path is correct
     height: 300,
     width: 300
   },
@@ -678,7 +678,7 @@ export const portfolioItems = [
     description: "NFT artwork",
     category: "nft",
     subcategory: "art",
-    image: "/NFTs/Grand-Canyon.jpg", // Make sure this path is correct
+    image: "/NFTs/Grand-Canyon.webp", // Make sure this path is correct
     height: 300,
     width: 300
   },
@@ -688,7 +688,7 @@ export const portfolioItems = [
     description: "NFT artwork",
     category: "nft",
     subcategory: "art",
-    image: "/NFTs/Great-Wall-Of-China.jpg", // Make sure this path is correct
+    image: "/NFTs/Great-Wall-Of-China.webp", // Make sure this path is correct
     height: 300,
     width: 300
   },
@@ -698,7 +698,7 @@ export const portfolioItems = [
     description: "NFT artwork",
     category: "nft",
     subcategory: "art",
-    image: "/NFTs/island 1.jpg", // Make sure this path is correct
+    image: "/NFTs/island 1.webp", // Make sure this path is correct
     height: 300,
     width: 300
   },
@@ -708,7 +708,7 @@ export const portfolioItems = [
     description: "NFT artwork",
     category: "nft",
     subcategory: "art",
-    image: "/NFTs/island.jpg", // Make sure this path is correct
+    image: "/NFTs/island.webp", // Make sure this path is correct
     height: 300,
     width: 300
   },
@@ -718,7 +718,7 @@ export const portfolioItems = [
     description: "NFT artwork",
     category: "nft",
     subcategory: "art",
-    image: "/NFTs/Jesus-Statue.jpg", // Make sure this path is correct
+    image: "/NFTs/Jesus-Statue.webp", // Make sure this path is correct
     height: 300,
     width: 300
   },
@@ -728,7 +728,7 @@ export const portfolioItems = [
     description: "NFT artwork",
     category: "nft",
     subcategory: "art",
-    image: "/NFTs/Jungle-With-Acient-Temples.jpg", // Make sure this path is correct
+    image: "/NFTs/Jungle-With-Acient-Temples.webp", // Make sure this path is correct
     height: 300,
     width: 300
   },
@@ -738,7 +738,7 @@ export const portfolioItems = [
     description: "NFT artwork",
     category: "nft",
     subcategory: "art",
-    image: "/NFTs/Recycle-of-world.jpg", // Make sure this path is correct
+    image: "/NFTs/Recycle-of-world.webp", // Make sure this path is correct
     height: 300,
     width: 300
   },
@@ -748,7 +748,7 @@ export const portfolioItems = [
     description: "NFT artwork",
     category: "nft",
     subcategory: "art",
-    image: "/NFTs/Roman-Fort.jpg", // Make sure this path is correct
+    image: "/NFTs/Roman-Fort.webp", // Make sure this path is correct
     height: 300,
     width: 300
   },
