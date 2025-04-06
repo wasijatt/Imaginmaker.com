@@ -42,6 +42,16 @@ export function PinterestGallery() {
           </div>
         ))}
       </div>
+      <div className="relative mx-auto max-w-20xl overflow-hidden rounded-3xl py-24 mt-32 mb-32">
+      <div className="absolute inset-0">
+            <Image
+              src="/services/service-static.webp"
+              alt="Card background"
+              fill
+              className="object-cover opacity-100 "
+            />
+          </div>
+          </div>
     </div>
         {/* Bottom Card */}
         <div className="relative mx-auto max-w-5xl overflow-hidden rounded-3xl py-16 mt-32 mb-32">
