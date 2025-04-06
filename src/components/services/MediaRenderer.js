@@ -8,7 +8,7 @@ import { LazyVideo } from "./LazyVideo"
 
 const Lottie = dynamic(() => import("lottie-react"), {
   ssr: false,
-  loading: () => <div className="w-full h-full flex items-center justify-center">Loading...</div>,
+  loading: () => <div className="w-full h-full flex items-center justify-center"></div>,
 })
 
 export function MediaRenderer({ item, className = "", priority = false }) {
@@ -61,7 +61,7 @@ function LottieRenderer({ item, className }) {
   const animationData = useLottieLoader(item.video)
 
   if (!animationData) {
-    return <div className="w-full h-full flex items-center justify-center">Loading animation...</div>
+    return <div className="w-full h-full flex items-center justify-center"></div>
   }
 
   return (
