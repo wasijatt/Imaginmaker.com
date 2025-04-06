@@ -3,6 +3,7 @@
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
+import { clashGrotesk } from "@/lib/clashGroteskfont"
 import { satoshi } from "@/lib/fonts"
 import { useState } from 'react'
 
@@ -84,7 +85,7 @@ export default function ContactForm() {
       <div className="container px-4 md:px-6">
         <div className="flex flex-col items-center space-y-8">
           <div className="text-center space-y-2">
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">
+            <h2 className={`${clashGrotesk.className} text-3xl font-bold sm:text-4xl text-black tracking-wide`}>
               Let&apos;s Work Together!
             </h2>
             <div className="mx-auto h-[3px] w-24 bg-[#6D40FF]" />
