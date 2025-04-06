@@ -2,6 +2,7 @@
 
 import dynamic from "next/dynamic"
 import Image from "next/image"
+import PropTypes from 'prop-types'
 import { useLottieLoader } from "@/utils/lottieLoader"
 import { LazyVideo } from "./LazyVideo"
 
@@ -11,44 +12,63 @@ const Lottie = dynamic(() => import("lottie-react"), {
 })
 
 export function MediaRenderer({ item, className = "", priority = false }) {
+  // Handle Lottie animations
   if (item.video && item.video.endsWith(".json")) {
     return <LottieRenderer item={item} className={className} />
   }
 
-  if (item.video) {
+  // Handle video files
+  if (item.video && (item.video.endsWith(".mp4") || item.video.endsWith(".webm"))) {
     return (
       <LazyVideo
         src={item.video}
-        className={`${className} object-cover w-full h-full`}
+        className={`${className} w-full h-auto`}
         autoPlay
       />
     )
   }
 
+  // Handle images - auto aspect ratio
+  const imageSrc = item.image || "/placeholder.svg"
+  
   return (
-    <Image
-      src={item.image || "/placeholder.svg"}
-      alt={item.title}
-      fill
-      className={`${className} object-cover`}
-      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-      priority={priority}
+    <img
+      src={imageSrc}
+      alt={item.title || "Portfolio item"}
+      className={`${className} w-full h-auto rounded-lg`}
+      loading={priority ? "eager" : "lazy"}
+      onError={(e) => {
+        console.error("Failed to load image:", imageSrc)
+        e.currentTarget.src = "/placeholder.svg"
+      }}
     />
   )
+}
+
+MediaRenderer.propTypes = {
+  item: PropTypes.shape({
+    id: PropTypes.string.isRequired,
+    title: PropTypes.string,
+    description: PropTypes.string,
+    image: PropTypes.string,
+    video: PropTypes.string,
+  }).isRequired,
+  className: PropTypes.string,
+  priority: PropTypes.bool,
 }
 
 function LottieRenderer({ item, className }) {
   const animationData = useLottieLoader(item.video)
 
   if (!animationData) {
-    return <div className="w-full h-full flex items-center justify-center"></div>
+    return <div className="w-full h-full flex items-center justify-center">Loading animation...</div>
   }
 
   return (
     <Lottie
       animationData={animationData}
       loop={true}
-      className={`${className} w-full h-full`}
+      className={`${className} w-full h-auto`}
     />
   )
 }

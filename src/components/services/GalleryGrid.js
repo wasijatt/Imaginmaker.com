@@ -23,14 +23,14 @@ export function PinterestGallery() {
         onSubcategoryChange={setActiveSubcategory}
       />
 
-      <div className="columns-2 md:columns-3 gap-4 space-y-4">
+      <div className="columns-2 md:columns-3 gap-4">
         {filteredItems.map((item) => (
-          <div key={item.id} className="relative mb-4 break-inside-avoid">
+          <div key={item.id} className="mb-4 break-inside-avoid">
             <Link href={`/services/${item.id}`} passHref>
-              <div className="relative w-full h-auto">
+              <div className="relative rounded-lg overflow-hidden hover:shadow-lg transition-shadow duration-200">
                 <MediaRenderer 
                   item={item} 
-                  className="rounded-lg hover:scale-105 transition-transform duration-200 cursor-pointer" 
+                  className="w-full h-auto" 
                 />
               </div>
             </Link>

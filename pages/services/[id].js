@@ -26,7 +26,7 @@ export default function ImagePage() {
         {/* Right: Details */}
         <div className="p-6 space-y-4 bg-white rounded-lg shadow-lg">
           <h2 className="text-2xl font-bold text-gray-800">{item.title}</h2>
-          <p className="text-muted-foreground text-gray-600">{item.description || "No description available"}</p>
+          <p className="text-muted-foreground text-gray-800">{item.description || "No description available"}</p>
 
           <p className="text-gray-800 text-sm font-bold">You can also reach out to us on our social media platforms:</p>
 

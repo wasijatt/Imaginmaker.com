@@ -139,7 +139,7 @@ export default function ContactForm() {
                     onChange={handleChange}
                     placeholder="Email"
                     type="email"
-                    className="h-12 rounded-full border border-[#6D40FF] px-6"
+                    className="h-12 rounded-full border border-black px-6"
                     required
                   />
                 </div>

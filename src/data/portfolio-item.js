@@ -615,22 +615,707 @@ export const portfolioItems = [
   {
     id: "70",
     title: "4-season",
-    description: "A cool animation for a Bitcoin trading app.",
+    description: "NFT artwork",
     category: "nft",
     subcategory: "art",
-    video: "/NFT's/4-season.jpg", // Video file
+    image: "/NFTs/four-season.jpg", // Make sure this path is correct
     height: 300,
+    width: 300
   },
   {
     id: "71",
     title: "Antarkatka-House",
-    description: "A cool animation for a Bitcoin trading app.",
+    description: "NFT artwork",
     category: "nft",
     subcategory: "art",
-    video: "/NFT's/Antarkatka-House.jpg", // Video file
+    image: "/NFTs/Antarkatka-House.jpg", // Make sure this path is correct
     height: 300,
+    width: 300
+  },
+  {
+    id: "72",
+    title: "Baloom Land",
+    description: "NFT artwork",
+    category: "nft",
+    subcategory: "art",
+    image: "/NFTs/Baloom Land.jpg", // Make sure this path is correct
+    height: 300,
+    width: 300
+  },
+  {
+    id: "73",
+    title: "Cyberpunk-City-final",
+    description: "NFT artwork",
+    category: "nft",
+    subcategory: "art",
+    image: "/NFTs/Cyberpunk-City-final.jpg", // Make sure this path is correct
+    height: 300,
+    width: 300
+  },
+  {
+    id: "74",
+    title: "Egypt-Desert",
+    description: "NFT artwork",
+    category: "nft",
+    subcategory: "art",
+    image: "/NFTs/Egypt-Desert.jpg", // Make sure this path is correct
+    height: 300,
+    width: 300
+  },
+  {
+    id: "75",
+    title: "four-season",
+    description: "NFT artwork",
+    category: "nft",
+    subcategory: "art",
+    image: "/NFTs/four-season.jpg", // Make sure this path is correct
+    height: 300,
+    width: 300
+  },
+  {
+    id: "76",
+    title: "Grand-Canyon",
+    description: "NFT artwork",
+    category: "nft",
+    subcategory: "art",
+    image: "/NFTs/Grand-Canyon.jpg", // Make sure this path is correct
+    height: 300,
+    width: 300
+  },
+  {
+    id: "77",
+    title: "Great-Wall-Of-China",
+    description: "NFT artwork",
+    category: "nft",
+    subcategory: "art",
+    image: "/NFTs/Great-Wall-Of-China.jpg", // Make sure this path is correct
+    height: 300,
+    width: 300
+  },
+  {
+    id: "78",
+    title: "island 1",
+    description: "NFT artwork",
+    category: "nft",
+    subcategory: "art",
+    image: "/NFTs/island 1.jpg", // Make sure this path is correct
+    height: 300,
+    width: 300
+  },
+  {
+    id: "79",
+    title: "island",
+    description: "NFT artwork",
+    category: "nft",
+    subcategory: "art",
+    image: "/NFTs/island.jpg", // Make sure this path is correct
+    height: 300,
+    width: 300
+  },
+  {
+    id: "80",
+    title: "Jesus-Statue",
+    description: "NFT artwork",
+    category: "nft",
+    subcategory: "art",
+    image: "/NFTs/Jesus-Statue.jpg", // Make sure this path is correct
+    height: 300,
+    width: 300
+  },
+  {
+    id: "81",
+    title: "Jungle-With-Acient-Temples",
+    description: "NFT artwork",
+    category: "nft",
+    subcategory: "art",
+    image: "/NFTs/Jungle-With-Acient-Temples.jpg", // Make sure this path is correct
+    height: 300,
+    width: 300
+  },
+  {
+    id: "82",
+    title: "Recycle-of-world",
+    description: "NFT artwork",
+    category: "nft",
+    subcategory: "art",
+    image: "/NFTs/Recycle-of-world.jpg", // Make sure this path is correct
+    height: 300,
+    width: 300
+  },
+  {
+    id: "83",
+    title: "Roman-Fort",
+    description: "NFT artwork",
+    category: "nft",
+    subcategory: "art",
+    image: "/NFTs/Roman-Fort.jpg", // Make sure this path is correct
+    height: 300,
+    width: 300
+  },
+  {
+    id: "89",
+    title: "Black is Tech Conf 4",
+    description: "NFT artwork",
+    category: "graphic",
+    subcategory: "poster design",
+    image: "/Graphic design poster/Black is Tech Conf 4.webp", // Make sure this path is correct
+    height: 300,
+    width: 300
+  },
+  {
+    id: "85",
+    title: "African song event poster design",
+    description: "NFT artwork",
+    category: "graphic",
+    subcategory: "poster design",
+    image: "/Graphic design poster/African song event poster design.webp", // Make sure this path is correct
+    height: 300,
+    width: 300
+  },
+  {
+    id: "86",
+    title: "Agriculter advertisement poster design",
+    description: "NFT artwork",
+    category: "graphic",
+    subcategory: "poster design",
+    image: "/Graphic design poster/Agriculter advertisement poster design.webp", // Make sure this path is correct
+    height: 300,
+    width: 300
+  },
+  {
+    id: "93",
+    title: "Beauity product poster design",
+    description: "NFT artwork",
+    category: "graphic",
+    subcategory: "poster design",
+    image: "/Graphic design poster/Beauity product poster design.webp", // Make sure this path is correct
+    height: 300,
+    width: 300
+  },
+  {
+    id: "87",
+    title: "Lotion for beauty product poster design",
+    description: "NFT artwork",
+    category: "graphic",
+    subcategory: "poster design",
+    image: "/Graphic design poster/Lotion for beauty product poster design.webp", // Make sure this path is correct
+    height: 300,
+    width: 300
   },
 
- 
+  {
+    id: "88",
+    title: "beauty-product-lotion-poster-design-skincare-advertisement",
+    description: "NFT artwork",
+    category: "graphic",
+    subcategory: "poster design",
+    image: "/Graphic design poster/beauty-product-lotion-poster-design-skincare-advertisement.webp", // Make sure this path is correct
+    height: 300,
+    width: 300
+  },
+
+  {
+    id: "90",
+    title: "Cars sale poster design for advertisemet",
+    description: "NFT artwork",
+    category: "graphic",
+    subcategory: "poster design",
+    image: "/Graphic design poster/Cars sale poster design for advertisemet.webp", // Make sure this path is correct
+    height: 300,
+    width: 300
+  },
+  {
+    id: "91",
+    title: "Cartoonish football event poster design",
+    description: "NFT artwork",
+    category: "graphic",
+    subcategory: "poster design",
+    image: "/Graphic design poster/Cartoonish football event poster design.webp", // Make sure this path is correct
+    height: 400,
+    width: 300
+  },
+  {
+    id: "84",
+    title: "africa-beyond-poster-design-conference-event-2024",
+    description: "NFT artwork",
+    category: "graphic",
+    subcategory: "poster design",
+    image: "/Graphic design poster/africa-beyond-poster-design-conference-event-2024.webp", // Make sure this path is correct
+    height: 400,
+    width: 300
+  },
+  {
+    id: "92",
+    title: "Course sales poster design",
+    description: "NFT artwork",
+    category: "graphic",
+    subcategory: "poster design",
+    image: "/Graphic design poster/Course sales poster design.webp", // Make sure this path is correct
+    height: 400,
+    width: 300
+  },
+  {
+    id: "94",
+    title: "DOMINOS PIZZA advertisement poster design",
+    description: "NFT artwork",
+    category: "graphic",
+    subcategory: "poster design",
+    image: "/Graphic design poster/DOMINOS PIZZA advertisement poster design.webp", // Make sure this path is correct
+    height: 400,
+    width: 300
+  },
+  {
+    id: "95",
+    title: "DREAMLAND2024ARTIST",
+    description: "NFT artwork",
+    category: "graphic",
+    subcategory: "poster design",
+    image: "/Graphic design poster/DREAMLAND2024ARTIST.webp", // Make sure this path is correct
+    height: 400,
+    width: 300
+  },
+  {
+    id: "96",
+    title: "Eid-poster design",
+    description: "NFT artwork",
+    category: "graphic",
+    subcategory: "poster design",
+    image: "/Graphic design poster/Eid-poster design.webp", // Make sure this path is correct
+    height: 400,
+    width: 300
+  },
+  {
+    id: "97",
+    title: "Event poster design",
+    description: "NFT artwork",
+    category: "graphic",
+    subcategory: "poster design",
+    image: "/Graphic design poster/Event poster design.webp", // Make sure this path is correct
+    height: 400,
+    width: 300
+  },
+  {
+    id: "98",
+    title: "face skin care poster design",
+    description: "NFT artwork",
+    category: "graphic",
+    subcategory: "poster design",
+    image: "/Graphic design poster/face skin care poster design.webp", // Make sure this path is correct
+    height: 400,
+    width: 300
+  },
+  {
+    id: "99",
+    title: "Fashon design poster design",
+    description: "NFT artwork",
+    category: "graphic",
+    subcategory: "poster design",
+    image: "/Graphic design poster/Fashon design poster design.webp", // Make sure this path is correct
+    height: 400,
+    width: 300
+  },
+  {
+    id: "100",
+    title: "Fashon sales poster design",
+    description: "NFT artwork",
+    category: "graphic",
+    subcategory: "poster design",
+    image: "/Graphic design poster/Fashon sales poster design.webp", // Make sure this path is correct
+    height: 400,
+    width: 300
+  },
+  {
+    id: "101",
+    title: "Happy-New-Year-Social-Media-Banner-18",
+    description: "NFT artwork",
+    category: "graphic",
+    subcategory: "poster design",
+    image: "/Graphic design poster/Happy-New-Year-Social-Media-Banner-18.webp", // Make sure this path is correct
+    height: 400,
+    width: 300
+  },
+  {
+    id: "102",
+    title: "i phone sales poster design for advertisement",
+    description: "NFT artwork",
+    category: "graphic",
+    subcategory: "poster design",
+    image: "/Graphic design poster/i phone sales poster design for advertisement.webp", // Make sure this path is correct
+    height: 400,
+    width: 300
+  },
+  {
+    id: "103",
+    title: "ice creame Product poster design",
+    description: "NFT artwork",
+    category: "graphic",
+    subcategory: "poster design",
+    image: "/Graphic design poster/ice creame Product poster design.webp", // Make sure this path is correct
+    height: 400,
+    width: 300
+  },
+  {
+    id: "104",
+    title: "Ipad-pro black-friday poster design",
+    description: "NFT artwork",
+    category: "graphic",
+    subcategory: "poster design",
+    image: "/Graphic design poster/Ipad-pro black-friday poster design.webp", // Make sure this path is correct
+    height: 400,
+    width: 300
+  },
+  {
+    id: "105",
+    title: "Iphone-12--black-friday poster design",
+    description: "NFT artwork",
+    category: "graphic",
+    subcategory: "poster design",
+    image: "/Graphic design poster/Iphone-12--black-friday poster design.webp", // Make sure this path is correct
+    height: 400,
+    width: 300
+  },
+  {
+    id: "106",
+    title: "Iphone-15---black-friday poster design",
+    description: "NFT artwork",
+    category: "graphic",
+    subcategory: "poster design",
+    image: "/Graphic design poster/Iphone-15---black-friday poster design.webp", // Make sure this path is correct
+    height: 400,
+    width: 300
+  },
+  {
+    id: "107",
+    title: "jucie flavour Product poster design",
+    description: "NFT artwork",
+    category: "graphic",
+    subcategory: "poster design",
+    image: "/Graphic design poster/jucie flavour Product poster design.webp", // Make sure this path is correct
+    height: 400,
+    width: 300
+  },
+  {
+    id: "108",
+    title: "Lotion for beauty product poster design",
+    description: "NFT artwork",
+    category: "graphic",
+    subcategory: "poster design",
+    image: "/Graphic design poster/Lotion for beauty product poster design.webp", // Make sure this path is correct
+    height: 400,
+    width: 300
+  },
+  {
+    id: "109",
+    title: "Luxery pefume poster design for brands",
+    description: "NFT artwork",
+    category: "graphic",
+    subcategory: "poster design",
+    image: "/Graphic design poster/Luxery pefume poster design for brands.webp", // Make sure this path is correct
+    height: 400,
+    width: 300
+  },
+  {
+    id: "110",
+    title: "luxury-perfume-poster-design-dubai",
+    description: "NFT artwork",
+    category: "graphic",
+    subcategory: "poster design",
+    image: "/Graphic design poster/luxury-perfume-poster-design-dubai.webp", // Make sure this path is correct
+    height: 400,
+    width: 300
+  },
+  {
+    id: "111",
+    title: "Macbook-air---black-friday poster design",
+    description: "NFT artwork",
+    category: "graphic",
+    subcategory: "poster design",
+    image: "/Graphic design poster/Macbook-air---black-friday poster design.webp", // Make sure this path is correct
+    height: 400,
+    width: 300
+  },
+  {
+    id: "112",
+    title: "Magic-poster for book sale advertisement poster design",
+    description: "NFT artwork",
+    category: "graphic",
+    subcategory: "poster design",
+    image: "/Graphic design poster/Magic-poster for book sale advertisement poster design.webp", // Make sure this path is correct
+    height: 400,
+    width: 300
+  },
+  {
+    id: "113",
+    title: "man- shirt posters design for e commers",
+    description: "NFT artwork",
+    category: "graphic",
+    subcategory: "poster design",
+    image: "/Graphic design poster/man- shirt posters design for e commers.webp", // Make sure this path is correct
+    height: 400,
+    width: 300
+  },
+  {
+    id: "114",
+    title: "man- shirt posters design for e commers",
+    description: "NFT artwork",
+    category: "graphic",
+    subcategory: "poster design",
+    image: "/Graphic design poster/man- shirt posters design for e commers.webp", // Make sure this path is correct
+    height: 400,
+    width: 300
+  },
+  {
+    id: "115",
+    title: "Movie-poster netflix poster design",
+    description: "NFT artwork",
+    category: "graphic",
+    subcategory: "poster design",
+    image: "/Graphic design poster/Movie-poster netflix poster design.webp", // Make sure this path is correct
+    height: 400,
+    width: 300
+  },
+  {
+    id: "116",
+    title: "New year poster discount poster design",
+    description: "NFT artwork",
+    category: "graphic",
+    subcategory: "poster design",
+    image: "/Graphic design poster/New year poster discount poster design.webp", // Make sure this path is correct
+    height: 400,
+    width: 300
+  },
+  {
+    id: "117",
+    title: "OZ-TV_Ads-Prerolls",
+    description: "NFT artwork",
+    category: "graphic",
+    subcategory: "poster design",
+    image: "/Graphic design poster/OZ-TV_Ads-Prerolls.webp", // Make sure this path is correct
+    height: 400,
+    width: 300
+  },
+  {
+    id: "118",
+    title: "OZ-TV_Ads-Vapes",
+    description: "NFT artwork",
+    category: "graphic",
+    subcategory: "poster design",
+    image: "/Graphic design poster/OZ-TV_Ads-Vapes.webp", // Make sure this path is correct
+    height: 400,
+    width: 300
+  },
+  {
+    id: "119",
+    title: "paint-advertisement-poster-design-home-decor",
+    description: "NFT artwork",
+    category: "graphic",
+    subcategory: "poster design",
+    image: "/Graphic design poster/paint-advertisement-poster-design-home-decor.webp", // Make sure this path is correct
+    height: 400,
+    width: 300
+  },
+  {
+    id: "120",
+    title: "perfume-poster-design-25-percent-discount",
+    description: "NFT artwork",
+    category: "graphic",
+    subcategory: "poster design",
+    image: "/Graphic design poster/perfume-poster-design-25-percent-discount.webp", // Make sure this path is correct
+    height: 400,
+    width: 300
+  },
+  {
+    id: "121",
+    title: "Pink shade perfume-poster-design",
+    description: "NFT artwork",
+    category: "graphic",
+    subcategory: "poster design",
+    image: "/Graphic design poster/Pink shade perfume-poster-design.webp", // Make sure this path is correct
+    height: 400,
+    width: 300
+  },
+  {
+    id: "122",
+    title: "poster-design juice advertisement",
+    description: "NFT artwork",
+    category: "graphic",
+    subcategory: "poster design",
+    image: "/Graphic design poster/poster-design juice advertisement.webp", // Make sure this path is correct
+    height: 400,
+    width: 300
+  },
+  {
+    id: "122",
+    title: "poster-design Map creator construction-advertisement",
+    description: "NFT artwork",
+    category: "graphic",
+    subcategory: "poster design",
+    image: "/Graphic design poster/poster-design Map creator construction-advertisement.webp", // Make sure this path is correct
+    height: 400,
+    width: 300
+  },
+  {
+    id: "123",
+    title: "poster-design-construction-advertisement for building",
+    description: "NFT artwork",
+    category: "graphic",
+    subcategory: "poster design",
+    image: "/Graphic design poster/poster-design-construction-advertisement for building.webp", // Make sure this path is correct
+    height: 400,
+    width: 300
+  },
+  {
+    id: "124",
+    title: "poster-design-construction-advertisement with rolers",
+    description: "NFT artwork",
+    category: "graphic",
+    subcategory: "poster design",
+    image: "/Graphic design poster/poster-design-construction-advertisement with rolers.webp", // Make sure this path is correct
+    height: 400,
+    width: 300
+  },
+  {
+    id: "125",
+    title: "poster-design-construction-advertisement",
+    description: "NFT artwork",
+    category: "graphic",
+    subcategory: "poster design",
+    image: "/Graphic design poster/poster-design-construction-advertisement.webp", // Make sure this path is correct
+    height: 400,
+    width: 300
+  },
+  {
+    id: "126",
+    title: "Product poster design",
+    description: "NFT artwork",
+    category: "graphic",
+    subcategory: "poster design",
+    image: "/Graphic design poster/Product poster design.webp", // Make sure this path is correct
+    height: 400,
+    width: 300
+  },
+  {
+    id: "127",
+    title: "Product sales poster design",
+    description: "NFT artwork",
+    category: "graphic",
+    subcategory: "poster design",
+    image: "/Graphic design poster/Product sales poster design.webp", // Make sure this path is correct
+    height: 400,
+    width: 300
+  },
+  {
+    id: "128",
+    title: "Resturent poster design",
+    description: "NFT artwork",
+    category: "graphic",
+    subcategory: "poster design",
+    image: "/Graphic design poster/Resturent poster design.webp", // Make sure this path is correct
+    height: 400,
+    width: 300
+  },
+  {
+    id: "129",
+    title: "Shopif poster design",
+    description: "NFT artwork",
+    category: "graphic",
+    subcategory: "poster design",
+    image: "/Graphic design poster/Shopif poster design.webp", // Make sure this path is correct
+    height: 400,
+    width: 300
+  },
+  {
+    id: "130",
+    title: "skin care poster design",
+    description: "NFT artwork",
+    category: "graphic",
+    subcategory: "poster design",
+    image: "/Graphic design poster/skin care poster design.webp", // Make sure this path is correct
+    height: 400,
+    width: 300
+  },
+  {
+    id: "131",
+    title: "Skin care product poster design",
+    description: "NFT artwork",
+    category: "graphic",
+    subcategory: "poster design",
+    image: "/Graphic design poster/Skin care product poster design.webp", // Make sure this path is correct
+    height: 400,
+    width: 300
+  },
+  {
+    id: "132",
+    title: "Skincare advertisement poster design",
+    description: "NFT artwork",
+    category: "graphic",
+    subcategory: "poster design",
+    image: "/Graphic design poster/Skincare advertisement poster design.webp", // Make sure this path is correct
+    height: 400,
+    width: 300
+  },
+  {
+    id: "133",
+    title: "SkinFlair poster design",
+    description: "NFT artwork",
+    category: "graphic",
+    subcategory: "poster design",
+    image: "/Graphic design poster/SkinFlair poster design.webp", // Make sure this path is correct
+    height: 400,
+    width: 300
+  },
+  {
+    id: "134",
+    title: "Song event poster design",
+    description: "NFT artwork",
+    category: "graphic",
+    subcategory: "poster design",
+    image: "/Graphic design poster/Song event poster design.webp", // Make sure this path is correct
+    height: 400,
+    width: 300
+  },
+  {
+    id: "135",
+    title: "stylish shirt, poster design, and fashion brand",
+    description: "NFT artwork",
+    category: "graphic",
+    subcategory: "poster design",
+    image: "/Graphic design poster/stylish shirt, poster design, and fashion brand.webp", // Make sure this path is correct
+    height: 400,
+    width: 300
+  },
+  {
+    id: "136",
+    title: "Travel agency poster design",
+    description: "NFT artwork",
+    category: "graphic",
+    subcategory: "poster design",
+    image: "/Graphic design poster/Travel agency poster design.webp", // Make sure this path is correct
+    height: 400,
+    width: 300
+  },
+  {
+    id: "137",
+    title: "University admissin open poster",
+    description: "NFT artwork",
+    category: "graphic",
+    subcategory: "poster design",
+    image: "/Graphic design poster/University admissin open poster.webp", // Make sure this path is correct
+    height: 400,
+    width: 300
+  },
+  {
+    id: "138",
+    title: "University poster design Admisshion-open-poster",
+    description: "NFT artwork",
+    category: "graphic",
+    subcategory: "poster design",
+    image: "/Graphic design poster/University poster design Admisshion-open-poster.webp", // Make sure this path is correct
+    height: 400,
+    width: 300
+  },
+
+
+
   // Add more items as needed
 ];
