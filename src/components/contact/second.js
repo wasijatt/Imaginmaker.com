@@ -1,10 +1,10 @@
 'use client'
 
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { satoshi } from "@/lib/fonts"
-import { useState } from 'react'
+import { useState } from 'react';
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { satoshi } from "@/lib/fonts";
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
@@ -18,7 +18,7 @@ export default function ContactForm() {
     loading: false, 
     error: null, 
     success: false,
-    emailSuccess: true // Track email status separately
+    emailSuccess: true 
   });
 
   const handleSubmit = async (e) => {
@@ -42,35 +42,24 @@ export default function ContactForm() {
         throw new Error(result.message || 'Failed to submit form');
       }
 
-      // Handle partial success (form received but email failed)
-      if (response.status === 206) {
-        setStatus({
-          loading: false,
-          error: 'Message received! (Email confirmation failed)',
-          success: true,
-          emailSuccess: false
-        });
-      } 
-      // Full success
-      else if (result.success) {
-        setStatus({
-          loading: false,
-          error: null,
-          success: true,
-          emailSuccess: true
-        });
+      setStatus({
+        loading: false,
+        error: null,
+        success: true,
+        emailSuccess: result.emails?.user ?? false
+      });
+
+      // Reset form if fully successful
+      if (result.emails?.admin && result.emails?.user) {
         setFormData({
           fullName: '',
           email: '',
           phone: '',
           message: ''
         });
-      } else {
-        throw new Error(result.message || 'Submission failed');
       }
       
     } catch (error) {
-      console.error('Submission error:', error);
       setStatus({ 
         loading: false, 
         error: error.message || 'Failed to submit form. Please try again later.', 
@@ -101,18 +90,33 @@ export default function ContactForm() {
           
           {status.success ? (
             <div className="w-full max-w-4xl text-center">
-              <div className={`bg-[#bcaddd] p-8 rounded-lg border ${status.emailSuccess ? 'border-[#6D40FF]' : 'border-yellow-500'}`}>
-                <h3 className="text-2xl font-bold text-[#7D40FF] mb-3">
+              <div className={`p-8 rounded-lg border ${
+                status.emailSuccess 
+                  ? 'bg-[#bcaddd] border-[#6D40FF] text-[#7D40FF]' 
+                  : 'bg-yellow-50 border-yellow-400 text-yellow-700'
+              }`}>
+                <h3 className="text-2xl font-bold mb-3">
                   {status.emailSuccess ? 'Thank You!' : 'Message Received!'}
                 </h3>
-                <p className={`${status.emailSuccess ? 'text-[#7D40FF]' : 'text-yellow-700'}`}>
-                  {status.emailSuccess 
-                    ? "Your message has been received. We'll get back to you soon."
-                    : "We've received your message but couldn't send a confirmation email. We'll still contact you soon."}
+                <p className="mb-4">
+                  {status.emailSuccess
+                    ? "We've received your message and sent a confirmation email."
+                    : "We've received your message but couldn't send a confirmation email."}
                 </p>
+                {!status.emailSuccess && (
+                  <p className="text-sm mb-4">
+                    (This usually happens due to temporary email service issues. 
+                    We've definitely received your message and will contact you.)
+                  </p>
+                )}
                 <Button
-                  onClick={() => setStatus({ loading: false, error: null, success: false, emailSuccess: true })}
-                  className={`${satoshi.className} mt-6 bg-[#7D40FF] text-white px-6 py-2 rounded-full text-base font-medium hover:bg-[#6D40FF] transition-all`}
+                  onClick={() => setStatus({ 
+                    loading: false, 
+                    error: null, 
+                    success: false,
+                    emailSuccess: true 
+                  })}
+                  className={`${satoshi.className} mt-4 bg-[#7D40FF] text-white px-6 py-2 rounded-full text-base font-medium hover:bg-[#6D40FF] transition-all`}
                 >
                   Send Another Message
                 </Button>
@@ -168,7 +172,7 @@ export default function ContactForm() {
                 <div className="mt-4 p-3 bg-red-100 text-red-700 rounded-lg border border-red-400">
                   <p>{status.error}</p>
                   {status.error.includes('email') && (
-                    <p className="text-sm mt-1">Please check your email settings or try again later.</p>
+                    <p className="text-sm mt-1">Please check your email address or try again later.</p>
                   )}
                 </div>
               )}
@@ -195,5 +199,5 @@ export default function ContactForm() {
         </div>
       </div>
     </section>
-  )
+  );
 }
