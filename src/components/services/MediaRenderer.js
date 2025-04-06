@@ -22,21 +22,21 @@ export function MediaRenderer({ item, className = "", priority = false }) {
     return (
       <LazyVideo
         src={item.video}
-        className={`${className} w-full h-auto`}
+        className={`${className} w-full`}
         autoPlay
       />
     )
   }
 
-  // Handle images - auto aspect ratio
+  // Handle images
   const imageSrc = item.image || "/placeholder.svg"
   
   return (
     <img
       src={imageSrc}
       alt={item.title || "Portfolio item"}
-      className={`${className} w-full h-auto rounded-lg`}
-      loading={priority ? "eager" : "lazy"}
+      className={`${className}`}
+      loading="lazy"
       onError={(e) => {
         console.error("Failed to load image:", imageSrc)
         e.currentTarget.src = "/placeholder.svg"
@@ -68,7 +68,7 @@ function LottieRenderer({ item, className }) {
     <Lottie
       animationData={animationData}
       loop={true}
-      className={`${className} w-full h-auto`}
+      className={`${className} w-full`}
     />
   )
 }
