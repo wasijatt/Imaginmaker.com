@@ -106,7 +106,7 @@ export default function ContactForm() {
                 {!status.emailSuccess && (
                   <p className="text-sm mb-4">
                     (This usually happens due to temporary email service issues. 
-                    We've definitely received your message and will contact you.)
+                    We&apos;ve definitely received your message and will contact you.)
                   </p>
                 )}
                 <Button
