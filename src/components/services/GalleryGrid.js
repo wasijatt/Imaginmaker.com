@@ -23,7 +23,7 @@ export function PinterestGallery() {
         onSubcategoryChange={setActiveSubcategory}
       />
 
-      <div className="columns-2 gap-4">
+      <div className="columns-2 md:columns-3 gap-4">
         {filteredItems.map((item) => (
           <div key={item.id} className="mb-4 break-inside-avoid">
             <Link href={`/services/${item.id}`} passHref>
