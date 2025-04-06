@@ -19,8 +19,8 @@ export default function ImagePage() {
     <main className="container mx-auto px-4 py-6">
       <div className="grid grid-cols-1 md:grid-cols-[1fr,400px] gap-8">
         {/* Left: Media Display */}
-        <div className="relative flex items-center justify-center h-[80vh] rounded-lg overflow-hidden shadow-lg">
-          <MediaRenderer item={item} className="object-contain" priority />
+        <div className="relative flex items-center justify-center h-[80vh] rounded-lg overflow-hidden shadow-lg bg-gray-100">
+          <MediaRenderer item={item} className="w-full h-full object-contain" priority />
         </div>
 
         {/* Right: Details */}
@@ -56,8 +56,13 @@ export default function ImagePage() {
 function RelatedWorkItem({ item }) {
   return (
     <Link href={`/services/${item.id}`} passHref>
-      <div className="relative w-full aspect-square rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-200">
-        <MediaRenderer item={item} />
+      <div className="relative w-full rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-200 bg-gray-100">
+        <div className="aspect-square"> {/* This creates a square container */}
+          <MediaRenderer 
+            item={item} 
+            className="w-full h-full object-contain p-2" 
+          />
+        </div>
       </div>
     </Link>
   )
