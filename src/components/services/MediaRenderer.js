@@ -41,7 +41,7 @@ function LottieRenderer({ item, className }) {
   const animationData = useLottieLoader(item.video)
 
   if (!animationData) {
-    return <div className="w-full h-full flex items-center justify-center">Loading...</div>
+    return <div className="w-full h-full flex items-center justify-center"></div>
   }
 
   return (

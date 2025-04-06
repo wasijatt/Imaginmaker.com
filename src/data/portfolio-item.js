@@ -612,6 +612,24 @@ export const portfolioItems = [
     video: "/lottie/Black friday bag poster animation.json", // Video file
     height: 300,
   },
+  {
+    id: "70",
+    title: "4-season",
+    description: "A cool animation for a Bitcoin trading app.",
+    category: "nft",
+    subcategory: "art",
+    video: "/NFT's/4-season.jpg", // Video file
+    height: 300,
+  },
+  {
+    id: "71",
+    title: "Antarkatka-House",
+    description: "A cool animation for a Bitcoin trading app.",
+    category: "nft",
+    subcategory: "art",
+    video: "/NFT's/Antarkatka-House.jpg", // Video file
+    height: 300,
+  },
 
  
   // Add more items as needed

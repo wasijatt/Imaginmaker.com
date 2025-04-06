@@ -13,63 +13,61 @@ export default function ContactForm() {
     phone: '',
     message: ''
   });
-  const [status, setStatus] = useState({ loading: false, error: null, success: false });
+  
+  const [status, setStatus] = useState({ 
+    loading: false, 
+    error: null, 
+    success: false 
+  });
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setStatus({ loading: true, error: null, success: false });
 
     try {
-        // Log the form data being sent
-        console.log('Sending form data:', formData);
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData)
+      });
 
-        const response = await fetch('/api/contact', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(formData)
-        });
+      // First check if response is OK
+      if (!response.ok) {
+        // Try to get error message from response
+        const errorText = await response.text();
+        throw new Error(
+          errorText.startsWith('{') 
+            ? JSON.parse(errorText).message 
+            : `Server error: ${response.status}`
+        );
+      }
 
-        // Log detailed information about the response
-        console.log('Response status:', response.status);
-        console.log('Response headers:', Object.fromEntries([...response.headers.entries()]));
-        
-        // Try to get the raw response text first
-        const responseText = await response.text();
-        console.log('Raw response text:', responseText);
-        
-        // If we can't parse as JSON, show the raw response
-        let data;
-        try {
-            data = JSON.parse(responseText);
-            console.log('Parsed data:', data);
-        } catch (parseError) {
-            console.error('Failed to parse response as JSON:', parseError);
-            throw new Error(`Server returned non-JSON response: ${responseText.substring(0, 100)}...`);
-        }
-        
-        // Check if the response indicates an error
-        if (!response.ok || !data.success) {
-            throw new Error(data.message || 'Form submission failed. Please try again.');
-        }
+      // If response is OK, parse as JSON
+      const data = await response.json();
+      
+      if (!data.success) {
+        throw new Error(data.message || 'Form submission failed');
+      }
 
-        // Show success state
-        setStatus({ loading: false, error: null, success: true });
-        
-        // Clear form
-        setFormData({
-            fullName: '',
-            email: '',
-            phone: '',
-            interestedIn: ''
-        });
-        
+      setStatus({ loading: false, error: null, success: true });
+      setFormData({
+        fullName: '',
+        email: '',
+        phone: '',
+        message: ''
+      });
+      
     } catch (error) {
-        console.error('Form submission error:', error);
-        setStatus({ loading: false, error: error.message, success: false });
+      console.error('Form submission error:', error);
+      setStatus({ 
+        loading: false, 
+        error: error.message || 'Failed to submit form. Please try again later.', 
+        success: false 
+      });
     }
-};
+  };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -113,7 +111,6 @@ export default function ContactForm() {
               onSubmit={handleSubmit}
             >
               <div className="grid gap-8 md:gap-44 md:grid-cols-2 md:mt-20">
-                {/* Left Column - Input Fields */}
                 <div className="flex flex-col space-y-6 md:space-y-11">
                   <Input
                     name="fullName"
@@ -143,7 +140,6 @@ export default function ContactForm() {
                   />
                 </div>
                 
-                {/* Right Column - Message Textarea */}
                 <div>
                   <Textarea
                     name="message"
