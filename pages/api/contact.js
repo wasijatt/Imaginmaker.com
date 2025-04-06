@@ -2,7 +2,6 @@
 import { sendMail } from '../../lib/mail';
 
 export default async function handler(req, res) {
-  // Set response headers
   res.setHeader('Content-Type', 'application/json');
   
   if (req.method !== 'POST') {
@@ -12,7 +11,6 @@ export default async function handler(req, res) {
   try {
     const { fullName, email, phone, message } = req.body;
     
-    // Basic validation
     if (!fullName || !email || !phone) {
       return res.status(400).json({ 
         success: false, 
@@ -20,55 +18,41 @@ export default async function handler(req, res) {
       });
     }
 
-    // Send email to admin
+    // Attempt to send admin email
     const adminEmail = await sendMail({
       to: process.env.ADMIN_EMAIL,
-      subject: 'New Contact Form Submission',
-      html: `
-        <h3>New Contact Submission</h3>
-        <p><strong>Name:</strong> ${fullName}</p>
-        <p><strong>Email:</strong> ${email}</p>
-        <p><strong>Phone:</strong> ${phone}</p>
-        <p><strong>Message:</strong> ${message || 'No message provided'}</p>
-        <p>Received at: ${new Date().toLocaleString()}</p>
-      `
+      subject: 'New Contact Submission',
+      html: `<p>New contact from ${fullName} (${email}, ${phone}):<br>${message || 'No message'}</p>`
     });
 
-    // Send confirmation to user
+    // Attempt to send user confirmation (don't await so both send simultaneously)
     const userEmail = await sendMail({
       to: email,
-      subject: 'Thank you for contacting us!',
-      html: `
-        <p>Hi ${fullName},</p>
-        <p>Thank you for reaching out. We've received your message and will get back to you soon.</p>
-        <p>Here's what you submitted:</p>
-        <ul>
-          <li><strong>Phone:</strong> ${phone}</li>
-          <li><strong>Message:</strong> ${message || 'No message provided'}</li>
-        </ul>
-        <p>Best regards,<br>Your Company Team</p>
-      `
+      subject: 'Thanks for contacting Imaginmaker!',
+      html: `<p>Hi ${fullName},</p>
+             <p>We've received your message and will respond soon.</p>
+             <p><strong>Your message:</strong> ${message || 'None provided'}</p>`
     });
 
-    if (!adminEmail.success || !userEmail.success) {
-      console.error('Email sending issues:', { adminEmail, userEmail });
-      return res.status(500).json({
-        success: false,
-        message: 'Form received but email notifications failed'
-      });
-    }
+    // Check if both emails succeeded
+    const allEmailsSent = adminEmail.success && userEmail.success;
 
-    return res.status(200).json({ 
-      success: true, 
-      message: 'Form submitted successfully' 
+    return res.status(allEmailsSent ? 200 : 206).json({ 
+      success: true,
+      message: allEmailsSent 
+        ? 'Form submitted successfully' 
+        : 'Form received but email notifications partially failed',
+      emailStatus: {
+        admin: adminEmail.success,
+        user: userEmail.success
+      }
     });
     
   } catch (error) {
     console.error('Contact form error:', error);
     return res.status(500).json({ 
       success: false, 
-      message: 'Internal server error',
-      error: process.env.NODE_ENV === 'development' ? error.message : undefined
+      message: 'Internal server error' 
     });
   }
 }

@@ -17,12 +17,15 @@ export default function ContactForm() {
   const [status, setStatus] = useState({ 
     loading: false, 
     error: null, 
-    success: false 
+    success: false,
+    emailSuccess: true // Track email status separately
   });
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setStatus({ loading: true, error: null, success: false });
+    if (status.loading) return;
+    
+    setStatus({ loading: true, error: null, success: false, emailSuccess: true });
 
     try {
       const response = await fetch('/api/contact', {
@@ -35,23 +38,44 @@ export default function ContactForm() {
 
       const result = await response.json();
       
-      if (!response.ok || !result.success) {
+      if (!response.ok) {
         throw new Error(result.message || 'Failed to submit form');
       }
 
-      setStatus({ loading: false, error: null, success: true });
-      setFormData({
-        fullName: '',
-        email: '',
-        phone: '',
-        message: ''
-      });
+      // Handle partial success (form received but email failed)
+      if (response.status === 206) {
+        setStatus({
+          loading: false,
+          error: 'Message received! (Email confirmation failed)',
+          success: true,
+          emailSuccess: false
+        });
+      } 
+      // Full success
+      else if (result.success) {
+        setStatus({
+          loading: false,
+          error: null,
+          success: true,
+          emailSuccess: true
+        });
+        setFormData({
+          fullName: '',
+          email: '',
+          phone: '',
+          message: ''
+        });
+      } else {
+        throw new Error(result.message || 'Submission failed');
+      }
       
     } catch (error) {
+      console.error('Submission error:', error);
       setStatus({ 
         loading: false, 
         error: error.message || 'Failed to submit form. Please try again later.', 
-        success: false 
+        success: false,
+        emailSuccess: false
       });
     }
   };
@@ -77,15 +101,17 @@ export default function ContactForm() {
           
           {status.success ? (
             <div className="w-full max-w-4xl text-center">
-              <div className="bg-[#bcaddd] p-8 rounded-lg border border-[#6D40FF]">
+              <div className={`bg-[#bcaddd] p-8 rounded-lg border ${status.emailSuccess ? 'border-[#6D40FF]' : 'border-yellow-500'}`}>
                 <h3 className="text-2xl font-bold text-[#7D40FF] mb-3">
-                  Thank You!
+                  {status.emailSuccess ? 'Thank You!' : 'Message Received!'}
                 </h3>
-                <p className="text-[#7D40FF]">
-                  Your message has been received. We&apos;ll get back to you soon.
+                <p className={`${status.emailSuccess ? 'text-[#7D40FF]' : 'text-yellow-700'}`}>
+                  {status.emailSuccess 
+                    ? "Your message has been received. We'll get back to you soon."
+                    : "We've received your message but couldn't send a confirmation email. We'll still contact you soon."}
                 </p>
                 <Button
-                  onClick={() => setStatus({ loading: false, error: null, success: false })}
+                  onClick={() => setStatus({ loading: false, error: null, success: false, emailSuccess: true })}
                   className={`${satoshi.className} mt-6 bg-[#7D40FF] text-white px-6 py-2 rounded-full text-base font-medium hover:bg-[#6D40FF] transition-all`}
                 >
                   Send Another Message
@@ -132,7 +158,7 @@ export default function ContactForm() {
                     name="message"
                     value={formData.message}
                     onChange={handleChange}
-                    placeholder="Message"
+                    placeholder="Message (Optional)"
                     className="min-h-[232px] w-full resize-none rounded-3xl border-2 border-black p-6"
                   />
                 </div>
@@ -141,6 +167,9 @@ export default function ContactForm() {
               {status.error && (
                 <div className="mt-4 p-3 bg-red-100 text-red-700 rounded-lg border border-red-400">
                   <p>{status.error}</p>
+                  {status.error.includes('email') && (
+                    <p className="text-sm mt-1">Please check your email settings or try again later.</p>
+                  )}
                 </div>
               )}
               
@@ -150,7 +179,15 @@ export default function ContactForm() {
                   disabled={status.loading}
                   className={`${satoshi.className} h-12 rounded-full bg-[#6D40FF] shadow-[0.5px_0.2px_7px_0.2px_rgba(125,64,255,55)] px-12 text-white hover:bg-[#7D40FF] font-bold`}
                 >
-                  {status.loading ? 'Sending...' : 'Send'}
+                  {status.loading ? (
+                    <span className="flex items-center">
+                      <svg className="animate-spin -ml-1 mr-2 h-4 w-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                      </svg>
+                      Sending...
+                    </span>
+                  ) : 'Send'}
                 </Button>
               </div>
             </form>
