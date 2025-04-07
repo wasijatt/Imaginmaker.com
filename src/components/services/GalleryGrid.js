@@ -20,53 +20,64 @@ export function PinterestGallery() {
 
   return (
     <>
-    <div className="container mx-auto px-4 py-6">
-      <CategoryNav
-        activeCategory={activeCategory}
-        onCategoryChange={setActiveCategory}
-        activeSubcategory={activeSubcategory}
-        onSubcategoryChange={setActiveSubcategory}
+      <div className="container mx-auto px-4 py-6">
+        <CategoryNav
+          activeCategory={activeCategory}
+          onCategoryChange={setActiveCategory}
+          activeSubcategory={activeSubcategory}
+          onSubcategoryChange={setActiveSubcategory}
         />
 
-      <div className="columns-2 md:columns-3 gap-4 w-full">
-        {filteredItems.map((item) => (
-          <div key={item.id} className="mb-4 break-inside-avoid">
-            <Link href={`/services/${item.id}`} passHref>
-              <div className="relative rounded-lg overflow-hidden hover:shadow-lg transition-shadow duration-200">
-                <MediaRenderer 
-                  item={item} 
-                  className="w-full rounded-lg" 
+        <div className="columns-2 md:columns-3 gap-4 w-full">
+          {filteredItems.map((item) => (
+            <div key={item.id} className="mb-4 break-inside-avoid">
+              <Link href={`/services/${item.id}`} passHref>
+                <div className="relative rounded-lg overflow-hidden hover:shadow-lg transition-shadow duration-200">
+                  <MediaRenderer 
+                    item={item} 
+                    className="w-full rounded-lg" 
                   />
-              </div>
-            </Link>
-          </div>
-        ))}
-      </div>
-      <div className="relative mx-auto max-w-20xl overflow-hidden rounded-3xl py-24 mt-32 mb-32">
-      <div className="absolute inset-0">
-            <Image
-              src="/services/service-static.webp"
-              alt="Card background"
-              fill
-              className="object-cover opacity-100 "
-            />
-          </div>
-          </div>
-    </div>
+                </div>
+              </Link>
+            </div>
+          ))}
+        </div>
+
+
+{/* Bottom Image - Fully Controllable Dimensions */}
+<div className="flex justify-center my-32 md:-mt-40 -mt-60">
+  <div 
+    className="relative rounded-3xl overflow-hidden bg-transparent"
+    style={{
+      width: '90vw',    /* Adjust this value (80vw-100vw) */
+      height: '70vh',    /* Adjust this value (40vh-80vh) */
+      maxWidth: '1400px', /* Optional max constraint */
+      maxHeight: '800px'  /* Optional max constraint */
+    }}
+  >
+    <Image
+      src="/services/service-static.webp"
+      alt="Full width background"
+      fill
+      className="object-contain"
+      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 1400px"
+      priority
+    />
+  </div>
+</div>
         {/* Bottom Card */}
-        <div className="relative mx-auto max-w-5xl overflow-hidden rounded-3xl py-16 mt-10 mb-32">
-          {/* Card Background Image */}
+        <div className="relative mx-auto w-full max-w-5xl overflow-hidden rounded-3xl py-16 my-16 px-6 md:-mt-64 -mt-80">
           <div className="absolute inset-0">
             <Image
               src="/casestudy/bottomthirdcard.svg"
               alt="Card background"
               fill
-              className="object-cover opacity-100 "
+              className="object-cover opacity-100"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 800px"
             />
           </div>
 
-          {/* Card Content */}
-          <div className="relative flex flex-col items-center justify-between gap-8 p-10 md:flex-row md:p-12">
+          <div className="relative flex flex-col items-center justify-between gap-8 p-6 md:flex-row md:p-12">
             <div className="flex items-start space-x-4">
               <Image
                 src="/casestudy/third commas.svg"
@@ -75,20 +86,21 @@ export function PinterestGallery() {
                 height={35}
                 className="mt-1"
               />
-              <h3 className="text-left font-semibold text-white md:text-3xl text-md">
+              <h3 className="text-left font-semibold text-white md:text-3xl text-lg">
                 Have an idea? We can help.<br />
                 Start your project →
               </h3>
             </div>
             <Button
               variant="secondary"
-              className={`${satoshi.className} w-full bg-[#6D40FF] shadow-[0.5px_0.2px_7px_0.2px_rgba(125,64,255,55)] text-white md:px-8 px-2 py-3 rounded-full text-lg hover:bg-[#7D40FF] md:w-auto font-bold`}
+              className={`${satoshi.className} w-full bg-[#6D40FF] shadow-[0.5px_0.2px_7px_0.2px_rgba(125,64,255,55)] text-white md:px-8 px-4 py-3 rounded-full text-lg hover:bg-[#7D40FF] md:w-auto font-bold`}
             >
               Let&apos;s Connect
             </Button>
           </div>
         </div>
-        <Footer/>
-                    </>
+      </div>
+      <Footer/>
+    </>
   )
 }
