@@ -64,4 +64,3 @@ export function CategoryNav({ activeCategory, onCategoryChange, activeSubcategor
     </nav>
   )
 }
-

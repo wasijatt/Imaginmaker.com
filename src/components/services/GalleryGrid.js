@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { CategoryNav } from "./CategoryNav"
 import Link from "next/link"
 import { portfolioItems } from "@/data/portfolio-item"
@@ -13,59 +13,76 @@ import Footer from "../Footer"
 export function PinterestGallery() {
   const [activeCategory, setActiveCategory] = useState("graphic")
   const [activeSubcategory, setActiveSubcategory] = useState(null)
+  const [filteredItems, setFilteredItems] = useState([])
 
-  const filteredItems = portfolioItems.filter(
-    (item) => item.category === activeCategory && (!activeSubcategory || item.subcategory === activeSubcategory),
-  )
+  useEffect(() => {
+    // Filter and sort items whenever category or subcategory changes
+    const filtered = portfolioItems
+      .filter(item => item.category === activeCategory)
+      .filter(item => !activeSubcategory || item.subcategory === activeSubcategory)
+      .sort((a, b) => a.title.localeCompare(b.title)) // Sort by title for consistent ordering
+
+    setFilteredItems(filtered)
+  }, [activeCategory, activeSubcategory])
+
+  const handleCategoryChange = (category) => {
+    setActiveCategory(category)
+    setActiveSubcategory(null) // Reset subcategory when main category changes
+  }
 
   return (
     <>
       <div className="container mx-auto px-4 py-6">
         <CategoryNav
           activeCategory={activeCategory}
-          onCategoryChange={setActiveCategory}
+          onCategoryChange={handleCategoryChange}
           activeSubcategory={activeSubcategory}
           onSubcategoryChange={setActiveSubcategory}
         />
 
-        <div className="columns-2 md:columns-3 gap-4 w-full">
-          {filteredItems.map((item) => (
-            <div key={item.id} className="mb-4 break-inside-avoid">
-              <Link href={`/services/${item.id}`} passHref>
-                <div className="relative rounded-lg overflow-hidden hover:shadow-lg transition-shadow duration-200">
-                  <MediaRenderer 
-                    item={item} 
-                    className="w-full rounded-lg" 
-                  />
-                </div>
-              </Link>
-            </div>
-          ))}
+        {filteredItems.length > 0 ? (
+          <div className="columns-2 md:columns-3 gap-4 w-full">
+            {filteredItems.map((item) => (
+              <div key={item.id} className="mb-4 break-inside-avoid">
+                <Link href={`/services/${item.id}`} passHref>
+                  <div className="relative rounded-lg overflow-hidden hover:shadow-lg transition-shadow duration-200">
+                    <MediaRenderer 
+                      item={item} 
+                      className="w-full rounded-lg" 
+                    />
+                  </div>
+                </Link>
+              </div>
+            ))}
+          </div>
+        ) : (
+          <div className="text-center py-12">
+            <p className="text-gray-500">No items found for this category</p>
+          </div>
+        )}
+
+        {/* Rest of your existing code remains the same */}
+        <div className="flex justify-center my-32 md:-mt-40 -mt-60">
+          <div 
+            className="relative rounded-3xl overflow-hidden bg-transparent"
+            style={{
+              width: '90vw',
+              height: '70vh',
+              maxWidth: '1400px',
+              maxHeight: '800px'
+            }}
+          >
+            <Image
+              src="/services/service-static.webp"
+              alt="Full width background"
+              fill
+              className="object-contain"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 1400px"
+              priority
+            />
+          </div>
         </div>
 
-
-{/* Bottom Image - Fully Controllable Dimensions */}
-<div className="flex justify-center my-32 md:-mt-40 -mt-60">
-  <div 
-    className="relative rounded-3xl overflow-hidden bg-transparent"
-    style={{
-      width: '90vw',    /* Adjust this value (80vw-100vw) */
-      height: '70vh',    /* Adjust this value (40vh-80vh) */
-      maxWidth: '1400px', /* Optional max constraint */
-      maxHeight: '800px'  /* Optional max constraint */
-    }}
-  >
-    <Image
-      src="/services/service-static.webp"
-      alt="Full width background"
-      fill
-      className="object-contain"
-      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 1400px"
-      priority
-    />
-  </div>
-</div>
-        {/* Bottom Card */}
         <div className="relative mx-auto w-full max-w-5xl overflow-hidden rounded-3xl py-16 my-16 px-6 md:-mt-64 -mt-80">
           <div className="absolute inset-0">
             <Image
