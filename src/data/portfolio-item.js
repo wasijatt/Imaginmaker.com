@@ -1306,7 +1306,7 @@ export const portfolioItems = [
   },
   {
     id: "138",
-    title: "University poster design Admisshion-open-poster",
+    title: "University Poster design Admisshion-open-poster",
     description: "NFT artwork",
     category: "graphic",
     subcategory: "poster design",
