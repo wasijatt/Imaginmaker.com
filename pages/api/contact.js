@@ -1,42 +1,118 @@
-import { sendMail } from '../../lib/mail';
-import Contact from '../../models/Contact';
-import dbConnect from '../../lib/mongodb';
+import dbConnect from '@/lib/dbConnect';
+import Contact from '@/models/Contact';
+import { sendContactEmail } from '@/lib/mailer';
+import rateLimit from 'express-rate-limit';
+
+// Initialize rate limiter
+const limiter = rateLimit({
+  windowMs: 15 * 60 * 1000, // 15 minutes
+  max: 10, // Limit each IP to 10 requests per windowMs
+  handler: (req, res) => {
+    console.warn('Rate limit exceeded for contact form from IP:', req.headers['x-forwarded-for'] || req.connection.remoteAddress);
+    return res.status(429).json({
+      success: false,
+      message: 'Too many requests. Please try again later.'
+    });
+  }
+});
+
+// Helper function to run middleware
+const runMiddleware = (req, res, fn) => {
+  return new Promise((resolve, reject) => {
+    fn(req, res, (result) => {
+      if (result instanceof Error) {
+        return reject(result);
+      }
+      return resolve(result);
+    });
+  });
+};
 
 export default async function handler(req, res) {
-  if (req.method !== 'POST') {
-    return res.status(405).json({ success: false, message: 'Method not allowed' });
-  }
-
   try {
+    // Apply rate limiting
+    await runMiddleware(req, res, limiter);
+
+    if (req.method !== 'POST') {
+      console.log('Invalid method used for contact API');
+      return res.status(405).json({ 
+        success: false, 
+        message: 'Method not allowed' 
+      });
+    }
+
+    // Validate content type
+    if (req.headers['content-type'] !== 'application/json') {
+      console.log('Invalid content type for contact form');
+      return res.status(400).json({ 
+        success: false, 
+        message: 'Content-Type must be application/json' 
+      });
+    }
+
+    const formData = req.body;
+
+    // Enhanced validation
+    if (!formData.email || !formData.email.includes('@')) {
+      console.log('Invalid email submitted:', formData.email);
+      return res.status(400).json({ 
+        success: false, 
+        message: 'Please provide a valid email address' 
+      });
+    }
+
+    if (!formData.fullName || formData.fullName.trim().length < 2) {
+      return res.status(400).json({ 
+        success: false, 
+        message: 'Please provide your full name' 
+      });
+    }
+
+    // Connect to database
     await dbConnect();
 
-    const { fullName, email, phone, interestedIn } = req.body;
+    // Log the submission (without sensitive data)
+    console.log('New contact form submission from:', formData.email);
 
-    // Save the contact form data to the database (optional)
-    // const newContact = new Contact({ fullName, email, phone, interestedIn });
-    // await newContact.save();
-
-    // Send email to the user
-    const userEmailResponse = await sendMail({
-      to: email,
-      subject: 'Thank you for contacting us!',
-      html: `<p>Hi ${fullName},</p><p>Thank you for reaching out. We will get back to you soon.</p>`,
+    // Save to database
+    const newContact = new Contact({
+      fullName: formData.fullName.trim(),
+      email: formData.email.toLowerCase().trim(),
+      phone: formData.phone ? formData.phone.trim() : undefined,
+      interestedIn: formData.interestedIn ? formData.interestedIn.trim() : undefined,
+      message: formData.message ? formData.message.trim() : undefined,
+      ipAddress: req.headers['x-forwarded-for'] || req.connection.remoteAddress,
+      userAgent: req.headers['user-agent']
     });
 
-    // Send email to the admin
-    const adminEmailResponse = await sendMail({
-      to: process.env.ADMIN_EMAIL,
-      subject: 'New Contact Form Submission',
-      html: `<p>You have a new contact form submission from ${fullName} (${email}).</p>`,
+    await newContact.save();
+
+    // Send emails
+    await sendContactEmail(formData);
+
+    return res.status(200).json({ 
+      success: true, 
+      message: 'Form submitted successfully!' 
     });
 
-    if (userEmailResponse.success && adminEmailResponse.success) {
-      return res.status(200).json({ success: true, message: 'Form submitted successfully' });
-    } else {
-      return res.status(500).json({ success: false, message: 'Failed to send emails' });
-    }
   } catch (error) {
-    console.error('Error in contact form submission:', error);
-    return res.status(500).json({ success: false, message: 'Internal server error' });
+    console.error('Contact form error:', error);
+    
+    // Log additional error context
+    console.error('Error context:', {
+      formData: {
+        email: req.body?.email,
+        name: req.body?.fullName
+      },
+      headers: {
+        ip: req.headers['x-forwarded-for'],
+        userAgent: req.headers['user-agent']
+      }
+    });
+
+    return res.status(500).json({ 
+      success: false, 
+      message: 'An unexpected error occurred. Please try again later.' 
+    });
   }
 }
