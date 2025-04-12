@@ -1,6 +1,6 @@
-import dbConnect from '@/lib/dbConnect';
-import Contact from '@/models/Contact';
-import { sendContactEmail } from '@/lib/mailer';
+import dbConnect from 'lib/mongodb';
+import Contact from 'models/Contact';
+import { sendContactEmail } from 'lib/mailer';
 import rateLimit from 'express-rate-limit';
 
 // Initialize rate limiter
