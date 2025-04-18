@@ -16,6 +16,9 @@
 # next.js
 /.next/
 /out/
+next.config.mjs.d.ts
+next.config.mjs.swc
+next.config.mjs.map
 
 # production
 /build

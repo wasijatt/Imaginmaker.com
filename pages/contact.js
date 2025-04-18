@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { Search } from 'lucide-react';
-import { clashGrotesk } from '@/lib/clashGroteskfont';
-import { satoshi } from '@/lib/fonts';
+import { combineFonts, clashGrotesk, satoshi } from '@/lib/fonts';
 import ContactFirstSection from '@/components/contact/first';
 import Navbar from '@/components/Navbar';
 import ContactSecondSection from '@/components/contact/second';
@@ -11,7 +10,7 @@ export default function contact() {
 
 
     return (
-        <main className={`${clashGrotesk.className} ${satoshi.className}`}>
+        <main className={combineFonts(clashGrotesk, satoshi)}>
             <Navbar/>
             <ContactFirstSection />
             <ContactSecondSection/>

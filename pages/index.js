@@ -1,14 +1,11 @@
-// import HeroSection from '@/components/heroSection';
-
 "use client"
 import { useState } from 'react';
 import { Search } from 'lucide-react';
+import { combineFonts, clashGrotesk, satoshi } from '@/lib/fonts'; // Single import for all font-related items
 import Navbar from '@/components/Navbar';
 import HeroSection from '@/components/HeroSection';
-import { clashGrotesk } from '@/lib/clashGroteskfont';
 import AnimatedCarousel from '@/components/Homecarousels';
 import WhatWeDo from '@/components/WhatWeDo';
-import { satoshi } from '@/lib/fonts';
 import PerksSection from '@/components/perks-section';
 import MembershipSection from '@/components/membership';
 import WhyPeopleLikeUs from '@/components/why-people-like-us';
@@ -17,19 +14,12 @@ import Footer from '@/components/Footer';
 import ServicesSection from '@/components/HeroServices';
 import LogoMarquee from '@/components/HeroLogoSection';
 
-
-
-// import Footer from '@/components/Footer';
-
-
 export default function Home() {
-
-
   return (
-    <main className={`${clashGrotesk.className} ${satoshi.className}`}>
+    <main className={combineFonts(clashGrotesk, satoshi)}>
       <Navbar />
       <HeroSection />
-     <LogoMarquee/>
+      <LogoMarquee/>
       <AnimatedCarousel />
       <WhatWeDo />
       <ServicesSection />
@@ -41,5 +31,3 @@ export default function Home() {
     </main>
   )
 }
-
-
