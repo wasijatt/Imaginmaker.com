@@ -32,10 +32,12 @@ export function MediaRenderer({ item, className = "", priority = false }) {
   const imageSrc = item.image || "/placeholder.svg"
   
   return (
-    <img
+    <Image
       src={imageSrc}
       alt={item.title || "Portfolio item"}
       className={`${className}`}
+      width={500} // Add specific width
+      height={300} // Add specific height
       loading="lazy"
       onError={(e) => {
         console.error("Failed to load image:", imageSrc)
