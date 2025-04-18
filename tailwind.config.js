@@ -15,13 +15,12 @@ module.exports = {
     },
     extend: {
       fontFamily: {
-        clash: ['var(--font-clash-grotesk)', 'system-ui', 'sans-serif'],
-        satoshi: ['var(--font-satoshi)', 'system-ui', 'sans-serif'],
-        // Remove redundant variants since we can use font-weight utilities
-        'satoshi-regular': ['var(--font-satoshi)', 'system-ui', 'sans-serif'],
-        'satoshi-medium': ['var(--font-satoshi)', 'system-ui', 'sans-serif'],
-        'satoshi-bold': ['var(--font-satoshi)', 'system-ui', 'sans-serif'],
-        'satoshi-black': ['var(--font-satoshi)', 'system-ui', 'sans-serif'],
+        clash: ['var(--font-clash-grotesk)'],
+        'satoshi-regular': ['var(--font-satoshi)', 'sans-serif'],
+        'satoshi-medium': ['var(--font-satoshi)', 'sans-serif'],
+        'satoshi-bold': ['var(--font-satoshi)', 'sans-serif'],
+        'satoshi-black': ['var(--font-satoshi)', 'sans-serif'],
+        satoshi: ['var(--font-satoshi)', 'sans-serif'],
       },
       colors: {
         border: "hsl(var(--border))",

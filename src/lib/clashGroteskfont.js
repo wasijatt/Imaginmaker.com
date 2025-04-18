@@ -1,4 +1,5 @@
-import localFont from 'next/font/local';
+// src/lib/fonts.js
+import localFont from 'next/font/local'
 
 export const clashGrotesk = localFont({
     src: [
