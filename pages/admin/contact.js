@@ -1,26 +1,13 @@
 // pages/admin/contacts.js
 import { useState, useEffect } from 'react';
+import { useSession, signIn } from 'next-auth/react';
 import Head from 'next/head';
 
 export default function AdminContacts() {
+  const { data: session, status } = useSession();
   const [contacts, setContacts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
-  const [authPassword, setAuthPassword] = useState('');
-
-  // Simple admin auth check
-  const authenticateAdmin = (password) => {
-    // This is a simple example - in production, use proper auth
-    const adminPassword = process.env.NEXT_PUBLIC_ADMIN_PASSWORD || 'admin123';
-    if (password === adminPassword) {
-      setIsAuthenticated(true);
-      localStorage.setItem('admin_authenticated', 'true');
-      fetchContacts();
-    } else {
-      setError('Invalid password');
-    }
-  };
 
   const fetchContacts = async () => {
     try {
@@ -33,32 +20,25 @@ export default function AdminContacts() {
 
       const data = await response.json();
       setContacts(data.contacts);
-      setLoading(false);
     } catch (err) {
       console.error('Error fetching contacts:', err);
       setError(err.message);
+    } finally {
       setLoading(false);
     }
   };
 
   useEffect(() => {
-    // Check if already authenticated
-    if (typeof window !== 'undefined') {
-      const isAuth = localStorage.getItem('admin_authenticated') === 'true';
-      if (isAuth) {
-        setIsAuthenticated(true);
-        fetchContacts();
-      }
+    if (session?.user?.role === 'admin') {
+      fetchContacts();
     }
-  }, []);
+  }, [session]);
 
-  // Format date to readable format
-  const formatDate = (dateString) => {
-    const date = new Date(dateString);
-    return date.toLocaleString();
-  };
+  if (status === 'loading') {
+    return <div>Loading...</div>;
+  }
 
-  if (!isAuthenticated) {
+  if (!session || session.user.role !== 'admin') {
     return (
       <div className="min-h-screen bg-gray-100 flex flex-col items-center justify-center p-4">
         <Head>
@@ -66,41 +46,22 @@ export default function AdminContacts() {
         </Head>
         <div className="bg-white p-8 rounded-lg shadow-md w-full max-w-md">
           <h1 className="text-2xl font-bold mb-6 text-center">Admin Login</h1>
-          
-          {error && (
-            <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-4">
-              {error}
-            </div>
-          )}
-          
-          <form 
-            onSubmit={(e) => {
-              e.preventDefault();
-              authenticateAdmin(authPassword);
-            }}
-            className="space-y-4"
+          <button 
+            onClick={() => signIn('credentials')}
+            className="w-full bg-[#7D40FF] text-white py-2 px-4 rounded-lg hover:bg-[#6930D9] transition"
           >
-            <div>
-              <label className="block text-gray-700 mb-2">Admin Password</label>
-              <input 
-                type="password" 
-                value={authPassword}
-                onChange={(e) => setAuthPassword(e.target.value)}
-                className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500"
-                required
-              />
-            </div>
-            <button 
-              type="submit" 
-              className="w-full bg-[#7D40FF] text-white py-2 px-4 rounded-lg hover:bg-[#6930D9] transition"
-            >
-              Login
-            </button>
-          </form>
+            Login with Admin Credentials
+          </button>
         </div>
       </div>
     );
   }
+
+  // Format date to readable format
+  const formatDate = (dateString) => {
+    const date = new Date(dateString);
+    return date.toLocaleString();
+  };
 
   return (
     <div className="min-h-screen bg-gray-100">

@@ -47,7 +47,7 @@ export default function HeroSection() {
                 </svg>
               </span>
               <br />
-              <span>Design Agency</span>
+              <span>Design Agency.......</span>
               <span className="inline-block h-3 w-3 md:h-4 md:w-4 rounded-full bg-[#6D40FF] align-middle ml-1" />
             </h1>
           </div>
